@@ -32,6 +32,10 @@ public class JobSchedulerEnv extends Environment {
     public void prettyPrint(State s) {
         System.out.println("State: " + s.eval("jobs"));
     }
+
+    /* Your must define the reward here too 
+     * Be inspired by TicTacToe.java
+     */
 }
 ```
 

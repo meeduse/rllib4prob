@@ -149,4 +149,33 @@ Selected machine = /TicTacToe/tictac_rewarded.mch
 
 ## License
 
-Private research code. No license assigned.
+Attribution Assurance License
+
+Copyright (c) 2025 Akram Idani
+
+All rights reserved.
+
+This license gives everyone permission to use, copy, modify, and distribute
+this software and its documentation for any purpose, without fee, provided
+that the following attribution requirement is met:
+
+Any work or product that uses, includes, or is derived from this software
+must display the following acknowledgment:
+
+   "This product includes software developed by Akram Idani.
+    Original source available at: https://github.com/meeduse/rllib4prob"
+
+This acknowledgment must be displayed in:
+   (1) the user interface of any application using this software,  
+   or  
+   (2) the documentation and marketing materials accompanying the product.
+
+The name of the author may not be used to endorse or promote products
+derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL
+THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER
+IN CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

@@ -24,7 +24,7 @@ REWARD_STRATEGIES=(
 EXPLORATIONS=(
   PREPROCESS
   RECURSIVE
-  # NONE est exclu pour l'instant comme demandé
+  # NONE est exclu car non pertinent pour les stratégies de récompense testées
 )
 
 mkdir -p logs

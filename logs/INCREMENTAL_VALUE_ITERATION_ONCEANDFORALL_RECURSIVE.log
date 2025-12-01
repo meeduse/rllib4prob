@@ -1,0 +1,84 @@
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected machine = /TicTacToe/tictac.mch
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 5478 | Exploration time: 19.590682833 seconds
+Start learning (Incremental Value Iteration)
+Iteration: 1 | delta: 1.0
+Iteration: 2 | delta: 1.0
+Iteration: 3 | delta: 1.0
+Iteration: 4 | delta: 1.0
+Iteration: 5 | delta: 1.0
+Iteration: 6 | delta: 1.0
+Iteration: 7 | delta: 1.0
+Iteration: 8 | delta: 1.0
+Iteration: 9 | delta: 1.0
+Iteration: 10 | delta: 1.0
+Iteration: 11 | delta: 1.0
+Iteration: 12 | delta: 1.0
+Iteration: 13 | delta: 1.0
+Iteration: 14 | delta: 1.0
+Iteration: 15 | delta: 1.0
+Iteration: 16 | delta: 1.0
+Iteration: 17 | delta: 1.15
+Iteration: 18 | delta: 1.0
+Iteration: 19 | delta: 1.0
+Iteration: 20 | delta: 1.0
+Iteration: 21 | delta: 1.15
+Iteration: 22 | delta: 1.0
+Iteration: 23 | delta: 1.0
+Iteration: 24 | delta: 1.0
+Iteration: 25 | delta: 1.0
+Iteration: 26 | delta: 1.0
+Iteration: 27 | delta: 1.15
+Iteration: 28 | delta: 1.0
+Iteration: 29 | delta: 1.15
+Iteration: 30 | delta: 1.0
+Iteration: 31 | delta: 1.0
+Iteration: 32 | delta: 1.0
+Iteration: 33 | delta: 1.0
+Iteration: 34 | delta: 1.0
+Iteration: 35 | delta: 1.0
+Iteration: 36 | delta: 1.0
+Iteration: 37 | delta: 1.15
+Iteration: 38 | delta: 1.0
+Iteration: 39 | delta: 1.0
+Iteration: 40 | delta: 1.0
+Iteration: 41 | delta: 1.0
+Iteration: 42 | delta: 1.0
+Iteration: 43 | delta: 1.0
+Iteration: 44 | delta: 1.0
+Iteration: 45 | delta: 1.0
+Iteration: 46 | delta: 0.9
+Iteration: 47 | delta: 0.9
+Iteration: 48 | delta: 1.0
+Iteration: 49 | delta: 0.9
+Iteration: 50 | delta: 1.0
+Iteration: 51 | delta: 1.0
+Iteration: 52 | delta: 1.0
+Iteration: 53 | delta: 1.0
+Iteration: 54 | delta: 0.65
+Iteration: 55 | delta: 1.0
+Iteration: 56 | delta: 1.0
+Iteration: 57 | delta: 0.81
+Iteration: 58 | delta: 0.65
+Iteration: 59 | delta: 0.8999999999999999
+Iteration: 60 | delta: 0.9
+Iteration: 61 | delta: 1.0
+Iteration: 62 | delta: 1.0
+Iteration: 63 | delta: 0.22499999999999998
+Iteration: 64 | delta: 0.65
+Iteration: 65 | delta: 0.9
+Iteration: 66 | delta: 1.0
+Iteration: 67 | delta: 0.65
+Iteration: 68 | delta: 0.9
+Iteration: 69 | delta: 0.9
+Iteration: 70 | delta: 1.0
+Iteration: 71 | delta: 1.0
+Iteration: 72 | delta: 0.65
+Iteration: 73 | delta: 0.0
+Execution time (Incremental VI): 58.310265875 seconds

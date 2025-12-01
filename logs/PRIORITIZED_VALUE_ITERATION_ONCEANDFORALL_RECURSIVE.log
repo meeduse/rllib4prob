@@ -1,0 +1,57 @@
+Selected algorithm = PRIORITIZED_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected machine = /TicTacToe/tictac.mch
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 5478 | Exploration time: 20.142203792 seconds
+Start learning (Prioritized Value Iteration)
+Update 100 | last delta: 1.0
+Update 200 | last delta: 1.0
+Update 300 | last delta: 1.0
+Update 400 | last delta: 1.0
+Update 500 | last delta: 1.0
+Update 600 | last delta: 1.0
+Update 700 | last delta: 1.0
+Update 800 | last delta: 1.0
+Update 900 | last delta: 1.0
+Update 1000 | last delta: 1.0
+Update 1100 | last delta: 1.0
+Update 1200 | last delta: 1.0
+Update 1300 | last delta: 1.0
+Update 1400 | last delta: 1.0
+Update 1500 | last delta: 1.0
+Update 1600 | last delta: 1.0
+Update 1700 | last delta: 0.65
+Update 1800 | last delta: 0.65
+Update 1900 | last delta: 0.65
+Update 2000 | last delta: 0.65
+Update 2100 | last delta: 0.65
+Update 2200 | last delta: 0.65
+Update 2300 | last delta: 0.65
+Update 2400 | last delta: 0.65
+Update 2500 | last delta: 0.65
+Update 2600 | last delta: 0.65
+Update 2700 | last delta: 0.65
+Update 2800 | last delta: 0.65
+Update 2900 | last delta: 0.65
+Update 3000 | last delta: 0.65
+Update 3100 | last delta: 0.65
+Update 3200 | last delta: 0.3350000000000001
+Update 3300 | last delta: 0.3350000000000001
+Update 3400 | last delta: 0.3350000000000001
+Update 3500 | last delta: 0.3350000000000001
+Update 3600 | last delta: 0.3350000000000001
+Update 3700 | last delta: 0.3350000000000001
+Update 3800 | last delta: 0.3350000000000001
+Update 3900 | last delta: 0.3350000000000001
+Update 4000 | last delta: 0.0515000000000001
+Update 4100 | last delta: 0.25
+Update 4200 | last delta: 0.0515000000000001
+Update 4300 | last delta: 0.25
+Update 4400 | last delta: 0.0515000000000001
+Update 4500 | last delta: 0.22499999999999998
+Execution time (Prioritized VI): 50.738694708 seconds
+Total updates performed: 4530

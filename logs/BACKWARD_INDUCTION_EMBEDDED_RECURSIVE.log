@@ -1,0 +1,20 @@
+Selected algorithm = BACKWARD_INDUCTION
+Selected reward strategy = EMBEDDED
+Selected machine = /TicTacToe/tictac_rewarded.mch
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 5478 | Exploration time: 37.453293125 seconds
+Start learning (Backward Induction / Finite Horizon DP)
+Horizon step: 1 | max delta: 1.0
+Horizon step: 2 | max delta: 0.9
+Horizon step: 3 | max delta: 0.81
+Horizon step: 4 | max delta: 0.7290000000000001
+Horizon step: 5 | max delta: 0.6561000000000001
+Horizon step: 6 | max delta: 0.0
+Horizon step: 7 | max delta: 0.0
+Horizon step: 8 | max delta: 0.0
+Horizon step: 9 | max delta: 0.0
+Execution time (Backward Induction): 18.169990042 seconds

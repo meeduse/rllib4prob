@@ -1,0 +1,17 @@
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected machine = /TicTacToe/tictac_rewarded.mch
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+................................................................Model Checking complete. No error nodes found.Total states: 5479
+
+End of exploration 5478 | Exploration time: 32.291658 seconds
+Start learning
+Iteration: 1 | delta: 1.0
+Iteration: 2 | delta: 0.65
+Iteration: 3 | delta: 0.3350000000000001
+Iteration: 4 | delta: 0.0515000000000001
+Iteration: 5 | delta: 0.0
+Execution time: 81.759083334 seconds

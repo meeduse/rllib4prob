@@ -1,0 +1,15 @@
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = ONTHEFLY
+Selected machine = /TicTacToe/tictac.mch
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 5478 | Exploration time: 6.105944792 seconds
+Start learning
+Iteration: 1 | delta: 1.0
+Iteration: 2 | delta: 0.65
+Iteration: 3 | delta: 0.3350000000000001
+Iteration: 4 | delta: 0.0
+Execution time: 310.639913125 seconds

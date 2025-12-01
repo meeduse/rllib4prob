@@ -1,0 +1,15 @@
+Selected algorithm = MODIFIED_POLICY_ITERATION
+Selected reward strategy = EMBEDDED
+Selected machine = /TicTacToe/tictac_rewarded.mch
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 5478 | Exploration time: 35.45459225 seconds
+Start learning (Modified Policy Iteration)
+Iteration: 1 | policy stable: false
+Iteration: 2 | policy stable: false
+Iteration: 3 | policy stable: false
+Iteration: 4 | policy stable: true
+Execution time (MPI): 14.047065167 seconds

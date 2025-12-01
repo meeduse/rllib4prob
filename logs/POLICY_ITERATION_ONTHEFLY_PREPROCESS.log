@@ -1,0 +1,16 @@
+Selected algorithm = POLICY_ITERATION
+Selected reward strategy = ONTHEFLY
+Selected machine = /TicTacToe/tictac.mch
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+......Model Checking complete. No error nodes found.Total states: 5479
+
+End of exploration 5478 | Exploration time: 2.744913167 seconds
+Start learning
+Iteration: 1 | policy stable: false
+Iteration: 2 | policy stable: false
+Iteration: 3 | policy stable: false
+Iteration: 4 | policy stable: true
+Execution time: 556.73215475 seconds

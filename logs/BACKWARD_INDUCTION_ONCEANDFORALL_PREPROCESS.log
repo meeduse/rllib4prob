@@ -1,0 +1,21 @@
+Selected algorithm = BACKWARD_INDUCTION
+Selected reward strategy = ONCEANDFORALL
+Selected machine = /TicTacToe/tictac.mch
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+......Model Checking complete. No error nodes found.Total states: 5479
+
+End of exploration 5478 | Exploration time: 2.737270292 seconds
+Start learning (Backward Induction / Finite Horizon DP)
+Horizon step: 1 | max delta: 1.0
+Horizon step: 2 | max delta: 0.9
+Horizon step: 3 | max delta: 0.81
+Horizon step: 4 | max delta: 0.7290000000000001
+Horizon step: 5 | max delta: 0.6561000000000001
+Horizon step: 6 | max delta: 0.0
+Horizon step: 7 | max delta: 0.0
+Horizon step: 8 | max delta: 0.0
+Horizon step: 9 | max delta: 0.0
+Execution time (Backward Induction): 51.490563792 seconds

@@ -1,0 +1,31 @@
+\begin{table}[t]
+  \centering
+  \caption{Average exploration times (in seconds) per B specification and exploration strategy.}
+  \label{tab:exploration-times}
+  \begin{tabular}{l rr}
+    \hline
+    Specification & Pre-proc & Recursive \\
+    \hline
+    \texttt{tictac.mch} & 2.77766 & 12.9572 \\
+    \texttt{tictac\_rewarded.mch} & 32.3712 & 36.5074 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[t]
+  \centering
+  \caption{Average learning time per algorithm and reward strategy (over PREPROCESS and RECURSIVE exploration).}
+  \label{tab:learning-times}
+  \begin{tabular}{l rrr}
+    \hline
+    Algorithm & On-The-Fly & Once-and-for-all & Embedded \\
+    \hline
+    Value Iteration (VI) & 351.889 & 188.846 & 71.121 \\
+    Policy Iteration (PI) & 550.565 & 42.138 & 15.2622 \\
+    Modified PI & 493.025 & 41.0533 & 14.1059 \\
+    Incremental VI & 444.631 & 58.3828 & 15.8178 \\
+    Backward Induction & 624.169 & 50.6721 & 17.3453 \\
+    Prioritized VI & 647.786 & 51.4371 & 15.2098 \\
+    \hline
+  \end{tabular}
+\end{table}

@@ -1,0 +1,16 @@
+Selected algorithm = POLICY_ITERATION
+Selected reward strategy = EMBEDDED
+Selected machine = /TicTacToe/tictac_rewarded.mch
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.................................................................Model Checking complete. No error nodes found.Total states: 5479
+
+End of exploration 5478 | Exploration time: 32.580312042 seconds
+Start learning
+Iteration: 1 | policy stable: false
+Iteration: 2 | policy stable: false
+Iteration: 3 | policy stable: false
+Iteration: 4 | policy stable: true
+Execution time: 15.26229525 seconds

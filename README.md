@@ -40,20 +40,24 @@ The main motivation is to treat a B machine as an executable environment, allowi
 
 ## Project Structure
 
+```text
 src/main/java/fr/polytech/mnia/
 ├── App.java
 ├── Environment.java
 ├── TicTacToe.java
 ├── MyProb.java
+│
 ├── Agent.java
 ├── AgentFactory.java
 ├── AlgorithmId.java
+│
 ├── ValueIteration.java
 ├── PolicyIteration.java
 ├── ModifiedPolicyIteration.java
 ├── IncrementalValueIteration.java
 ├── PrioritizedValueIteration.java
 ├── BackwardInductionV1.java
+│
 ├── ExplorationStrategy.java
 └── RewardStrategy.java
 

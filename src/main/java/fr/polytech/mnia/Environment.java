@@ -160,9 +160,6 @@ public abstract class Environment {
             recursive(transition.getDestination(), visited, nextDepth, maxBreadth);
             count++;
         }
-
-        //System.out.print("\r" + visited.size());
-        //System.out.flush();
     }
 
     /**

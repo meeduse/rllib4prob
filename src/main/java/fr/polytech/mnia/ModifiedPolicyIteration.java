@@ -76,12 +76,12 @@ public class ModifiedPolicyIteration extends Agent {
 
     @Override
     public void learn(ExplorationStrategy strategy) {
-        // 1) Explore the whole state space using the chosen strategy
+        // Explore the whole state space using the chosen strategy
         env.explore(strategy);
         System.out.println("Start learning (Modified Policy Iteration)");
         long startTime = System.nanoTime();
 
-        // 2) Initialise a simple deterministic policy and V(s)
+        // Initialise a simple deterministic policy and V(s)
         Set<Integer> stateIds = env.getStateIds();
         for (int sID : stateIds) {
             State s = env.gState(sID);
@@ -93,7 +93,7 @@ public class ModifiedPolicyIteration extends Agent {
             }
         }
 
-        // 3) Alternate between partial policy evaluation and policy improvement
+        // Alternate between partial policy evaluation and policy improvement
         int iteration = 0;
         boolean policyStable;
         do {

@@ -76,7 +76,6 @@ public class BackwardInductionV1 extends Agent {
                 List<Transition> actions = s.getOutTransitions();
                 if (actions.isEmpty()) {
                     // Terminal state: horizon-limited return is zero by convention
-                    // (you could also choose to preserve vPrev(s) if needed).
                     vCurr.put(s, 0.0);
                     continue;
                 }
@@ -127,7 +126,7 @@ public class BackwardInductionV1 extends Agent {
     }
 
     /**
-     * Optional accessor if you want to inspect V_H(s).
+     * Optional accessor to inspect V_H(s).
      */
     public double getValue(State s) {
         return vValues.getOrDefault(s, 0.0);

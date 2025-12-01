@@ -59,12 +59,12 @@ public class PrioritizedValueIterationV1 extends Agent {
 
     @Override
     public void learn(ExplorationStrategy strategy) {
-        // 1) Full state-space construction via ProB
+        // Full state-space construction via ProB
         env.explore(strategy);
         System.out.println("Start learning (Prioritized Value Iteration)");
         long startTime = System.nanoTime();
 
-        // 2) Collect all reachable states
+        // Collect all reachable states
         Set<Integer> stateIds = env.getStateIds();
         List<State> states = new ArrayList<>();
         for (int sID : stateIds) {
@@ -77,21 +77,21 @@ public class PrioritizedValueIterationV1 extends Agent {
             return;
         }
 
-        // 3) Cache outgoing transitions and build predecessors
+        // Cache outgoing transitions and build predecessors
         buildGraphs(states);
 
-        // 4) Initialise V(s) = 0 for all states
+        // Initialise V(s) = 0 for all states
         for (State s : states) {
             vValues.put(s, 0.0);
         }
 
-        // 5) Priority queue of states, ordered by descending Bellman error
+        // Priority queue of states, ordered by descending Bellman error
         PriorityQueue<StatePriority> pq = new PriorityQueue<>(
             Comparator.comparingDouble((StatePriority sp) -> sp.priority).reversed()
         );
 
-        // 6) Initial priorities: on first pass, we can compute
-        //    an initial Bellman error for each state
+        // Initial priorities: on first pass, we can compute
+        // an initial Bellman error for each state
         for (State s : states) {
             double error = computeBellmanError(s);
             if (error > 0.0) {

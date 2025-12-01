@@ -64,12 +64,12 @@ public class IncrementalValueIteration extends Agent {
 
     @Override
     public void learn(ExplorationStrategy strategy) {
-        // 1) Explore the whole state space once using ProB
+        // Explore the whole state space once using ProB
         env.explore(strategy);
         System.out.println("Start learning (Incremental Value Iteration)");
         long startTime = System.nanoTime();
 
-        // 2) Collect all reachable states
+        // Collect all reachable states
         Set<Integer> stateIds = env.getStateIds();
         List<State> states = new ArrayList<>();
         for (int sID : stateIds) {
@@ -86,7 +86,7 @@ public class IncrementalValueIteration extends Agent {
         int nStates = states.size();
         int effectiveUpdates = Math.min(updatesPerIteration, nStates);
 
-        // 3) Incremental Value Iteration
+        // Incremental Value Iteration
         int iteration = 0;
         double delta;
         do {

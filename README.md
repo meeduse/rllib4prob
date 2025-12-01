@@ -60,6 +60,7 @@ src/main/java/fr/polytech/mnia/
 │
 ├── ExplorationStrategy.java
 └── RewardStrategy.java
+```
 
 ## Running Experiments
 

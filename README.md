@@ -3,7 +3,7 @@
 This project provides a Java-based toolchain for running **Model-Based Reinforcement Learning (MBRL)** algorithms over **formal B specifications** executed through the ProB model checker.  
 It supports multiple exploration strategies, several reward computation mechanisms, and a variety of MBRL algorithms including Value Iteration, Policy Iteration, and their variants.
 
-The main motivation is to treat a B machine as an executable environment, allowing RL agents to learn directly from a formally specified transition system without requiring any handcrafted simulator.
+The goal is to treat a B machine as an executable environment, allowing RL agents to learn directly from a **formally specified** transition system without requiring any handcrafted simulator.
 
 ## Features
 
@@ -13,7 +13,7 @@ The main motivation is to treat a B machine as an executable environment, allowi
   - RECURSIVE (on-the-fly DFS-like exploration)
 
 - Three reward strategies:
-  - ON_THE_FLY (constraint-based evaluation after each transition)
+  - ON_THE_FLY (constraint-based evaluation)
   - ONCE_AND_FOR_ALL (precomputed during exploration)
   - EMBEDDED (reward encoded directly in the B machine)
 
@@ -61,6 +61,7 @@ src/main/java/fr/polytech/mnia/
 ├── ExplorationStrategy.java
 └── RewardStrategy.java
 ```
+
 ## Compile
 
 ```
@@ -70,10 +71,15 @@ mvn clean compile
 ## Running Experiments
 
 ```
-mvn exec:java -Dexec.args="<ALGO> <REWARD>"
+mvn -q exec:java -Dexec.args="<ALGO> <REWARD> <EXPLORATION>"
 ```
 
-Available Algorithms:
+Defaults:
+```
+BACKWARD_INDUCTION ONCE_AND_FOR_ALL PREPROCESS
+```
+
+### Available Algorithms
 
 VALUE_ITERATION  
 POLICY_ITERATION  
@@ -82,51 +88,31 @@ INCREMENTAL_VALUE_ITERATION
 BACKWARD_INDUCTION  
 PRIORITIZED_VALUE_ITERATION  
 
-Reward Strategies:
+### Reward Strategies
 
 ON_THE_FLY  
 ONCE_AND_FOR_ALL  
 EMBEDDED  
 
-If no arguments are given, the default is:
-
-```
-BACKWARD_INDUCTION ONCE_AND_FOR_ALL
-```
-
-## Examples
-
-Value Iteration with on-the-fly reward evaluation:
-
-```
-mvn exec:java -Dexec.args="VALUE_ITERATION ON_THE_FLY"
-```
-
-Policy Iteration with embedded rewards:
-
-```
-mvn exec:java -Dexec.args="POLICY_ITERATION EMBEDDED"
-```
-
-Incremental Value Iteration with once-and-for-all rewards:
-
-```
-mvn exec:java -Dexec.args="INCREMENTAL_VALUE_ITERATION ONCE_AND_FOR_ALL"
-```
-
-## Exploration Strategy Selection
-
-Exploration strategy is chosen in App.java:
-
-```java
-agent.learn(ExplorationStrategy.PREPROCESS);
-```
-
-Available strategies:
+### Exploration Strategies
 
 PREPROCESS  
 RECURSIVE  
 NONE  
+
+## Examples
+
+```
+mvn -q exec:java -Dexec.args="VALUE_ITERATION ON_THE_FLY PREPROCESS"
+```
+
+```
+mvn -q exec:java -Dexec.args="POLICY_ITERATION EMBEDDED RECURSIVE"
+```
+
+```
+mvn -q exec:java -Dexec.args="INCREMENTAL_VALUE_ITERATION ONCE_AND_FOR_ALL"
+```
 
 ## Environment Selection
 
@@ -135,14 +121,13 @@ Reward strategy determines the B machine:
 - tictactoe.mch for ON_THE_FLY and ONCE_AND_FOR_ALL  
 - tictac_rewarded.mch for EMBEDDED
 
-## Output and Logging
-
-Example output:
+## Output Example
 
 ```
 Selected algorithm = POLICY_ITERATION
 Selected reward strategy = EMBEDDED
 Selected machine = /TicTacToe/tictac_rewarded.mch
+Exploration strategy = PREPROCESS
 ```
 
 ## Extending the Framework
@@ -156,31 +141,29 @@ Selected machine = /TicTacToe/tictac_rewarded.mch
 
 Attribution Assurance License
 
-Copyright (c) 2025 Akram Idani
+Copyright (c) 2025  
+Akram Idani
 
 All rights reserved.
 
-This license gives everyone permission to use, copy, modify, and distribute
-this software and its documentation for any purpose, without fee, provided
-that the following attribution requirement is met:
+This license gives everyone permission to use, copy, modify, and distribute this software and its documentation for any purpose, without fee, provided that the following attribution requirement is met:
 
-Any work or product that uses, includes, or is derived from this software
-must display the following acknowledgment:
+Any work or product that uses, includes, or is derived from this software must display the following acknowledgment:
 
-   "This product includes software developed by Akram Idani.
+   "This product includes software developed by Akram Idani.  
     Original source available at: https://github.com/meeduse/rllib4prob"
 
-This acknowledgment must be displayed in:
+This acknowledgment must be displayed in:  
    (1) the user interface of any application using this software,  
    or  
    (2) the documentation and marketing materials accompanying the product.
 
-The name of the author may not be used to endorse or promote products
+The name of the author may not be used to endorse or promote products  
 derived from this software without specific prior written permission.
 
-THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL
-THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER
-IN CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTIES OR CONDITIONS OF ANY  
+KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY,  
+FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL  
+THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER  
+IN CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION  
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

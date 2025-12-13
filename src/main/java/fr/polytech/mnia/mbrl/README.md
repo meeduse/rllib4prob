@@ -4,8 +4,6 @@ This package provides a collection of **model-based reinforcement learning algor
 
 The architecture distinguishes between **offline** and **online** model-based learning, reflecting different assumptions about when and how the environment model is made available to the learner.
 
----
-
 ## Package structure
 
 ```text
@@ -22,8 +20,6 @@ mbrl
     ├── DynaQ.java
     └── DynaQPlus.java
 ```
-
----
 
 ## Offline model-based reinforcement learning
 
@@ -63,8 +59,6 @@ ExplorationStrategy.RECURSIVE
 - Prioritized Value Iteration
 - Backward Induction
 
----
-
 ## Online model-based reinforcement learning
 
 ### Principle
@@ -94,16 +88,12 @@ ExplorationStrategy.NONE
 
 Dyna-Q+ extends Dyna-Q with an exploration bonus that encourages revisiting rarely used transitions.
 
----
-
 | Aspect | Offline | Online |
 |------|--------|--------|
 | Model | Known upfront | Learned incrementally |
 | Exploration | Required | None |
 | Strategy | PREPROCESS / RECURSIVE | NONE |
 | Examples | VI, PI, BI | Dyna-Q, Dyna-Q+ |
-
----
 
 ## Example
 

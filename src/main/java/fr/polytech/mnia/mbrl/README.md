@@ -96,8 +96,6 @@ Dyna-Q+ extends Dyna-Q with an exploration bonus that encourages revisiting rare
 
 ---
 
-## Summary
-
 | Aspect | Offline | Online |
 |------|--------|--------|
 | Model | Known upfront | Learned incrementally |

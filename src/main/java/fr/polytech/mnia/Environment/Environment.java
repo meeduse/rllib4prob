@@ -1,4 +1,4 @@
-package fr.polytech.mnia;
+package fr.polytech.mnia.Environment;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -197,7 +197,7 @@ public abstract class Environment {
      * Pretty prints the environment.
      * This method must be implemented by concrete subclasses.
      */
-    abstract void prettyPrint();
+    protected abstract void prettyPrint();
 
     /**
      * Computes the reward associated with a given transition.

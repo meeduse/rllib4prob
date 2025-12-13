@@ -1,5 +1,14 @@
 package fr.polytech.mnia;
 
+import fr.polytech.mnia.Environment.Environment;
+import fr.polytech.mnia.MBRL.AlgorithmId;
+import fr.polytech.mnia.MBRL.BackwardInductionV1;
+import fr.polytech.mnia.MBRL.IncrementalValueIteration;
+import fr.polytech.mnia.MBRL.ModifiedPolicyIteration;
+import fr.polytech.mnia.MBRL.PolicyIteration;
+import fr.polytech.mnia.MBRL.PrioritizedValueIterationV1;
+import fr.polytech.mnia.MBRL.ValueIteration;
+
 public final class AgentFactory {
 
     private AgentFactory() {

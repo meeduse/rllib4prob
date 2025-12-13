@@ -33,7 +33,7 @@ The goal is to treat a B machine as an executable environment, allowing RL agent
 
 ## Requirements
 
-- Java 21 or later  
+- Java 17 
 - Maven 3.8+  
 - ProB Java API  
 - Linux or macOS recommended
@@ -103,7 +103,7 @@ NONE
 ## Examples
 
 ```
-mvn -q exec:java -Dexec.args="VALUE_ITERATION ON_THE_FLY PREPROCESS"
+mvn -q exec:java -Dexec.args="MODIFIED_POLICY_ITERATION ONCE_AND_FOR_ALL PREPROCESS"
 ```
 
 ```

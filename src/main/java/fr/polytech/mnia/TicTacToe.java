@@ -2,6 +2,8 @@ package fr.polytech.mnia;
 
 import de.prob.statespace.State;
 import de.prob.statespace.Transition;
+import fr.polytech.mnia.Environment.Environment;
+import fr.polytech.mnia.Environment.RewardStrategy;
 
 public class TicTacToe extends Environment {
     RewardStrategy rStrategy ;
@@ -129,7 +131,7 @@ public class TicTacToe extends Environment {
     }*/
 
     @Override
-    void prettyPrint() {
+    protected void prettyPrint() {
         throw new UnsupportedOperationException("Unimplemented method 'prettyPrint'");
     }
     

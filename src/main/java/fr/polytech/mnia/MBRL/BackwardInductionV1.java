@@ -1,7 +1,10 @@
-package fr.polytech.mnia;
+package fr.polytech.mnia.MBRL;
 
 import de.prob.statespace.State;
 import de.prob.statespace.Transition;
+import fr.polytech.mnia.Agent;
+import fr.polytech.mnia.Environment.Environment;
+import fr.polytech.mnia.Environment.ExplorationStrategy;
 
 import java.util.*;
 

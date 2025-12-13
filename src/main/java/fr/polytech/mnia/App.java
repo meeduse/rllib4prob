@@ -6,6 +6,10 @@ import java.util.Scanner;
 
 import de.prob.statespace.State;
 import de.prob.statespace.Transition;
+import fr.polytech.mnia.Environment.Environment;
+import fr.polytech.mnia.Environment.ExplorationStrategy;
+import fr.polytech.mnia.Environment.RewardStrategy;
+import fr.polytech.mnia.MBRL.AlgorithmId;
 
 public class App {
     Environment env ;

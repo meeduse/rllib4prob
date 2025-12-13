@@ -4,6 +4,8 @@ import java.util.Map;
 
 import de.prob.statespace.State;
 import de.prob.statespace.Transition;
+import fr.polytech.mnia.Environment.Environment;
+import fr.polytech.mnia.Environment.ExplorationStrategy;
 
 public abstract class Agent {
     protected Environment env ;

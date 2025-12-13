@@ -1,4 +1,4 @@
-package fr.polytech.mnia;
+package fr.polytech.mnia.Environment;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;

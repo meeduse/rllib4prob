@@ -1,4 +1,4 @@
-package fr.polytech.mnia;
+package fr.polytech.mnia.MBRL;
 
 import de.prob.statespace.State;
 import de.prob.statespace.Transition;
@@ -8,6 +8,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import fr.polytech.mnia.Agent;
+import fr.polytech.mnia.Environment.Environment;
+import fr.polytech.mnia.Environment.ExplorationStrategy;
 
 /**
  *  book{puterman1994mdp,

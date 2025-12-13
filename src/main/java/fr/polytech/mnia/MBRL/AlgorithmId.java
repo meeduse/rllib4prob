@@ -1,4 +1,4 @@
-package fr.polytech.mnia;
+package fr.polytech.mnia.MBRL;
 
 public enum AlgorithmId {
     VALUE_ITERATION,

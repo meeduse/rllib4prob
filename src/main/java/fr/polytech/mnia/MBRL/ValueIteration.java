@@ -1,10 +1,14 @@
-package fr.polytech.mnia;
+package fr.polytech.mnia.MBRL;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import de.prob.statespace.State;
 import de.prob.statespace.Transition;
+
+import fr.polytech.mnia.Agent;
+import fr.polytech.mnia.Environment.Environment;
+import fr.polytech.mnia.Environment.ExplorationStrategy;
 
 /**
  * A reinforcement learning agent that performs Value Iteration to compute

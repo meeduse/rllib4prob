@@ -1,4 +1,4 @@
-package fr.polytech.mnia.MBRL;
+package fr.polytech.mnia.mbrl.offline;
 
 import java.util.Collections;
 import java.util.HashMap;

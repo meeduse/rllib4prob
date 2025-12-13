@@ -1,4 +1,4 @@
-package fr.polytech.mnia.MBRL;
+package fr.polytech.mnia;
 
 public enum AlgorithmId {
     VALUE_ITERATION,
@@ -6,5 +6,7 @@ public enum AlgorithmId {
     MODIFIED_POLICY_ITERATION,
     INCREMENTAL_VALUE_ITERATION,
     BACKWARD_INDUCTION,
-    PRIORITIZED_VALUE_ITERATION
+    PRIORITIZED_VALUE_ITERATION,
+    DYNA_Q,
+    DYNA_Q_PLUS
 }

@@ -9,7 +9,6 @@ import de.prob.statespace.Transition;
 import fr.polytech.mnia.Environment.Environment;
 import fr.polytech.mnia.Environment.ExplorationStrategy;
 import fr.polytech.mnia.Environment.RewardStrategy;
-import fr.polytech.mnia.MBRL.AlgorithmId;
 
 public class App {
     Environment env ;
@@ -77,73 +76,73 @@ public class App {
         }
 
         System.out.println("Exploration strategy = " + exploration);
+        
+        agent.learn(exploration); // Run learning with exploration
 
-        agent.learn(exploration);
+        System.out.println("Nb states discovered (env): " + env.getStateIds().size());
 
-        //playStepByStep(agent, env);
+        playStepByStep(agent, env);
         System.exit(0);
     }
     
     static void playStepByStep(Agent agent, TicTacToe env) {
-        do{
-            try (Scanner scanner = new Scanner(System.in)) {
-                State current = env.gState();
-                System.out.println("Starting game from initial state:");
-      
-                while (!current.getOutTransitions().isEmpty()) {
-                    List<Transition> actions = current.getOutTransitions();
-      
-                    System.out.println("\nAvailable actions and Q-values:");
-                    Map<Transition, Double> qForState = agent.getQValues(current);
-      
-                    for (int i = 0; i < actions.size(); i++) {
-                        Transition action = actions.get(i);
-                        double qValue = qForState.getOrDefault(action, 0.0);
-                        System.out.println(i + ": " + action + action.getParameterValues() + " => Q = " + qValue);
-                    }
-      
-                    // Saisie utilisateur pour choisir une action
-                    int choice = -1;
-                    while (choice < 0 || choice >= actions.size()) {
-                        System.out.print("\nChoose action [0-" + (actions.size() - 1) + "], or press ENTER to choose best: ");
-                        String input = scanner.nextLine().trim();
-      
-                        if (input.isEmpty()) {
-                            // Choisir la meilleure action automatiquement
-                            double maxQ = Double.NEGATIVE_INFINITY;
-                            for (Transition a : actions) {
-                                double q = qForState.getOrDefault(a, 0.0);
-                                if (q > maxQ) {
-                                    maxQ = q;
-                                    choice = actions.indexOf(a);
-                                }
-                            }
-                            System.out.println("Best action selected automatically.");
-                            break;
-                        }
-      
-                        try {
-                            choice = Integer.parseInt(input);
-                            if (choice < 0 || choice >= actions.size()) {
-                                System.out.println("Invalid choice. Try again.");
-                            }
-                        } catch (NumberFormatException e) {
-                            System.out.println("Invalid input. Please enter a number.");
-                        }
-                    }
-      
-                    Transition selectedAction = actions.get(choice);
-                    System.out.println("\nAction chosen: " + selectedAction + selectedAction.getParameterValues());
-      
-                    // Appliquer l'action
-                    current = selectedAction.getDestination();
-                    System.out.println("\nNew state: " + current.eval("square").toString());
-                    env.prettyPrint(current);
+        try (Scanner scanner = new Scanner(System.in)) {
+            State current = env.gState();
+            System.out.println("Starting game from initial state:");
+    
+            while (!current.getOutTransitions().isEmpty()) {
+                List<Transition> actions = current.getOutTransitions();
+    
+                System.out.println("\nAvailable actions and Q-values:");
+                Map<Transition, Double> qForState = agent.getQValues(current);
+    
+                for (int i = 0; i < actions.size(); i++) {
+                    Transition action = actions.get(i);
+                    double qValue = qForState.getOrDefault(action, 0.0);
+                    System.out.println(i + ": " + action + action.getParameterValues() + " => Q = " + qValue);
                 }
-      
-                // Fin de partie
-                System.out.println("\nGame ended.");
+    
+                // Saisie utilisateur pour choisir une action
+                int choice = -1;
+                while (choice < 0 || choice >= actions.size()) {
+                    System.out.print("\nChoose action [0-" + (actions.size() - 1) + "], or press ENTER to choose best: ");
+                    String input = scanner.nextLine().trim();
+    
+                    if (input.isEmpty()) {
+                        // Choisir la meilleure action automatiquement
+                        double maxQ = Double.NEGATIVE_INFINITY;
+                        for (Transition a : actions) {
+                            double q = qForState.getOrDefault(a, 0.0);
+                            if (q > maxQ) {
+                                maxQ = q;
+                                choice = actions.indexOf(a);
+                            }
+                        }
+                        System.out.println("Best action selected automatically.");
+                        break;
+                    }
+    
+                    try {
+                        choice = Integer.parseInt(input);
+                        if (choice < 0 || choice >= actions.size()) {
+                            System.out.println("Invalid choice. Try again.");
+                        }
+                    } catch (NumberFormatException e) {
+                        System.out.println("Invalid input. Please enter a number.");
+                    }
+                }
+    
+                Transition selectedAction = actions.get(choice);
+                System.out.println("\nAction chosen: " + selectedAction + selectedAction.getParameterValues());
+    
+                // Appliquer l'action
+                current = selectedAction.getDestination();
+                System.out.println("\nNew state: " + current.eval("square").toString());
+                env.prettyPrint(current);
             }
-        }while(true) ;
+    
+            // Fin de partie
+            System.out.println("\nGame ended.");
+        }
     }  
 }

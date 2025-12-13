@@ -1,4 +1,4 @@
-package fr.polytech.mnia.MBRL;
+package fr.polytech.mnia.mbrl.offline;
 
 import de.prob.statespace.State;
 import de.prob.statespace.Transition;

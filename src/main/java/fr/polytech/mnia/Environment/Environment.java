@@ -59,6 +59,9 @@ public abstract class Environment {
         this.stateIds = new HashSet<>();  
     }
 
+    public void addStateID(Integer id){
+        this.stateIds.add(id) ;
+    }
     public void registerRewardFormula(String rewardFormulaStr){
         this.rewardFormula = this.animator.getStateSpace().getModel().parseFormula(rewardFormulaStr);   
         this.animator.getStateSpace().subscribe(null,Collections.singleton(rewardFormula)) ;
@@ -71,7 +74,7 @@ public abstract class Environment {
     /**
      * Initializes the state machine by executing SETUP_CONSTANTS and INITIALISE_MACHINE transitions.
      */
-    protected void initialise() {
+    public void initialise() {
         Transition setup = initial.findTransition(Transition.SETUP_CONSTANTS_NAME);
         if (setup != null) {
             initial = setup.getDestination();

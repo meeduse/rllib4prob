@@ -41,25 +41,34 @@ The goal is to treat a B machine as an executable environment, allowing RL agent
 ## Project Structure
 
 ```text
-src/main/java/fr/polytech/mnia/
+src/main/java/fr/polytech/mnia
 ├── App.java
-├── Environment.java
-├── TicTacToe.java
-├── MyProb.java
-│
 ├── Agent.java
 ├── AgentFactory.java
 ├── AlgorithmId.java
+├── TicTacToe.java
 │
-├── ValueIteration.java
-├── PolicyIteration.java
-├── ModifiedPolicyIteration.java
-├── IncrementalValueIteration.java
-├── PrioritizedValueIteration.java
-├── BackwardInductionV1.java
+├── Environment
+│   ├── Environment.java
+│   ├── ExplorationStrategy.java
+│   ├── RewardStrategy.java
+│   └── MyProb.java
 │
-├── ExplorationStrategy.java
-└── RewardStrategy.java
+├── mbrl (model-based)
+│   ├── offline
+│   │   ├── ValueIteration.java
+│   │   ├── PolicyIteration.java
+│   │   ├── ModifiedPolicyIteration.java
+│   │   ├── IncrementalValueIteration.java
+│   │   ├── PrioritizedValueIterationV1.java
+│   │   └── BackwardInductionV1.java
+│   │
+│   └── online
+│       ├── DynaQ.java
+│       └── DynaQPlus.java
+│
+└── mfrl (model-free)
+    └── (under experimentation)
 ```
 
 ## Compile

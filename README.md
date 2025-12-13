@@ -1,46 +1,89 @@
 # Reinforcement Learning over ProB – Java Library
 
-This project provides a Java-based toolchain for running **Model-Based Reinforcement Learning (MBRL)** algorithms over **formal B specifications** executed through the ProB model checker.  
-It supports multiple exploration strategies, several reward computation mechanisms, and a variety of MBRL algorithms including Value Iteration, Policy Iteration, and their variants.
+This repository provides a **Java library for Reinforcement Learning over formal B specifications**, using **ProB** as the execution and state-space exploration engine.
 
-The goal is to treat a B machine as an executable environment, allowing RL agents to learn directly from a **formally specified** transition system without requiring any handcrafted simulator.
+The library treats a **B machine as an executable RL environment**, allowing agents to learn directly from a **formally specified transition system**, without requiring any handcrafted simulator.
 
-## Features
+It supports **model-based reinforcement learning (MBRL)** algorithms, both **offline (planning-based)** and **online (interaction-based)**, and is intended for **research, experimentation, and teaching** at the intersection of **formal methods** and **reinforcement learning**.
 
-- Integration with the ProB Java API  
-- Two environment exploration strategies:
-  - PREPROCESS (global model-checking of the state space)
-  - RECURSIVE (on-the-fly DFS-like exploration)
+---
 
-- Three reward strategies:
-  - ON_THE_FLY (constraint-based evaluation)
-  - ONCE_AND_FOR_ALL (precomputed during exploration)
-  - EMBEDDED (reward encoded directly in the B machine)
+## Key Concepts
 
-- Two environment specifications:
-  - tictactoe.mch
-  - tictac_rewarded.mch
+### Formal Environment
+- The environment is a **B machine** executed by **ProB**
+- States and transitions are taken directly from the formal specification
+- There is no abstraction gap between the model and the learning environment
 
-- Implemented MBRL algorithms:
-  - Value Iteration
-  - Policy Iteration
-  - Modified Policy Iteration
-  - Incremental Value Iteration
-  - Prioritized Value Iteration
-  - Backward Induction
+### Model-Based Reinforcement Learning
+All algorithms in this library assume access to, or learning of, a **transition model**:
+- Offline algorithms rely on a fully explored state space
+- Online algorithms incrementally build a partial model during interaction
 
-- Experiment orchestration through App.java.
+---
 
-## Requirements
+## Offline vs Online MBRL
 
-- Java 17 
-- Maven 3.8+  
-- ProB Java API  
-- Linux or macOS recommended
+### Offline Model-Based RL (Planning-Oriented)
+
+Offline algorithms assume that the **reachable state space is explored before learning**.
+
+Typical workflow:
+1. Explore the state space using ProB
+2. Build a complete transition graph
+3. Apply dynamic programming algorithms over the graph
+
+Characteristics:
+- Deterministic and reproducible
+- Well suited for benchmarking and analysis
+- Requires explicit state-space exploration
+
+Algorithms:
+- Value Iteration
+- Policy Iteration
+- Modified Policy Iteration
+- Incremental Value Iteration
+- Prioritized Value Iteration
+- Backward Induction
+
+Exploration strategies:
+- PREPROCESS
+- RECURSIVE
+
+---
+
+### Online Model-Based RL (Interaction-Oriented)
+
+Online algorithms learn by **interacting directly with the environment**, while incrementally building a model of observed transitions.
+
+Typical workflow:
+1. Start from the initial state
+2. Select actions using an exploration policy
+3. Observe transitions and rewards
+4. Update the learned model and value function
+5. Perform planning updates from the learned model
+
+Characteristics:
+- No exhaustive exploration required
+- Better scalability to large or infinite state spaces
+- Closer to classical reinforcement learning settings
+
+Algorithms:
+- Dyna-Q
+- Dyna-Q+
+
+Important:
+For online algorithms, you must use:
+```
+ExplorationStrategy.NONE
+```
+Explicit state-space exploration must be disabled.
+
+---
 
 ## Project Structure
 
-```text
+```
 src/main/java/fr/polytech/mnia
 ├── App.java
 ├── Agent.java
@@ -54,7 +97,7 @@ src/main/java/fr/polytech/mnia
 │   ├── RewardStrategy.java
 │   └── MyProb.java
 │
-├── mbrl (model-based)
+├── mbrl
 │   ├── offline
 │   │   ├── ValueIteration.java
 │   │   ├── PolicyIteration.java
@@ -67,9 +110,20 @@ src/main/java/fr/polytech/mnia
 │       ├── DynaQ.java
 │       └── DynaQPlus.java
 │
-└── mfrl (model-free)
+└── mfrl
     └── (under experimentation)
 ```
+
+---
+
+## Requirements
+
+- Java 17
+- Maven 3.8+
+- ProB Java API
+- Linux or macOS recommended
+
+---
 
 ## Compile
 
@@ -77,74 +131,88 @@ src/main/java/fr/polytech/mnia
 mvn clean compile
 ```
 
+---
+
 ## Running Experiments
 
 ```
-mvn -q exec:java -Dexec.args="<ALGO> <REWARD> <EXPLORATION>"
+mvn -q exec:java -Dexec.args="<ALGORITHM> <REWARD> <EXPLORATION>"
 ```
 
 Defaults:
 ```
-BACKWARD_INDUCTION ONCE_AND_FOR_ALL PREPROCESS
+BACKWARD_INDUCTION ONCEANDFORALL PREPROCESS
 ```
 
-### Available Algorithms
+---
 
-VALUE_ITERATION  
-POLICY_ITERATION  
-MODIFIED_POLICY_ITERATION  
-INCREMENTAL_VALUE_ITERATION  
-BACKWARD_INDUCTION  
-PRIORITIZED_VALUE_ITERATION  
+## Algorithms
 
-### Reward Strategies
+Offline:
+- VALUE_ITERATION
+- POLICY_ITERATION
+- MODIFIED_POLICY_ITERATION
+- INCREMENTAL_VALUE_ITERATION
+- PRIORITIZED_VALUE_ITERATION
+- BACKWARD_INDUCTION
 
-ON_THE_FLY  
-ONCE_AND_FOR_ALL  
-EMBEDDED  
+Online:
+- DYNA_Q
+- DYNA_Q_PLUS
 
-### Exploration Strategies
+---
 
-PREPROCESS  
-RECURSIVE  
-NONE  
+## Reward Strategies
+
+- ONTHEFLY
+- ONCEANDFORALL
+- EMBEDDED
+
+---
+
+## Exploration Strategies
+
+- PREPROCESS
+- RECURSIVE
+- NONE
+
+---
 
 ## Examples
 
+Offline learning:
 ```
-mvn -q exec:java -Dexec.args="MODIFIED_POLICY_ITERATION ONCE_AND_FOR_ALL PREPROCESS"
-```
-
-```
-mvn -q exec:java -Dexec.args="POLICY_ITERATION EMBEDDED RECURSIVE"
+mvn -q exec:java -Dexec.args="POLICY_ITERATION ONCEANDFORALL PREPROCESS"
 ```
 
+Online learning (Dyna-Q):
 ```
-mvn -q exec:java -Dexec.args="INCREMENTAL_VALUE_ITERATION ONCE_AND_FOR_ALL"
+mvn -q exec:java -Dexec.args="DYNA_Q ONCEANDFORALL NONE"
 ```
+
+Online learning (Dyna-Q+):
+```
+mvn -q exec:java -Dexec.args="DYNA_Q_PLUS ONCEANDFORALL NONE"
+```
+
+---
 
 ## Environment Selection
 
-Reward strategy determines the B machine:
+- `tictactoe.mch` is used for ONTHEFLY and ONCEANDFORALL
+- `tictac_rewarded.mch` is used for EMBEDDED
 
-- tictactoe.mch for ON_THE_FLY and ONCE_AND_FOR_ALL  
-- tictac_rewarded.mch for EMBEDDED
+---
 
-## Output Example
+## Extending the Library
 
-```
-Selected algorithm = POLICY_ITERATION
-Selected reward strategy = EMBEDDED
-Selected machine = /TicTacToe/tictac_rewarded.mch
-Exploration strategy = PREPROCESS
-```
+To add a new algorithm:
+1. Extend `Agent`
+2. Implement `learn()` and `getQValues()`
+3. Add an entry to `AlgorithmId`
+4. Register the algorithm in `AgentFactory`
 
-## Extending the Framework
-
-1. Extend Agent  
-2. Implement learn()  
-3. Add enum entry  
-4. Register in AgentFactory  
+---
 
 ## License
 
@@ -153,26 +221,9 @@ Attribution Assurance License
 Copyright (c) 2025  
 Akram Idani
 
-All rights reserved.
+Permission is granted to use, copy, modify, and distribute this software and its documentation for any purpose, provided that the following attribution is included:
 
-This license gives everyone permission to use, copy, modify, and distribute this software and its documentation for any purpose, without fee, provided that the following attribution requirement is met:
+"This product includes software developed by Akram Idani.  
+Original source available at: https://github.com/meeduse/rllib4prob"
 
-Any work or product that uses, includes, or is derived from this software must display the following acknowledgment:
-
-   "This product includes software developed by Akram Idani.  
-    Original source available at: https://github.com/meeduse/rllib4prob"
-
-This acknowledgment must be displayed in:  
-   (1) the user interface of any application using this software,  
-   or  
-   (2) the documentation and marketing materials accompanying the product.
-
-The name of the author may not be used to endorse or promote products  
-derived from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTIES OR CONDITIONS OF ANY  
-KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY,  
-FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL  
-THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER  
-IN CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION  
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.

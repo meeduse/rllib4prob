@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: >
+  If you use this software in academic work, please cite it using the
+  following reference.
+title: "rllib4prob"
+version: "1.0.0"
+date-released: 2025-01-01
+url: "https://github.com/meeduse/rllib4prob"
+
+authors:
+  - family-names: Idani
+    given-names: Akram
+    affiliation: "Université Grenoble Alpes / Grenoble INP / Verimag"
+
+preferred-citation:
+  type: software
+  title: "rllib4prob: Reinforcement Learning over Formal Model Checkers"
+  authors:
+    - family-names: Idani
+      given-names: Akram
+  year: 2025
+  url: "https://github.com/meeduse/rllib4prob"

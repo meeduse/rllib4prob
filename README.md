@@ -212,18 +212,9 @@ To add a new algorithm:
 3. Add an entry to `AlgorithmId`
 4. Register the algorithm in `AgentFactory`
 
----
-
 ## License
+This project is licensed under the MIT License.
 
-Attribution Assurance License
-
-Copyright (c) 2025  
-Akram Idani
-
-Permission is granted to use, copy, modify, and distribute this software and its documentation for any purpose, provided that the following attribution is included:
-
-"This product includes software developed by Akram Idani.  
-Original source available at: https://github.com/meeduse/rllib4prob"
-
-THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+## Citation
+If you use this software for academic research, please cite it.
+A ready-to-use reference is provided in the `CITATION.cff` file.

@@ -6,8 +6,7 @@ INVARIANT
 	turn : (0..1) & square : ((1..3) * (1..3)) +-> (0..1) 
 DEFINITIONS
 	"rewards.def";
-	SET_PREF_MAX_OPERATIONS == 15 ;
-	SET_PREF_INVARIANT_CHECKING == FALSE ;
+
 win(p) == 
     (#x.(x : 1..3 & !y.(y : 1..3 => (x|->y)|->p : square)))     /* Ligne */
     or (#y.(y : 1..3 & !x.(x : 1..3 => (x|->y)|->p : square)))  /* Colonne */
@@ -24,8 +23,9 @@ r <-- place(xx,yy) =
         & (xx |-> yy) /: dom(square)
 	    & not(win(1 - turn))        
     THEN
-        square(xx|->yy) := turn || turn := 1 - turn ||
-        r := reward
+        square(xx|->yy) := turn 
+	|| turn := 1 - turn 
+	|| r := reward
     END
 END
 

@@ -1,0 +1,42 @@
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = Interlocking
+Load classical B Machine
+de.prob.exception.ProBError: ProB returned error messages:
+Error: [8,13]  expecting: not belonging, non inclusion, strict non inclusion, not equal, element of, '<', inclusion, strict inclusion, superset, superset strict, not superset strict, not superset, contains element, not contains element, less equal, '=', '>', greater equal in file: /home/idania/rllib4prob/target/classes/interlocking/rewards.def (/home/idania/rllib4prob/target/classes/interlocking/rewards.def:8:12)
+	at de.prob.scripting.ClassicalBFactory.extract(ClassicalBFactory.java:76)
+	at de.prob.scripting.Api.b_load(Api.java:127)
+	at de.prob.scripting.Api.b_load(Api.java:137)
+	at fr.polytech.mnia.Environment.MyProb.load(MyProb.java:47)
+	at fr.polytech.mnia.Environment.Environment.<init>(Environment.java:54)
+	at fr.polytech.mnia.Environment.ModelBasedEnvironment.<init>(ModelBasedEnvironment.java:11)
+	at fr.polytech.mnia.Environment.InterlockingEnvironment.<init>(InterlockingEnvironment.java:6)
+	at fr.polytech.mnia.Environment.EnvironmentFactory.create(EnvironmentFactory.java:12)
+	at fr.polytech.mnia.App.main(App.java:49)
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:279)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: de.be4.classicalb.core.parser.exceptions.BCompoundException: [8,13]  expecting: not belonging, non inclusion, strict non inclusion, not equal, element of, '<', inclusion, strict inclusion, superset, superset strict, not superset strict, not superset, contains element, not contains element, less equal, '=', '>', greater equal in file: /home/idania/rllib4prob/target/classes/interlocking/rewards.def
+	at de.be4.classicalb.core.parser.exceptions.BCompoundException.withMissingLocations(BCompoundException.java:71)
+	at de.be4.classicalb.core.parser.PreParser.evaluateDefinitionFiles(PreParser.java:191)
+	at de.be4.classicalb.core.parser.PreParser.parse(PreParser.java:135)
+	at de.be4.classicalb.core.parser.BParser.preParsing(BParser.java:526)
+	at de.be4.classicalb.core.parser.BParser.parseWithPreParsing(BParser.java:430)
+	at de.be4.classicalb.core.parser.BParser.parseMachine(BParser.java:459)
+	at de.be4.classicalb.core.parser.BParser.parseFile(BParser.java:147)
+	at de.prob.scripting.ClassicalBFactory.extract(ClassicalBFactory.java:69)
+	... 10 more
+Caused by: de.be4.classicalb.core.parser.exceptions.PreParseException: [8,13]  expecting: not belonging, non inclusion, strict non inclusion, not equal, element of, '<', inclusion, strict inclusion, superset, superset strict, not superset strict, not superset, contains element, not contains element, less equal, '=', '>', greater equal in file: /home/idania/rllib4prob/target/classes/interlocking/rewards.def
+	at de.be4.classicalb.core.parser.PreParser.evaluateTypes(PreParser.java:246)
+	at de.be4.classicalb.core.parser.PreParser.parse(PreParser.java:140)
+	at de.be4.classicalb.core.parser.BParser.preParsing(BParser.java:526)
+	at de.be4.classicalb.core.parser.BParser.parseWithPreParsing(BParser.java:430)
+	at de.be4.classicalb.core.parser.BParser.parseMachine(BParser.java:459)
+	at de.be4.classicalb.core.parser.PreParser.evaluateDefinitionFiles(PreParser.java:180)
+	... 16 more
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.1.0:java (default-cli) on project rl-lib: An exception occurred while executing the Java class. Cannot invoke "de.prob.statespace.StateSpace.getRoot()" because the return value of "fr.polytech.mnia.Environment.MyProb.getStateSpace()" is null -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

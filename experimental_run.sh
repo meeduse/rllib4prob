@@ -283,7 +283,7 @@ if [[ "$SAVE_LOGS" -eq 1 ]]; then
   mkdir -p "$SESSION_DIR/logs"
 fi
 
-echo "algorithm,reward,exploration,environment,run,states,t_explore_sec,t_learn_sec,iterations_or_updates,status,exit_code,log_file" > "$RESULTS_FILE"
+echo "run,algorithm,reward,exploration,environment,states,t_explore_sec,t_learn_sec,iterations_or_updates,status,exit_code,log_file" > "$RESULTS_FILE"
 {
   echo "session_id=${SESSION_ID}"
   echo "output_root=${OUTPUT_ROOT}"
@@ -323,8 +323,10 @@ wait
 
 echo "Assemblage des résultats..."
 {
-  echo "algorithm,reward,exploration,environment,run,states,t_explore_sec,t_learn_sec,iterations_or_updates,status,exit_code,log_file"
-  find "$SESSION_DIR/runs" -name metrics.csv | sort | xargs cat
+  echo "run,algorithm,reward,exploration,environment,states,t_explore_sec,t_learn_sec,iterations_or_updates,status,exit_code,log_file"
+  find "$SESSION_DIR/runs" -name metrics.csv | sort | while read -r f; do
+    tail -n +2 "$f"
+  done
 } > "$RESULTS_FILE.tmp"
 mv "$RESULTS_FILE.tmp" "$RESULTS_FILE"
 

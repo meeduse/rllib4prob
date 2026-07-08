@@ -53,7 +53,7 @@ OPERATIONS
         (zx|->zy) |-> board((zx-1)|->zy),
         ((zx-1)|->zy) |-> 0
       } ||
-      zx := zx - 1
+      zx := zx - 1 ||
       r := reward
     END;
 
@@ -63,7 +63,7 @@ OPERATIONS
         (zx|->zy) |-> board((zx+1)|->zy),
         ((zx+1)|->zy) |-> 0
       } ||
-      zx := zx + 1
+      zx := zx + 1 ||
       r := reward 
     END;
 
@@ -73,7 +73,7 @@ OPERATIONS
         (zx|->zy) |-> board(zx|->(zy-1)),
         (zx|->(zy-1)) |-> 0
       } ||
-      zy := zy - 1
+      zy := zy - 1 ||
       r := reward
     END;
 
@@ -83,7 +83,7 @@ OPERATIONS
         (zx|->zy) |-> board(zx|->(zy+1)),
         (zx|->(zy+1)) |-> 0
       } ||
-      zy := zy + 1
+      zy := zy + 1 ||
       r := reward
     END
 

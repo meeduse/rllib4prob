@@ -1,5 +1,29 @@
 #!/usr/bin/env bash
 
+# -------------------------
+# Platform tools
+# -------------------------
+TIMEOUT_CMD=""
+STDBUF_CMD=""
+
+if command -v timeout >/dev/null 2>&1; then
+  TIMEOUT_CMD="timeout"
+elif command -v gtimeout >/dev/null 2>&1; then
+  TIMEOUT_CMD="gtimeout"
+else
+  echo "ERROR: neither timeout nor gtimeout found." >&2
+  echo "On macOS, install it with: brew install coreutils" >&2
+  exit 1
+fi
+
+if command -v stdbuf >/dev/null 2>&1; then
+  STDBUF_CMD="stdbuf"
+elif command -v gstdbuf >/dev/null 2>&1; then
+  STDBUF_CMD="gstdbuf"
+else
+  STDBUF_CMD=""
+fi
+
 set -euo pipefail
 
 # -------------------------
@@ -121,7 +145,7 @@ set_env_config() {
       )
       EXPLORATIONS=(PREPROCESS RECURSIVE)
       ;;
-    Moutain_Car)
+    Mountain_Car)
       ALGORITHMS=(
         VALUE_ITERATION
         POLICY_ITERATION
@@ -178,15 +202,24 @@ run_experiment() {
 
   echo "[START] run=${run_id} ${algo} | reward=${reward} | exploration=${expl} | env=${env}"
 
-  set +e
-  timeout --signal=SIGTERM --kill-after=30s "${TIMEOUT_SECONDS}s" \
-  stdbuf -oL -eL mvn -q exec:java -Dexec.args="$algo $reward $expl $env" \
-  > "$raw_output_file" 2>&1
-  exit_code=$?
+set +e
+
+if [[ -n "$STDBUF_CMD" ]]; then
+  "$TIMEOUT_CMD" --signal=SIGTERM --kill-after=30s "${TIMEOUT_SECONDS}s" \
+    "$STDBUF_CMD" -oL -eL mvn -q exec:java -Dexec.args="$algo $reward $expl $env" \
+    > "$raw_output_file" 2>&1
+else
+  "$TIMEOUT_CMD" --signal=SIGTERM --kill-after=30s "${TIMEOUT_SECONDS}s" \
+    mvn -q exec:java -Dexec.args="$algo $reward $expl $env" \
+    > "$raw_output_file" 2>&1
+fi
+
+exit_code=$?
+set -e
+
   if [[ "$exit_code" -eq 124 ]]; then
     status="TIMEOUT"
   fi
-  set -e
 
   if [[ "$SAVE_LOGS" -eq 1 ]]; then
     cp "$raw_output_file" "$log_file"
@@ -270,7 +303,7 @@ if [[ -z "${ENVIRONMENTS:-}" ]]; then
     Puzzle
     Taxi-driver
     tictactoe
-    Moutain_Car
+    Mountain_Car
   )
 fi
 
@@ -291,7 +324,7 @@ echo "run,algorithm,reward,exploration,environment,states,t_explore_sec,t_learn_
   echo "runs_per_configuration=${NUM_RUNS}"
   echo "save_logs=${SAVE_LOGS}"
   echo "environments=${ENVIRONMENTS[*]}"
-  echo "started_at=$(date -Iseconds)"
+  echo "started_at=$(date '+%Y-%m-%dT%H:%M:%S%z')"
   echo "timeout_seconds=${TIMEOUT_SECONDS}"
 } > "$MANIFEST_FILE"
 

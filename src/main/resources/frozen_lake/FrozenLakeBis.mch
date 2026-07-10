@@ -1,5 +1,5 @@
 MACHINE
-    FrozenLakeBis
+    FrozenLake
 
 CONSTANTS
     maxX, maxY,
@@ -39,9 +39,10 @@ INITIALISATION
 
 OPERATIONS
 
-left =
+r <-- left =
     SELECT reachedGoal = 0 & fellInHole = 0 THEN
         lastAction := 1 ||
+        r := reward ||
         IF posX > 0 THEN
             posX := posX - 1 ||
             IF (posX - 1 |-> posY) : Holes THEN
@@ -50,9 +51,10 @@ left =
         END
     END;
 
-right =
+r <-- right =
     SELECT reachedGoal = 0 & fellInHole = 0 THEN
         lastAction := 2 ||
+        r := reward ||
         IF posX < maxX THEN
             posX := posX + 1 ||
             IF (posX + 1 |-> posY) : Holes THEN
@@ -61,9 +63,10 @@ right =
         END
     END;
 
-up =
+r <-- up =
     SELECT reachedGoal = 0 & fellInHole = 0 THEN
         lastAction := 3 ||
+        r := reward ||
         IF posY < maxY THEN
             posY := posY + 1 ||
             IF (posX |-> posY + 1) : Holes THEN
@@ -72,9 +75,10 @@ up =
         END
     END;
 
-down =
+r <-- down =
     SELECT reachedGoal = 0 & fellInHole = 0 THEN
         lastAction := 4 ||
+        r := reward ||
         IF posY > 0 THEN
             posY := posY - 1 ||
             IF (posX |-> posY - 1) : Holes THEN
@@ -83,14 +87,15 @@ down =
         END
     END;
 
-check =
+r <-- check =
     BEGIN
         IF posX = goalX & posY = goalY THEN
             reachedGoal := 1
         END ||
         IF (posX |-> posY) : Holes THEN
             fellInHole := 1
-        END 
+        END ||
+        r := reward
     END
 
 END

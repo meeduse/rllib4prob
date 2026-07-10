@@ -56,7 +56,7 @@ OPERATIONS
    approximated as (25 * COSx(...)) / 10000.
 */
 
-push_left =
+r <-- push_left =
     SELECT done = 0 THEN
         ANY rawV, clippedV, rawP, clippedP, finalV, newDone WHERE
             rawV = velocity - 1 - ((25 * COSx(scale, 3 * position)) / ratio)
@@ -81,14 +81,17 @@ push_left =
               )
 	    //& (clippedP /= position or finalV /= velocity or newDone /= done)
         THEN
+        BEGIN
             position := clippedP ||
             velocity := finalV ||
             done := newDone ||
             lastAction := 1 
+        END ;
+        r := reward
         END
     END;
 
-no_push =
+r <-- no_push =
     SELECT done = 0 THEN
         ANY rawV, clippedV, rawP, clippedP, finalV, newDone WHERE
             rawV = velocity - ((25 * COSx(scale, 3 * position)) / ratio)
@@ -113,14 +116,17 @@ no_push =
               )
 	    //& (clippedP /= position or finalV /= velocity or newDone /= done)
         THEN
+        BEGIN
             position := clippedP ||
             velocity := finalV ||
             done := newDone ||
             lastAction := 2 
+        END ;
+        r := reward
         END
     END;
 
-push_right =
+r <-- push_right =
     SELECT done = 0 THEN
         ANY rawV, clippedV, rawP, clippedP, finalV, newDone WHERE
             rawV = velocity + 1 - ((25 * COSx(scale, 3 * position)) / ratio)
@@ -145,10 +151,13 @@ push_right =
               )
 	    //& (clippedP /= position or finalV /= velocity or newDone /= done)
         THEN
+        BEGIN
             position := clippedP ||
             velocity := finalV ||
             done := newDone ||
-            lastAction := 3 
+            lastAction := 3
+        END ;
+            r := reward
         END
     END
 

@@ -1,4 +1,4 @@
-MACHINE Puzzle8
+MACHINE Puzzle8Bis
 
 // Exploration finished. Explored states: 181442 | time : 29155 ms
 // MPI finished | core time = 16.370s | total time = 73.077s
@@ -47,40 +47,52 @@ INITIALISATION
 
 OPERATIONS
 
-MoveDown =
+  r <-- MoveDown =
     PRE zx > 1 THEN
+    BEGIN
       board := board <+ {
         (zx|->zy) |-> board((zx-1)|->zy),
         ((zx-1)|->zy) |-> 0
       } ||
-      zx := zx - 1 
+      zx := zx - 1
+    END;
+      r := reward
     END;
 
-MoveUp =
+  r <-- MoveUp =
     PRE zx < dim THEN
+    BEGIN
       board := board <+ {
         (zx|->zy) |-> board((zx+1)|->zy),
         ((zx+1)|->zy) |-> 0
       } ||
-      zx := zx + 1 
+      zx := zx + 1
+      END;
+      r := reward 
     END;
 
-MoveRight =
+  r <-- MoveRight =
     PRE zy > 1 THEN
+    BEGIN
       board := board <+ {
         (zx|->zy) |-> board(zx|->(zy-1)),
         (zx|->(zy-1)) |-> 0
       } ||
-      zy := zy - 1 
+      zy := zy - 1
+    END;
+      r := reward
     END;
 
-MoveLeft =
+  r <-- MoveLeft =
     PRE zy < dim THEN
+    BEGIN
       board := board <+ {
         (zx|->zy) |-> board(zx|->(zy+1)),
         (zx|->(zy+1)) |-> 0
       } ||
-      zy := zy + 1 
+      zy := zy + 1
+    END;
+      r := reward
     END
 
 END

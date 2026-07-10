@@ -66,6 +66,7 @@ set_env_config() {
         POLICY_ITERATION
         INCREMENTAL_VALUE_ITERATION
         PRIORITIZED_VALUE_ITERATION
+        BACKWARD_INDUCTION
       )
       REWARD_STRATEGIES=(
         ONCEANDFORALL
@@ -79,6 +80,7 @@ set_env_config() {
         POLICY_ITERATION
         INCREMENTAL_VALUE_ITERATION
         PRIORITIZED_VALUE_ITERATION
+        BACKWARD_INDUCTION
       )
       REWARD_STRATEGIES=(
         EMBEDDED
@@ -92,9 +94,23 @@ set_env_config() {
         PRIORITIZED_VALUE_ITERATION
         VALUE_ITERATION
         POLICY_ITERATION
+        BACKWARD_INDUCTION
       )
       REWARD_STRATEGIES=(
         ONCEANDFORALL
+      )
+      EXPLORATIONS=(PREPROCESS RECURSIVE)
+      ;;
+    Frozen_lakeembedded)
+      ALGORITHMS=(
+        MODIFIED_POLICY_ITERATION
+        INCREMENTAL_VALUE_ITERATION
+        PRIORITIZED_VALUE_ITERATION
+        VALUE_ITERATION
+        POLICY_ITERATION
+        BACKWARD_INDUCTION
+      )
+      REWARD_STRATEGIES=(
         EMBEDDED
       )
       EXPLORATIONS=(PREPROCESS RECURSIVE)
@@ -106,28 +122,55 @@ set_env_config() {
         PRIORITIZED_VALUE_ITERATION
         VALUE_ITERATION
         POLICY_ITERATION
+        BACKWARD_INDUCTION
       )
       REWARD_STRATEGIES=(
         ONCEANDFORALL
+      )
+      EXPLORATIONS=(PREPROCESS RECURSIVE)
+      ;;
+    Interlockingembedded)
+      ALGORITHMS=(
+        MODIFIED_POLICY_ITERATION
+        INCREMENTAL_VALUE_ITERATION
+        PRIORITIZED_VALUE_ITERATION
+        VALUE_ITERATION
+        POLICY_ITERATION
+        BACKWARD_INDUCTION
+      )
+      REWARD_STRATEGIES=(
         EMBEDDED
       )
       EXPLORATIONS=(PREPROCESS RECURSIVE)
       ;;
-    # Puzzle)
-    #   ALGORITHMS=(
-    #     VALUE_ITERATION
-    #     POLICY_ITERATION
-    #     MODIFIED_POLICY_ITERATION
-    #     INCREMENTAL_VALUE_ITERATION
-    #     BACKWARD_INDUCTION
-    #     PRIORITIZED_VALUE_ITERATION
-    #   )
-    #   REWARD_STRATEGIES=(
-    #     ONCEANDFORALL
-    #     EMBEDDED
-    #   )
-    #   EXPLORATIONS=(PREPROCESS RECURSIVE)
-    #   ;;
+    Puzzle)
+       ALGORITHMS=(
+         VALUE_ITERATION
+         POLICY_ITERATION
+         MODIFIED_POLICY_ITERATION
+         INCREMENTAL_VALUE_ITERATION
+         BACKWARD_INDUCTION
+         PRIORITIZED_VALUE_ITERATION
+       )
+       REWARD_STRATEGIES=(
+         ONCEANDFORALL
+       )
+       EXPLORATIONS=(PREPROCESS RECURSIVE)
+       ;;
+    Puzzleembedded)
+       ALGORITHMS=(
+         VALUE_ITERATION
+         POLICY_ITERATION
+         MODIFIED_POLICY_ITERATION
+         INCREMENTAL_VALUE_ITERATION
+         BACKWARD_INDUCTION
+         PRIORITIZED_VALUE_ITERATION
+       )
+       REWARD_STRATEGIES=(
+         EMBEDDED
+       )
+       EXPLORATIONS=(PREPROCESS RECURSIVE)
+       ;;
     Taxi-driver)
       ALGORITHMS=(
         MODIFIED_POLICY_ITERATION
@@ -135,14 +178,43 @@ set_env_config() {
         PRIORITIZED_VALUE_ITERATION
         VALUE_ITERATION
         POLICY_ITERATION
+        BACKWARD_INDUCTION
       )
       REWARD_STRATEGIES=(
         ONCEANDFORALL
-        # EMBEDDED
       )
       EXPLORATIONS=(PREPROCESS RECURSIVE)
       ;;
-    tictactoe)
+    Taxi-driverembedded)
+      ALGORITHMS=(
+        MODIFIED_POLICY_ITERATION
+        INCREMENTAL_VALUE_ITERATION
+        PRIORITIZED_VALUE_ITERATION
+        VALUE_ITERATION
+        POLICY_ITERATION
+        BACKWARD_INDUCTION
+      )
+      REWARD_STRATEGIES=(
+        EMBEDDED
+      )
+      EXPLORATIONS=(PREPROCESS RECURSIVE)
+      ;;
+    #tictactoe)
+    #  ALGORITHMS=(
+    #    VALUE_ITERATION
+    #    POLICY_ITERATION
+    #    MODIFIED_POLICY_ITERATION
+    #    INCREMENTAL_VALUE_ITERATION
+    #    BACKWARD_INDUCTION
+    #    PRIORITIZED_VALUE_ITERATION
+    #  )
+    #  REWARD_STRATEGIES=(
+    #    ONCEANDFORALL
+    #    EMBEDDED
+    #  )
+    #  EXPLORATIONS=(PREPROCESS RECURSIVE)
+    #  ;;
+    Mountain_Car)
       ALGORITHMS=(
         VALUE_ITERATION
         POLICY_ITERATION
@@ -153,20 +225,19 @@ set_env_config() {
       )
       REWARD_STRATEGIES=(
         ONCEANDFORALL
-        EMBEDDED
       )
       EXPLORATIONS=(PREPROCESS RECURSIVE)
       ;;
-    Mountain_Car)
+    Mountain_Carembedded)
       ALGORITHMS=(
         VALUE_ITERATION
         POLICY_ITERATION
         MODIFIED_POLICY_ITERATION
         INCREMENTAL_VALUE_ITERATION
+        BACKWARD_INDUCTION
         PRIORITIZED_VALUE_ITERATION
       )
       REWARD_STRATEGIES=(
-        ONCEANDFORALL
         EMBEDDED
       )
       EXPLORATIONS=(PREPROCESS RECURSIVE)
@@ -310,12 +381,18 @@ done
 if [[ -z "${ENVIRONMENTS:-}" ]]; then
   ENVIRONMENTS=(
     Frozen_lake
+    Frozen_lakeembedded
     autoV2
+    autoV2embedded
     Interlocking
+    Interlockingembedded
     Puzzle
+    puzzleembedded
     Taxi-driver
+    Taxi-driverembedded
     tictactoe
     Mountain_Car
+    Mountain_Carembedded
   )
 fi
 

@@ -162,21 +162,23 @@ INITIALISATION
 
 OPERATIONS
 
-  AddTrain(tt) =
+rr <-- AddTrain(tt) =
   PRE
     tt:pending &
     tt/:acttrn &
     REQ_IN(tt)/:ran(trainpos) &
     REQ_IN(tt)/:dom(resss)
   THEN
+  BEGIN
     acttrn := acttrn \/ {tt} ||
     trainpos := trainpos \/ {tt |-> REQ_IN(tt)} ||
     traindir := traindir \/ {tt |-> REQ_DIR(tt)} ||
     resss := resss <+ {REQ_IN(tt) |-> tt} ||
     restail := restail <+ {tt |-> REQ_IN(tt)}
+  END ; rr := reward
   END;
 
-  ReserveNext(tt,ss) =
+rr <-- ReserveNext(tt,ss) =
   PRE
     tt:acttrn &
     ss:SECTION &
@@ -187,11 +189,13 @@ OPERATIONS
     ss/:dom(resss) &
     ss/:ran(trainpos)
   THEN
+  BEGIN
     resss := resss <+ {ss |-> tt} ||
     restail(tt) := ss
+  END ; rr := reward
   END;
 
-MoveStepT(TT, mv) =
+rr <-- MoveStepT(TT, mv) =
 PRE
   TT <: acttrn &
   TT /= {} &
@@ -212,9 +216,11 @@ PRE
     resss(mv(tt)) = tt
   )
 THEN
+BEGIN
   resss := trainpos[TT] <<| resss ||
   trainpos := trainpos <+ mv ||
   restail := restail <+ mv
+END ; rr := reward
 END;
 
 /*
@@ -236,27 +242,29 @@ THEN
 END;
 */
 
-  TurnDir(tt,dd) =
+rr <-- TurnDir(tt,dd) =
   PRE
     tt:acttrn &
     dd:DIR &
     dd /= traindir(tt) &
     trainpos(tt) : (pltf1 \/ pltf2)
   THEN
-    traindir(tt) := dd
+    traindir(tt) := dd ; rr := reward
   END;
 
-  ExitTrain(tt) =
+rr <-- ExitTrain(tt) =
   PRE
     tt:acttrn &
     trainpos(tt) = REQ_OUT(tt)
   THEN
+  BEGIN
     resss := {trainpos(tt)} <<| resss ||
     acttrn := acttrn - {tt} ||
     trainpos := {tt} <<| trainpos ||
     traindir := {tt} <<| traindir ||
     restail := {tt} <<| restail ||
     pending := pending - {tt}
+  END ; rr := reward
   END
 
 END

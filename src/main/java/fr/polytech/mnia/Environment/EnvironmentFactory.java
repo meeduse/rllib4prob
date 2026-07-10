@@ -8,6 +8,7 @@ public final class EnvironmentFactory {
     public static Environment create(String envName, RewardStrategy rewardStrategy) {
         return switch (envName.toLowerCase()) {
             case "autov2" -> new AutoV2Environment("/autoV2/HighwayPerception_Q.mch", rewardStrategy);
+            case "autov2embedded" -> new AutoV2Environment("/autoV2/HighwayPerception_QBis.mch", rewardStrategy);
             case "frozen_lake", "frozenlake" -> new FrozenLakeEnvironment("/frozen_lake/FrozenLakeGrid_4_4.mch", rewardStrategy);
             case "interlocking", "interloking" -> new InterlockingEnvironment("/interlocking/interlocking.mch", rewardStrategy);
             case "puzzle" -> new PuzzleEnvironment("/puzzle/Puzzle8.mch", rewardStrategy);

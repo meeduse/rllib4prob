@@ -116,76 +116,53 @@ Intersting initial values :
 */
 OPERATIONS
 
-r <-- FASTER =
+FASTER =
     PRE
         collision = FALSE &
         ego_speed < vmax &
         safe_after_faster = TRUE
     THEN
-	BEGIN
-        	ego_speed := next_speed_faster ||
-        	distance_front := clamp_dist(next_distance_faster)
-	END;
-        r := reward
+        ego_speed := next_speed_faster ||
+        distance_front := clamp_dist(next_distance_faster)
     END;
 
-r <-- IDLE =
+IDLE =
     PRE
         collision = FALSE &
         safe_after_idle = TRUE
     THEN
-	BEGIN
-        	distance_front := clamp_dist(next_distance_idle) 
-	END ;
-        r := reward
+        distance_front := clamp_dist(next_distance_idle) 
     END;
 
-r <-- SLOWER =
+SLOWER =
     PRE
         collision = FALSE &
         ego_speed > 0
     THEN
-	BEGIN
         ego_speed :=
             clamp_speed(ego_speed - slow_step)
-
         ||
-
         distance_front :=
             clamp_dist(
                 distance_front +
                 (front_speed -
                  clamp_speed(ego_speed - slow_step))
             )
-
-        END;
-
-        r := reward
-
     END;
 
-r <-- BRAKE =
+BRAKE =
     PRE
         collision = FALSE &
         ego_speed > 0
     THEN
-	BEGIN
         ego_speed :=
             clamp_speed(ego_speed - brake_step)
-
         ||
-
         distance_front :=
             clamp_dist(
                 distance_front +
                 (front_speed -
                  clamp_speed(ego_speed - brake_step))
             )
-
-        END;
-
-        r := reward
-
     END
-
 END

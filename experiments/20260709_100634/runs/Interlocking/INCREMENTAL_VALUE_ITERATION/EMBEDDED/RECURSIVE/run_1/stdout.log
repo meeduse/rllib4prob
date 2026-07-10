@@ -1,0 +1,14 @@
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = Interlocking
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 100226 | Exploration time: 138.170390246 seconds
+Start learning (Incremental Value Iteration)
+Iteration: 1 | delta: 0.0
+Execution time (Incremental VI): 53.125736893 seconds
+Nb states discovered (env): 100226
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.

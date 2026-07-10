@@ -1,0 +1,14 @@
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = Interlocking
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 100226 | Exploration time: 140.462016777 seconds
+Start learning
+Iteration: 1 | delta: 5000.0
+Iteration: 2 | delta: 4499.0
+Iteration: 3 | delta: 4048.1
+Iteration: 4 | delta: 3642.29

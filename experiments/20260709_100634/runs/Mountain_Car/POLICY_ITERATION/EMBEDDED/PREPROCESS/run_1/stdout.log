@@ -1,0 +1,38 @@
+Selected algorithm = POLICY_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = Mountain_Car
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+........Model Checking complete. No error nodes found.Total states: 12049
+
+End of exploration 12048 | Exploration time: 3.874128746 seconds
+Start learning
+Iteration: 1 | policy stable: false
+Iteration: 2 | policy stable: false
+Iteration: 3 | policy stable: false
+Iteration: 4 | policy stable: false
+Iteration: 5 | policy stable: false
+Iteration: 6 | policy stable: false
+Iteration: 7 | policy stable: false
+Iteration: 8 | policy stable: false
+Iteration: 9 | policy stable: false
+Iteration: 10 | policy stable: false
+Iteration: 11 | policy stable: false
+Iteration: 12 | policy stable: false
+Iteration: 13 | policy stable: false
+Iteration: 14 | policy stable: false
+Iteration: 15 | policy stable: false
+Iteration: 16 | policy stable: false
+Iteration: 17 | policy stable: false
+Iteration: 18 | policy stable: false
+Iteration: 19 | policy stable: false
+Iteration: 20 | policy stable: false
+Iteration: 21 | policy stable: false
+Iteration: 22 | policy stable: false
+Iteration: 23 | policy stable: false
+Iteration: 24 | policy stable: true
+Execution time: 27.990485529 seconds
+Nb states discovered (env): 12048
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.

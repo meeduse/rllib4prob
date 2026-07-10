@@ -1,0 +1,10 @@
+Selected algorithm = MODIFIED_POLICY_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = Interlocking
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 100226 | Exploration time: 139.344548016 seconds
+Start learning (Modified Policy Iteration)

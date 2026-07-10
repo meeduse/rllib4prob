@@ -1,0 +1,11 @@
+Selected algorithm = POLICY_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = autoV2
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 2830 | Exploration time: 1.275691485 seconds
+Start learning
+Iteration: 1 | policy stable: false

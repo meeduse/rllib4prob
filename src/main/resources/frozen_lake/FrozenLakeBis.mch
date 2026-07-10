@@ -1,5 +1,5 @@
 MACHINE
-    FrozenLake
+    FrozenLakeBis
 
 CONSTANTS
     maxX, maxY,

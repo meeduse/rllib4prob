@@ -1,5 +1,5 @@
 MACHINE
-    SafeTaxiDriver
+    SafeTaxiDriverBis
 
 DEFINITIONS
     "rewards.def" ;

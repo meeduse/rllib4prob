@@ -1,7 +1,0 @@
-Selected algorithm = MODIFIED_POLICY_ITERATION
-Selected reward strategy = ONCEANDFORALL
-Selected environment = Puzzle
-Load classical B Machine
-Load success
-Exploration strategy = RECURSIVE
-Start exploration

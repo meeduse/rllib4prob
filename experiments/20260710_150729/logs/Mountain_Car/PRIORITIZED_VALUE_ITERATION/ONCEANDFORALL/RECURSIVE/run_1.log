@@ -1,7 +1,0 @@
-Selected algorithm = PRIORITIZED_VALUE_ITERATION
-Selected reward strategy = ONCEANDFORALL
-Selected environment = Mountain_Car
-Load classical B Machine
-Load success
-Exploration strategy = RECURSIVE
-Start exploration

@@ -1,0 +1,115 @@
+Selected algorithm = PRIORITIZED_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = autoV2
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.Model Checking complete. No error nodes found.Total states: 2831
+
+End of exploration 2830 | Exploration time: 0.378599369 seconds
+Start learning (Prioritized Value Iteration)
+Update 100 | last delta: 1730.0
+Update 200 | last delta: 1530.0
+Update 300 | last delta: 1490.0
+Update 400 | last delta: 2370.0
+Update 500 | last delta: 1410.0
+Update 600 | last delta: 2054.0
+Update 700 | last delta: 2210.0
+Update 800 | last delta: 2174.0
+Update 900 | last delta: 2012.0
+Update 1000 | last delta: 1250.0
+Update 1100 | last delta: 2270.0
+Update 1200 | last delta: 1762.3200000000002
+Update 1300 | last delta: 1160.0
+Update 1400 | last delta: 2231.2
+Update 1500 | last delta: 1096.0
+Update 1600 | last delta: 1048.0
+Update 1700 | last delta: 2203.728
+Update 1800 | last delta: 3801.2595842437877
+Update 1900 | last delta: 3860.1828258232026
+Update 2000 | last delta: 23.03229785140502
+Update 2100 | last delta: 3968.958219794383
+Update 2200 | last delta: 3582.0758316859415
+Update 2300 | last delta: 3026.806510742979
+Update 2400 | last delta: 2091.60192
+Update 2500 | last delta: 1738.2707818534027
+Update 2600 | last delta: 1397.6367360000004
+Update 2700 | last delta: 1169.8379110400003
+Update 2800 | last delta: 1000.0
+Update 2900 | last delta: 953.5999999999999
+Update 3000 | last delta: 940.8000000000002
+Update 3100 | last delta: 889.6000000000004
+Update 3200 | last delta: 902.4000000000001
+Update 3300 | last delta: 1140.0800000000004
+Update 3400 | last delta: 869.9200000000003
+Update 3500 | last delta: 127.37793352430526
+Update 3600 | last delta: 825.6000000000004
+Update 3700 | last delta: 1894.0
+Update 3800 | last delta: 775.4400000000003
+Update 3900 | last delta: 752.6400000000003
+Update 4000 | last delta: 742.4000000000005
+Update 4100 | last delta: 732.1599999999999
+Update 4200 | last delta: 721.9200000000001
+Update 4300 | last delta: 537.2800000000007
+Update 4400 | last delta: 561.152
+Update 4500 | last delta: 684.8000000000002
+Update 4600 | last delta: 670.7200000000003
+Update 4700 | last delta: 660.4800000000005
+Update 4800 | last delta: 92.94967295999993
+Update 4900 | last delta: 640.0
+Update 5000 | last delta: 1096.0
+Update 5100 | last delta: 406.96174928423625
+Update 5200 | last delta: 599.04
+Update 5300 | last delta: 365.1602158052301
+Update 5400 | last delta: 580.0
+Update 5500 | last delta: 576.0
+Update 5600 | last delta: 674.3999999999992
+Update 5700 | last delta: 471.03999999999996
+Update 5800 | last delta: 544.768
+Update 5900 | last delta: 536.576
+Update 6000 | last delta: 528.384
+Update 6100 | last delta: 520.0
+Update 6200 | last delta: 505.35567800032413
+Update 6300 | last delta: 495.61600000000044
+Update 6400 | last delta: 496.6707200000001
+Update 6500 | last delta: 376.8319999999999
+Update 6600 | last delta: 462.8480000000004
+Update 6700 | last delta: 456.0
+Update 6800 | last delta: 664.9860769095617
+Update 6900 | last delta: 442.36799999999994
+Update 7000 | last delta: 464.99519999999984
+Update 7100 | last delta: 292.12817264418436
+Update 7200 | last delta: 422.70720000000074
+Update 7300 | last delta: 416.15359999999964
+Update 7400 | last delta: 409.5999999999999
+Update 7500 | last delta: 343.40863999999965
+Update 7600 | last delta: 389.93920000000026
+Update 7700 | last delta: 376.83200000000033
+Update 7800 | last delta: 369.6230400000004
+Update 7900 | last delta: 364.3801599999997
+Update 8000 | last delta: 359.1372800000008
+Update 8100 | last delta: 353.8943999999992
+Update 8200 | last delta: 348.65152000000035
+Update 8300 | last delta: 343.40864000000056
+Update 8400 | last delta: 336.4633600000002
+Update 8500 | last delta: 213.22253811534756
+Update 8600 | last delta: 322.4371200000005
+Update 8700 | last delta: 317.1942399999998
+Update 8800 | last delta: 262.14400000000023
+Update 8900 | last delta: 301.46560000000136
+Update 9000 | last delta: 296.0
+Update 9100 | last delta: 290.97983999999997
+Update 9200 | last delta: 285.7369600000002
+Update 9300 | last delta: 280.49407999999994
+Update 9400 | last delta: 278.52799999999934
+Update 9500 | last delta: 274.7269120000001
+Update 9600 | last delta: 270.0067840000006
+Update 9700 | last delta: 263.34881792000033
+Update 9800 | last delta: 213.0706431999988
+Update 9900 | last delta: 253.75539200000003
+Update 10000 | last delta: 249.85600000000045
+Execution time (Prioritized VI): 243.685772264 seconds
+Total updates performed: 10000
+Nb states discovered (env): 2830
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.

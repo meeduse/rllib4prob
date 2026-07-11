@@ -1,0 +1,11 @@
+Selected algorithm = BACKWARD_INDUCTION
+Selected reward strategy = EMBEDDED
+Selected environment = Interlockingembedded
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+..........................................................................................................................................................................................................................................................................Model Checking complete. No error nodes found.Total states: 100228
+
+End of exploration 100227 | Exploration time: 133.655747246 seconds
+Start learning (Backward Induction / Finite Horizon DP)

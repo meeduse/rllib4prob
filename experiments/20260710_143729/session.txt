@@ -1,0 +1,8 @@
+session_id=20260710_143729
+output_root=experiments
+max_jobs=1
+runs_per_configuration=1
+save_logs=1
+environments=Frozen_lake Frozen_lakeembedded autoV2 autoV2embedded Interlocking Interlockingembedded Puzzle puzzleembedded Taxi-driver Taxi-driverembedded tictactoe Mountain_Car Mountain_Carembedded
+started_at=2026-07-10T14:37:29+0200
+timeout_seconds=1200

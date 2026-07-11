@@ -1,0 +1,10 @@
+Selected algorithm = BACKWARD_INDUCTION
+Selected reward strategy = EMBEDDED
+Selected environment = Interlockingembedded
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 100226 | Exploration time: 183.498963465 seconds
+Start learning (Backward Induction / Finite Horizon DP)

@@ -1,0 +1,96 @@
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = autoV2
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.Model Checking complete. No error nodes found.Total states: 2831
+
+End of exploration 2830 | Exploration time: 0.349445393 seconds
+Start learning
+Iteration: 1 | delta: 3840.394298368001
+Iteration: 2 | delta: 2719.9910912000005
+Iteration: 3 | delta: 2057.237550080001
+Iteration: 4 | delta: 1635.3388400640008
+Iteration: 5 | delta: 1164.5509796102153
+Iteration: 6 | delta: 874.570249142273
+Iteration: 7 | delta: 699.6561993138189
+Iteration: 8 | delta: 559.7249594510549
+Iteration: 9 | delta: 447.77996756084394
+Iteration: 10 | delta: 262.33505969292514
+Iteration: 11 | delta: 167.8944382034722
+Iteration: 12 | delta: 42.88683768246801
+Iteration: 13 | delta: 22.903678118376774
+Iteration: 14 | delta: 17.393921346442028
+Iteration: 15 | delta: 11.132109661722893
+Iteration: 16 | delta: 8.905687729378315
+Iteration: 17 | delta: 7.124550183502606
+Iteration: 18 | delta: 4.446746852114302
+Iteration: 19 | delta: 2.8459179853534806
+Iteration: 20 | delta: 1.187377124892464
+Iteration: 21 | delta: 0.7599799706104022
+Iteration: 22 | delta: 0.6079839764888675
+Iteration: 23 | delta: 0.48638718119082114
+Iteration: 24 | delta: 0.38910974495274786
+Iteration: 25 | delta: 0.3112877959629259
+Iteration: 26 | delta: 0.2490302367705226
+Iteration: 27 | delta: 0.19922418941678188
+Iteration: 28 | delta: 0.1593793515339712
+Iteration: 29 | delta: 0.12750348122699506
+Iteration: 30 | delta: 0.10200278498177795
+Iteration: 31 | delta: 0.08160222798505856
+Iteration: 32 | delta: 0.06528178238841065
+Iteration: 33 | delta: 0.052225425911274215
+Iteration: 34 | delta: 0.04178034072901937
+Iteration: 35 | delta: 0.033424272583488346
+Iteration: 36 | delta: 0.02673941806642688
+Iteration: 37 | delta: 0.0213915344538691
+Iteration: 38 | delta: 0.017113227563640976
+Iteration: 39 | delta: 0.01369058205091278
+Iteration: 40 | delta: 0.010952465641821618
+Iteration: 41 | delta: 0.008761972513639193
+Iteration: 42 | delta: 0.007009578011093254
+Iteration: 43 | delta: 0.005607662408692704
+Iteration: 44 | delta: 0.004486129927045113
+Iteration: 45 | delta: 0.003588903941817989
+Iteration: 46 | delta: 0.0028711231534543913
+Iteration: 47 | delta: 0.002296898523127311
+Iteration: 48 | delta: 0.0018375188187746971
+Iteration: 49 | delta: 0.0014700150550197577
+Iteration: 50 | delta: 0.0011760120441977051
+Iteration: 51 | delta: 9.40809635721962E-4
+Iteration: 52 | delta: 7.52647708850418E-4
+Iteration: 53 | delta: 6.021181670803344E-4
+Iteration: 54 | delta: 4.8169453384616645E-4
+Iteration: 55 | delta: 3.8535562680408475E-4
+Iteration: 56 | delta: 3.082845014432678E-4
+Iteration: 57 | delta: 2.4662760188221E-4
+Iteration: 58 | delta: 1.9730208168766694E-4
+Iteration: 59 | delta: 1.5784166544108302E-4
+Iteration: 60 | delta: 1.2627333217096748E-4
+Iteration: 61 | delta: 1.0101866610057186E-4
+Iteration: 62 | delta: 8.081493342615431E-5
+Iteration: 63 | delta: 6.465194746851921E-5
+Iteration: 64 | delta: 5.172155806576484E-5
+Iteration: 65 | delta: 4.137724681640975E-5
+Iteration: 66 | delta: 3.310179727122886E-5
+Iteration: 67 | delta: 2.648143890837673E-5
+Iteration: 68 | delta: 2.1185151126701385E-5
+Iteration: 69 | delta: 1.6948120901361108E-5
+Iteration: 70 | delta: 1.3558496902987827E-5
+Iteration: 71 | delta: 1.0846797522390261E-5
+Iteration: 72 | delta: 8.677438017912209E-6
+Iteration: 73 | delta: 6.941951141925529E-6
+Iteration: 74 | delta: 5.5535601859446615E-6
+Iteration: 75 | delta: 4.442848876351491E-6
+Iteration: 76 | delta: 3.554278919182252E-6
+Iteration: 77 | delta: 2.843424226739444E-6
+Iteration: 78 | delta: 2.274739927088376E-6
+Iteration: 79 | delta: 1.8197915778728202E-6
+Iteration: 80 | delta: 1.4558336260961369E-6
+Iteration: 81 | delta: 1.1646679922705516E-6
+Iteration: 82 | delta: 9.317345757153817E-7
+Execution time: 667.813676198 seconds
+Nb states discovered (env): 2830
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.

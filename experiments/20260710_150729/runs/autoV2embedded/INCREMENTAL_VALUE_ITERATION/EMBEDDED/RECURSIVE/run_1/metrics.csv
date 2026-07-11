@@ -1,0 +1,2 @@
+run,algorithm,reward,exploration,environment,states,t_explore_sec,t_learn_sec,iterations_or_updates,status,exit_code,log_file
+1,INCREMENTAL_VALUE_ITERATION,EMBEDDED,RECURSIVE,autoV2embedded,2830,1.949823136,5.858453406,100,SUCCESS,0,experiments/20260710_150729/logs/autoV2embedded/INCREMENTAL_VALUE_ITERATION/EMBEDDED/RECURSIVE/run_1.log

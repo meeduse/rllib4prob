@@ -1,0 +1,45 @@
+Selected algorithm = PRIORITIZED_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = Frozen_lake
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.Model Checking complete. No error nodes found.Total states: 45
+
+End of exploration 44 | Exploration time: 0.017925655 seconds
+Start learning (Prioritized Value Iteration)
+Update 100 | last delta: 817.8876989999999
+Update 200 | last delta: 1049.9095251899998
+Update 300 | last delta: 348.67844010000044
+Update 400 | last delta: 285.179807064299
+Update 500 | last delta: 256.66182635786754
+Update 600 | last delta: 168.39582427339792
+Update 700 | last delta: 79.76644307687275
+Update 800 | last delta: 72.48888065062056
+Update 900 | last delta: 52.84439399430266
+Update 1000 | last delta: 25.03155504993265
+Update 1100 | last delta: 14.780882941434356
+Update 1200 | last delta: 13.432335931285706
+Update 1300 | last delta: 9.792172893908173
+Update 1400 | last delta: 7.931660044065211
+Update 1500 | last delta: 3.757102126135578
+Update 1600 | last delta: 3.072887612854174
+Update 1700 | last delta: 2.489038966411499
+Update 1800 | last delta: 2.01612156279225
+Update 1900 | last delta: 0.6961986091318977
+Update 2000 | last delta: 0.6265787482170708
+Update 2100 | last delta: 0.5694122784698266
+Update 2200 | last delta: 0.4151015510042271
+Update 2300 | last delta: 0.1966270504763088
+Update 2400 | last delta: 0.12900700781756314
+Update 2500 | last delta: 0.10551324477728485
+Update 2600 | last delta: 0.05553328672613134
+Update 2700 | last delta: 0.04498196224813
+Update 2800 | last delta: 0.04087799288754468
+Update 2900 | last delta: 0.029800056814565323
+Update 3000 | last delta: 0.014115816386038205
+Execution time (Prioritized VI): 50.403683423 seconds
+Total updates performed: 3078
+Nb states discovered (env): 44
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.

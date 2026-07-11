@@ -1,0 +1,11 @@
+Selected algorithm = MODIFIED_POLICY_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = Puzzle
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+..............................Model Checking complete. No error nodes found.Total states: 181442
+
+End of exploration 181441 | Exploration time: 14.804266703 seconds
+Start learning (Modified Policy Iteration)

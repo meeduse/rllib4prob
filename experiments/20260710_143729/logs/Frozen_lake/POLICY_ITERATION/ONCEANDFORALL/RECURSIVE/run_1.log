@@ -1,0 +1,20 @@
+Selected algorithm = POLICY_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = Frozen_lake
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 43 | Exploration time: 0.038893214 seconds
+Start learning
+Iteration: 1 | policy stable: false
+Iteration: 2 | policy stable: false
+Iteration: 3 | policy stable: false
+Iteration: 4 | policy stable: false
+Iteration: 5 | policy stable: false
+Iteration: 6 | policy stable: false
+Iteration: 7 | policy stable: true
+Execution time: 3.084366038 seconds
+Nb states discovered (env): 43
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.

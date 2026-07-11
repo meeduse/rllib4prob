@@ -1,0 +1,98 @@
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = autoV2
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.Model Checking complete. No error nodes found.Total states: 2831
+
+End of exploration 2830 | Exploration time: 0.343448005 seconds
+Start learning
+Iteration: 1 | delta: 3480.6817945600005
+Iteration: 2 | delta: 2544.3592960000005
+Iteration: 3 | delta: 1883.0520320000005
+Iteration: 4 | delta: 1506.4416256000004
+Iteration: 5 | delta: 1113.8935298457602
+Iteration: 6 | delta: 821.9074232320002
+Iteration: 7 | delta: 657.5259385856001
+Iteration: 8 | delta: 526.02075086848
+Iteration: 9 | delta: 384.3152520465619
+Iteration: 10 | delta: 307.45220163724935
+Iteration: 11 | delta: 245.96176130979939
+Iteration: 12 | delta: 72.48605400640349
+Iteration: 13 | delta: 42.845920263237986
+Iteration: 14 | delta: 29.74849949632255
+Iteration: 15 | delta: 23.798799597058064
+Iteration: 16 | delta: 14.571997283490418
+Iteration: 17 | delta: 8.277832949349204
+Iteration: 18 | delta: 6.622266359479454
+Iteration: 19 | delta: 5.297813087583563
+Iteration: 20 | delta: 3.5099821625326513
+Iteration: 21 | delta: 2.8079857300272124
+Iteration: 22 | delta: 2.2463885840206785
+Iteration: 23 | delta: 1.7971108672172704
+Iteration: 24 | delta: 1.4376886937734525
+Iteration: 25 | delta: 1.1501509550198534
+Iteration: 26 | delta: 0.9201207640162465
+Iteration: 27 | delta: 0.7360966112137248
+Iteration: 28 | delta: 0.5888772889702523
+Iteration: 29 | delta: 0.4711018311754742
+Iteration: 30 | delta: 0.37688146494110697
+Iteration: 31 | delta: 0.30150517195397697
+Iteration: 32 | delta: 0.24120413756281778
+Iteration: 33 | delta: 0.19296331004989042
+Iteration: 34 | delta: 0.15437064804063994
+Iteration: 35 | delta: 0.12349651843214815
+Iteration: 36 | delta: 0.09879721474590042
+Iteration: 37 | delta: 0.07903777179672034
+Iteration: 38 | delta: 0.06323021743719437
+Iteration: 39 | delta: 0.05058417395048309
+Iteration: 40 | delta: 0.04046733916038647
+Iteration: 41 | delta: 0.032373871328672976
+Iteration: 42 | delta: 0.02589909706330218
+Iteration: 43 | delta: 0.020719277650641743
+Iteration: 44 | delta: 0.016575422121604788
+Iteration: 45 | delta: 0.013260337697829527
+Iteration: 46 | delta: 0.010608270157717925
+Iteration: 47 | delta: 0.008486616125992441
+Iteration: 48 | delta: 0.0067892929018853465
+Iteration: 49 | delta: 0.005431434321508277
+Iteration: 50 | delta: 0.00434514745575143
+Iteration: 51 | delta: 0.003476117964964942
+Iteration: 52 | delta: 0.0027808943723357515
+Iteration: 53 | delta: 0.002224715498414298
+Iteration: 54 | delta: 0.0017797723994590342
+Iteration: 55 | delta: 0.0014238179201129242
+Iteration: 56 | delta: 0.0011390543359084404
+Iteration: 57 | delta: 9.112434690905502E-4
+Iteration: 58 | delta: 7.289947752724402E-4
+Iteration: 59 | delta: 5.8319582058175E-4
+Iteration: 60 | delta: 4.6655665664729895E-4
+Iteration: 61 | delta: 3.732453260454349E-4
+Iteration: 62 | delta: 2.985962601087522E-4
+Iteration: 63 | delta: 2.3887700808700174E-4
+Iteration: 64 | delta: 1.9110160701529821E-4
+Iteration: 65 | delta: 1.5288128633983433E-4
+Iteration: 66 | delta: 1.2230502943566535E-4
+Iteration: 67 | delta: 9.784402391233016E-5
+Iteration: 68 | delta: 7.827521949366201E-5
+Iteration: 69 | delta: 6.262017450353596E-5
+Iteration: 70 | delta: 5.009613960282877E-5
+Iteration: 71 | delta: 4.007691222795984E-5
+Iteration: 72 | delta: 3.206153087376151E-5
+Iteration: 73 | delta: 2.5649225790402852E-5
+Iteration: 74 | delta: 2.051937917713076E-5
+Iteration: 75 | delta: 1.641550443309825E-5
+Iteration: 76 | delta: 1.313240409217542E-5
+Iteration: 77 | delta: 1.0505922546144575E-5
+Iteration: 78 | delta: 8.404738764511421E-6
+Iteration: 79 | delta: 6.723791557305958E-6
+Iteration: 80 | delta: 5.379033609642647E-6
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.1.0:java (default-cli) on project rl-lib: An exception occurred while executing the Java class. Error during communication with Prolog core.: ProB binary returned nothing - it might have crashed: NoSuchElementException -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

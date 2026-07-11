@@ -1,0 +1,115 @@
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = Mountain_Car
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+........Model Checking complete. No error nodes found.Total states: 12049
+
+End of exploration 12048 | Exploration time: 3.583110482 seconds
+Start learning (Incremental Value Iteration)
+Iteration: 1 | delta: 10000.0
+Iteration: 2 | delta: 10000.0
+Iteration: 3 | delta: 10000.0
+Iteration: 4 | delta: 10000.0
+Iteration: 5 | delta: 10000.0
+Iteration: 6 | delta: 10000.0
+Iteration: 7 | delta: 10000.0
+Iteration: 8 | delta: 10000.0
+Iteration: 9 | delta: 10000.0
+Iteration: 10 | delta: 10000.0
+Iteration: 11 | delta: 10000.0
+Iteration: 12 | delta: 10000.0
+Iteration: 13 | delta: 10000.0
+Iteration: 14 | delta: 10000.0
+Iteration: 15 | delta: 10000.0
+Iteration: 16 | delta: 10000.0
+Iteration: 17 | delta: 10000.0
+Iteration: 18 | delta: 10000.0
+Iteration: 19 | delta: 10000.0
+Iteration: 20 | delta: 10000.0
+Iteration: 21 | delta: 10000.0
+Iteration: 22 | delta: 10000.0
+Iteration: 23 | delta: 10000.0
+Iteration: 24 | delta: 10000.0
+Iteration: 25 | delta: 10000.0
+Iteration: 26 | delta: 9000.0
+Iteration: 27 | delta: 10000.0
+Iteration: 28 | delta: 10000.0
+Iteration: 29 | delta: 10000.0
+Iteration: 30 | delta: 9000.0
+Iteration: 31 | delta: 10000.0
+Iteration: 32 | delta: 10000.0
+Iteration: 33 | delta: 10000.0
+Iteration: 34 | delta: 10000.0
+Iteration: 35 | delta: 10000.0
+Iteration: 36 | delta: 10000.0
+Iteration: 37 | delta: 10000.0
+Iteration: 38 | delta: 10000.0
+Iteration: 39 | delta: 10000.0
+Iteration: 40 | delta: 10000.0
+Iteration: 41 | delta: 10000.0
+Iteration: 42 | delta: 10000.0
+Iteration: 43 | delta: 10000.0
+Iteration: 44 | delta: 8999.9
+Iteration: 45 | delta: 10000.0
+Iteration: 46 | delta: 10000.0
+Iteration: 47 | delta: 10000.0
+Iteration: 48 | delta: 10000.0
+Iteration: 49 | delta: 10000.0
+Iteration: 50 | delta: 10000.0
+Iteration: 51 | delta: 10000.0
+Iteration: 52 | delta: 10000.0
+Iteration: 53 | delta: 9000.0
+Iteration: 54 | delta: 9000.0
+Iteration: 55 | delta: 10000.0
+Iteration: 56 | delta: 8999.9
+Iteration: 57 | delta: 10000.0
+Iteration: 58 | delta: 10000.0
+Iteration: 59 | delta: 10000.0
+Iteration: 60 | delta: 9000.0
+Iteration: 61 | delta: 10000.0
+Iteration: 62 | delta: 9000.0
+Iteration: 63 | delta: 10000.0
+Iteration: 64 | delta: 10000.0
+Iteration: 65 | delta: 10000.0
+Iteration: 66 | delta: 9000.0
+Iteration: 67 | delta: 8099.91
+Iteration: 68 | delta: 10000.0
+Iteration: 69 | delta: 8099.8099999999995
+Iteration: 70 | delta: 10000.0
+Iteration: 71 | delta: 9000.0
+Iteration: 72 | delta: 7289.829
+Iteration: 73 | delta: 9000.0
+Iteration: 74 | delta: 7289.728999999999
+Iteration: 75 | delta: 10000.0
+Iteration: 76 | delta: 7289.829
+Iteration: 77 | delta: 8099.91
+Iteration: 78 | delta: 6560.846099999999
+Iteration: 79 | delta: 8999.9
+Iteration: 80 | delta: 7289.829
+Iteration: 81 | delta: 8999.9
+Iteration: 82 | delta: 8099.91
+Iteration: 83 | delta: 8099.91
+Iteration: 84 | delta: 8999.9
+Iteration: 85 | delta: 7289.829
+Iteration: 86 | delta: 8999.9
+Iteration: 87 | delta: 9000.0
+Iteration: 88 | delta: 10000.0
+Iteration: 89 | delta: 8099.91
+Iteration: 90 | delta: 7289.918999999999
+Iteration: 91 | delta: 9000.0
+Iteration: 92 | delta: 6560.656099999999
+Iteration: 93 | delta: 10000.0
+Iteration: 94 | delta: 7289.829
+Iteration: 95 | delta: 5314.041440999999
+Iteration: 96 | delta: 6560.7561
+Iteration: 97 | delta: 10000.0
+Iteration: 98 | delta: 8099.8099999999995
+Iteration: 99 | delta: 9000.0
+Iteration: 100 | delta: 9000.0
+Reached maximum number of iterations.
+Execution time (Incremental VI): 101.33920247 seconds
+Nb states discovered (env): 12048
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.

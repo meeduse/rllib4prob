@@ -1,0 +1,22 @@
+Selected algorithm = BACKWARD_INDUCTION
+Selected reward strategy = EMBEDDED
+Selected environment = Frozen_lakeembedded
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 43 | Exploration time: 0.042891082 seconds
+Start learning (Backward Induction / Finite Horizon DP)
+Horizon step: 1 | max delta: 1000.0
+Horizon step: 2 | max delta: 900.0
+Horizon step: 3 | max delta: 810.0
+Horizon step: 4 | max delta: 729.0000000000001
+Horizon step: 5 | max delta: 656.1000000000001
+Horizon step: 6 | max delta: 590.4900000000002
+Horizon step: 7 | max delta: 531.4410000000003
+Horizon step: 8 | max delta: 478.2969000000003
+Horizon step: 9 | max delta: 430.46721000000025
+Execution time (Backward Induction): 0.064778593 seconds
+Nb states discovered (env): 43
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.

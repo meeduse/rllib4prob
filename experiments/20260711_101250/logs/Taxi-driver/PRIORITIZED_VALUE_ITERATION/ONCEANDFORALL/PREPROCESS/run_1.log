@@ -1,0 +1,15 @@
+Selected algorithm = PRIORITIZED_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = Taxi-driver
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.Model Checking complete. No error nodes found.Total states: 45
+
+End of exploration 44 | Exploration time: 0.020737335 seconds
+Start learning (Prioritized Value Iteration)
+Execution time (Prioritized VI): 0.487647042 seconds
+Total updates performed: 43
+Nb states discovered (env): 44
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.

@@ -1,0 +1,14 @@
+Selected algorithm = BACKWARD_INDUCTION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = Interlocking
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+........................................................................................................................................................................Model Checking complete. No error nodes found.Total states: 100228
+
+End of exploration 100227 | Exploration time: 84.185731656 seconds
+Start learning (Backward Induction / Finite Horizon DP)
+Horizon step: 1 | max delta: 50000.0
+Horizon step: 2 | max delta: 45000.0
+Horizon step: 3 | max delta: 40500.00000000001

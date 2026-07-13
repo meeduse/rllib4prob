@@ -1,0 +1,2 @@
+run,algorithm,reward,exploration,environment,states,t_explore_sec,t_learn_sec,iterations_or_updates,status,exit_code,log_file
+1,BACKWARD_INDUCTION,ONCEANDFORALL,RECURSIVE,Interlocking,100226,133.708185928,,3,TIMEOUT,124,experiments/20260711_101250/logs/Interlocking/BACKWARD_INDUCTION/ONCEANDFORALL/RECURSIVE/run_1.log

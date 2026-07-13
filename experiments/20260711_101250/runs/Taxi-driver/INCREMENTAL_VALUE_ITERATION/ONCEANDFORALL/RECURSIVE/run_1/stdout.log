@@ -1,0 +1,30 @@
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = Taxi-driver
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 43 | Exploration time: 0.03193106 seconds
+Start learning (Incremental Value Iteration)
+Iteration: 1 | delta: 1000.0
+Iteration: 2 | delta: 900.0
+Iteration: 3 | delta: 808.1
+Iteration: 4 | delta: 727.2900000000001
+Iteration: 5 | delta: 654.561
+Iteration: 6 | delta: 1.71
+Iteration: 7 | delta: 588.2949000000001
+Iteration: 8 | delta: 529.4654100000001
+Iteration: 9 | delta: 475.78986900000007
+Iteration: 10 | delta: 652.6610000000001
+Iteration: 11 | delta: 528.6554100000001
+Iteration: 12 | delta: 346.26032450100007
+Iteration: 13 | delta: 225.74119379510614
+Iteration: 14 | delta: 280.4708628458101
+Iteration: 15 | delta: 280.4708628458101
+Iteration: 16 | delta: 311.63429205090006
+Iteration: 17 | delta: 0.0
+Execution time (Incremental VI): 1.27573514 seconds
+Nb states discovered (env): 43
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.

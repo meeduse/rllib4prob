@@ -1,0 +1,42 @@
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = Mountain_Car
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+........Model Checking complete. No error nodes found.Total states: 12049
+
+End of exploration 12048 | Exploration time: 3.550664702 seconds
+Start learning
+Iteration: 1 | delta: 10000.0
+Iteration: 2 | delta: 8999.9
+Iteration: 3 | delta: 8099.8099999999995
+Iteration: 4 | delta: 7289.728999999999
+Iteration: 5 | delta: 6560.656099999999
+Iteration: 6 | delta: 5904.490489999999
+Iteration: 7 | delta: 5313.941440999999
+Iteration: 8 | delta: 4782.447296899999
+Iteration: 9 | delta: 4304.102567209999
+Iteration: 10 | delta: 3873.592310488999
+Iteration: 11 | delta: 3178.0706324593903
+Iteration: 12 | delta: 2714.465797585652
+Iteration: 13 | delta: 2400.6238204360434
+Iteration: 14 | delta: 2071.0600439002355
+Iteration: 15 | delta: 1816.8480424090528
+Iteration: 16 | delta: 1535.7172442879219
+Iteration: 17 | delta: 1382.1455198591298
+Iteration: 18 | delta: 1144.484973992991
+Iteration: 19 | delta: 977.6964798146256
+Iteration: 20 | delta: 512.743790536852
+Iteration: 21 | delta: 403.3138595064264
+Iteration: 22 | delta: 304.8269215790433
+Iteration: 23 | delta: 216.18867744439854
+Iteration: 24 | delta: 136.41425772321827
+Iteration: 25 | delta: 79.77441972118027
+Iteration: 26 | delta: 71.7969777490622
+Iteration: 27 | delta: 64.61727997415608
+Iteration: 28 | delta: 0.0
+Execution time: 646.901958906 seconds
+Nb states discovered (env): 12048
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.

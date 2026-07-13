@@ -1,0 +1,13 @@
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = Puzzle
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+..............................Model Checking complete. No error nodes found.Total states: 181442
+
+End of exploration 181441 | Exploration time: 14.81979929 seconds
+Start learning
+Iteration: 1 | delta: 44.03537401596221
+Iteration: 2 | delta: 37.65225209187281

@@ -1,0 +1,115 @@
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = Puzzle
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+..............................Model Checking complete. No error nodes found.Total states: 181442
+
+End of exploration 181441 | Exploration time: 14.81007278 seconds
+Start learning (Incremental Value Iteration)
+Iteration: 1 | delta: 5.95
+Iteration: 2 | delta: 5.95
+Iteration: 3 | delta: 8.505
+Iteration: 4 | delta: 5.95
+Iteration: 5 | delta: 5.95
+Iteration: 6 | delta: 4.95
+Iteration: 7 | delta: 5.95
+Iteration: 8 | delta: 7.505000000000001
+Iteration: 9 | delta: 6.605
+Iteration: 10 | delta: 6.605
+Iteration: 11 | delta: 6.505000000000001
+Iteration: 12 | delta: 13.95
+Iteration: 13 | delta: 6.505000000000001
+Iteration: 14 | delta: 6.605
+Iteration: 15 | delta: 6.505000000000001
+Iteration: 16 | delta: 6.605
+Iteration: 17 | delta: 9.405000000000001
+Iteration: 18 | delta: 8.405000000000001
+Iteration: 19 | delta: 6.505000000000001
+Iteration: 20 | delta: 8.405000000000001
+Iteration: 21 | delta: 6.605
+Iteration: 22 | delta: 8.405000000000001
+Iteration: 23 | delta: 7.405
+Iteration: 24 | delta: 10.305
+Iteration: 25 | delta: 8.405000000000001
+Iteration: 26 | delta: 8.505
+Iteration: 27 | delta: 6.605
+Iteration: 28 | delta: 9.704500000000001
+Iteration: 29 | delta: 8.505
+Iteration: 30 | delta: 7.094500000000001
+Iteration: 31 | delta: 10.305
+Iteration: 32 | delta: 8.405000000000001
+Iteration: 33 | delta: 7.605
+Iteration: 34 | delta: 10.305
+Iteration: 35 | delta: 7.505000000000001
+Iteration: 36 | delta: 19.505
+Iteration: 37 | delta: 7.9945
+Iteration: 38 | delta: 7.274499999999999
+Iteration: 39 | delta: 12.514500000000002
+Iteration: 40 | delta: 10.405000000000001
+Iteration: 41 | delta: 9.305
+Iteration: 42 | delta: 9.305
+Iteration: 43 | delta: 8.405000000000001
+Iteration: 44 | delta: 15.976845
+Iteration: 45 | delta: 10.704500000000001
+Iteration: 46 | delta: 8.405000000000001
+Iteration: 47 | delta: 9.8045
+Iteration: 48 | delta: 6.505000000000001
+Iteration: 49 | delta: 11.145050000000001
+Iteration: 50 | delta: 6.605
+Iteration: 51 | delta: 11.604500000000002
+Iteration: 52 | delta: 12.980545000000003
+Iteration: 53 | delta: 8.505
+Iteration: 54 | delta: 8.8945
+Iteration: 55 | delta: 12.684050000000003
+Iteration: 56 | delta: 10.704500000000001
+Iteration: 57 | delta: 8.405000000000001
+Iteration: 58 | delta: 31.5045
+Iteration: 59 | delta: 11.774050000000003
+Iteration: 60 | delta: 9.974050000000002
+Iteration: 61 | delta: 8.374500000000001
+Iteration: 62 | delta: 9.8045
+Iteration: 63 | delta: 11.3245
+Iteration: 64 | delta: 13.774050000000003
+Iteration: 65 | delta: 9.6145
+Iteration: 66 | delta: 7.505000000000001
+Iteration: 67 | delta: 8.505
+Iteration: 68 | delta: 10.405000000000001
+Iteration: 69 | delta: 10.405000000000001
+Iteration: 70 | delta: 10.87405
+Iteration: 71 | delta: 8.405000000000001
+Iteration: 72 | delta: 7.505000000000001
+Iteration: 73 | delta: 9.6145
+Iteration: 74 | delta: 10.926645
+Iteration: 75 | delta: 14.314500000000002
+Iteration: 76 | delta: 8.505
+Iteration: 77 | delta: 9.405000000000001
+Iteration: 78 | delta: 14.314500000000002
+Iteration: 79 | delta: 10.305
+Iteration: 80 | delta: 11.604500000000002
+Iteration: 81 | delta: 9.8045
+Iteration: 82 | delta: 8.8945
+Iteration: 83 | delta: 10.514500000000002
+Iteration: 84 | delta: 9.87405
+Iteration: 85 | delta: 10.514500000000002
+Iteration: 86 | delta: 10.704500000000001
+Iteration: 87 | delta: 8.97405
+Iteration: 88 | delta: 10.405000000000001
+Iteration: 89 | delta: 10.704500000000001
+Iteration: 90 | delta: 12.351545000000002
+Iteration: 91 | delta: 11.351545000000002
+Iteration: 92 | delta: 11.351545000000002
+Iteration: 93 | delta: 11.604500000000002
+Iteration: 94 | delta: 8.8945
+Iteration: 95 | delta: 12.514500000000002
+Iteration: 96 | delta: 12.492745
+Iteration: 97 | delta: 8.985445
+Iteration: 98 | delta: 12.4145
+Iteration: 99 | delta: 9.8045
+Iteration: 100 | delta: 15.365645000000004
+Reached maximum number of iterations.
+Execution time (Incremental VI): 197.977546406 seconds
+Nb states discovered (env): 181441
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.

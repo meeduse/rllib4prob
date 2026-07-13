@@ -1,0 +1,10 @@
+Selected algorithm = PRIORITIZED_VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = Interlockingembedded
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 100226 | Exploration time: 213.283092249 seconds
+Start learning (Prioritized Value Iteration)

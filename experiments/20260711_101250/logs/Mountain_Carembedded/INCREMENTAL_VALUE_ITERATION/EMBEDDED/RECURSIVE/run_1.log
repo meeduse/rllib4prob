@@ -1,0 +1,5 @@
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = Mountain_Carembedded
+Load classical B Machine
+Load success

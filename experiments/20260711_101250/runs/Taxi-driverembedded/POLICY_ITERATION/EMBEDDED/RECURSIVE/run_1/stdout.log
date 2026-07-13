@@ -1,0 +1,5 @@
+Selected algorithm = POLICY_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = Taxi-driverembedded
+Load classical B Machine
+Load success

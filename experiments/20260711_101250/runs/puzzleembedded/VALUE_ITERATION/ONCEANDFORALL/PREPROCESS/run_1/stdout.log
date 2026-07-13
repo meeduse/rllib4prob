@@ -1,0 +1,20 @@
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = puzzleembedded
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+...............................................................................................................................................................................................................................................................................................................Model Checking complete. No error nodes found.Total states: 181442
+
+End of exploration 181441 | Exploration time: 152.275847051 seconds
+Start learning
+Iteration: 1 | delta: 44.03537401596221
+Iteration: 2 | delta: 36.81565889187282
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.1.0:java (default-cli) on project rl-lib: An exception occurred while executing the Java class. com.google.common.util.concurrent.UncheckedExecutionException: de.prob.exception.CliError: Error during communication with Prolog core.: ProB has been shut down. It does not accept messages. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

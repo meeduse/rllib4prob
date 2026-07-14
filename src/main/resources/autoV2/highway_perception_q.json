@@ -1,0 +1,25 @@
+{
+  "svg": "highway_perception_q.svg",
+  "items": [
+    { "id": "safe_txt", "attr": "text", "value": "safe" },
+    { "id": "collision_txt", "attr": "text", "value": "collision" },
+    { "id": "reward_txt", "attr": "text", "value": "reward" },
+
+    {
+      "id": "front_target_x",
+      "attr": "text",
+      "value": "IF distance_front >= 95 THEN 1100 ELSE 300 + 8 * distance_front END"
+    },
+
+    {
+      "id": "ego_speed_value",
+      "attr": "text",
+      "value": "road_speed"
+    },
+{
+  "id": "accel_angle",
+  "attr": "text",
+  "value": "4 * (front_speed - ego_speed)"
+}
+  ]
+}

@@ -1,0 +1,7 @@
+Le train ne change de direction que sur une plateforme.
+la réservation se fait soit vers l'avant soit vers l'arrière
+
+avec 3 trains
+
+Model Checking complete. No more error nodes found. | Total states: 1876343
+Exploration finished. Explored states: 1876343 | time : 1949829 ms

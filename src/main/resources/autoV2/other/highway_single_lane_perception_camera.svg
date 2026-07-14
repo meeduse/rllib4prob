@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="360" viewBox="0 0 1000 360">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#000000" flood-opacity="0.22"/>
+    </filter>
+    <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#111827"/>
+    </marker>
+  </defs>
+
+  <style>
+    .bg { fill: #f6f8fb; }
+    .road { fill: #3f4650; }
+    .shoulder { fill: #59616c; opacity: 0.8; }
+    .laneMark { stroke: #ffffff; stroke-width: 5; stroke-dasharray: 30 24; opacity: 0.75; }
+    .title { font-family: system-ui, -apple-system, Segoe UI, sans-serif; font-size: 23px; font-weight: 800; fill: #1f2937; }
+    .label { font-family: system-ui, -apple-system, Segoe UI, sans-serif; font-size: 15px; font-weight: 750; fill: #111827; }
+    .small { font-family: system-ui, -apple-system, Segoe UI, sans-serif; font-size: 13px; fill: #374151; }
+    .value { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 14px; font-weight: 800; fill: #111827; }
+    .panel { fill: #ffffff; stroke: #d1d5db; stroke-width: 1.2; rx: 14; filter: url(#shadow); }
+    .ego { fill: #2563eb; stroke: #1e3a8a; stroke-width: 2; filter: url(#shadow); }
+    .front { fill: #f59e0b; stroke: #92400e; stroke-width: 2; filter: url(#shadow); }
+    .wheel { fill: #111827; }
+    .window { fill: #dbeafe; opacity: 0.95; }
+    .light { fill: #fde68a; }
+    .tail { fill: #ef4444; }
+    .gap { stroke: #22c55e; stroke-width: 5; stroke-linecap: round; marker-end: url(#arrowHead); }
+    .hud { fill: #eef2ff; stroke: #6366f1; stroke-width: 1.2; }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="1000" height="360"/>
+  <text class="title" x="30" y="42">BRein Studio — Perception-based Single Lane Controller</text>
+
+  <!-- Camera-style road: EGO stays fixed, FRONT is relative to EGO -->
+  <rect class="road" x="30" y="90" width="940" height="125" rx="18"/>
+  <rect class="shoulder" x="30" y="90" width="940" height="14" rx="8"/>
+  <rect class="shoulder" x="30" y="201" width="940" height="14" rx="8"/>
+  <line class="laneMark" x1="50" y1="153" x2="950" y2="153"/>
+
+  <!-- Gap visualization -->
+  <line id="gap_line" class="gap" x1="328" y1="82" x2="460" y2="82"/>
+  <text id="gap_label" class="small" x="360" y="74">gap</text>
+
+  <!-- Ego car fixed -->
+  <rect id="ego_body" class="ego" x="250" y="132" width="78" height="38" rx="10"/>
+  <rect id="ego_roof" class="window" x="273" y="139" width="30" height="13" rx="3"/>
+  <circle id="ego_wheel_1" class="wheel" cx="269" cy="172" r="6"/>
+  <circle id="ego_wheel_2" class="wheel" cx="309" cy="172" r="6"/>
+  <rect id="ego_headlight" class="light" x="322" y="143" width="5" height="14" rx="2"/>
+  <rect id="ego_taillight" class="tail" x="252" y="143" width="5" height="14" rx="2"/>
+  <text class="label" x="266" y="126">EGO</text>
+
+  <!-- Front car: x attributes controlled by VisB using front_pos - ego_pos -->
+  <rect id="front_body" class="front" x="500" y="132" width="78" height="38" rx="10"/>
+  <rect id="front_roof" class="window" x="523" y="139" width="30" height="13" rx="3"/>
+  <circle id="front_wheel_1" class="wheel" cx="519" cy="172" r="6"/>
+  <circle id="front_wheel_2" class="wheel" cx="559" cy="172" r="6"/>
+  <rect id="front_headlight" class="light" x="572" y="143" width="5" height="14" rx="2"/>
+  <rect id="front_taillight" class="tail" x="502" y="143" width="5" height="14" rx="2"/>
+  <text id="front_label" class="label" x="510" y="126">FRONT</text>
+
+  <!-- Perception / safety HUD -->
+  <rect class="panel" x="90" y="242" width="820" height="84" rx="14"/>
+  <text class="label" x="115" y="269">Perception</text>
+
+  <text class="small" x="115" y="296">gap:</text>
+  <text id="gap_txt" class="value" x="155" y="296">?</text>
+
+  <text class="small" x="235" y="296">rel speed:</text>
+  <text id="rel_speed_txt" class="value" x="315" y="296">?</text>
+
+  <text class="small" x="430" y="296">perceived gap:</text>
+  <text id="perceived_gap_txt" class="value" x="535" y="296">?</text>
+
+  <text class="small" x="115" y="318">perceived rel:</text>
+  <text id="perceived_rel_txt" class="value" x="215" y="318">?</text>
+
+  <text class="small" x="430" y="318">safe:</text>
+  <text id="safe_txt" class="value" x="475" y="318">?</text>
+
+  <text class="small" x="555" y="318">collision:</text>
+  <text id="collision_txt" class="value" x="635" y="318">?</text>
+
+  <rect class="hud" x="745" y="277" width="130" height="34" rx="10"/>
+  <text class="small" x="762" y="299">reward:</text>
+  <text id="reward_txt" class="value" x="820" y="299">?</text>
+</svg>

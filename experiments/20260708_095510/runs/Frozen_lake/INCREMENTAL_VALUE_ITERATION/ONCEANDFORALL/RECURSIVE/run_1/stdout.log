@@ -1,0 +1,90 @@
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = Frozen_lake
+Load classical B Machine
+com.google.inject.ProvisionException: Unable to provision, see the following errors:
+
+1) [Guice/ErrorInCustomProvider]: CliError: Problem while starting up ProB CLI: Cannot run program "/home/idania/.prob/prob2-4.13.1/probcli.sh": Exec failed, error: 13 (Permission denied) 
+  while locating ProBInstanceProvider
+  at AnimatorImpl.<init>(AnimatorImpl.java:54)
+      \_ for 1st parameter
+  while locating AnimatorImpl
+  while locating IAnimator
+  at StateSpace.<init>(StateSpace.java:111)
+  while locating StateSpace
+
+Learn more:
+  https://github.com/google/guice/wiki/ERROR_IN_CUSTOM_PROVIDER
+
+1 error
+
+======================
+Full classname legend:
+======================
+AnimatorImpl:         "de.prob.animator.AnimatorImpl"
+CliError:             "de.prob.exception.CliError"
+IAnimator:            "de.prob.animator.IAnimator"
+ProBInstanceProvider: "de.prob.cli.ProBInstanceProvider"
+StateSpace:           "de.prob.statespace.StateSpace"
+========================
+End of classname legend:
+========================
+
+	at com.google.inject.internal.InternalProvisionException.toProvisionException(InternalProvisionException.java:251)
+	at com.google.inject.internal.InjectorImpl$1.get(InjectorImpl.java:1151)
+	at de.prob.scripting.StateSpaceProvider.getStateSpace(StateSpaceProvider.java:34)
+	at de.prob.model.representation.AbstractModel.load(AbstractModel.java:149)
+	at de.prob.scripting.ExtractedModel.load(ExtractedModel.java:28)
+	at de.prob.scripting.Api.b_load(Api.java:127)
+	at de.prob.scripting.Api.b_load(Api.java:137)
+	at fr.polytech.mnia.Environment.MyProb.load(MyProb.java:47)
+	at fr.polytech.mnia.Environment.Environment.<init>(Environment.java:54)
+	at fr.polytech.mnia.Environment.ModelBasedEnvironment.<init>(ModelBasedEnvironment.java:11)
+	at fr.polytech.mnia.Environment.FrozenLakeEnvironment.<init>(FrozenLakeEnvironment.java:6)
+	at fr.polytech.mnia.Environment.EnvironmentFactory.create(EnvironmentFactory.java:11)
+	at fr.polytech.mnia.App.main(App.java:49)
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:279)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: de.prob.exception.CliError: Problem while starting up ProB CLI: Cannot run program "/home/idania/.prob/prob2-4.13.1/probcli.sh": Exec failed, error: 13 (Permission denied) 
+	at de.prob.cli.ProBInstanceProvider.makeProcess(ProBInstanceProvider.java:117)
+	at de.prob.cli.ProBInstanceProvider.startProlog(ProBInstanceProvider.java:139)
+	at de.prob.cli.ProBInstanceProvider.get(ProBInstanceProvider.java:64)
+	at de.prob.cli.ProBInstanceProvider.get(ProBInstanceProvider.java:20)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:86)
+	at com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:60)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:59)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:40)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:60)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:113)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:91)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:300)
+	at com.google.inject.internal.FactoryProxy.get(FactoryProxy.java:60)
+	at com.google.inject.internal.InjectorImpl$1.get(InjectorImpl.java:1148)
+	at de.prob.statespace.StateSpace.<init>(StateSpace.java:112)
+	at de.prob.statespace.StateSpace$$FastClassByGuice$$85198.GUICE$TRAMPOLINE(<generated>)
+	at de.prob.statespace.StateSpace$$FastClassByGuice$$85198.apply(<generated>)
+	at com.google.inject.internal.DefaultConstructionProxyFactory$FastClassProxy.newInstance(DefaultConstructionProxyFactory.java:82)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:114)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:91)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:300)
+	at com.google.inject.internal.InjectorImpl$1.get(InjectorImpl.java:1148)
+	... 13 more
+Caused by: java.io.IOException: Cannot run program "/home/idania/.prob/prob2-4.13.1/probcli.sh": Exec failed, error: 13 (Permission denied) 
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at de.prob.cli.ProBInstanceProvider.makeProcess(ProBInstanceProvider.java:114)
+	... 35 more
+Caused by: java.io.IOException: Exec failed, error: 13 (Permission denied) 
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 37 more
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.1.0:java (default-cli) on project rl-lib: An exception occurred while executing the Java class. Cannot invoke "de.prob.statespace.StateSpace.getRoot()" because the return value of "fr.polytech.mnia.Environment.MyProb.getStateSpace()" is null -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

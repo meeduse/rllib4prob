@@ -5,6 +5,7 @@ CONCRETE_VARIABLES
 INVARIANT  
 	turn : (0..1) & square : ((1..3) * (1..3)) +-> (0..1) 
 DEFINITIONS
+	"rewards.def";
 	SET_PREF_MAX_OPERATIONS == 15 ;
 	SET_PREF_INVARIANT_CHECKING == FALSE ;
 win(p) == 
@@ -16,14 +17,15 @@ win(p) ==
 INITIALISATION 
     turn,square := 0,{}
 OPERATIONS
-place(xx,yy) =
+r <-- place(xx,yy) =
     PRE	
         xx : 1..3 
         & yy : 1..3 
         & (xx |-> yy) /: dom(square)
 	    & not(win(1 - turn))        
     THEN
-        square(xx|->yy) := turn || turn := 1 - turn
+        square(xx|->yy) := turn || turn := 1 - turn ||
+        r := reward
     END
 END
 

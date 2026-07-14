@@ -1,0 +1,90 @@
+{
+  "svg": "highway_single_lane_perception_camera.svg",
+  "items": [
+    {
+      "id": "gap_txt",
+      "attr": "text",
+      "value": "gap"
+    },
+    {
+      "id": "rel_speed_txt",
+      "attr": "text",
+      "value": "rel_speed"
+    },
+    {
+      "id": "perceived_gap_txt",
+      "attr": "text",
+      "value": "perceived_gap"
+    },
+    {
+      "id": "perceived_rel_txt",
+      "attr": "text",
+      "value": "perceived_rel_speed"
+    },
+    {
+      "id": "safe_txt",
+      "attr": "text",
+      "value": "safe"
+    },
+    {
+      "id": "collision_txt",
+      "attr": "text",
+      "value": "collision"
+    },
+    {
+      "id": "reward_txt",
+      "attr": "text",
+      "value": "reward"
+    },
+    {
+      "id": "front_body",
+      "attr": "x",
+      "value": "250 + 6 * (front_pos - ego_pos)"
+    },
+    {
+      "id": "front_roof",
+      "attr": "x",
+      "value": "273 + 6 * (front_pos - ego_pos)"
+    },
+    {
+      "id": "front_wheel_1",
+      "attr": "cx",
+      "value": "269 + 6 * (front_pos - ego_pos)"
+    },
+    {
+      "id": "front_wheel_2",
+      "attr": "cx",
+      "value": "309 + 6 * (front_pos - ego_pos)"
+    },
+    {
+      "id": "front_headlight",
+      "attr": "x",
+      "value": "322 + 6 * (front_pos - ego_pos)"
+    },
+    {
+      "id": "front_taillight",
+      "attr": "x",
+      "value": "252 + 6 * (front_pos - ego_pos)"
+    },
+    {
+      "id": "front_label",
+      "attr": "x",
+      "value": "260 + 6 * (front_pos - ego_pos)"
+    },
+    {
+      "id": "gap_line",
+      "attr": "x1",
+      "value": "328"
+    },
+    {
+      "id": "gap_line",
+      "attr": "x2",
+      "value": "250 + 6 * (front_pos - ego_pos)"
+    },
+    {
+      "id": "gap_label",
+      "attr": "x",
+      "value": "285 + 3 * (front_pos - ego_pos)"
+    }
+  ]
+}

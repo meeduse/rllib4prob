@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e9f7ff"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="hillFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#bfe6c1"/>
+      <stop offset="100%" stop-color="#7abb82"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.22"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#sky)"/>
+
+  <g id="scene"
+     data-position="-500"
+     data-velocity="0"
+     data-done="0"
+     data-last-action="0"
+     data-reward="0"
+     data-min-position="-1200"
+     data-max-position="600"
+     data-goal-position="500"
+     data-min-velocity="-70"
+     data-max-velocity="70"
+     data-scale="1000">
+    <g id="world"></g>
+  </g>
+
+  <text id="txt_title" x="50" y="38" font-family="Arial" font-size="22" font-weight="bold" fill="#223">
+    MountainCar Discrete Environment
+  </text>
+  <text id="txt_subtitle" x="50" y="62" font-family="Arial" font-size="12" fill="#667">
+    integer-scaled MountainCar-v0: position ×1000, velocity ×1000
+  </text>
+
+  <text id="txt_status" x="50" y="475" font-family="Arial" font-size="14" fill="#222">status</text>
+  <text id="txt_legend" x="50" y="498" font-family="Arial" font-size="12" fill="#667">
+    Actions: push_left, no_push, push_right | Goal: reach the flag at position ≥ 0.5
+  </text>
+
+  <script type="text/ecmascript"><![CDATA[
+    const NS = 'http://www.w3.org/2000/svg';
+    const W = 780;
+    const H = 300;
+    const X0 = 60;
+    const Y0 = 100;
+
+    function n(v, d=0) {
+      const x = parseFloat(String(v || '').replace(/[^0-9+\-.eE]/g, ''));
+      return Number.isFinite(x) ? x : d;
+    }
+
+    function make(tag, attrs = {}, text = null) {
+      const el = document.createElementNS(NS, tag);
+      Object.entries(attrs).forEach(([k,v]) => el.setAttribute(k, String(v)));
+      if (text !== null) el.textContent = text;
+      return el;
+    }
+
+    function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+    function norm(x, minX, maxX) { return (x - minX) / (maxX - minX); }
+    function sx(pos, minPos, maxPos) { return X0 + clamp(norm(pos, minPos, maxPos), 0, 1) * W; }
+
+    // Visual mountain curve, close to the classic two-valley MountainCar shape.
+    function hillYByT(t) {
+      // t in [0,1]. Lower y means visually higher on screen.
+      const valley = 0.62 + 0.30 * Math.cos(2 * Math.PI * (t - 0.50));
+      const rightRise = -0.23 * t;
+      const leftRise = -0.10 * (1 - t);
+      return Y0 + 55 + H * clamp(valley + rightRise + leftRise, 0.10, 0.95);
+    }
+
+    function hillY(pos, minPos, maxPos) {
+      return hillYByT(clamp(norm(pos, minPos, maxPos), 0, 1));
+    }
+
+    function actionName(a) {
+      return ({0:'none', 1:'push_left', 2:'no_push', 3:'push_right'}[a] || '?');
+    }
+
+    function render() {
+      const scene = document.getElementById('scene');
+      const world = document.getElementById('world');
+      if (!scene || !world) return;
+      while (world.firstChild) world.removeChild(world.firstChild);
+
+      const position = n(scene.getAttribute('data-position'), -500);
+      const velocity = n(scene.getAttribute('data-velocity'), 0);
+      const done = n(scene.getAttribute('data-done'), 0);
+      const lastAction = n(scene.getAttribute('data-last-action'), 0);
+      const reward = scene.getAttribute('data-reward') || '0';
+      const minPos = n(scene.getAttribute('data-min-position'), -1200);
+      const maxPos = n(scene.getAttribute('data-max-position'), 600);
+      const goalPos = n(scene.getAttribute('data-goal-position'), 500);
+      const minVel = n(scene.getAttribute('data-min-velocity'), -70);
+      const maxVel = n(scene.getAttribute('data-max-velocity'), 70);
+      const scale = n(scene.getAttribute('data-scale'), 1000);
+
+      // Axes baseline and labels
+      world.appendChild(make('line', {x1:X0, y1:Y0+H+35, x2:X0+W, y2:Y0+H+35, stroke:'#333', 'stroke-width':1.5, 'marker-end':'url(#arrow)'}));
+      world.appendChild(make('text', {x:X0+W+12, y:Y0+H+40, 'font-family':'Arial', 'font-size':12, fill:'#333'}, 'position'));
+
+      [-1200, -600, 0, 500, 600].forEach(p => {
+        const x = sx(p, minPos, maxPos);
+        world.appendChild(make('line', {x1:x, y1:Y0+H+28, x2:x, y2:Y0+H+42, stroke:'#666', 'stroke-width':1}));
+        world.appendChild(make('text', {x:x, y:Y0+H+58, 'text-anchor':'middle', 'font-family':'Arial', 'font-size':11, fill:'#555'}, (p/scale).toFixed(p % 1000 === 0 ? 0 : 1)));
+      });
+
+      // Mountain path
+      let d = '';
+      for (let i = 0; i <= 160; i++) {
+        const t = i / 160;
+        const x = X0 + t * W;
+        const y = hillYByT(t);
+        d += (i === 0 ? 'M' : 'L') + x.toFixed(1) + ',' + y.toFixed(1) + ' ';
+      }
+      const fillD = d + `L ${X0+W},${Y0+H+35} L ${X0},${Y0+H+35} Z`;
+      world.appendChild(make('path', {d:fillD, fill:'url(#hillFill)', opacity:0.92}));
+      world.appendChild(make('path', {d, fill:'none', stroke:'#2d6a4f', 'stroke-width':5, 'stroke-linecap':'round'}));
+      world.appendChild(make('path', {d, fill:'none', stroke:'#ffffff', 'stroke-width':2, 'stroke-linecap':'round', opacity:0.65}));
+
+      // Goal flag
+      const gx = sx(goalPos, minPos, maxPos);
+      const gy = hillY(goalPos, minPos, maxPos) - 70;
+      world.appendChild(make('line', {x1:gx, y1:gy, x2:gx, y2:gy+70, stroke:'#444', 'stroke-width':3}));
+      world.appendChild(make('path', {d:`M ${gx},${gy} L ${gx+48},${gy+12} L ${gx},${gy+24} Z`, fill: done ? '#2ecc71' : '#ffcc33', stroke:'#7d6608', 'stroke-width':1.5}));
+      world.appendChild(make('text', {x:gx+8, y:gy-8, 'font-family':'Arial', 'font-size':13, 'font-weight':'bold', fill:'#333'}, 'Goal 0.5'));
+
+      // Car
+      const cx = sx(position, minPos, maxPos);
+      const cy = hillY(position, minPos, maxPos) - 20;
+      const carColor = done ? '#2ecc71' : '#3498db';
+      const action = actionName(lastAction);
+      const direction = lastAction === 1 ? -1 : lastAction === 3 ? 1 : 0;
+
+      world.appendChild(make('ellipse', {cx:cx, cy:cy+31, rx:38, ry:9, fill:'#000', opacity:0.18}));
+      world.appendChild(make('rect', {x:cx-34, y:cy-16, width:68, height:30, rx:10, fill:carColor, stroke:'#0b3558', 'stroke-width':3, filter:'url(#softShadow)'}));
+      world.appendChild(make('circle', {cx:cx-22, cy:cy+17, r:8, fill:'#222'}));
+      world.appendChild(make('circle', {cx:cx+22, cy:cy+17, r:8, fill:'#222'}));
+      world.appendChild(make('circle', {cx:cx-22, cy:cy+17, r:3, fill:'#ddd'}));
+      world.appendChild(make('circle', {cx:cx+22, cy:cy+17, r:3, fill:'#ddd'}));
+      world.appendChild(make('text', {x:cx, y:cy+4, 'text-anchor':'middle', 'font-family':'Arial', 'font-size':12, 'font-weight':'bold', fill:'white'}, 'MC'));
+
+      if (direction !== 0) {
+        const ax1 = cx + direction * 46;
+        const ax2 = cx + direction * 86;
+        world.appendChild(make('line', {x1:ax1, y1:cy, x2:ax2, y2:cy, stroke:'#e67e22', 'stroke-width':4, 'marker-end':'url(#arrow)'}));
+      }
+
+      // Velocity gauge
+      const gaugeX = X0;
+      const gaugeY = 82;
+      const gaugeW = 220;
+      const vt = clamp((velocity - minVel) / (maxVel - minVel), 0, 1);
+      world.appendChild(make('text', {x:gaugeX, y:gaugeY-12, 'font-family':'Arial', 'font-size':12, fill:'#333'}, 'velocity'));
+      world.appendChild(make('rect', {x:gaugeX, y:gaugeY, width:gaugeW, height:12, rx:6, fill:'#e5e7eb', stroke:'#ccd'}));
+      world.appendChild(make('rect', {x:gaugeX, y:gaugeY, width:gaugeW*vt, height:12, rx:6, fill:'#7c3aed'}));
+      world.appendChild(make('text', {x:gaugeX+gaugeW+12, y:gaugeY+11, 'font-family':'Arial', 'font-size':12, fill:'#333'}, `${(velocity/scale).toFixed(3)}`));
+
+      const status = document.getElementById('txt_status');
+      if (status) {
+        status.textContent = `position=${(position/scale).toFixed(3)} | velocity=${(velocity/scale).toFixed(3)} | action=${action} | reward=${reward} | done=${done}`;
+      }
+    }
+
+    const observer = new MutationObserver(render);
+    observer.observe(document.getElementById('scene'), { attributes: true });
+    render();
+  ]]></script>
+</svg>

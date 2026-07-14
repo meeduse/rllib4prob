@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1000"
+     height="420"
+     viewBox="0 0 1000 420">
+
+  <style>
+    .bg { fill:#f6f8fb; }
+    .road { fill:#3f4650; }
+    .laneMark { stroke:#ffffff; stroke-width:5; stroke-dasharray:32 24; opacity:0.8; }
+    .title { font-family:sans-serif; font-size:24px; font-weight:800; fill:#1f2937; }
+    .subtitle { font-family:sans-serif; font-size:14px; fill:#4b5563; }
+    .label { font-family:sans-serif; font-size:15px; font-weight:700; fill:#111827; }
+    .small { font-family:sans-serif; font-size:13px; fill:#374151; }
+    .value { font-family:monospace; font-size:15px; font-weight:700; fill:#111827; }
+    .panel { fill:white; stroke:#d1d5db; stroke-width:1.2; rx:14; }
+    .dialBg { fill:#ffffff; stroke:#d1d5db; stroke-width:1.2; }
+    .dialArc { fill:none; stroke:#d1d5db; stroke-width:11; stroke-linecap:round; }
+    .dialRed { fill:none; stroke:#ef4444; stroke-width:8; stroke-linecap:round; }
+    .dialGreen { fill:none; stroke:#22c55e; stroke-width:8; stroke-linecap:round; }
+    .dialBlue { fill:none; stroke:#2563eb; stroke-width:8; stroke-linecap:round; }
+    .needle { stroke:#111827; stroke-width:4; stroke-linecap:round; }
+    .tick { stroke:#6b7280; stroke-width:2; }
+    .tickText { font-family:sans-serif; font-size:11px; font-weight:700; fill:#374151; }
+    .centerValue { font-family:monospace; font-size:20px; font-weight:900; fill:#111827; }
+  </style>
+
+  <rect class="bg" width="1000" height="420"/>
+
+  <text class="title" x="30" y="42">BRein Studio - Adaptive Cruise Control</text>
+  <text class="subtitle" x="30" y="66">Highway view with safety control</text>
+
+  <rect class="road" x="0" y="105" width="1000" height="130" rx="0"/>
+  <line id="lane" class="laneMark" x1="0" y1="170" x2="1010" y2="170"/>
+
+  <!-- values updated by VisB and read by JavaScript -->
+  <text id="front_target_x" x="980" y="390" opacity="0.01">1100</text>
+  <text id="road_speed_value" x="980" y="410" opacity="0.01">0</text>
+  <text id="ego_speed_value" x="940" y="390" opacity="0.01">0</text>
+  <text id="speed_diff_angle" x="940" y="410" opacity="0.01">0</text>
+
+  <!-- ego car -->
+  <text class="label" x="355" y="135">EGO</text>
+  <image id="ego_car" href="ego_car.png" x="300" y="160" width="130" height="80"/>
+
+  <!-- front car -->
+  <text id="front_label" class="label" x="870" y="135">FRONT</text>
+  <image id="front_car" href="front_car.png" x="820" y="160" width="130" height="80"/>
+
+  <!-- left dashboard: ego speed -->
+  <g id="speed_dial" transform="translate(185,335)">
+    <circle class="dialBg" cx="0" cy="0" r="76"/>
+    <path class="dialArc" d="M -58 40 A 70 70 0 1 1 58 40"/>
+    <path class="dialBlue" d="M -58 40 A 70 70 0 1 1 58 40"/>
+
+    <line class="tick" x1="-58" y1="40" x2="-49" y2="34"/>
+    <line class="tick" x1="-40" y1="-48" x2="-34" y2="-39"/>
+    <line class="tick" x1="0" y1="-70" x2="0" y2="-58"/>
+    <line class="tick" x1="40" y1="-48" x2="34" y2="-39"/>
+    <line class="tick" x1="58" y1="40" x2="49" y2="34"/>
+
+<text class="tickText" x="-69" y="57">0</text>
+<text id="vmax_q1_txt" class="tickText" x="-54" y="-54">?</text>
+<text id="vmax_q2_txt" class="tickText" x="-8" y="-78">?</text>
+<text id="vmax_q3_txt" class="tickText" x="39" y="-54">?</text>
+<text id="vmax_txt" class="tickText" x="58" y="57">?</text>
+
+    <line id="speed_needle" class="needle" x1="0" y1="0" x2="0" y2="-56"/>
+    <circle cx="0" cy="0" r="8" fill="#111827"/>
+    <text id="ego_speed_display" class="centerValue" x="-13" y="32">?</text>
+    <text class="label" x="-22" y="60">SPEED</text>
+  </g>
+
+  <!-- right dashboard: speed difference -->
+  <g id="diff_dial" transform="translate(355,335)">
+    <circle class="dialBg" cx="0" cy="0" r="76"/>
+    <path class="dialArc" d="M -58 40 A 70 70 0 1 1 58 40"/>
+    <path class="dialRed" d="M -58 40 A 70 70 0 0 1 0 -70"/>
+    <path class="dialGreen" d="M 0 -70 A 70 70 0 0 1 58 40"/>
+
+    <text class="tickText" x="-75" y="57">TOO FAST</text>
+    <text class="tickText" x="-18" y="-78">MATCH</text>
+    <text class="tickText" x="33" y="57">SLOW</text>
+
+    <line id="diff_needle" class="needle" x1="0" y1="0" x2="0" y2="-56"/>
+    <circle cx="0" cy="0" r="8" fill="#111827"/>
+    
+  </g>
+
+  <!-- state panel -->
+  <rect class="panel" x="500" y="255" width="430" height="110" rx="14"/>
+  <text class="label" x="520" y="285">Highway State</text>
+
+  <text class="small" x="520" y="320">safe:</text>
+  <text id="safe_txt" class="value" x="620" y="320">?</text>
+
+  <text class="small" x="520" y="350">collision:</text>
+  <text id="collision_txt" class="value" x="620" y="350">?</text>
+
+  <text class="small" x="760" y="320">reward:</text>
+  <text id="reward_txt" class="value" x="830" y="320">?</text>
+
+<text id="vmax_value" x="940" y="370" opacity="0.01">40</text>
+
+  <script type="application/ecmascript"><![CDATA[
+    let currentX = null;
+    let laneOffset = 0;
+    let speedAngle = -120;
+    let diffAngle = 0;
+
+    function clamp(v, lo, hi) {
+      return Math.max(lo, Math.min(hi, v));
+    }
+
+    function animate() {
+      const targetNode = document.getElementById("front_target_x");
+      const roadSpeedNode = document.getElementById("road_speed_value");
+      const egoSpeedNode = document.getElementById("ego_speed_value");
+      const diffNode = document.getElementById("speed_diff_angle");
+
+      const car = document.getElementById("front_car");
+      const label = document.getElementById("front_label");
+      const lane = document.getElementById("lane");
+      const speedNeedle = document.getElementById("speed_needle");
+      const diffNeedle = document.getElementById("diff_needle");
+      const egoSpeedDisplay = document.getElementById("ego_speed_display");
+
+      /* front car */
+      if (targetNode && car) {
+        const targetX = parseFloat(targetNode.textContent);
+        if (!isNaN(targetX)) {
+          if (currentX === null) currentX = targetX;
+          currentX = currentX + (targetX - currentX) * 0.04;
+          car.setAttribute("x", currentX);
+          if (label) label.setAttribute("x", currentX + 50);
+
+          if (currentX > 1000) {
+            car.setAttribute("visibility", "hidden");
+            if (label) label.setAttribute("visibility", "hidden");
+          } else {
+            car.setAttribute("visibility", "visible");
+            if (label) label.setAttribute("visibility", "visible");
+          }
+        }
+      }
+
+      /* road flow */
+      if (roadSpeedNode && lane) {
+        const roadSpeed = parseFloat(roadSpeedNode.textContent);
+        if (!isNaN(roadSpeed)) {
+          laneOffset = laneOffset + Math.max(0.5, roadSpeed * 0.1);
+          lane.setAttribute("stroke-dashoffset", laneOffset);
+        }
+      }
+
+/* ego speed dial: 0..vmax maps to -120..120 degrees */
+if (egoSpeedNode && speedNeedle) {
+  const s = parseFloat(egoSpeedNode.textContent);
+  const maxNode = document.getElementById("vmax_value");
+  const vmax = maxNode ? parseFloat(maxNode.textContent) : 40;
+
+  if (!isNaN(s) && !isNaN(vmax) && vmax > 0) {
+    const targetAngle =
+        -120 + (clamp(s, 0, vmax) * 240 / vmax);
+
+    speedAngle =
+        speedAngle + (targetAngle - speedAngle) * 0.08;
+
+    speedNeedle.setAttribute(
+        "transform",
+        "rotate(" + speedAngle + ")"
+    );
+
+    if (egoSpeedDisplay) {
+      egoSpeedDisplay.textContent =
+          Math.round(s);
+    }
+  }
+}
+
+      /* speed difference dial: negative=red, positive=green */
+      if (diffNode && diffNeedle) {
+        const a = parseFloat(diffNode.textContent);
+        if (!isNaN(a)) {
+          const targetDiff = clamp(a, -90, 90);
+          diffAngle = diffAngle + (targetDiff - diffAngle) * 0.08;
+          diffNeedle.setAttribute("transform", "rotate(" + diffAngle + ")");
+        }
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
+  ]]></script>
+</svg>

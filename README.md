@@ -139,6 +139,9 @@ mvn clean compile
 mvn -q exec:java -Dexec.args="<ALGORITHM> <REWARD> <EXPLORATION>"
 ```
 
+For the parallel runner, see [docs/guide-experimentations.md](docs/guide-experimentations.md).
+For the architecture overview, see [docs/architecture.md](docs/architecture.md).
+
 Defaults:
 ```
 BACKWARD_INDUCTION ONCEANDFORALL PREPROCESS

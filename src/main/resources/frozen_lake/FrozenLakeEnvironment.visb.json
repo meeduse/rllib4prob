@@ -1,0 +1,26 @@
+{
+  "svg": "FrozenLakeEnvironment.svg",
+  "model-name": "FrozenLakeGrid_4_4",
+  "items": [
+    { "id": "scene", "attr": "data-maxx", "value": "TO_STRING(maxX)" },
+    { "id": "scene", "attr": "data-maxy", "value": "TO_STRING(maxY)" },
+
+    { "id": "scene", "attr": "data-agentx", "value": "TO_STRING(posX)" },
+    { "id": "scene", "attr": "data-agenty", "value": "TO_STRING(posY)" },
+
+    { "id": "scene", "attr": "data-startx", "value": "\"0\"" },
+    { "id": "scene", "attr": "data-starty", "value": "TO_STRING(maxY)" },
+
+    { "id": "scene", "attr": "data-goalx", "value": "TO_STRING(goalX)" },
+    { "id": "scene", "attr": "data-goaly", "value": "TO_STRING(goalY)" },
+
+    { "id": "scene", "attr": "data-holes", "value": "TO_STRING(Holes)" },
+
+    { "id": "scene", "attr": "data-fallen", "value": "TO_STRING(fellInHole)" },
+    { "id": "scene", "attr": "data-reached", "value": "TO_STRING(reachedGoal)" },
+    { "id": "scene", "attr": "data-done", "value": "TO_STRING(fellInHole + reachedGoal)" },
+
+    { "id": "scene", "attr": "data-last-action", "value": "TO_STRING(lastAction)" },
+    { "id": "scene", "attr": "data-reward", "value": "TO_STRING(reward)" }
+  ]
+}

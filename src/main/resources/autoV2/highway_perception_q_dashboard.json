@@ -1,0 +1,24 @@
+{
+  "svg": "highway_perception_q_dashboard.svg",
+  "items": [
+    { "id": "safe_txt", "attr": "text", "value": "safe" },
+    { "id": "collision_txt", "attr": "text", "value": "collision" },
+    { "id": "reward_txt", "attr": "text", "value": "reward" },
+
+    {
+      "id": "front_target_x",
+      "attr": "text",
+      "value": "IF distance_front >= 95 THEN 1100 ELSE 300 + 8 * distance_front END"
+    },
+
+    { "id": "road_speed_value", "attr": "text", "value": "road_speed" },
+    { "id": "ego_speed_value", "attr": "text", "value": "ego_speed + 0" },
+    { "id": "speed_diff_angle", "attr": "text", "value": "4 * (front_speed - ego_speed)" },
+{ "id": "vmax_value", "attr": "text", "value": "vmax" },
+
+{ "id": "vmax_q1_txt", "attr": "text", "value": "vmax / 4" },
+{ "id": "vmax_q2_txt", "attr": "text", "value": "vmax / 2" },
+{ "id": "vmax_q3_txt", "attr": "text", "value": "(3 * vmax) / 4" },
+{ "id": "vmax_txt", "attr": "text", "value": "vmax" }
+  ]
+}

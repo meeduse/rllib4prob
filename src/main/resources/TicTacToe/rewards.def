@@ -1,0 +1,21 @@
+DEFINITIONS
+    SET_PREF_MAXINT == 200 ;
+    SET_PREF_SHOW_EVENTB_ANY_VALUES == FALSE ;
+    SET_PREF_MAX_OPERATIONS == 20 ;
+    SET_PREF_INVARIANT_CHECKING == FALSE ;
+
+reward ==
+    IF win(0) = TRUE THEN
+        1.0
+    ELSE
+        IF win(1) = TRUE THEN
+            -1.0
+        ELSE
+            IF card(dom(square)) = 9 THEN
+                0.0
+            ELSE
+                -0.25
+            END
+        END
+    END
+;

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="460" viewBox="0 0 980 460">
+
+  <defs>
+    <filter id="panelShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.14"/>
+    </filter>
+    <filter id="trainShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-family: system-ui, -apple-system, Segoe UI, sans-serif; font-size: 18px; font-weight: 750; fill: #1f1f1f; }
+    .hint  { font-family: system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; fill: #2a2a2a; opacity: 0.75; }
+
+    .panel { fill: #f2f1ef; stroke: #000; stroke-opacity: 0.10; stroke-width: 2; }
+    .mono  { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; fill: #1f1f1f; }
+
+    .trkBase { stroke: #bdb8b3; stroke-width: 16; stroke-linecap: round; fill: none; }
+    .trkEdge { stroke: #6d6a66; stroke-width: 2; stroke-linecap: round; fill: none; opacity: 0.35; }
+    .node { fill: #6d6a66; opacity: 0.55; }
+
+    .secLbl { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; fill: #2a2a2a; opacity: 0.85; }
+
+    .trDot { fill: #1f1f1f; }
+    .trText { font-family: system-ui, -apple-system, Segoe UI, sans-serif; font-size: 12px; font-weight: 700; fill: #ffffff;
+              dominant-baseline: middle; text-anchor: middle; }
+  </style>
+
+  <text x="24" y="30" class="title">Interlocking</text>
+  <text x="24" y="52" class="hint">Segments: neutre / réservé (bleu) / occupé (orange) / occupé+réservé (rouge)</text>
+
+  <rect x="16" y="70" width="948" height="364" rx="18" ry="18" class="panel" filter="url(#panelShadow)"/>
+
+  <g>
+    <!-- main -->
+    <path id="ss01_seg" class="trkBase" d="M 80 170 L 190 170"/>
+    <path class="trkEdge" d="M 80 162 L 190 162"/><path class="trkEdge" d="M 80 178 L 190 178"/>
+
+    <path id="ss02_seg" class="trkBase" d="M 190 170 L 300 170"/>
+    <path class="trkEdge" d="M 190 162 L 300 162"/><path class="trkEdge" d="M 190 178 L 300 178"/>
+
+    <path id="ss03_seg" class="trkBase" d="M 300 170 L 410 170"/>
+    <path class="trkEdge" d="M 300 162 L 410 162"/><path class="trkEdge" d="M 300 178 L 410 178"/>
+
+    <path id="ss04_seg" class="trkBase" d="M 410 170 L 520 170"/>
+    <path class="trkEdge" d="M 410 162 L 520 162"/><path class="trkEdge" d="M 410 178 L 520 178"/>
+
+    <path id="ss05_seg" class="trkBase" d="M 520 170 L 630 170"/>
+    <path class="trkEdge" d="M 520 162 L 630 162"/><path class="trkEdge" d="M 520 178 L 630 178"/>
+
+    <path id="ss06_seg" class="trkBase" d="M 630 170 L 740 170"/>
+    <path class="trkEdge" d="M 630 162 L 740 162"/><path class="trkEdge" d="M 630 178 L 740 178"/>
+
+    <path id="ss07_seg" class="trkBase" d="M 740 170 L 850 170"/>
+    <path class="trkEdge" d="M 740 162 L 850 162"/><path class="trkEdge" d="M 740 178 L 850 178"/>
+
+    <path id="ss08_seg" class="trkBase" d="M 850 170 L 920 170"/>
+    <path class="trkEdge" d="M 850 162 L 920 162"/><path class="trkEdge" d="M 850 178 L 920 178"/>
+
+    <!-- branch from end of ss03 (= x=410) -->
+    <path id="sb01_seg" class="trkBase" d="M 410 170 L 520 250"/>
+    <path class="trkEdge" d="M 404 165 L 514 245"/><path class="trkEdge" d="M 416 175 L 526 255"/>
+
+    <path id="sb02_seg" class="trkBase" d="M 520 250 L 660 250"/>
+    <path class="trkEdge" d="M 520 242 L 660 242"/><path class="trkEdge" d="M 520 258 L 660 258"/>
+
+    <path id="sb03_seg" class="trkBase" d="M 660 250 L 820 250"/>
+    <path class="trkEdge" d="M 660 242 L 820 242"/><path class="trkEdge" d="M 660 258 L 820 258"/>
+
+    <!-- nodes -->
+    <circle cx="80"  cy="170" r="5" class="node"/>
+    <circle cx="190" cy="170" r="5" class="node"/>
+    <circle cx="300" cy="170" r="5" class="node"/>
+    <circle cx="410" cy="170" r="5" class="node"/>
+    <circle cx="520" cy="170" r="5" class="node"/>
+    <circle cx="630" cy="170" r="5" class="node"/>
+    <circle cx="740" cy="170" r="5" class="node"/>
+    <circle cx="850" cy="170" r="5" class="node"/>
+    <circle cx="920" cy="170" r="5" class="node"/>
+    <circle cx="520" cy="250" r="5" class="node"/>
+    <circle cx="660" cy="250" r="5" class="node"/>
+    <circle cx="820" cy="250" r="5" class="node"/>
+
+    <!-- labels -->
+    <text x="125" y="145" class="secLbl">ss01</text>
+    <text x="235" y="145" class="secLbl">ss02</text>
+    <text x="345" y="145" class="secLbl">ss03</text>
+    <text x="455" y="145" class="secLbl">ss04</text>
+    <text x="565" y="145" class="secLbl">ss05</text>
+    <text x="675" y="145" class="secLbl">ss06</text>
+    <text x="785" y="145" class="secLbl">ss07</text>
+    <text x="885" y="145" class="secLbl">ss08</text>
+
+    <text x="465" y="210" class="secLbl">sb01</text>
+    <text x="585" y="235" class="secLbl">sb02</text>
+    <text x="735" y="235" class="secLbl">sb03</text>
+
+    <!-- Platform 1 : ss03 -->
+<rect x="300" y="108" width="110" height="28" rx="12" ry="12"
+      fill="#ffffff" stroke="#000000" stroke-opacity="0.08" stroke-width="2"/>
+<text x="318" y="128" class="secLbl"
+      style="font-weight:700;opacity:0.7;">Platform 1</text>
+
+<!-- Platform 2 : sb03 -->
+<rect x="680" y="262" width="110" height="28" rx="12" ry="12"
+      fill="#ffffff" stroke="#000000" stroke-opacity="0.08" stroke-width="2"/>
+<text x="698" y="280" class="secLbl"
+      style="font-weight:700;opacity:0.7;">Platform 2</text>
+
+<!-- Platform 3 : ss08 -->
+<rect x="835" y="108" width="110" height="28" rx="12" ry="12"
+      fill="#ffffff" stroke="#000000" stroke-opacity="0.08" stroke-width="2"/>
+<text x="853" y="128" class="secLbl"
+      style="font-weight:700;opacity:0.7;">Platform 3</text>
+
+    <!-- train markers -->
+    <g id="ss01_tr" opacity="0"><circle cx="135" cy="170" r="12" class="trDot" filter="url(#trainShadow)"/><text id="ss01_text" x="135" y="170" class="trText"></text></g>
+    <g id="ss02_tr" opacity="0"><circle cx="245" cy="170" r="12" class="trDot" filter="url(#trainShadow)"/><text id="ss02_text" x="245" y="170" class="trText"></text></g>
+    <g id="ss03_tr" opacity="0"><circle cx="355" cy="170" r="12" class="trDot" filter="url(#trainShadow)"/><text id="ss03_text" x="355" y="170" class="trText"></text></g>
+    <g id="ss04_tr" opacity="0"><circle cx="465" cy="170" r="12" class="trDot" filter="url(#trainShadow)"/><text id="ss04_text" x="465" y="170" class="trText"></text></g>
+    <g id="ss05_tr" opacity="0"><circle cx="575" cy="170" r="12" class="trDot" filter="url(#trainShadow)"/><text id="ss05_text" x="575" y="170" class="trText"></text></g>
+    <g id="ss06_tr" opacity="0"><circle cx="685" cy="170" r="12" class="trDot" filter="url(#trainShadow)"/><text id="ss06_text" x="685" y="170" class="trText"></text></g>
+    <g id="ss07_tr" opacity="0"><circle cx="795" cy="170" r="12" class="trDot" filter="url(#trainShadow)"/><text id="ss07_text" x="795" y="170" class="trText"></text></g>
+    <g id="ss08_tr" opacity="0"><circle cx="885" cy="170" r="12" class="trDot" filter="url(#trainShadow)"/><text id="ss08_text" x="885" y="170" class="trText"></text></g>
+
+    <g id="sb01_tr" opacity="0"><circle cx="465" cy="210" r="12" class="trDot" filter="url(#trainShadow)"/><text id="sb01_text" x="465" y="210" class="trText"></text></g>
+    <g id="sb02_tr" opacity="0"><circle cx="590" cy="250" r="12" class="trDot" filter="url(#trainShadow)"/><text id="sb02_text" x="590" y="250" class="trText"></text></g>
+    <g id="sb03_tr" opacity="0"><circle cx="740" cy="250" r="12" class="trDot" filter="url(#trainShadow)"/><text id="sb03_text" x="740" y="250" class="trText"></text></g>
+  </g>
+
+  <!-- State panel -->
+  <rect x="36" y="308" width="908" height="110" rx="14" ry="14"
+        fill="#ffffff" stroke="#000000" stroke-opacity="0.10" stroke-width="2"/>
+
+  <text x="54" y="332" class="mono">acttrn:</text>
+  <text id="acttrn_text" x="130" y="332" class="mono"></text>
+
+  <text x="54" y="352" class="mono">trainpos:</text>
+  <text id="trainpos_text" x="130" y="352" class="mono"></text>
+
+  <text x="54" y="372" class="mono">resss:</text>
+  <text id="resss_text" x="130" y="372" class="mono"></text>
+
+  <text x="520" y="332" class="mono">traindir:</text>
+  <text id="traindir_text" x="610" y="332" class="mono"></text>
+
+  <text x="520" y="352" class="mono">pending:</text>
+  <text id="pending_text" x="610" y="352" class="mono"></text>
+
+</svg>

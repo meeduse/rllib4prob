@@ -1,0 +1,26 @@
+{
+  "svg": "TaxiDriverEnvironment.svg",
+  "model-name": "TaxiDriverEnvironment",
+  "items": [
+    { "id": "scene", "attr": "data-maxx", "value": "TO_STRING(maxX)" },
+    { "id": "scene", "attr": "data-maxy", "value": "TO_STRING(maxY)" },
+    { "id": "scene", "attr": "data-taxix", "value": "TO_STRING(taxiX)" },
+    { "id": "scene", "attr": "data-taxiy", "value": "TO_STRING(taxiY)" },
+    { "id": "scene", "attr": "data-passenger-in-taxi", "value": "TO_STRING(passengerInTaxi)" },
+    { "id": "scene", "attr": "data-passenger-loc", "value": "TO_STRING(passengerLoc)" },
+    { "id": "scene", "attr": "data-destination", "value": "TO_STRING(destination)" },
+    { "id": "scene", "attr": "data-delivered", "value": "TO_STRING(delivered)" },
+    { "id": "scene", "attr": "data-reward", "value": "TO_STRING(reward)" },
+
+    { "id": "scene", "attr": "data-loc1x", "value": "TO_STRING(locX(1))" },
+    { "id": "scene", "attr": "data-loc1y", "value": "TO_STRING(locY(1))" },
+    { "id": "scene", "attr": "data-loc2x", "value": "TO_STRING(locX(2))" },
+    { "id": "scene", "attr": "data-loc2y", "value": "TO_STRING(locY(2))" },
+    { "id": "scene", "attr": "data-loc3x", "value": "TO_STRING(locX(3))" },
+    { "id": "scene", "attr": "data-loc3y", "value": "TO_STRING(locY(3))" },
+    { "id": "scene", "attr": "data-loc4x", "value": "TO_STRING(locX(4))" },
+    { "id": "scene", "attr": "data-loc4y", "value": "TO_STRING(locY(4))" },
+
+    { "id": "scene", "attr": "data-danger", "value": "TO_STRING(Danger)" }
+  ]
+}

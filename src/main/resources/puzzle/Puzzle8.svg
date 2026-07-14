@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="520" viewBox="0 0 420 520">
+
+  <defs>
+    <!-- Ombre du plateau -->
+    <filter id="boardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10"
+                    flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+
+    <!-- Ombre des tuiles (appliquée via JSON uniquement) -->
+    <filter id="tileShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="5" stdDeviation="4"
+                    flood-color="#000000" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+             font-size: 18px; font-weight: 650; fill: #222222; }
+
+    .hint  { font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+             font-size: 13px; fill: #333333; opacity: 0.75; }
+
+    .num   { font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+             font-size: 44px; font-weight: 750;
+             dominant-baseline: middle;
+             text-anchor: middle;
+             fill: #1b1b1b; }
+  </style>
+
+  <!-- Titre -->
+  <text x="26" y="30" class="title">Puzzle8</text>
+
+  <!-- Plateau -->
+  <g filter="url(#boardShadow)">
+    <!-- Fond du plateau (la case vide doit matcher cette couleur) -->
+    <rect x="44" y="96" width="332" height="332"
+          rx="18" ry="18"
+          fill="#efedea"/>
+  </g>
+
+  <!-- Grille centrée -->
+  <!-- cellSize=92 gap=12 originX=60 originY=114 -->
+
+  <!-- Row 1 -->
+  <rect id="cell_1_1_rect" x="60"  y="114" width="92" height="92"
+        rx="16" ry="16"
+        fill="#d9d9d9"
+        stroke="#2a2a2a"
+        stroke-opacity="0.18"
+        stroke-width="2"/>
+  <text id="cell_1_1_text" class="num" x="106" y="160">?</text>
+
+  <rect id="cell_1_2_rect" x="164" y="114" width="92" height="92"
+        rx="16" ry="16"
+        fill="#d9d9d9"
+        stroke="#2a2a2a"
+        stroke-opacity="0.18"
+        stroke-width="2"/>
+  <text id="cell_1_2_text" class="num" x="210" y="160">?</text>
+
+  <rect id="cell_1_3_rect" x="268" y="114" width="92" height="92"
+        rx="16" ry="16"
+        fill="#d9d9d9"
+        stroke="#2a2a2a"
+        stroke-opacity="0.18"
+        stroke-width="2"/>
+  <text id="cell_1_3_text" class="num" x="314" y="160">?</text>
+
+  <!-- Row 2 -->
+  <rect id="cell_2_1_rect" x="60"  y="218" width="92" height="92"
+        rx="16" ry="16"
+        fill="#d9d9d9"
+        stroke="#2a2a2a"
+        stroke-opacity="0.18"
+        stroke-width="2"/>
+  <text id="cell_2_1_text" class="num" x="106" y="264">?</text>
+
+  <rect id="cell_2_2_rect" x="164" y="218" width="92" height="92"
+        rx="16" ry="16"
+        fill="#d9d9d9"
+        stroke="#2a2a2a"
+        stroke-opacity="0.18"
+        stroke-width="2"/>
+  <text id="cell_2_2_text" class="num" x="210" y="264">?</text>
+
+  <rect id="cell_2_3_rect" x="268" y="218" width="92" height="92"
+        rx="16" ry="16"
+        fill="#d9d9d9"
+        stroke="#2a2a2a"
+        stroke-opacity="0.18"
+        stroke-width="2"/>
+  <text id="cell_2_3_text" class="num" x="314" y="264">?</text>
+
+  <!-- Row 3 -->
+  <rect id="cell_3_1_rect" x="60"  y="322" width="92" height="92"
+        rx="16" ry="16"
+        fill="#d9d9d9"
+        stroke="#2a2a2a"
+        stroke-opacity="0.18"
+        stroke-width="2"/>
+  <text id="cell_3_1_text" class="num" x="106" y="368">?</text>
+
+  <rect id="cell_3_2_rect" x="164" y="322" width="92" height="92"
+        rx="16" ry="16"
+        fill="#d9d9d9"
+        stroke="#2a2a2a"
+        stroke-opacity="0.18"
+        stroke-width="2"/>
+  <text id="cell_3_2_text" class="num" x="210" y="368">?</text>
+
+  <rect id="cell_3_3_rect" x="268" y="322" width="92" height="92"
+        rx="16" ry="16"
+        fill="#d9d9d9"
+        stroke="#2a2a2a"
+        stroke-opacity="0.18"
+        stroke-width="2"/>
+  <text id="cell_3_3_text" class="num" x="314" y="368">?</text>
+
+</svg>

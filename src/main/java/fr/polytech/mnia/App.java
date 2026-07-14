@@ -7,19 +7,11 @@ import java.util.Scanner;
 import de.prob.statespace.State;
 import de.prob.statespace.Transition;
 import fr.polytech.mnia.Environment.Environment;
+import fr.polytech.mnia.Environment.EnvironmentFactory;
 import fr.polytech.mnia.Environment.ExplorationStrategy;
 import fr.polytech.mnia.Environment.RewardStrategy;
 
 public class App {
-    Environment env ;
-
-    private static String resolveMachinePath(RewardStrategy rs) {
-        if (rs == RewardStrategy.EMBEDDED) {
-            return "/TicTacToe/tictac_rewarded.mch";
-        }
-        return "/TicTacToe/tictac.mch";
-    }
-    
     public static void main(String[] args) {
 
         /* Read algorithm + reward strategy */
@@ -45,25 +37,25 @@ public class App {
 
         System.out.println("Selected algorithm = " + algo);
         System.out.println("Selected reward strategy = " + rewardStrategy);
-        
-        // Select B machine according to reward strategy
-        String machinePath = resolveMachinePath(rewardStrategy);
-        System.out.println("Selected machine = " + machinePath);
-        
-        // Create environment
-        TicTacToe env = new TicTacToe(
-                machinePath,
-                rewardStrategy
-        );
 
-        // Create agent (factory already exists)        
-        Agent agent = AgentFactory.create(algo, env);
+        String envName = "tictactoe";
+        if (args.length >= 4) {
+            envName = args[3];
+        }
+
+        System.out.println("Selected environment = " + envName);
+
+        // Create environment from factory
+        Environment env = EnvironmentFactory.create(envName, rewardStrategy);
+
+        // Create agent (factory already exists)
+        Agent agent = AgentFactory.create(algo, env, envName);
 
         if (agent == null) {
             System.err.println("ERROR: Cannot create agent for algorithm " + algo);
             return;
         }
-        
+
         // Run learning with exploration (unless NONE chosen)
         ExplorationStrategy exploration = ExplorationStrategy.PREPROCESS;
 
@@ -81,7 +73,11 @@ public class App {
 
         System.out.println("Nb states discovered (env): " + env.getStateIds().size());
 
-        playStepByStep(agent, env);
+        if (env instanceof TicTacToe ticTacToe) {
+            playStepByStep(agent, ticTacToe);
+        } else {
+            System.out.println("Interactive play is only supported for TicTacToe. Skipping step-by-step display.");
+        }
         System.exit(0);
     }
     

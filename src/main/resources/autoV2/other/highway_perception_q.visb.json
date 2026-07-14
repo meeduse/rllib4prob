@@ -1,0 +1,11 @@
+{
+  "svg": "highway_perception_q.svg",
+  "items": [
+    { "id": "safe_txt", "attr": "text", "value": "safe" },
+    { "id": "collision_txt", "attr": "text", "value": "collision" },
+    { "id": "reward_txt", "attr": "text", "value": "reward" },
+
+    { "id": "front_car", "attr": "x", "value": "250 + 5 * distance_front" },
+    { "id": "front_label", "attr": "x", "value": "300 + 5 * distance_front" }
+  ]
+}

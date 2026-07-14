@@ -1,0 +1,7 @@
+session_id=20260708_095119
+output_root=experiments
+max_jobs=24
+runs_per_configuration=1
+save_logs=1
+environments=Frozen_lake autoV2 Interlocking Puzzle Taxi-driver tictactoe Moutain_Car
+started_at=2026-07-08T09:51:19+02:00

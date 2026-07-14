@@ -1,0 +1,40 @@
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = Puzzle
+Load classical B Machine
+de.prob.exception.ProBError: ProB returned error messages:
+Error: Invalid combination of symbols: '1' and 'r'. Missing operator or separator between literal and identifier. (/home/idania/rllib4prob/target/classes/puzzle/Puzzle8.mch:57:6)
+	at de.prob.scripting.ClassicalBFactory.extract(ClassicalBFactory.java:76)
+	at de.prob.scripting.Api.b_load(Api.java:127)
+	at de.prob.scripting.Api.b_load(Api.java:137)
+	at fr.polytech.mnia.Environment.MyProb.load(MyProb.java:47)
+	at fr.polytech.mnia.Environment.Environment.<init>(Environment.java:54)
+	at fr.polytech.mnia.Environment.ModelBasedEnvironment.<init>(ModelBasedEnvironment.java:11)
+	at fr.polytech.mnia.Environment.PuzzleEnvironment.<init>(PuzzleEnvironment.java:6)
+	at fr.polytech.mnia.Environment.EnvironmentFactory.create(EnvironmentFactory.java:13)
+	at fr.polytech.mnia.App.main(App.java:49)
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:279)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: de.be4.classicalb.core.parser.exceptions.BCompoundException: Invalid combination of symbols: '1' and 'r'. Missing operator or separator between literal and identifier.
+	at de.be4.classicalb.core.parser.BParser.parseInternal(BParser.java:411)
+	at de.be4.classicalb.core.parser.BParser.parseWithPreParsing(BParser.java:436)
+	at de.be4.classicalb.core.parser.BParser.parseMachine(BParser.java:459)
+	at de.be4.classicalb.core.parser.BParser.parseFile(BParser.java:147)
+	at de.prob.scripting.ClassicalBFactory.extract(ClassicalBFactory.java:69)
+	... 10 more
+Caused by: de.be4.classicalb.core.parser.exceptions.BLexerException: Invalid combination of symbols: '1' and 'r'. Missing operator or separator between literal and identifier.
+	at de.be4.classicalb.core.parser.BLexer.ThrowDefaultLexerException(BLexer.java:407)
+	at de.be4.classicalb.core.parser.BLexer.checkForInvalidCombinations(BLexer.java:398)
+	at de.be4.classicalb.core.parser.BLexer.findSyntaxError(BLexer.java:377)
+	at de.be4.classicalb.core.parser.BLexer.filter(BLexer.java:439)
+	at de.be4.classicalb.core.parser.lexer.Lexer.peek(Lexer.java:38)
+	at de.be4.classicalb.core.parser.parser.Parser.parse(Parser.java:174)
+	at de.be4.classicalb.core.parser.BParser.parseInternal(BParser.java:372)
+	... 14 more
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.1.0:java (default-cli) on project rl-lib: An exception occurred while executing the Java class. Cannot invoke "de.prob.statespace.StateSpace.getRoot()" because the return value of "fr.polytech.mnia.Environment.MyProb.getStateSpace()" is null -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

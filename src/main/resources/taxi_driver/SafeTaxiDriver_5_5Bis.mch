@@ -4,7 +4,8 @@ INCLUDES
 	SafeTaxiDriverBis
 PROMOTES
 	south, north, east, west, pickup, dropoff
-        
+DEFINITIONS
+    "rewards.def" ;       
 PROPERTIES
 
     locCount = 4

@@ -57,7 +57,7 @@ OPERATIONS
 */
 
 r <-- push_left =
-    SELECT done = 0 THEN
+    PRE done = 0 THEN
         ANY rawV, clippedV, rawP, clippedP, finalV, newDone WHERE
             rawV = velocity - 1 - ((25 * COSx(scale, 3 * position)) / ratio)
             & clippedV : minVelocity..maxVelocity
@@ -92,7 +92,7 @@ r <-- push_left =
     END;
 
 r <-- no_push =
-    SELECT done = 0 THEN
+    PRE done = 0 THEN
         ANY rawV, clippedV, rawP, clippedP, finalV, newDone WHERE
             rawV = velocity - ((25 * COSx(scale, 3 * position)) / ratio)
             & clippedV : minVelocity..maxVelocity
@@ -127,7 +127,7 @@ r <-- no_push =
     END;
 
 r <-- push_right =
-    SELECT done = 0 THEN
+    PRE done = 0 THEN
         ANY rawV, clippedV, rawP, clippedP, finalV, newDone WHERE
             rawV = velocity + 1 - ((25 * COSx(scale, 3 * position)) / ratio)
             & clippedV : minVelocity..maxVelocity

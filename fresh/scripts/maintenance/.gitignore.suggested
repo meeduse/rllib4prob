@@ -1,0 +1,12 @@
+# Build artifacts
+target/
+
+# Local reversible cleanup archive and IDE/OS files
+.local-archive/
+.DS_Store
+.idea/
+.vscode/
+*.iml
+
+# Do not ignore experiments/ or *.log globally: reproducibility data
+# are intended to remain versionable for the journal artifact.

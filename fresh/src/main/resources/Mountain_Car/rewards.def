@@ -1,0 +1,45 @@
+DEFINITIONS
+
+    SET_PREF_MAXINT == 200000 ;
+    SET_PREF_SHOW_EVENTB_ANY_VALUES == FALSE ;
+    SET_PREF_MAX_OPERATIONS == 20 ;
+    SET_PREF_INVARIANT_CHECKING == FALSE ;
+
+reward ==
+    IF done = 1 THEN
+        10000.0
+    ELSE
+        -0.1
+    END
+;
+
+/*
+  epsilon = 1.0
+  epsilonDecay = true
+  epsilonMin = 0.1
+  epsilonDecayRate = 0.0001
+  maxSteps = 1000
+  alpha = 0.2
+  gamma = 0.99
+*/
+reward_directed ==
+    IF done = 1 THEN
+        10000.0
+    ELSE
+        -10.0
+
+        /* petit guidage distance */
+        - (0.001 * real(
+            IF goalPosition >= position THEN
+                goalPosition - position
+            ELSE
+                position - goalPosition
+            END
+          ))
+
+        /* petit guidage vitesse */
+        + (0.5 * real(
+            IF velocity >= 0 THEN velocity ELSE -velocity END
+          ))
+    END
+;

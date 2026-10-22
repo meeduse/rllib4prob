@@ -1,0 +1,13 @@
+DEFINITIONS
+    SET_PREF_MAXINT == 100 ;
+    SET_PREF_SHOW_EVENTB_ANY_VALUES == TRUE ;
+    SET_PREF_MAX_OPERATIONS == 20 ;
+    SET_PREF_INVARIANT_CHECKING == FALSE ;
+
+reward ==
+    IF Goal THEN
+        5000.0
+    ELSE
+        -1.0
+    END
+;

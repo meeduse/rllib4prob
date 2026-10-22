@@ -1,0 +1,11 @@
+test=IVI_PREPROCESS_vs_RECURSIVE_VQ
+reward=ONCEANDFORALL
+seed=0
+gamma=0.9
+theta=0.01
+maxIterations=100
+updatesPerIteration=500
+ordering=BFS_ACTIONS
+java=openjdk version "24-ea" 2025-03-18
+maven=Apache Maven 3.9.9 (8e8579a9e76f7d015ee5ec7bfcdc97d260186937)
+git_commit=c9001f5bf37785b567883c7aed4e761311081b27

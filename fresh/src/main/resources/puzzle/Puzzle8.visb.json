@@ -1,0 +1,34 @@
+{
+  "model-name": "Puzzle8",
+  "svg": "Puzzle8.svg",
+  "items": [
+    {
+      "repeat": [1,2,3],
+      "for": { "from": 1, "to": 3 },
+      "id": "cell_%1_%0_text",
+      "attr": "textContent",
+      "value": "IF board(%1|->%0)=0 THEN \"\" ELSE FORMAT_TO_STRING(\"~w\",[board(%1|->%0)]) END"
+    },
+    {
+      "repeat": [1,2,3],
+      "for": { "from": 1, "to": 3 },
+      "id": "cell_%1_%0_rect",
+      "attr": "fill",
+      "value": "LET v BE v = board(%1|->%0) IN (IF v=0 THEN \"#efedea\" ELSIF v=1 THEN \"#5b7aa6\" ELSIF v=2 THEN \"#c9893a\" ELSIF v=3 THEN \"#b55b5b\" ELSIF v=4 THEN \"#5f9a93\" ELSIF v=5 THEN \"#5b8f63\" ELSIF v=6 THEN \"#c8b25a\" ELSIF v=7 THEN \"#8b6f9a\" ELSE \"#9a7a5f\" END) END"
+    },
+    {
+      "repeat": [1,2,3],
+      "for": { "from": 1, "to": 3 },
+      "id": "cell_%1_%0_rect",
+      "attr": "stroke",
+      "value": "IF board(%1|->%0)=0 THEN \"#efedea\" ELSE \"#2a2a2a\" END"
+    },
+    {
+      "repeat": [1,2,3],
+      "for": { "from": 1, "to": 3 },
+      "id": "cell_%1_%0_rect",
+      "attr": "filter",
+      "value": "IF board(%1|->%0)=0 THEN \"none\" ELSE \"url(#tileShadow)\" END"
+    }
+  ]
+}

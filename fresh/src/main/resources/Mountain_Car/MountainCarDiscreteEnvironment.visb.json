@@ -1,0 +1,18 @@
+{
+  "svg": "MountainCarDiscreteEnvironment.svg",
+  "model-name": "MountainCarDiscrete",
+  "items": [
+    { "id": "scene", "attr": "data-position", "value": "TO_STRING(position)" },
+    { "id": "scene", "attr": "data-velocity", "value": "TO_STRING(velocity)" },
+    { "id": "scene", "attr": "data-done", "value": "TO_STRING(done)" },
+    { "id": "scene", "attr": "data-last-action", "value": "TO_STRING(lastAction)" },
+    { "id": "scene", "attr": "data-reward", "value": "TO_STRING(reward)" },
+
+    { "id": "scene", "attr": "data-min-position", "value": "TO_STRING(minPosition)" },
+    { "id": "scene", "attr": "data-max-position", "value": "TO_STRING(maxPosition)" },
+    { "id": "scene", "attr": "data-goal-position", "value": "TO_STRING(goalPosition)" },
+    { "id": "scene", "attr": "data-min-velocity", "value": "TO_STRING(minVelocity)" },
+    { "id": "scene", "attr": "data-max-velocity", "value": "TO_STRING(maxVelocity)" },
+    { "id": "scene", "attr": "data-scale", "value": "TO_STRING(scale)" }
+  ]
+}

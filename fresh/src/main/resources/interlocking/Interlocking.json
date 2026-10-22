@@ -1,0 +1,72 @@
+{
+  "model-name": "InterlockingReq",
+  "svg": "Interlocking.svg",
+  "items": [
+    { "id": "acttrn_text", "attr": "textContent", "value": "FORMAT_TO_STRING(\"~w\",[acttrn])" },
+    { "id": "trainpos_text", "attr": "textContent", "value": "FORMAT_TO_STRING(\"~w\",[trainpos])" },
+    { "id": "resss_text", "attr": "textContent", "value": "FORMAT_TO_STRING(\"~w\",[resss])" },
+    { "id": "traindir_text", "attr": "textContent", "value": "FORMAT_TO_STRING(\"~w\",[traindir])" },
+    { "id": "pending_text", "attr": "textContent", "value": "FORMAT_TO_STRING(\"~w\",[pending])" },
+
+    { "id": "ss01_tr", "attr": "opacity", "value": "IF ss01:ran(trainpos) THEN \"1\" ELSE \"0\" END" },
+    { "id": "ss02_tr", "attr": "opacity", "value": "IF ss02:ran(trainpos) THEN \"1\" ELSE \"0\" END" },
+    { "id": "ss03_tr", "attr": "opacity", "value": "IF ss03:ran(trainpos) THEN \"1\" ELSE \"0\" END" },
+    { "id": "ss04_tr", "attr": "opacity", "value": "IF ss04:ran(trainpos) THEN \"1\" ELSE \"0\" END" },
+    { "id": "ss05_tr", "attr": "opacity", "value": "IF ss05:ran(trainpos) THEN \"1\" ELSE \"0\" END" },
+    { "id": "ss06_tr", "attr": "opacity", "value": "IF ss06:ran(trainpos) THEN \"1\" ELSE \"0\" END" },
+    { "id": "ss07_tr", "attr": "opacity", "value": "IF ss07:ran(trainpos) THEN \"1\" ELSE \"0\" END" },
+    { "id": "ss08_tr", "attr": "opacity", "value": "IF ss08:ran(trainpos) THEN \"1\" ELSE \"0\" END" },
+
+    { "id": "sb01_tr", "attr": "opacity", "value": "IF sb01:ran(trainpos) THEN \"1\" ELSE \"0\" END" },
+    { "id": "sb02_tr", "attr": "opacity", "value": "IF sb02:ran(trainpos) THEN \"1\" ELSE \"0\" END" },
+    { "id": "sb03_tr", "attr": "opacity", "value": "IF sb03:ran(trainpos) THEN \"1\" ELSE \"0\" END" },
+
+    { "id": "ss01_text", "attr": "textContent", "value": "IF ss01:ran(trainpos) THEN FORMAT_TO_STRING(\"~w\",[(trainpos~)(ss01)]) ELSE \"\" END" },
+    { "id": "ss02_text", "attr": "textContent", "value": "IF ss02:ran(trainpos) THEN FORMAT_TO_STRING(\"~w\",[(trainpos~)(ss02)]) ELSE \"\" END" },
+    { "id": "ss03_text", "attr": "textContent", "value": "IF ss03:ran(trainpos) THEN FORMAT_TO_STRING(\"~w\",[(trainpos~)(ss03)]) ELSE \"\" END" },
+    { "id": "ss04_text", "attr": "textContent", "value": "IF ss04:ran(trainpos) THEN FORMAT_TO_STRING(\"~w\",[(trainpos~)(ss04)]) ELSE \"\" END" },
+    { "id": "ss05_text", "attr": "textContent", "value": "IF ss05:ran(trainpos) THEN FORMAT_TO_STRING(\"~w\",[(trainpos~)(ss05)]) ELSE \"\" END" },
+    { "id": "ss06_text", "attr": "textContent", "value": "IF ss06:ran(trainpos) THEN FORMAT_TO_STRING(\"~w\",[(trainpos~)(ss06)]) ELSE \"\" END" },
+    { "id": "ss07_text", "attr": "textContent", "value": "IF ss07:ran(trainpos) THEN FORMAT_TO_STRING(\"~w\",[(trainpos~)(ss07)]) ELSE \"\" END" },
+    { "id": "ss08_text", "attr": "textContent", "value": "IF ss08:ran(trainpos) THEN FORMAT_TO_STRING(\"~w\",[(trainpos~)(ss08)]) ELSE \"\" END" },
+
+    { "id": "sb01_text", "attr": "textContent", "value": "IF sb01:ran(trainpos) THEN FORMAT_TO_STRING(\"~w\",[(trainpos~)(sb01)]) ELSE \"\" END" },
+    { "id": "sb02_text", "attr": "textContent", "value": "IF sb02:ran(trainpos) THEN FORMAT_TO_STRING(\"~w\",[(trainpos~)(sb02)]) ELSE \"\" END" },
+    { "id": "sb03_text", "attr": "textContent", "value": "IF sb03:ran(trainpos) THEN FORMAT_TO_STRING(\"~w\",[(trainpos~)(sb03)]) ELSE \"\" END" },
+
+    { "id": "ss01_seg", "attr": "style",
+      "value": "IF (ss01:ran(trainpos) & ss01:dom(resss)) THEN \"stroke:#d66a5e;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF ss01:ran(trainpos) THEN \"stroke:#f0b35a;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF ss01:dom(resss) THEN \"stroke:#6ea0e6;stroke-width:16;stroke-linecap:round;fill:none\" ELSE \"stroke:#bdb8b3;stroke-width:16;stroke-linecap:round;fill:none\" END END END"
+    },
+    { "id": "ss02_seg", "attr": "style",
+      "value": "IF (ss02:ran(trainpos) & ss02:dom(resss)) THEN \"stroke:#d66a5e;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF ss02:ran(trainpos) THEN \"stroke:#f0b35a;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF ss02:dom(resss) THEN \"stroke:#6ea0e6;stroke-width:16;stroke-linecap:round;fill:none\" ELSE \"stroke:#bdb8b3;stroke-width:16;stroke-linecap:round;fill:none\" END END END"
+    },
+    { "id": "ss03_seg", "attr": "style",
+      "value": "IF (ss03:ran(trainpos) & ss03:dom(resss)) THEN \"stroke:#d66a5e;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF ss03:ran(trainpos) THEN \"stroke:#f0b35a;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF ss03:dom(resss) THEN \"stroke:#6ea0e6;stroke-width:16;stroke-linecap:round;fill:none\" ELSE \"stroke:#bdb8b3;stroke-width:16;stroke-linecap:round;fill:none\" END END END"
+    },
+    { "id": "ss04_seg", "attr": "style",
+      "value": "IF (ss04:ran(trainpos) & ss04:dom(resss)) THEN \"stroke:#d66a5e;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF ss04:ran(trainpos) THEN \"stroke:#f0b35a;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF ss04:dom(resss) THEN \"stroke:#6ea0e6;stroke-width:16;stroke-linecap:round;fill:none\" ELSE \"stroke:#bdb8b3;stroke-width:16;stroke-linecap:round;fill:none\" END END END"
+    },
+    { "id": "ss05_seg", "attr": "style",
+      "value": "IF (ss05:ran(trainpos) & ss05:dom(resss)) THEN \"stroke:#d66a5e;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF ss05:ran(trainpos) THEN \"stroke:#f0b35a;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF ss05:dom(resss) THEN \"stroke:#6ea0e6;stroke-width:16;stroke-linecap:round;fill:none\" ELSE \"stroke:#bdb8b3;stroke-width:16;stroke-linecap:round;fill:none\" END END END"
+    },
+    { "id": "ss06_seg", "attr": "style",
+      "value": "IF (ss06:ran(trainpos) & ss06:dom(resss)) THEN \"stroke:#d66a5e;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF ss06:ran(trainpos) THEN \"stroke:#f0b35a;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF ss06:dom(resss) THEN \"stroke:#6ea0e6;stroke-width:16;stroke-linecap:round;fill:none\" ELSE \"stroke:#bdb8b3;stroke-width:16;stroke-linecap:round;fill:none\" END END END"
+    },
+    { "id": "ss07_seg", "attr": "style",
+      "value": "IF (ss07:ran(trainpos) & ss07:dom(resss)) THEN \"stroke:#d66a5e;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF ss07:ran(trainpos) THEN \"stroke:#f0b35a;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF ss07:dom(resss) THEN \"stroke:#6ea0e6;stroke-width:16;stroke-linecap:round;fill:none\" ELSE \"stroke:#bdb8b3;stroke-width:16;stroke-linecap:round;fill:none\" END END END"
+    },
+    { "id": "ss08_seg", "attr": "style",
+      "value": "IF (ss08:ran(trainpos) & ss08:dom(resss)) THEN \"stroke:#d66a5e;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF ss08:ran(trainpos) THEN \"stroke:#f0b35a;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF ss08:dom(resss) THEN \"stroke:#6ea0e6;stroke-width:16;stroke-linecap:round;fill:none\" ELSE \"stroke:#bdb8b3;stroke-width:16;stroke-linecap:round;fill:none\" END END END"
+    },
+
+    { "id": "sb01_seg", "attr": "style",
+      "value": "IF (sb01:ran(trainpos) & sb01:dom(resss)) THEN \"stroke:#d66a5e;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF sb01:ran(trainpos) THEN \"stroke:#f0b35a;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF sb01:dom(resss) THEN \"stroke:#6ea0e6;stroke-width:16;stroke-linecap:round;fill:none\" ELSE \"stroke:#bdb8b3;stroke-width:16;stroke-linecap:round;fill:none\" END END END"
+    },
+    { "id": "sb02_seg", "attr": "style",
+      "value": "IF (sb02:ran(trainpos) & sb02:dom(resss)) THEN \"stroke:#d66a5e;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF sb02:ran(trainpos) THEN \"stroke:#f0b35a;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF sb02:dom(resss) THEN \"stroke:#6ea0e6;stroke-width:16;stroke-linecap:round;fill:none\" ELSE \"stroke:#bdb8b3;stroke-width:16;stroke-linecap:round;fill:none\" END END END"
+    },
+    { "id": "sb03_seg", "attr": "style",
+      "value": "IF (sb03:ran(trainpos) & sb03:dom(resss)) THEN \"stroke:#d66a5e;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF sb03:ran(trainpos) THEN \"stroke:#f0b35a;stroke-width:16;stroke-linecap:round;fill:none\" ELSE IF sb03:dom(resss) THEN \"stroke:#6ea0e6;stroke-width:16;stroke-linecap:round;fill:none\" ELSE \"stroke:#bdb8b3;stroke-width:16;stroke-linecap:round;fill:none\" END END END"
+    }
+  ]
+}

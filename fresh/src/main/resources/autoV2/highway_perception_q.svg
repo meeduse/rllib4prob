@@ -1,0 +1,340 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1000"
+     height="420"
+     viewBox="0 0 1000 420">
+
+  <style>
+    .bg { fill:#f6f8fb; }
+    .road { fill:#3f4650; }
+    .laneMark {
+      stroke:#ffffff;
+      stroke-width:5;
+      stroke-dasharray:32 24;
+      opacity:0.8;
+    }
+
+    .title {
+      font-family:sans-serif;
+      font-size:24px;
+      font-weight:800;
+      fill:#1f2937;
+    }
+
+    .subtitle {
+      font-family:sans-serif;
+      font-size:14px;
+      fill:#4b5563;
+    }
+
+    .label {
+      font-family:sans-serif;
+      font-size:15px;
+      font-weight:700;
+      fill:#111827;
+    }
+
+    .small {
+      font-family:sans-serif;
+      font-size:14px;
+      fill:#374151;
+    }
+
+    .value {
+      font-family:monospace;
+      font-size:15px;
+      font-weight:700;
+      fill:#111827;
+    }
+
+    .panel {
+      fill:white;
+      stroke:#d1d5db;
+      stroke-width:1.2;
+      rx:14;
+    }
+  </style>
+
+  <rect class="bg"
+        width="1000"
+        height="420"/>
+
+  <text class="title"
+        x="30"
+        y="42">
+    BRein Studio — Adaptive Cruise Control
+  </text>
+
+  <text class="subtitle"
+        x="30"
+        y="66">
+    Reinforcement Learning on Perceived Distance
+  </text>
+
+  <rect class="road"
+        x="00"
+        y="105"
+        width="1000"
+        height="130"
+        rx="0"/>
+
+  <line id="lane"
+        class="laneMark"
+        x1="00"
+        y1="170"
+        x2="1010"
+        y2="170"/>
+
+  <!-- données lues par le JS -->
+
+  <text id="ego_speed_value"
+        x="980"
+        y="410"
+        opacity="0.01">
+    0
+  </text>
+
+  <text id="front_target_x"
+        x="980"
+        y="390"
+        opacity="0.01">
+    870
+  </text>
+
+  <!-- voiture ego -->
+
+  <text class="label"
+        x="355"
+        y="135">
+    EGO
+  </text>
+
+  <image id="ego_car"
+         href="ego_car.png"
+         x="300"
+         y="160"
+         width="130"
+         height="80"/>
+
+  <!-- voiture front -->
+
+  <text id="front_label"
+        class="label"
+        x="870"
+        y="135">
+    FRONT
+  </text>
+
+  <image id="front_car"
+         href="front_car.png"
+         x="820"
+         y="160"
+         width="130"
+         height="80"/>
+
+  <!-- panneau -->
+
+  <rect class="panel"
+        x="500"
+        y="255"
+        width="430"
+        height="110"
+        rx="14"/>
+
+  <text class="label"
+        x="520"
+        y="285">
+    Highway State
+  </text>
+
+  <text class="small"
+        x="520"
+        y="320">
+    safe:
+  </text>
+
+  <text id="safe_txt"
+        class="value"
+        x="620"
+        y="320">
+    ?
+  </text>
+
+  <text class="small"
+        x="520"
+        y="350">
+    collision:
+  </text>
+
+  <text id="collision_txt"
+        class="value"
+        x="620"
+        y="350">
+    ?
+  </text>
+
+  <text class="small"
+        x="760"
+        y="320">
+    reward:
+  </text>
+
+  <text id="reward_txt"
+        class="value"
+        x="830"
+        y="320">
+    ?
+  </text>
+
+<!-- jauge accélération -->
+
+<text id="accel_angle"
+      x="980"
+      y="470"
+      opacity="0.01">
+  0
+</text>
+
+<g transform="translate(250,350)">
+
+  <text class="label"
+        x="-55"
+        y="55">
+    SPEED MATCH
+  </text>
+
+  <path d="M -90 0 A 90 90 0 0 1 90 0"
+        fill="none"
+        stroke="#d1d5db"
+        stroke-width="14"/>
+
+  <path d="M -90 0 A 90 90 0 0 1 -15 -88"
+        fill="none"
+        stroke="#ef4444"
+        stroke-width="10"/>
+
+  <path d="M 15 -88 A 90 90 0 0 1 90 0"
+        fill="none"
+        stroke="#22c55e"
+        stroke-width="10"/>
+
+  <line id="accel_needle"
+        x1="0"
+        y1="0"
+        x2="0"
+        y2="-70"
+        stroke="#111827"
+        stroke-width="4"
+        stroke-linecap="round"/>
+
+  <circle cx="0"
+          cy="0"
+          r="8"
+          fill="#111827"/>
+
+</g>
+
+  <script type="application/ecmascript"><![CDATA[
+
+    let currentX = null;
+    let laneOffset = 0;
+
+    function animate() {
+
+      const targetNode =
+          document.getElementById("front_target_x");
+
+      const speedNode =
+          document.getElementById("ego_speed_value");
+
+      const car =
+          document.getElementById("front_car");
+
+      const label =
+          document.getElementById("front_label");
+
+      const lane =
+          document.getElementById("lane");
+
+      /* voiture avant */
+
+      if (targetNode && car) {
+
+        const targetX =
+            parseFloat(targetNode.textContent);
+
+        if (!isNaN(targetX)) {
+
+          if (currentX === null) {
+            currentX = targetX;
+          }
+
+          currentX =
+              currentX +
+              (targetX - currentX) * 0.04;
+
+          car.setAttribute("x", currentX);
+
+          if (label) {
+            label.setAttribute(
+                "x",
+                currentX + 50
+            );
+          }
+        }
+      }
+
+      /* défilement route */
+
+      if (speedNode && lane) {
+
+        const speed =
+            parseFloat(speedNode.textContent);
+
+        if (!isNaN(speed)) {
+
+          laneOffset =
+              laneOffset +
+              Math.max(
+                  0.5,
+                  speed * 0.1
+              );
+
+          lane.setAttribute(
+              "stroke-dashoffset",
+              laneOffset
+          );
+        }
+      }
+
+const accelNode =
+    document.getElementById("accel_angle");
+
+const needle =
+    document.getElementById("accel_needle");
+
+if (accelNode && needle) {
+
+  const angle =
+      parseFloat(accelNode.textContent);
+
+  if (!isNaN(angle)) {
+
+    const clamped =
+        Math.max(-90, Math.min(90, angle));
+
+    needle.setAttribute(
+      "transform",
+      "rotate(" + clamped + ")"
+    );
+  }
+}
+
+      requestAnimationFrame(animate);
+    }
+
+
+    requestAnimationFrame(animate);
+
+  ]]></script>
+
+</svg>

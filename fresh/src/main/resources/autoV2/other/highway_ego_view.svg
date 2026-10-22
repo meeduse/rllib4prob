@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <style>
+    .bg { fill:#f6f8fb; }
+    .road { fill:#3f4650; }
+    .lane { stroke:#ffffff; stroke-width:5; stroke-linecap:round; opacity:0.82; }
+    .title { font-family:sans-serif; font-size:24px; font-weight:800; fill:#1f2937; }
+    .subtitle { font-family:sans-serif; font-size:14px; fill:#4b5563; }
+    .label { font-family:sans-serif; font-size:15px; font-weight:700; fill:#111827; }
+    .small { font-family:sans-serif; font-size:14px; fill:#374151; }
+    .value { font-family:monospace; font-size:15px; font-weight:700; fill:#111827; }
+    .panel { fill:#ffffff; stroke:#d1d5db; stroke-width:1.2; }
+    .ego { fill:#2563eb; stroke:#1e3a8a; stroke-width:2; }
+    .front { fill:#f59e0b; stroke:#92400e; stroke-width:2; }
+    .window { fill:#dbeafe; opacity:0.9; }
+    .wheel { fill:#111827; }
+    .gap { stroke:#22c55e; stroke-width:5; stroke-linecap:round; }
+  </style>
+
+  <rect class="bg" width="1000" height="420"/>
+
+  <text class="title" x="30" y="42">BRein Studio — Ego-centric Adaptive Cruise Control</text>
+  <text class="subtitle" x="30" y="66">EGO is fixed; FRONT moves according to perceived distance</text>
+
+  <rect class="road" x="30" y="105" width="940" height="130" rx="18"/>
+
+  <!-- Lane marks: these are static, robust VisB-compatible elements -->
+  <line class="lane" x1="50" y1="170" x2="90" y2="170"/>
+  <line class="lane" x1="130" y1="170" x2="170" y2="170"/>
+  <line class="lane" x1="210" y1="170" x2="250" y2="170"/>
+  <line class="lane" x1="290" y1="170" x2="330" y2="170"/>
+  <line class="lane" x1="370" y1="170" x2="410" y2="170"/>
+  <line class="lane" x1="450" y1="170" x2="490" y2="170"/>
+  <line class="lane" x1="530" y1="170" x2="570" y2="170"/>
+  <line class="lane" x1="610" y1="170" x2="650" y2="170"/>
+  <line class="lane" x1="690" y1="170" x2="730" y2="170"/>
+  <line class="lane" x1="770" y1="170" x2="810" y2="170"/>
+  <line class="lane" x1="850" y1="170" x2="890" y2="170"/>
+  <line class="lane" x1="930" y1="170" x2="970" y2="170"/>
+
+  <!-- EGO fixed in ego-centric view -->
+  <text class="label" x="210" y="138">EGO</text>
+  <g id="ego_car">
+    <rect class="ego" x="185" y="145" width="100" height="50" rx="16"/>
+    <rect class="window" x="220" y="154" width="28" height="16" rx="4"/>
+    <circle class="wheel" cx="208" cy="198" r="6"/>
+    <circle class="wheel" cx="264" cy="198" r="6"/>
+  </g>
+
+  <!-- FRONT moves with distance_front via transform, more reliable than moving image x -->
+  <text id="front_label" class="label" x="450" y="138">FRONT</text>
+  <g id="front_car" transform="translate(430,145)">
+    <rect class="front" x="0" y="0" width="100" height="50" rx="16"/>
+    <rect class="window" x="35" y="9" width="28" height="16" rx="4"/>
+    <circle class="wheel" cx="23" cy="53" r="6"/>
+    <circle class="wheel" cx="79" cy="53" r="6"/>
+  </g>
+
+  <!-- Distance bar, no dynamic text binding -->
+  <line id="gap_line" class="gap" x1="290" y1="130" x2="430" y2="130"/>
+  <text class="small" x="330" y="122" fill="#22c55e">perceived gap</text>
+
+  <rect class="panel" x="500" y="255" width="430" height="110" rx="14"/>
+  <text class="label" x="520" y="285">Safety metrics</text>
+
+  <text class="small" x="520" y="320">safe:</text>
+  <text id="safe_txt" class="value" x="620" y="320">?</text>
+
+  <text class="small" x="520" y="350">collision:</text>
+  <text id="collision_txt" class="value" x="620" y="350">?</text>
+
+  <text class="small" x="760" y="320">reward:</text>
+  <text id="reward_txt" class="value" x="830" y="320">?</text>
+</svg>

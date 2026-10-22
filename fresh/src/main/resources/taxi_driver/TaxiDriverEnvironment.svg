@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="900"
+     height="950"
+     viewBox="0 0 900 950">
+
+  <rect width="100%" height="100%" fill="white"/>
+
+  <g id="scene"
+     data-maxx="4"
+     data-maxy="4"
+     data-taxix="0"
+     data-taxiy="0"
+     data-passenger-in-taxi="0"
+     data-passenger-loc="1"
+     data-destination="2"
+     data-delivered="0"
+     data-illegal="0"
+     data-reward="0"
+     data-loc1x="0"
+     data-loc1y="4"
+     data-loc2x="4"
+     data-loc2y="4"
+     data-loc3x="0"
+     data-loc3y="0"
+     data-loc4x="3"
+     data-loc4y="0"
+     data-danger="{}">
+
+    <g id="board" transform="translate(60,60)"></g>
+  </g>
+
+  <text id="txt_title"
+        x="60"
+        y="35"
+        font-family="Arial"
+        font-size="20"
+        font-weight="bold"
+        fill="#222">
+    Taxi Driver Environment
+  </text>
+
+  <text id="txt_status"
+        x="60"
+        y="570"
+        font-family="Arial"
+        font-size="14"
+        fill="#333">
+    status
+  </text>
+
+  <text id="txt_legend"
+        x="60"
+        y="592"
+        font-family="Arial"
+        font-size="12"
+        fill="#666">
+    R,G,Y,B = lieux | P = passager | D = destination | T = taxi | triangles = danger
+  </text>
+
+  <script type="text/ecmascript"><![CDATA[
+
+    const NS = 'http://www.w3.org/2000/svg';
+
+    const cell = 70;
+
+    const labels = ['R','G','Y','B'];
+
+    const colors = [
+      '#ffcccc',
+      '#ccffcc',
+      '#fff2b3',
+      '#cce0ff'
+    ];
+
+    function n(v, d=0) {
+      const x = parseInt(v, 10);
+      return Number.isFinite(x) ? x : d;
+    }
+
+    function make(tag, attrs = {}, text = null) {
+
+      const el = document.createElementNS(NS, tag);
+
+      Object.entries(attrs).forEach(([k,v]) => {
+        el.setAttribute(k, String(v));
+      });
+
+      if (text !== null) {
+        el.textContent = text;
+      }
+
+      return el;
+    }
+
+    function parseDanger(raw) {
+
+      const out = new Set();
+
+      const re = /\(?\s*(\d+)\s*\|->\s*(\d+)\s*\)?/g;
+
+      let m;
+
+      while ((m = re.exec(raw || '')) !== null) {
+        out.add(`${m[1]},${m[2]}`);
+      }
+
+      return out;
+    }
+
+    function render() {
+
+      const scene = document.getElementById('scene');
+
+      const board = document.getElementById('board');
+
+      if (!scene || !board) return;
+
+      while (board.firstChild) {
+        board.removeChild(board.firstChild);
+      }
+
+      const maxX = n(scene.getAttribute('data-maxx'), 4);
+      const maxY = n(scene.getAttribute('data-maxy'), 4);
+
+      const taxiX = n(scene.getAttribute('data-taxix'), 0);
+      const taxiY = n(scene.getAttribute('data-taxiy'), 0);
+
+      const pInTaxi =
+        n(scene.getAttribute('data-passenger-in-taxi'), 0);
+
+      const pLoc =
+        n(scene.getAttribute('data-passenger-loc'), 1);
+
+      const dest =
+        n(scene.getAttribute('data-destination'), 2);
+
+      const delivered =
+        n(scene.getAttribute('data-delivered'), 0);
+
+      const illegal =
+        n(scene.getAttribute('data-illegal'), 0);
+
+      const reward =
+        scene.getAttribute('data-reward');
+
+      const danger =
+        parseDanger(scene.getAttribute('data-danger'));
+
+      const locs = [1,2,3,4].map(i => ({
+        x: n(scene.getAttribute(`data-loc${i}x`), 0),
+        y: n(scene.getAttribute(`data-loc${i}y`), 0),
+        label: labels[i-1],
+        color: colors[i-1]
+      }));
+
+      const width = (maxX + 1) * cell;
+      const height = (maxY + 1) * cell;
+
+      const svg = document.documentElement;
+
+      svg.setAttribute(
+        'viewBox',
+        `0 0 ${width + 120} ${height + 180}`
+      );
+
+      svg.setAttribute(
+        'width',
+        width + 120
+      );
+
+      svg.setAttribute(
+        'height',
+        height + 180
+      );
+
+      board.appendChild(
+        make('rect', {
+          x:0,
+          y:0,
+          width,
+          height,
+          fill:'#fafafa',
+          stroke:'#222',
+          'stroke-width':2
+        })
+      );
+
+      for (let y = 0; y <= maxY; y++) {
+
+        for (let x = 0; x <= maxX; x++) {
+
+          const sx = x * cell;
+
+          const sy = (maxY - y) * cell;
+
+          board.appendChild(
+            make('rect', {
+              x:sx,
+              y:sy,
+              width:cell,
+              height:cell,
+              fill:'#f7f7f7',
+              stroke:'#999'
+            })
+          );
+
+          board.appendChild(
+            make('text', {
+              x:sx+8,
+              y:sy+16,
+              'font-family':'Arial',
+              'font-size':11,
+              fill:'#777'
+            }, `${x},${y}`)
+          );
+
+          if (danger.has(`${x},${y}`)) {
+
+            board.appendChild(
+              make('polygon', {
+                points:
+                  `${sx+35},${sy+14} ` +
+                  `${sx+18},${sy+52} ` +
+                  `${sx+52},${sy+52}`,
+                fill:'#ff4d4d',
+                stroke:'#b30000',
+                'stroke-width':2
+              })
+            );
+
+            board.appendChild(
+              make('text', {
+                x:sx+35,
+                y:sy+45,
+                'text-anchor':'middle',
+                'font-family':'Arial',
+                'font-size':16,
+                'font-weight':'bold',
+                fill:'white'
+              }, '!')
+            );
+          }
+        }
+      }
+
+      locs.forEach((l, idx) => {
+
+        const sx = l.x * cell;
+
+        const sy = (maxY - l.y) * cell;
+
+        board.appendChild(
+          make('rect', {
+            x:sx+7,
+            y:sy+7,
+            width:cell-14,
+            height:cell-14,
+            rx:8,
+            fill:l.color,
+            stroke:'#444',
+            'stroke-width':2,
+            opacity:0.80
+          })
+        );
+
+        board.appendChild(
+          make('text', {
+            x:sx+cell-16,
+            y:sy+24,
+            'text-anchor':'middle',
+            'font-family':'Arial',
+            'font-size':18,
+            'font-weight':'bold',
+            fill:'#222'
+          }, l.label)
+        );
+
+        if (
+          pInTaxi === 0 &&
+          pLoc === idx + 1 &&
+          delivered === 0
+        ) {
+
+          board.appendChild(
+            make('circle', {
+              cx:sx+22,
+              cy:sy+48,
+              r:13,
+              fill:'#9b59b6',
+              stroke:'#512e5f',
+              'stroke-width':2
+            })
+          );
+
+          board.appendChild(
+            make('text', {
+              x:sx+22,
+              y:sy+53,
+              'text-anchor':'middle',
+              'font-family':'Arial',
+              'font-size':12,
+              'font-weight':'bold',
+              fill:'white'
+            }, 'P')
+          );
+        }
+
+        if (dest === idx + 1) {
+
+          board.appendChild(
+            make('circle', {
+              cx:sx+48,
+              cy:sy+48,
+              r:13,
+              fill:'#f1c40f',
+              stroke:'#7d6608',
+              'stroke-width':2
+            })
+          );
+
+          board.appendChild(
+            make('text', {
+              x:sx+48,
+              y:sy+53,
+              'text-anchor':'middle',
+              'font-family':'Arial',
+              'font-size':12,
+              'font-weight':'bold',
+              fill:'#222'
+            }, 'D')
+          );
+        }
+      });
+
+      const tx =
+        taxiX * cell + cell/2;
+
+      const ty =
+        (maxY - taxiY) * cell + cell/2;
+
+      board.appendChild(
+        make('rect', {
+          x:tx-22,
+          y:ty-15,
+          width:44,
+          height:30,
+          rx:8,
+          fill: illegal ? '#e67e22' : '#2ca02c',
+          stroke:'#145214',
+          'stroke-width':3
+        })
+      );
+
+      board.appendChild(
+        make('circle', {
+          cx:tx-13,
+          cy:ty+18,
+          r:5,
+          fill:'#222'
+        })
+      );
+
+      board.appendChild(
+        make('circle', {
+          cx:tx+13,
+          cy:ty+18,
+          r:5,
+          fill:'#222'
+        })
+      );
+
+      board.appendChild(
+        make('text', {
+          x:tx,
+          y:ty+5,
+          'text-anchor':'middle',
+          'font-family':'Arial',
+          'font-size':13,
+          'font-weight':'bold',
+          fill:'white'
+        }, pInTaxi ? 'T+P' : 'T')
+      );
+
+      const status =
+        document.getElementById('txt_status');
+
+      if (status) {
+
+        status.setAttribute(
+          'y',
+          height + 95
+        );
+
+        status.textContent =
+          `reward=${reward} | illegal=${illegal} | delivered=${delivered}`;
+      }
+
+      const legend =
+        document.getElementById('txt_legend');
+
+      if (legend) {
+
+        legend.setAttribute(
+          'y',
+          height + 120
+        );
+      }
+    }
+
+    const observer =
+      new MutationObserver(render);
+
+    observer.observe(
+      document.getElementById('scene'),
+      { attributes: true }
+    );
+
+    render();
+
+  ]]></script>
+
+</svg>

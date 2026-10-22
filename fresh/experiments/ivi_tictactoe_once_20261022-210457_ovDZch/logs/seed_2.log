@@ -1,0 +1,19 @@
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = tictactoe
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+..........Model Checking complete. No more error nodes found.Total states: 5479
+
+End of exploration 5478 | Exploration time: 4.858404416 seconds
+IVI_ORDERING method=BFS_ACTIONS states=5478 transitions=16167 orderingSeconds=34.515709
+IVI iteration=11 sample_delta=1.15000000 global_residual=0.900000000
+IVI iteration=22 sample_delta=0.900000000 global_residual=0.810000000
+IVI iteration=33 sample_delta=0.810000000 global_residual=0.00000000
+IVI_RESULT status=CONVERGED seed=2 gamma=0.900000000 theta=0.0100000000 maxIterations=100 updatesPerIteration=500 iterations=33 exploredStates=5478 distinctUpdatedStates=4520 updateBackups=16500 residualBackups=21912 totalBackups=38412 rewardLookups=113356 bellmanResidual=0.00000000 orderingSeconds=34.515709 learningSeconds=43.804416
+REWARD_CACHE strategy=ONCEANDFORALL hits=107879 misses=5477 cachedStates=5477
+Nb states discovered (env): 5478
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

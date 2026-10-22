@@ -1,0 +1,12 @@
+{
+  "svg": "highway_ego_view.svg",
+  "items": [
+    { "id": "safe_txt", "attr": "text", "value": "safe" },
+    { "id": "collision_txt", "attr": "text", "value": "collision" },
+    { "id": "reward_txt", "attr": "text", "value": "reward" },
+
+    { "id": "front_car", "attr": "transform", "value": "translate(300 + 5 * distance_front,145)" },
+    { "id": "front_label", "attr": "x", "value": "320 + 5 * distance_front" },
+    { "id": "gap_line", "attr": "x2", "value": "300 + 5 * distance_front" }
+  ]
+}

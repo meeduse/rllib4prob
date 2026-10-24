@@ -1,0 +1,46 @@
+{
+  "campaignId": "backward_induction_tictactoe_onthefly_recursive_20261023T060152Z_fr7eel5r",
+  "algorithm": "BACKWARD_INDUCTION",
+  "environment": "tictactoe",
+  "rewardStrategy": "ONTHEFLY",
+  "explorationStrategy": "RECURSIVE",
+  "totalRuns": 1,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 1
+  },
+  "successfulRuns": 1,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 1,
+      "mean": 6.739035375,
+      "sampleSD": null,
+      "median": 6.739035375,
+      "min": 6.739035375,
+      "max": 6.739035375
+    },
+    "learningSeconds": {
+      "n": 1,
+      "mean": 86.306706,
+      "sampleSD": null,
+      "median": 86.306706,
+      "min": 86.306706,
+      "max": 86.306706
+    },
+    "totalSeconds": {
+      "n": 1,
+      "mean": 93.045741,
+      "sampleSD": null,
+      "median": 93.045741,
+      "min": 93.045741,
+      "max": 93.045741
+    },
+    "totalBackups": {
+      "n": 1,
+      "mean": 49302.0,
+      "sampleSD": null,
+      "median": 49302.0,
+      "min": 49302.0,
+      "max": 49302.0
+    }
+  }
+}

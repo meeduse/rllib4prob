@@ -1,0 +1,54 @@
+{
+  "campaignId": "modified_policy_iteration_interlockingembedded_embedded_preprocess_20261024T143940Z_you8mo12",
+  "algorithm": "MODIFIED_POLICY_ITERATION",
+  "environment": "interlockingembedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 1,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 1
+  },
+  "successfulRuns": 1,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 1,
+      "mean": 231.431180625,
+      "sampleSD": null,
+      "median": 231.431180625,
+      "min": 231.431180625,
+      "max": 231.431180625
+    },
+    "learningSeconds": {
+      "n": 1,
+      "mean": 152.109265,
+      "sampleSD": null,
+      "median": 152.109265,
+      "min": 152.109265,
+      "max": 152.109265
+    },
+    "totalSeconds": {
+      "n": 1,
+      "mean": 383.540446,
+      "sampleSD": null,
+      "median": 383.540446,
+      "min": 383.540446,
+      "max": 383.540446
+    },
+    "totalBackups": {
+      "n": 1,
+      "mean": 10292904.0,
+      "sampleSD": null,
+      "median": 10292904.0,
+      "min": 10292904.0,
+      "max": 10292904.0
+    },
+    "iterations": {
+      "n": 1,
+      "mean": 17.0,
+      "sampleSD": null,
+      "median": 17.0,
+      "min": 17.0,
+      "max": 17.0
+    }
+  }
+}

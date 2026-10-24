@@ -1,0 +1,54 @@
+{
+  "campaignId": "value_iteration_tictactoe_onceandforall_preprocess_20261023T062350Z_b7oi08vj",
+  "algorithm": "VALUE_ITERATION",
+  "environment": "tictactoe",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 3.3433339872000003,
+      "sampleSD": 0.6112500641668489,
+      "median": 3.0481437705000003,
+      "min": 2.837498666,
+      "max": 4.512662541
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 31.3431247,
+      "sampleSD": 1.3354788438812708,
+      "median": 30.987385500000002,
+      "min": 29.419093,
+      "max": 33.18251
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 34.6864588,
+      "sampleSD": 1.5194093878255466,
+      "median": 34.782529,
+      "min": 32.310142,
+      "max": 36.704233
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 32868.0,
+      "sampleSD": 0.0,
+      "median": 32868.0,
+      "min": 32868.0,
+      "max": 32868.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 5.0,
+      "sampleSD": 0.0,
+      "median": 5.0,
+      "min": 5.0,
+      "max": 5.0
+    }
+  }
+}

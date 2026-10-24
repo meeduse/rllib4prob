@@ -1,0 +1,13 @@
+{
+  "campaignId": "policy_iteration_interlocking_onceandforall_recursive_20261024T134055Z_h9yxxmym",
+  "algorithm": "POLICY_ITERATION",
+  "environment": "interlocking",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "RECURSIVE",
+  "totalRuns": 1,
+  "validationStates": {
+    "INVALID": 1
+  },
+  "successfulRuns": 0,
+  "statisticsOnVerifiedSuccessOnly": {}
+}

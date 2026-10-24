@@ -1,0 +1,45 @@
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = interlockingembedded
+Load classical B Machine
+de.prob.exception.ProBError: ProB returned error messages:
+Error: expecting: not belonging, non inclusion, strict non inclusion, not equal, element of, '<', inclusion, strict inclusion, superset, superset strict, not superset strict, not superset, contains element, not contains element, less equal, '=', '>', greater equal (/Users/idani/rllib4prob/fresh/target/classes/interlocking/rewards.def:13:26)
+	at de.prob.scripting.ClassicalBFactory.extract(ClassicalBFactory.java:79)
+	at de.prob.scripting.Api.b_load(Api.java:65)
+	at de.prob.scripting.Api.b_load(Api.java:75)
+	at fr.polytech.mnia.Environment.MyProb.load(MyProb.java:47)
+	at fr.polytech.mnia.Environment.Environment.<init>(Environment.java:54)
+	at fr.polytech.mnia.Environment.ModelBasedEnvironment.<init>(ModelBasedEnvironment.java:21)
+	at fr.polytech.mnia.Environment.InterlockingEnvironment.<init>(InterlockingEnvironment.java:21)
+	at fr.polytech.mnia.Environment.EnvironmentFactory.create(EnvironmentFactory.java:22)
+	at fr.polytech.mnia.App.main(App.java:55)
+Caused by: de.be4.classicalb.core.parser.exceptions.BCompoundException: expecting: not belonging, non inclusion, strict non inclusion, not equal, element of, '<', inclusion, strict inclusion, superset, superset strict, not superset strict, not superset, contains element, not contains element, less equal, '=', '>', greater equal
+	at de.be4.classicalb.core.parser.exceptions.BCompoundException.withMissingLocations(BCompoundException.java:58)
+	at de.be4.classicalb.core.parser.PreParser.evaluateDefinitionFiles(PreParser.java:238)
+	at de.be4.classicalb.core.parser.PreParser.parse(PreParser.java:174)
+	at de.be4.classicalb.core.parser.BParser.preParsing(BParser.java:445)
+	at de.be4.classicalb.core.parser.BParser.parseWithPreParsing(BParser.java:362)
+	at de.be4.classicalb.core.parser.BParser.parseMachine(BParser.java:390)
+	at de.be4.classicalb.core.parser.BParser.parseFile(BParser.java:156)
+	at de.prob.scripting.ClassicalBFactory.extract(ClassicalBFactory.java:72)
+	... 8 more
+Caused by: de.be4.classicalb.core.parser.exceptions.PreParseException: expecting: not belonging, non inclusion, strict non inclusion, not equal, element of, '<', inclusion, strict inclusion, superset, superset strict, not superset strict, not superset, contains element, not contains element, less equal, '=', '>', greater equal
+	at de.be4.classicalb.core.parser.PreParser.determineType(PreParser.java:390)
+	at de.be4.classicalb.core.parser.PreParser.parse(PreParser.java:183)
+	at de.be4.classicalb.core.parser.BParser.preParsing(BParser.java:445)
+	at de.be4.classicalb.core.parser.BParser.parseWithPreParsing(BParser.java:362)
+	at de.be4.classicalb.core.parser.BParser.parseMachine(BParser.java:390)
+	at de.be4.classicalb.core.parser.PreParser.evaluateDefinitionFiles(PreParser.java:218)
+	... 14 more
+Caused by: de.be4.classicalb.core.parser.parser.ParserException: [13,27] expecting: not belonging, non inclusion, strict non inclusion, not equal, element of, '<', inclusion, strict inclusion, superset, superset strict, not superset strict, not superset, contains element, not contains element, less equal, '=', '>', greater equal
+	at de.be4.classicalb.core.parser.parser.Parser.parse(Parser.java:3324)
+	at de.be4.classicalb.core.parser.PreParser.tryParsing(PreParser.java:429)
+	at de.be4.classicalb.core.parser.PreParser.determineType(PreParser.java:382)
+	... 19 more
+Exception in thread "main" java.lang.NullPointerException: Cannot invoke "de.prob.statespace.StateSpace.getRoot()" because the return value of "fr.polytech.mnia.Environment.MyProb.getStateSpace()" is null
+	at fr.polytech.mnia.Environment.Environment.<init>(Environment.java:58)
+	at fr.polytech.mnia.Environment.ModelBasedEnvironment.<init>(ModelBasedEnvironment.java:21)
+	at fr.polytech.mnia.Environment.InterlockingEnvironment.<init>(InterlockingEnvironment.java:21)
+	at fr.polytech.mnia.Environment.EnvironmentFactory.create(EnvironmentFactory.java:22)
+	at fr.polytech.mnia.App.main(App.java:55)
+RUN_EXIT_CODE=1

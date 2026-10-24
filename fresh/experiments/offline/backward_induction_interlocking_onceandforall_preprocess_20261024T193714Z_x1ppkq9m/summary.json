@@ -1,0 +1,46 @@
+{
+  "campaignId": "backward_induction_interlocking_onceandforall_preprocess_20261024T193714Z_x1ppkq9m",
+  "algorithm": "BACKWARD_INDUCTION",
+  "environment": "interlocking",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 1,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 1
+  },
+  "successfulRuns": 1,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 1,
+      "mean": 137.591163,
+      "sampleSD": null,
+      "median": 137.591163,
+      "min": 137.591163,
+      "max": 137.591163
+    },
+    "learningSeconds": {
+      "n": 1,
+      "mean": 272.850297,
+      "sampleSD": null,
+      "median": 272.850297,
+      "min": 272.850297,
+      "max": 272.850297
+    },
+    "totalSeconds": {
+      "n": 1,
+      "mean": 410.44146,
+      "sampleSD": null,
+      "median": 410.44146,
+      "min": 410.44146,
+      "max": 410.44146
+    },
+    "totalBackups": {
+      "n": 1,
+      "mean": 15033900.0,
+      "sampleSD": null,
+      "median": 15033900.0,
+      "min": 15033900.0,
+      "max": 15033900.0
+    }
+  }
+}

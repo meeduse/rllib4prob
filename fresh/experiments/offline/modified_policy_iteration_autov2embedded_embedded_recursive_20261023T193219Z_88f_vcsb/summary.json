@@ -1,0 +1,54 @@
+{
+  "campaignId": "modified_policy_iteration_autov2embedded_embedded_recursive_20261023T193219Z_88f_vcsb",
+  "algorithm": "MODIFIED_POLICY_ITERATION",
+  "environment": "autov2embedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "RECURSIVE",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 3.367982575,
+      "sampleSD": 0.4689952707857509,
+      "median": 3.1503264580000003,
+      "min": 2.934705709,
+      "max": 4.333154167
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 5.0720644,
+      "sampleSD": 0.24158946110163368,
+      "median": 5.0346435,
+      "min": 4.791395,
+      "max": 5.515807
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 8.4400471,
+      "sampleSD": 0.6638852701154937,
+      "median": 8.208948,
+      "min": 7.811075,
+      "max": 9.848961
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 467922.0,
+      "sampleSD": 0.0,
+      "median": 467922.0,
+      "min": 467922.0,
+      "max": 467922.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 23.0,
+      "sampleSD": 0.0,
+      "median": 23.0,
+      "min": 23.0,
+      "max": 23.0
+    }
+  }
+}

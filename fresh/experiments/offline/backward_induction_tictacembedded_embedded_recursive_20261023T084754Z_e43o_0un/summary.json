@@ -1,0 +1,46 @@
+{
+  "campaignId": "backward_induction_tictacembedded_embedded_recursive_20261023T084754Z_e43o_0un",
+  "algorithm": "BACKWARD_INDUCTION",
+  "environment": "tictacembedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "RECURSIVE",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 37.9840419584,
+      "sampleSD": 1.7502077917441,
+      "median": 37.420821708000005,
+      "min": 36.218736084,
+      "max": 41.057962208
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 8.8747763,
+      "sampleSD": 1.420784112896666,
+      "median": 8.402894,
+      "min": 7.80976,
+      "max": 12.531362
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 46.8588182,
+      "sampleSD": 2.845774958024255,
+      "median": 45.9347175,
+      "min": 44.091969,
+      "max": 53.589324
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 49302.0,
+      "sampleSD": 0.0,
+      "median": 49302.0,
+      "min": 49302.0,
+      "max": 49302.0
+    }
+  }
+}

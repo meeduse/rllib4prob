@@ -1,0 +1,45 @@
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = taxidriver30embedded
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 1477 | Exploration time: 1.197379417 seconds
+IVI_ORDERING method=BFS_ACTIONS states=1477 transitions=5402 orderingSeconds=2.332675
+IVI iteration=3 sample_delta=1000.00000 global_residual=900.000000
+IVI iteration=6 sample_delta=900.000000 global_residual=728.190000
+IVI iteration=9 sample_delta=728.190000 global_residual=655.371000
+IVI iteration=12 sample_delta=589.833900 global_residual=530.194410
+IVI iteration=15 sample_delta=476.518869 global_residual=477.174969
+IVI iteration=18 sample_delta=385.389794 global_residual=346.850815
+IVI iteration=21 sample_delta=312.165733 global_residual=280.470863
+IVI iteration=24 sample_delta=280.470863 global_residual=252.423777
+IVI iteration=27 sample_delta=203.645371 global_residual=183.280834
+IVI iteration=30 sample_delta=183.280834 global_residual=148.108797
+IVI iteration=33 sample_delta=148.108797 global_residual=133.297918
+IVI iteration=36 sample_delta=133.297918 global_residual=119.968126
+IVI iteration=39 sample_delta=96.6375658 global_residual=86.9738092
+IVI iteration=42 sample_delta=78.0222417 global_residual=62.9692478
+IVI iteration=45 sample_delta=50.5704317 global_residual=50.7991996
+IVI iteration=48 sample_delta=45.5133885 global_residual=40.9620497
+IVI iteration=51 sample_delta=40.9620497 global_residual=29.7112396
+IVI iteration=54 sample_delta=26.5900210 global_residual=26.5900210
+IVI iteration=57 sample_delta=21.4028318 global_residual=21.4028318
+IVI iteration=60 sample_delta=15.3716688 global_residual=19.2625486
+IVI iteration=63 sample_delta=13.8345019 global_residual=13.8345019
+IVI iteration=65 sample_delta=11.1074694 global_residual=9.99672249
+IVI iteration=68 sample_delta=8.80994377 global_residual=8.90842086
+IVI iteration=71 sample_delta=8.90842086 global_residual=5.62864786
+IVI iteration=74 sample_delta=4.98601664 global_residual=5.06578308
+IVI iteration=77 sample_delta=3.96688368 global_residual=4.55920477
+IVI iteration=80 sample_delta=4.10328429 global_residual=3.63480613
+IVI iteration=83 sample_delta=2.49218788 global_residual=1.77802826
+IVI iteration=86 sample_delta=1.96633742 global_residual=1.76970368
+IVI iteration=89 sample_delta=1.76970368 global_residual=0.525600178
+IVI iteration=92 sample_delta=0.00000000 global_residual=0.00000000
+IVI_RESULT status=CONVERGED seed=6 gamma=0.900000000 theta=0.0100000000 maxIterations=100 updatesPerIteration=500 iterations=92 exploredStates=1477 distinctUpdatedStates=1476 updateBackups=46000 residualBackups=47264 totalBackups=93264 rewardLookups=341109 bellmanResidual=0.00000000 orderingSeconds=2.332675 learningSeconds=2.878847
+Nb states discovered (env): 1477
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

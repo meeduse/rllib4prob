@@ -1,0 +1,30 @@
+{
+  "id": "interlocking",
+  "description": "InterlockingReq classical B, identical transition graph and reward between ONCEANDFORALL and EMBEDDED; expectedStates obtained from exhaustive ProB equivalence",
+  "algorithms": [
+    "VI",
+    "PI",
+    "MPI",
+    "IVI",
+    "PVI",
+    "BI"
+  ],
+  "explorations": [
+    "PREPROCESS",
+    "RECURSIVE"
+  ],
+  "repetitions": 10,
+  "gamma": 0.9,
+  "theta": 0.01,
+  "biHorizon": 150,
+  "variants": [
+    {
+      "id": "default",
+      "expectedStates": 100226,
+      "environments": {
+        "ONCEANDFORALL": "interlocking",
+        "EMBEDDED": "interlockingembedded"
+      }
+    }
+  ]
+}

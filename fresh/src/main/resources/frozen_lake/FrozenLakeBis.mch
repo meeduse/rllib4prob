@@ -41,60 +41,70 @@ OPERATIONS
 
 r <-- left =
     SELECT reachedGoal = 0 & fellInHole = 0 THEN
-        lastAction := 1 ||
-        r := reward ||
-        IF posX > 0 THEN
-            posX := posX - 1 ||
-            IF (posX - 1 |-> posY) : Holes THEN
-                fellInHole := 1
+        BEGIN
+            lastAction := 1 ||
+            IF posX > 0 THEN
+                posX := posX - 1 ||
+                IF (posX - 1 |-> posY) : Holes THEN
+                    fellInHole := 1
+                END
             END
-        END
+        END;
+        r := reward
     END;
 
 r <-- right =
     SELECT reachedGoal = 0 & fellInHole = 0 THEN
-        lastAction := 2 ||
-        r := reward ||
-        IF posX < maxX THEN
-            posX := posX + 1 ||
-            IF (posX + 1 |-> posY) : Holes THEN
-                fellInHole := 1
+        BEGIN
+            lastAction := 2 ||
+            IF posX < maxX THEN
+                posX := posX + 1 ||
+                IF (posX + 1 |-> posY) : Holes THEN
+                    fellInHole := 1
+                END
             END
-        END
+        END;
+        r := reward
     END;
 
 r <-- up =
     SELECT reachedGoal = 0 & fellInHole = 0 THEN
-        lastAction := 3 ||
-        r := reward ||
-        IF posY < maxY THEN
-            posY := posY + 1 ||
-            IF (posX |-> posY + 1) : Holes THEN
-                fellInHole := 1
+        BEGIN
+            lastAction := 3 ||
+            IF posY < maxY THEN
+                posY := posY + 1 ||
+                IF (posX |-> posY + 1) : Holes THEN
+                    fellInHole := 1
+                END
             END
-        END
+        END;
+        r := reward
     END;
 
 r <-- down =
     SELECT reachedGoal = 0 & fellInHole = 0 THEN
-        lastAction := 4 ||
-        r := reward ||
-        IF posY > 0 THEN
-            posY := posY - 1 ||
-            IF (posX |-> posY - 1) : Holes THEN
-                fellInHole := 1
+        BEGIN
+            lastAction := 4 ||
+            IF posY > 0 THEN
+                posY := posY - 1 ||
+                IF (posX |-> posY - 1) : Holes THEN
+                    fellInHole := 1
+                END
             END
-        END
+        END;
+        r := reward
     END;
 
 r <-- check =
     BEGIN
-        IF posX = goalX & posY = goalY THEN
-            reachedGoal := 1
-        END ||
-        IF (posX |-> posY) : Holes THEN
-            fellInHole := 1
-        END ||
+        BEGIN
+            IF posX = goalX & posY = goalY THEN
+                reachedGoal := 1
+            END ||
+            IF (posX |-> posY) : Holes THEN
+                fellInHole := 1
+            END
+        END;
         r := reward
     END
 

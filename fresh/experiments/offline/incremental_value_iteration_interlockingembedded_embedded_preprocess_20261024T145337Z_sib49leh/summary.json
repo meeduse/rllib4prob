@@ -1,0 +1,13 @@
+{
+  "campaignId": "incremental_value_iteration_interlockingembedded_embedded_preprocess_20261024T145337Z_sib49leh",
+  "algorithm": "INCREMENTAL_VALUE_ITERATION",
+  "environment": "interlockingembedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 1,
+  "validationStates": {
+    "VERIFIED_NONCONVERGENCE": 1
+  },
+  "successfulRuns": 0,
+  "statisticsOnVerifiedSuccessOnly": {}
+}

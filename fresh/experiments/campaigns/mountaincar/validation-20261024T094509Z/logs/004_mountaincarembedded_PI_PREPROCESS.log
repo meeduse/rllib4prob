@@ -1,0 +1,52 @@
+
+COMMAND: bash /Users/idani/rllib4prob/fresh/scripts/experiments/offline/run_campaign.sh --algorithm PI --reward EMBEDDED --exploration PREPROCESS --environment mountaincarembedded --count 1 --expected-states 12047
+Compiling once and resolving the runtime classpath...
+
+New campaign: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_mountaincarembedded_embedded_preprocess_20261024T094629Z_9i1e7vy8
+Snapshot: 116 source/config files
+
+========== POLICY_ITERATION repetition 1 (1/1) ==========
+Selected algorithm = POLICY_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = mountaincarembedded
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.........Model Checking complete. No more error nodes found.Total states: 12049
+
+End of exploration 12047 | Exploration time: 4.118833959 seconds
+PI iteration=1 evaluation_sweeps=26 policy_residual=0.00855026633 policy_stable=false bellman_residual=NaN
+PI iteration=2 evaluation_sweeps=32 policy_residual=0.00803633621 policy_stable=false bellman_residual=NaN
+PI iteration=3 evaluation_sweeps=68 policy_residual=7.73554010e-05 policy_stable=false bellman_residual=NaN
+PI iteration=4 evaluation_sweeps=87 policy_residual=4.40994755e-05 policy_stable=false bellman_residual=NaN
+PI iteration=5 evaluation_sweeps=103 policy_residual=1.93632598e-06 policy_stable=false bellman_residual=NaN
+PI iteration=6 evaluation_sweeps=117 policy_residual=4.42969275e-07 policy_stable=false bellman_residual=NaN
+PI iteration=7 evaluation_sweeps=160 policy_residual=4.77311080e-09 policy_stable=false bellman_residual=NaN
+PI iteration=8 evaluation_sweeps=176 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=9 evaluation_sweeps=193 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=10 evaluation_sweeps=203 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=11 evaluation_sweeps=215 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=12 evaluation_sweeps=222 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=13 evaluation_sweeps=227 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=14 evaluation_sweeps=232 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=15 evaluation_sweeps=237 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=16 evaluation_sweeps=241 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=17 evaluation_sweeps=245 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=18 evaluation_sweeps=248 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=19 evaluation_sweeps=250 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=20 evaluation_sweeps=252 policy_residual=0.00000000 policy_stable=true bellman_residual=0.00000000
+PI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 maxEvaluationSweeps=10000 iterations=20 evaluationSweeps=252 exploredStates=12047 evaluationBackups=2989224 improvementBackups=237240 residualBackups=265034 totalBackups=3491498 rewardLookups=4009356 policyStable=true policyResidual=0.00000000 bellmanResidual=0.00000000 learningSeconds=18.439611
+Nb states discovered (env): 12047
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+CHECK run 0: status=CONVERGED verification=VERIFIED_SUCCESS
+
+Completed: 1/1 verified successful runs
+Breakdown: {'VERIFIED_SUCCESS': 1}
+totalSeconds: mean=22.558445 sample_sd=n/a
+learningSeconds: mean=18.439611 sample_sd=n/a
+explorationSeconds: mean=4.118834 sample_sd=n/a
+totalBackups: mean=3491498.000000 sample_sd=n/a
+CSV: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_mountaincarembedded_embedded_preprocess_20261024T094629Z_9i1e7vy8/results.csv
+Summary: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_mountaincarembedded_embedded_preprocess_20261024T094629Z_9i1e7vy8/summary.json
+All raw logs preserved in: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_mountaincarembedded_embedded_preprocess_20261024T094629Z_9i1e7vy8/logs

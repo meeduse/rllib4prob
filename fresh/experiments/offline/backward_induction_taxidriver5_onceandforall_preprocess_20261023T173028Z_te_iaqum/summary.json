@@ -1,0 +1,46 @@
+{
+  "campaignId": "backward_induction_taxidriver5_onceandforall_preprocess_20261023T173028Z_te_iaqum",
+  "algorithm": "BACKWARD_INDUCTION",
+  "environment": "taxidriver5",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 0.0169465125,
+      "sampleSD": 0.0056839174490728025,
+      "median": 0.016069396,
+      "min": 0.011823042,
+      "max": 0.03086875
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 0.1468613,
+      "sampleSD": 0.043931868521483224,
+      "median": 0.1483015,
+      "min": 0.097337,
+      "max": 0.220556
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 0.1638078,
+      "sampleSD": 0.048306827904321954,
+      "median": 0.1645005,
+      "min": 0.10916,
+      "max": 0.241458
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 6450.0,
+      "sampleSD": 0.0,
+      "median": 6450.0,
+      "min": 6450.0,
+      "max": 6450.0
+    }
+  }
+}

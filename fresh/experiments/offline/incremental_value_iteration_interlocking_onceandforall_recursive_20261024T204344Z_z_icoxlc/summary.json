@@ -1,0 +1,62 @@
+{
+  "campaignId": "incremental_value_iteration_interlocking_onceandforall_recursive_20261024T204344Z_z_icoxlc",
+  "algorithm": "INCREMENTAL_VALUE_ITERATION",
+  "environment": "interlocking",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "RECURSIVE",
+  "totalRuns": 1,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 1
+  },
+  "successfulRuns": 1,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 1,
+      "mean": 306.85830975,
+      "sampleSD": null,
+      "median": 306.85830975,
+      "min": 306.85830975,
+      "max": 306.85830975
+    },
+    "orderingSeconds": {
+      "n": 1,
+      "mean": 249.267996,
+      "sampleSD": null,
+      "median": 249.267996,
+      "min": 249.267996,
+      "max": 249.267996
+    },
+    "learningSeconds": {
+      "n": 1,
+      "mean": 329.960942,
+      "sampleSD": null,
+      "median": 329.960942,
+      "min": 329.960942,
+      "max": 329.960942
+    },
+    "totalSeconds": {
+      "n": 1,
+      "mean": 636.819252,
+      "sampleSD": null,
+      "median": 636.819252,
+      "min": 636.819252,
+      "max": 636.819252
+    },
+    "totalBackups": {
+      "n": 1,
+      "mean": 15137176.0,
+      "sampleSD": null,
+      "median": 15137176.0,
+      "min": 15137176.0,
+      "max": 15137176.0
+    },
+    "iterations": {
+      "n": 1,
+      "mean": 1504.0,
+      "sampleSD": null,
+      "median": 1504.0,
+      "min": 1504.0,
+      "max": 1504.0
+    }
+  }
+}

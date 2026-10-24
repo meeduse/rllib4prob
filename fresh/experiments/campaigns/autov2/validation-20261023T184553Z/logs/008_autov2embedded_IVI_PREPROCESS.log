@@ -1,0 +1,46 @@
+
+COMMAND: bash /Users/idani/rllib4prob/fresh/scripts/experiments/offline/run_campaign.sh --algorithm IVI --reward EMBEDDED --exploration PREPROCESS --environment autov2embedded --count 1 --expected-states 2961
+Compiling once and resolving the runtime classpath...
+
+New campaign: /Users/idani/rllib4prob/fresh/experiments/offline/incremental_value_iteration_autov2embedded_embedded_preprocess_20261023T184743Z_pu6gojcr
+Snapshot: 116 source/config files
+
+========== INCREMENTAL_VALUE_ITERATION seed 0 (1/1) ==========
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = autov2embedded
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+...Model Checking complete. No more error nodes found.Total states: 2962
+
+End of exploration 2961 | Exploration time: 1.139997917 seconds
+IVI_ORDERING method=BFS_ACTIONS states=2961 transitions=10630 orderingSeconds=4.323514
+IVI iteration=6 sample_delta=10000.0000 global_residual=8050.00000
+IVI iteration=12 sample_delta=4643.73032 global_residual=3646.17032
+IVI iteration=18 sample_delta=4452.11286 global_residual=4006.90157
+IVI iteration=24 sample_delta=3618.75021 global_residual=3666.60524
+IVI iteration=30 sample_delta=2740.81213 global_residual=3182.12532
+IVI iteration=36 sample_delta=2533.62369 global_residual=2280.26132
+IVI iteration=42 sample_delta=1897.22601 global_residual=2612.65577
+IVI iteration=48 sample_delta=2052.80609 global_residual=2116.25118
+IVI iteration=54 sample_delta=1860.85635 global_residual=1483.64775
+IVI iteration=60 sample_delta=1283.71091 global_residual=1679.13848
+IVI iteration=66 sample_delta=1495.67528 global_residual=1511.22463
+IVI iteration=72 sample_delta=1154.23575 global_residual=1360.10217
+IVI iteration=77 sample_delta=1360.10217 global_residual=1224.09195
+IVI iteration=83 sample_delta=957.754834 global_residual=841.437861
+IVI iteration=89 sample_delta=804.929516 global_residual=757.294075
+IVI iteration=95 sample_delta=681.564667 global_residual=681.564667
+IVI iteration=100 sample_delta=696.830589 global_residual=639.745865
+IVI_RESULT status=ITERATION_LIMIT_REACHED seed=0 gamma=0.900000000 theta=0.0100000000 maxIterations=100 updatesPerIteration=500 iterations=100 exploredStates=2961 distinctUpdatedStates=2940 updateBackups=50000 residualBackups=53298 totalBackups=103298 rewardLookups=370838 bellmanResidual=639.745865 orderingSeconds=4.323514 learningSeconds=5.397717
+Nb states discovered (env): 2961
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+CHECK run 0: status=ITERATION_LIMIT_REACHED verification=VERIFIED_NONCONVERGENCE
+
+Completed: 0/1 verified successful runs
+Breakdown: {'VERIFIED_NONCONVERGENCE': 1}
+CSV: /Users/idani/rllib4prob/fresh/experiments/offline/incremental_value_iteration_autov2embedded_embedded_preprocess_20261023T184743Z_pu6gojcr/results.csv
+Summary: /Users/idani/rllib4prob/fresh/experiments/offline/incremental_value_iteration_autov2embedded_embedded_preprocess_20261023T184743Z_pu6gojcr/summary.json
+All raw logs preserved in: /Users/idani/rllib4prob/fresh/experiments/offline/incremental_value_iteration_autov2embedded_embedded_preprocess_20261023T184743Z_pu6gojcr/logs

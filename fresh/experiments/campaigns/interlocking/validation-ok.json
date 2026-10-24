@@ -1,0 +1,10 @@
+{
+  "schema": "offline-campaign-manager-v1",
+  "campaign": "interlocking",
+  "sourceFingerprint": "8669badb8a8d19cffc1421d459ef2ba6dfad8b7693a10b33f2a42b19882e22a5",
+  "manifestSha256": "5a530132d3abe61b293f683288bfdbe29f64d4de5964d2d2a04ef4f13f0101c5",
+  "report": "/Users/idani/rllib4prob/fresh/experiments/campaigns/interlocking/validation-20261024T182636Z/validation.csv",
+  "reportSha256": "4e38d7ac7d00cc7fbff33d63653265d3e909fe4fa58059d644b30fbe05289cc3",
+  "configurations": 24,
+  "timeUtc": "2026-10-24T21:38:16.869525+00:00"
+}

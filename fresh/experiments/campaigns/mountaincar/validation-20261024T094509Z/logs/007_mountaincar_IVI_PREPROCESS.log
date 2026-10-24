@@ -1,0 +1,35 @@
+
+COMMAND: bash /Users/idani/rllib4prob/fresh/scripts/experiments/offline/run_campaign.sh --algorithm IVI --reward ONCEANDFORALL --exploration PREPROCESS --environment mountaincar --count 1 --expected-states 12047
+Compiling once and resolving the runtime classpath...
+
+New campaign: /Users/idani/rllib4prob/fresh/experiments/offline/incremental_value_iteration_mountaincar_onceandforall_preprocess_20261024T094751Z__b5q1a3p
+Snapshot: 116 source/config files
+
+========== INCREMENTAL_VALUE_ITERATION seed 0 (1/1) ==========
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = mountaincar
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+........Model Checking complete. No more error nodes found.Total states: 12049
+
+End of exploration 12047 | Exploration time: 3.711755375 seconds
+IVI_ORDERING method=BFS_ACTIONS states=12047 transitions=35586 orderingSeconds=18.525502
+IVI iteration=25 sample_delta=9000.00000 global_residual=9000.00000
+IVI iteration=49 sample_delta=9000.00000 global_residual=8100.00000
+IVI iteration=73 sample_delta=7289.91900 global_residual=6560.92710
+IVI iteration=97 sample_delta=5904.76149 global_residual=5904.83439
+IVI iteration=100 sample_delta=5314.28534 global_residual=5904.83439
+IVI_RESULT status=ITERATION_LIMIT_REACHED seed=0 gamma=0.900000000 theta=0.0100000000 maxIterations=100 updatesPerIteration=500 iterations=100 exploredStates=12047 distinctUpdatedStates=11862 updateBackups=50000 residualBackups=72282 totalBackups=122282 rewardLookups=361206 bellmanResidual=5904.83439 orderingSeconds=18.525502 learningSeconds=24.608001
+REWARD_CACHE strategy=ONCEANDFORALL hits=349160 misses=12046 cachedStates=12046
+Nb states discovered (env): 12047
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+CHECK run 0: status=ITERATION_LIMIT_REACHED verification=VERIFIED_NONCONVERGENCE
+
+Completed: 0/1 verified successful runs
+Breakdown: {'VERIFIED_NONCONVERGENCE': 1}
+CSV: /Users/idani/rllib4prob/fresh/experiments/offline/incremental_value_iteration_mountaincar_onceandforall_preprocess_20261024T094751Z__b5q1a3p/results.csv
+Summary: /Users/idani/rllib4prob/fresh/experiments/offline/incremental_value_iteration_mountaincar_onceandforall_preprocess_20261024T094751Z__b5q1a3p/summary.json
+All raw logs preserved in: /Users/idani/rllib4prob/fresh/experiments/offline/incremental_value_iteration_mountaincar_onceandforall_preprocess_20261024T094751Z__b5q1a3p/logs

@@ -1,0 +1,46 @@
+{
+  "campaignId": "backward_induction_taxidriver10embedded_embedded_preprocess_20261023T174236Z_zdtrkfkt",
+  "algorithm": "BACKWARD_INDUCTION",
+  "environment": "taxidriver10embedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 0.036654046,
+      "sampleSD": 0.0058543090382378845,
+      "median": 0.0344717915,
+      "min": 0.034223625,
+      "max": 0.053182209
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 0.3957115,
+      "sampleSD": 0.04735383789268477,
+      "median": 0.3822705,
+      "min": 0.355689,
+      "max": 0.503858
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 0.4323655,
+      "sampleSD": 0.05210994953887831,
+      "median": 0.4173655,
+      "min": 0.390133,
+      "max": 0.55704
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 24750.0,
+      "sampleSD": 0.0,
+      "median": 24750.0,
+      "min": 24750.0,
+      "max": 24750.0
+    }
+  }
+}

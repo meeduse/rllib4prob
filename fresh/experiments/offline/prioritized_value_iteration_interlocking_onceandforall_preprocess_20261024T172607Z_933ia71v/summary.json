@@ -1,0 +1,13 @@
+{
+  "campaignId": "prioritized_value_iteration_interlocking_onceandforall_preprocess_20261024T172607Z_933ia71v",
+  "algorithm": "PRIORITIZED_VALUE_ITERATION",
+  "environment": "interlocking",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 1,
+  "validationStates": {
+    "VERIFIED_NONCONVERGENCE": 1
+  },
+  "successfulRuns": 0,
+  "statisticsOnVerifiedSuccessOnly": {}
+}

@@ -1,0 +1,54 @@
+{
+  "campaignId": "value_iteration_tictactoe_onthefly_recursive_20261023T101446Z_f9ln69qc",
+  "algorithm": "VALUE_ITERATION",
+  "environment": "tictactoe",
+  "rewardStrategy": "ONTHEFLY",
+  "explorationStrategy": "RECURSIVE",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 6.2844754542,
+      "sampleSD": 0.2840889920343492,
+      "median": 6.2325805,
+      "min": 5.98789575,
+      "max": 6.674414917
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 83.5020223,
+      "sampleSD": 1.3530485245229702,
+      "median": 82.75832750000001,
+      "min": 82.421983,
+      "max": 86.14083
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 89.7864976,
+      "sampleSD": 1.5712995294000147,
+      "median": 89.1638275,
+      "min": 88.449236,
+      "max": 92.670643
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 27390.0,
+      "sampleSD": 0.0,
+      "median": 27390.0,
+      "min": 27390.0,
+      "max": 27390.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 4.0,
+      "sampleSD": 0.0,
+      "median": 4.0,
+      "min": 4.0,
+      "max": 4.0
+    }
+  }
+}

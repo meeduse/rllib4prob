@@ -1,0 +1,13 @@
+{
+  "campaignId": "backward_induction_tictacembedded_embedded_preprocess_20261023T054149Z_4wiquzz8",
+  "algorithm": "BACKWARD_INDUCTION",
+  "environment": "tictacembedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 1,
+  "validationStates": {
+    "INVALID": 1
+  },
+  "successfulRuns": 0,
+  "statisticsOnVerifiedSuccessOnly": {}
+}

@@ -1,0 +1,59 @@
+
+COMMAND: bash /Users/idani/rllib4prob/fresh/scripts/experiments/offline/run_campaign.sh --algorithm VI --reward EMBEDDED --exploration PREPROCESS --environment mountaincarembedded --count 1 --expected-states 12047
+Compiling once and resolving the runtime classpath...
+
+New campaign: /Users/idani/rllib4prob/fresh/experiments/offline/value_iteration_mountaincarembedded_embedded_preprocess_20261024T094537Z_s1tfu2tn
+Snapshot: 116 source/config files
+
+========== VALUE_ITERATION repetition 1 (1/1) ==========
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = mountaincarembedded
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.......Model Checking complete. No more error nodes found.Total states: 12049
+
+End of exploration 12047 | Exploration time: 3.451535333 seconds
+VI iteration=1 sweep_delta=10000.0000
+VI iteration=2 sweep_delta=9000.00000
+VI iteration=3 sweep_delta=8100.00000
+VI iteration=4 sweep_delta=7290.00000
+VI iteration=5 sweep_delta=5904.83439
+VI iteration=6 sweep_delta=5314.35095
+VI iteration=7 sweep_delta=4782.91586
+VI iteration=8 sweep_delta=4304.62427
+VI iteration=9 sweep_delta=3486.70261
+VI iteration=10 sweep_delta=2829.35732
+VI iteration=11 sweep_delta=2515.51535
+VI iteration=12 sweep_delta=2263.96381
+VI iteration=13 sweep_delta=1978.84557
+VI iteration=14 sweep_delta=1780.96101
+VI iteration=15 sweep_delta=1602.86491
+VI iteration=16 sweep_delta=1358.82249
+VI iteration=17 sweep_delta=1192.03400
+VI iteration=18 sweep_delta=614.714006
+VI iteration=19 sweep_delta=304.826922
+VI iteration=20 sweep_delta=266.899602
+VI iteration=21 sweep_delta=240.209642
+VI iteration=22 sweep_delta=207.916869
+VI iteration=23 sweep_delta=151.571397
+VI iteration=24 sweep_delta=136.414258
+VI iteration=25 sweep_delta=52.3399968
+VI iteration=26 sweep_delta=0.00000000
+VI_RESIDUAL iteration=26 global_residual=0.00000000
+VI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=200 iterations=26 exploredStates=12047 updateBackups=313222 residualBackups=12047 totalBackups=325269 rewardLookups=960822 bellmanResidual=0.00000000 learningSeconds=16.921685
+Nb states discovered (env): 12047
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+CHECK run 0: status=CONVERGED verification=VERIFIED_SUCCESS
+
+Completed: 1/1 verified successful runs
+Breakdown: {'VERIFIED_SUCCESS': 1}
+totalSeconds: mean=20.373220 sample_sd=n/a
+learningSeconds: mean=16.921685 sample_sd=n/a
+explorationSeconds: mean=3.451535 sample_sd=n/a
+totalBackups: mean=325269.000000 sample_sd=n/a
+CSV: /Users/idani/rllib4prob/fresh/experiments/offline/value_iteration_mountaincarembedded_embedded_preprocess_20261024T094537Z_s1tfu2tn/results.csv
+Summary: /Users/idani/rllib4prob/fresh/experiments/offline/value_iteration_mountaincarembedded_embedded_preprocess_20261024T094537Z_s1tfu2tn/summary.json
+All raw logs preserved in: /Users/idani/rllib4prob/fresh/experiments/offline/value_iteration_mountaincarembedded_embedded_preprocess_20261024T094537Z_s1tfu2tn/logs

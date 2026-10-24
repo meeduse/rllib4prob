@@ -1,0 +1,39 @@
+/* pour exécuter */
+
+cd /Users/idani/rllib4prob/fresh
+
+for exploration in PREPROCESS RECURSIVE
+do
+    for algo in VI PI MPI IVI PVI BI
+    do
+        echo "========== $algo / ONCEANDFORALL / $exploration =========="
+
+        bash scripts/experiments/offline/run_campaign.sh \
+          --algorithm "$algo" \
+          --reward ONCEANDFORALL \
+          --exploration "$exploration" \
+          --environment frozenlake10 \
+          --count 10 \
+          --expected-states 304
+
+        echo "========== $algo / EMBEDDED / $exploration =========="
+
+        bash scripts/experiments/offline/run_campaign.sh \
+          --algorithm "$algo" \
+          --reward EMBEDDED \
+          --exploration "$exploration" \
+          --environment frozenlake10embedded \
+          --count 10 \
+          --expected-states 304
+    done
+done
+
+/* Pour regrouper les résultats */
+cd /Users/idani/rllib4prob/fresh
+
+find experiments/offline -type f \
+  \( -name "results.csv" -o -name "summary.json" \) \
+  -path "*frozenlake10*" \
+  -print | zip -q frozenlake10_final_results.zip -@
+
+

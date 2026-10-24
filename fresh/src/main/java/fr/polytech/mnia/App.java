@@ -7,9 +7,14 @@ import java.util.Scanner;
 import de.prob.statespace.State;
 import de.prob.statespace.Transition;
 import fr.polytech.mnia.Environment.Environment;
+import fr.polytech.mnia.Environment.FrozenLakeEnvironment;
 import fr.polytech.mnia.Environment.EnvironmentFactory;
 import fr.polytech.mnia.Environment.ExplorationStrategy;
 import fr.polytech.mnia.Environment.RewardStrategy;
+import fr.polytech.mnia.Environment.InterlockingEnvironment;
+import fr.polytech.mnia.Environment.MountainCarEnvironment;
+import fr.polytech.mnia.Environment.AutoV2Environment;
+import fr.polytech.mnia.Environment.TaxiDriverEnvironment;
 import fr.polytech.mnia.Environment.TicTacToeEnvironment;
 
 public class App {
@@ -74,12 +79,50 @@ public class App {
 
         // Once-and-for-all diagnostics. These are Java-side cache metrics,
         // NOT measurements of underlying ProB requests.
-        if (env instanceof TicTacToeEnvironment ticTacToeEnv
-                && rewardStrategy == RewardStrategy.ONCEANDFORALL) {
+        if (rewardStrategy == RewardStrategy.ONCEANDFORALL) {
+            if (env instanceof TicTacToeEnvironment ticTacToeEnv) {
+                System.out.println("REWARD_CACHE strategy=ONCEANDFORALL"
+                    + " hits=" + ticTacToeEnv.getRewardCacheHits()
+                    + " misses=" + ticTacToeEnv.getRewardCacheMisses()
+                    + " cachedStates=" + ticTacToeEnv.getCachedRewardStateCount());
+            } else if (env instanceof FrozenLakeEnvironment frozenLakeEnv) {
+                System.out.println("REWARD_CACHE strategy=ONCEANDFORALL"
+                    + " hits=" + frozenLakeEnv.getRewardCacheHits()
+                    + " misses=" + frozenLakeEnv.getRewardCacheMisses()
+                    + " cachedStates=" + frozenLakeEnv.getCachedRewardStateCount());
+            }
+        }
+
+        if (rewardStrategy == RewardStrategy.ONCEANDFORALL
+                && env instanceof TaxiDriverEnvironment taxiEnv) {
             System.out.println("REWARD_CACHE strategy=ONCEANDFORALL"
-                + " hits=" + ticTacToeEnv.getRewardCacheHits()
-                + " misses=" + ticTacToeEnv.getRewardCacheMisses()
-                + " cachedStates=" + ticTacToeEnv.getCachedRewardStateCount());
+                + " hits=" + taxiEnv.getRewardCacheHits()
+                + " misses=" + taxiEnv.getRewardCacheMisses()
+                + " cachedStates=" + taxiEnv.getCachedRewardStateCount());
+        }
+
+        if (rewardStrategy == RewardStrategy.ONCEANDFORALL
+                && env instanceof AutoV2Environment autoV2Env) {
+            System.out.println("REWARD_CACHE strategy=ONCEANDFORALL"
+                + " hits=" + autoV2Env.getRewardCacheHits()
+                + " misses=" + autoV2Env.getRewardCacheMisses()
+                + " cachedStates=" + autoV2Env.getCachedRewardStateCount());
+        }
+
+        if (rewardStrategy == RewardStrategy.ONCEANDFORALL
+                && env instanceof MountainCarEnvironment car) {
+            System.out.println("REWARD_CACHE strategy=ONCEANDFORALL"
+                + " hits=" + car.getRewardCacheHits()
+                + " misses=" + car.getRewardCacheMisses()
+                + " cachedStates=" + car.getCachedRewardStateCount());
+        }
+
+        if (rewardStrategy == RewardStrategy.ONCEANDFORALL
+                && env instanceof InterlockingEnvironment railway) {
+            System.out.println("REWARD_CACHE strategy=ONCEANDFORALL"
+                + " hits=" + railway.getRewardCacheHits()
+                + " misses=" + railway.getRewardCacheMisses()
+                + " cachedStates=" + railway.getCachedRewardStateCount());
         }
 
         System.out.println("Nb states discovered (env): " + env.getStateIds().size());

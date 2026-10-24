@@ -11,10 +11,23 @@ public final class EnvironmentFactory {
             case "autov2embedded" -> new AutoV2Environment("/autoV2/HighwayPerception_QBis.mch", rewardStrategy);
             case "frozen_lake", "frozenlake" -> new FrozenLakeEnvironment("/frozen_lake/FrozenLakeGrid_4_4.mch", rewardStrategy);
             case "frozen_lakeembedded", "frozenlakeembedded" -> new FrozenLakeEnvironment("/frozen_lake/FrozenLakeGrid_4_4Bis.mch", rewardStrategy);
+            case "frozenlake10" ->
+                new FrozenLakeEnvironment(
+                    "/frozen_lake/FrozenLakeGrid_10_10.mch", rewardStrategy);
+
+            case "frozenlake10embedded" ->
+                new FrozenLakeEnvironment(
+        "/frozen_lake/FrozenLakeGrid_10_10Bis.mch", rewardStrategy);
             case "interlocking", "interloking" -> new InterlockingEnvironment("/interlocking/interlocking.mch", rewardStrategy);
             case "interlockingembedded", "interlokingembedded" -> new InterlockingEnvironment("/interlocking/interlockingBis.mch", rewardStrategy);
             case "puzzle" -> new PuzzleEnvironment("/puzzle/Puzzle8.mch", rewardStrategy);
             case "puzzleembedded" -> new PuzzleEnvironment("/puzzle/Puzzle8Bis.mch", rewardStrategy);
+            case "taxidriver5" -> new TaxiDriverEnvironment("/taxi_driver/SafeTaxiDriver_5_5.mch", rewardStrategy);
+            case "taxidriver5embedded" -> new TaxiDriverEnvironment("/taxi_driver/SafeTaxiDriver_5_5Bis.mch", rewardStrategy);
+            case "taxidriver10" -> new TaxiDriverEnvironment("/taxi_driver/SafeTaxiDriver_10_10.mch", rewardStrategy);
+            case "taxidriver10embedded" -> new TaxiDriverEnvironment("/taxi_driver/SafeTaxiDriver_10_10Bis.mch", rewardStrategy);
+            case "taxidriver30" -> new TaxiDriverEnvironment("/taxi_driver/SafeTaxiDriver_30_30.mch", rewardStrategy);
+            case "taxidriver30embedded" -> new TaxiDriverEnvironment("/taxi_driver/SafeTaxiDriver_30_30Bis.mch", rewardStrategy);
             case "taxi-driver", "taxi_driver", "taxi" -> new TaxiDriverEnvironment("/taxi_driver/SafeTaxiDriver_5_5.mch", rewardStrategy);
             case "taxi-driverembedded", "taxi_driverembedded", "taxiembedded" -> new TaxiDriverEnvironment("/taxi_driver/SafeTaxiDriver_5_5Bis.mch", rewardStrategy);
             case "mountain_car", "mountaincar" -> new MountainCarEnvironment("/Mountain_Car/MountainCarSmall.mch", rewardStrategy);

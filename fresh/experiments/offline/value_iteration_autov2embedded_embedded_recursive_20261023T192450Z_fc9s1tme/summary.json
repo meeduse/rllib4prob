@@ -1,0 +1,54 @@
+{
+  "campaignId": "value_iteration_autov2embedded_embedded_recursive_20261023T192450Z_fc9s1tme",
+  "algorithm": "VALUE_ITERATION",
+  "environment": "autov2embedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "RECURSIVE",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 3.0776154375,
+      "sampleSD": 0.2187151986052595,
+      "median": 3.017804979,
+      "min": 2.802248292,
+      "max": 3.519062708
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 5.189452,
+      "sampleSD": 0.28414473228190507,
+      "median": 5.193913,
+      "min": 4.752277,
+      "max": 5.670056
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 8.2670673,
+      "sampleSD": 0.4435043151081695,
+      "median": 8.055208499999999,
+      "min": 7.77529,
+      "max": 8.870093
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 275373.0,
+      "sampleSD": 0.0,
+      "median": 275373.0,
+      "min": 275373.0,
+      "max": 275373.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 92.0,
+      "sampleSD": 0.0,
+      "median": 92.0,
+      "min": 92.0,
+      "max": 92.0
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "campaignId": "prioritized_value_iteration_mountaincarembedded_embedded_preprocess_20261024T105817Z_srq_mr3z",
+  "algorithm": "PRIORITIZED_VALUE_ITERATION",
+  "environment": "mountaincarembedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 3.5733892166,
+      "sampleSD": 0.14699754030442397,
+      "median": 3.5273915835,
+      "min": 3.464602625,
+      "max": 3.979640291
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 16.6993528,
+      "sampleSD": 0.38641873304854724,
+      "median": 16.611195000000002,
+      "min": 16.429273,
+      "max": 17.777092
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 20.272742,
+      "sampleSD": 0.39372073012959036,
+      "median": 20.161171500000002,
+      "min": 19.893876,
+      "max": 21.285099
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 83111.0,
+      "sampleSD": 0.0,
+      "median": 83111.0,
+      "min": 83111.0,
+      "max": 83111.0
+    },
+    "updates": {
+      "n": 10,
+      "mean": 11862.0,
+      "sampleSD": 0.0,
+      "median": 11862.0,
+      "min": 11862.0,
+      "max": 11862.0
+    }
+  }
+}

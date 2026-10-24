@@ -1,0 +1,36 @@
+{
+  "id": "taxidriver",
+  "description": "Taxi Driver 5x5, 10x10 and 30x30; six offline RL algorithms",
+  "algorithms": ["VI", "PI", "MPI", "IVI", "PVI", "BI"],
+  "explorations": ["PREPROCESS", "RECURSIVE"],
+  "repetitions": 10,
+  "gamma": 0.9,
+  "theta": 0.01,
+  "biHorizon": 150,
+  "variants": [
+    {
+      "id": "5",
+      "expectedStates": 43,
+      "environments": {
+        "ONCEANDFORALL": "taxidriver5",
+        "EMBEDDED": "taxidriver5embedded"
+      }
+    },
+    {
+      "id": "10",
+      "expectedStates": 165,
+      "environments": {
+        "ONCEANDFORALL": "taxidriver10",
+        "EMBEDDED": "taxidriver10embedded"
+      }
+    },
+    {
+      "id": "30",
+      "expectedStates": 1477,
+      "environments": {
+        "ONCEANDFORALL": "taxidriver30",
+        "EMBEDDED": "taxidriver30embedded"
+      }
+    }
+  ]
+}

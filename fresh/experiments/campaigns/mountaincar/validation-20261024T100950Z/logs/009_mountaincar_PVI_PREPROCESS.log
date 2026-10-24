@@ -1,0 +1,45 @@
+
+COMMAND: bash /Users/idani/rllib4prob/fresh/scripts/experiments/offline/run_campaign.sh --algorithm PVI --reward ONCEANDFORALL --exploration PREPROCESS --environment mountaincar --count 1 --expected-states 12047
+Compiling once and resolving the runtime classpath...
+
+New campaign: /Users/idani/rllib4prob/fresh/experiments/offline/prioritized_value_iteration_mountaincar_onceandforall_preprocess_20261024T101345Z_aockvgai
+Snapshot: 116 source/config files
+
+========== PRIORITIZED_VALUE_ITERATION repetition 1 (1/1) ==========
+Selected algorithm = PRIORITIZED_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = mountaincar
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.......Model Checking complete. No more error nodes found.Total states: 12049
+
+End of exploration 12047 | Exploration time: 3.481174708 seconds
+Preparing graph and initial priorities (PVI). First pass may take time...
+PVI updates=1000 pending=10862 last_error=5904.49049
+PVI updates=2000 pending=9862 last_error=3486.13308
+PVI updates=3000 pending=8862 last_error=2823.57779
+PVI updates=4000 pending=7862 last_error=2058.11721
+PVI updates=5000 pending=6862 last_error=1852.20549
+PVI updates=6000 pending=5862 last_error=1349.98680
+PVI updates=7000 pending=4862 last_error=1093.29931
+PVI updates=8000 pending=3862 last_error=885.382441
+PVI updates=9000 pending=2862 last_error=796.744197
+PVI updates=10000 pending=1862 last_error=716.969777
+PVI updates=11000 pending=862 last_error=580.555520
+PVI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxUpdates=100000 updates=11862 exploredStates=12047 transitions=35586 priorityBackups=59017 residualBackups=12047 finalQBackups=12047 totalBackups=83111 rewardLookups=247668 bellmanResidual=0.00000000 learningSeconds=17.320873
+REWARD_CACHE strategy=ONCEANDFORALL hits=235622 misses=12046 cachedStates=12046
+Nb states discovered (env): 12047
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+CHECK run 0: status=CONVERGED verification=VERIFIED_SUCCESS
+
+Completed: 1/1 verified successful runs
+Breakdown: {'VERIFIED_SUCCESS': 1}
+totalSeconds: mean=20.802048 sample_sd=n/a
+learningSeconds: mean=17.320873 sample_sd=n/a
+explorationSeconds: mean=3.481175 sample_sd=n/a
+totalBackups: mean=83111.000000 sample_sd=n/a
+CSV: /Users/idani/rllib4prob/fresh/experiments/offline/prioritized_value_iteration_mountaincar_onceandforall_preprocess_20261024T101345Z_aockvgai/results.csv
+Summary: /Users/idani/rllib4prob/fresh/experiments/offline/prioritized_value_iteration_mountaincar_onceandforall_preprocess_20261024T101345Z_aockvgai/summary.json
+All raw logs preserved in: /Users/idani/rllib4prob/fresh/experiments/offline/prioritized_value_iteration_mountaincar_onceandforall_preprocess_20261024T101345Z_aockvgai/logs

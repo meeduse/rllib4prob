@@ -1,0 +1,46 @@
+{
+  "campaignId": "backward_induction_frozenlake10embedded_embedded_preprocess_20261023T161432Z_xdjf9a0l",
+  "algorithm": "BACKWARD_INDUCTION",
+  "environment": "frozenlake10embedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 0.0556435625,
+      "sampleSD": 0.009436334002001097,
+      "median": 0.051677937,
+      "min": 0.048846416,
+      "max": 0.079786584
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 0.8307605,
+      "sampleSD": 0.10409159316491948,
+      "median": 0.7988204999999999,
+      "min": 0.733264,
+      "max": 1.03485
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 0.886404,
+      "sampleSD": 0.10419818166999525,
+      "median": 0.85008,
+      "min": 0.784355,
+      "max": 1.084999
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 45600.0,
+      "sampleSD": 0.0,
+      "median": 45600.0,
+      "min": 45600.0,
+      "max": 45600.0
+    }
+  }
+}

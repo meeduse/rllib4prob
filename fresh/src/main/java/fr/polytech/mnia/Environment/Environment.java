@@ -191,9 +191,51 @@ public abstract class Environment {
             }
         );
         modelChecker.call();
+        if (nodes[0] < 2) {
+            throw new IllegalStateException(
+                "ProB returned no usable nodes during preprocessing");
+        }
+
+        // ProB's total node count includes the synthetic root and, depending on
+        // the B machine, intermediate SETUP_CONSTANTS / INITIALISE_MACHINE states.
+        // The learner must only receive states AFTER machine initialisation.
+        // Preserve the fast model-checker traversal: do not enumerate all edges
+        // again through the Java API to discover the reachable state set.
+        Set<Integer> administrativeIds = new HashSet<>();
+        State cursor = animator.getStateSpace().getRoot();
+        for (String transitionName : new String[] {
+                Transition.SETUP_CONSTANTS_NAME,
+                Transition.INITIALISE_MACHINE_NAME }) {
+            Transition administrative = cursor.findTransition(transitionName);
+            if (administrative == null) continue;
+            cursor = administrative.getDestination();
+            if (!cursor.getId().equals(initial.getId())) {
+                try {
+                    administrativeIds.add(Integer.parseInt(cursor.getId()));
+                } catch (NumberFormatException ignored) {
+                    // The synthetic root has a non-numeric identifier.
+                }
+            }
+        }
+        if (!cursor.getId().equals(initial.getId())) {
+            throw new IllegalStateException(
+                "Cannot identify the initialized ProB game state: expected "
+                + initial.getId() + " but found " + cursor.getId());
+        }
+
+        // State IDs are sequential in the ProB state-space representation used
+        // by this backend. Unlike the previous implementation, explicitly remove
+        // any numeric setup/initialisation states instead of subtracting only
+        // the synthetic root from the total count.
         this.stateIds = IntStream.rangeClosed(0, nodes[0] - 2)
+                                 .filter(id -> !administrativeIds.contains(id))
                                  .boxed()
                                  .collect(Collectors.toSet());
+        int initializedId = Integer.parseInt(initial.getId());
+        if (!stateIds.contains(initializedId)) {
+            throw new IllegalStateException(
+                "Preprocessing omitted the initialized B state " + initializedId);
+        }
     }
 
     /**

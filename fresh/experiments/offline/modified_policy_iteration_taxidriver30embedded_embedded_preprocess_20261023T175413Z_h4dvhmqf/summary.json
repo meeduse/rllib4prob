@@ -1,0 +1,54 @@
+{
+  "campaignId": "modified_policy_iteration_taxidriver30embedded_embedded_preprocess_20261023T175413Z_h4dvhmqf",
+  "algorithm": "MODIFIED_POLICY_ITERATION",
+  "environment": "taxidriver30embedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 0.2937639587,
+      "sampleSD": 0.016680235847829867,
+      "median": 0.2881526255,
+      "min": 0.282806,
+      "max": 0.337819209
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 2.7636653,
+      "sampleSD": 0.158327072881881,
+      "median": 2.718001,
+      "min": 2.592994,
+      "max": 3.160502
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 3.0574292,
+      "sampleSD": 0.16029461803594305,
+      "median": 3.011317,
+      "min": 2.883351,
+      "max": 3.451876
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 287824.0,
+      "sampleSD": 25565.06991971663,
+      "median": 284872.0,
+      "min": 245020.0,
+      "max": 335056.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 40.4,
+      "sampleSD": 4.351245032554859,
+      "median": 39.5,
+      "min": 34.0,
+      "max": 49.0
+    }
+  }
+}

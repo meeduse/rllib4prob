@@ -1,0 +1,54 @@
+{
+  "campaignId": "modified_policy_iteration_frozenlakeembedded_embedded_preprocess_20261023T151657Z_wo3xwous",
+  "algorithm": "MODIFIED_POLICY_ITERATION",
+  "environment": "frozenlakeembedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 0.0150293209,
+      "sampleSD": 0.0024285155623278943,
+      "median": 0.0140003335,
+      "min": 0.012905917,
+      "max": 0.019537667
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 0.1613461,
+      "sampleSD": 0.03421904834851165,
+      "median": 0.14939449999999999,
+      "min": 0.142426,
+      "max": 0.256292
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 0.1763752,
+      "sampleSD": 0.0356839005179896,
+      "median": 0.164684,
+      "min": 0.155724,
+      "max": 0.27583
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 7069.2,
+      "sampleSD": 36.26078383659742,
+      "median": 7052.0,
+      "min": 7052.0,
+      "max": 7138.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 22.0,
+      "sampleSD": 0.0,
+      "median": 22.0,
+      "min": 22.0,
+      "max": 22.0
+    }
+  }
+}

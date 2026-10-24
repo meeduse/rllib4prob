@@ -1,0 +1,54 @@
+{
+  "campaignId": "prioritized_value_iteration_tictactoe_onthefly_preprocess_20261023T094333Z_r_ydqtvf",
+  "algorithm": "PRIORITIZED_VALUE_ITERATION",
+  "environment": "tictactoe",
+  "rewardStrategy": "ONTHEFLY",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 2.9341091626,
+      "sampleSD": 0.10163844449848014,
+      "median": 2.9145435625,
+      "min": 2.838541292,
+      "max": 3.196945958
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 83.2316857,
+      "sampleSD": 1.441762839427564,
+      "median": 83.2722945,
+      "min": 80.455195,
+      "max": 86.063368
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 86.1657949,
+      "sampleSD": 1.4235916937637758,
+      "median": 86.1430435,
+      "min": 83.376088,
+      "max": 88.971562
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 34159.2,
+      "sampleSD": 16.844385810510673,
+      "median": 34160.0,
+      "min": 34124.0,
+      "max": 34184.0
+    },
+    "updates": {
+      "n": 10,
+      "mean": 4516.8,
+      "sampleSD": 4.211096452627668,
+      "median": 4517.0,
+      "min": 4508.0,
+      "max": 4523.0
+    }
+  }
+}

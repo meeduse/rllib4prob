@@ -1,0 +1,25 @@
+Selected algorithm = POLICY_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = taxidriver5embedded
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.Model Checking complete. No more error nodes found.Total states: 45
+
+End of exploration 43 | Exploration time: 0.012931 seconds
+PI iteration=1 evaluation_sweeps=28 policy_residual=0.00793166004 policy_stable=false bellman_residual=NaN
+PI iteration=2 evaluation_sweeps=30 policy_residual=0.00578218017 policy_stable=false bellman_residual=NaN
+PI iteration=3 evaluation_sweeps=32 policy_residual=0.00468356594 policy_stable=false bellman_residual=NaN
+PI iteration=4 evaluation_sweeps=34 policy_residual=0.00341431957 policy_stable=false bellman_residual=NaN
+PI iteration=5 evaluation_sweeps=36 policy_residual=0.00248903897 policy_stable=false bellman_residual=NaN
+PI iteration=6 evaluation_sweeps=38 policy_residual=0.00181450941 policy_stable=false bellman_residual=NaN
+PI iteration=7 evaluation_sweeps=41 policy_residual=0.00119049962 policy_stable=false bellman_residual=NaN
+PI iteration=8 evaluation_sweeps=43 policy_residual=0.000781086802 policy_stable=false bellman_residual=NaN
+PI iteration=9 evaluation_sweeps=45 policy_residual=0.000512471051 policy_stable=false bellman_residual=NaN
+PI iteration=10 evaluation_sweeps=47 policy_residual=0.000336232256 policy_stable=false bellman_residual=NaN
+PI iteration=11 evaluation_sweeps=50 policy_residual=0.00000000 policy_stable=true bellman_residual=0.00000000
+PI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 maxEvaluationSweeps=10000 iterations=11 evaluationSweeps=50 exploredStates=43 evaluationBackups=2100 improvementBackups=462 residualBackups=559 totalBackups=3121 rewardLookups=3992 policyStable=true policyResidual=0.00000000 bellmanResidual=0.00000000 learningSeconds=0.127983
+Nb states discovered (env): 43
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

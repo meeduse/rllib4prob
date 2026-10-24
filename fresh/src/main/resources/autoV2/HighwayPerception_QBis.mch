@@ -104,7 +104,7 @@ INVARIANT
 
 INITIALISATION
 
-    distance_front, ego_speed, front_speed := 100, 60, 25 //15
+    distance_front, ego_speed, front_speed := 95, 50, 25 // corrected to satisfy invariants
 
 /*
 gamma 0.8, alpha 0.1 (SARSA) 0.7 (QLearning), epsilon 0.1, 

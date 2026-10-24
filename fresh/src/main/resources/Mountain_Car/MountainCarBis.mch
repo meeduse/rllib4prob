@@ -2,8 +2,9 @@ MACHINE
     MountainCarBis
 
 DEFINITIONS
-    "LibraryMath.def";
     "rewards.def";
+    "LibraryMath.def";
+    
     
 CONSTANTS
     minPosition, maxPosition,

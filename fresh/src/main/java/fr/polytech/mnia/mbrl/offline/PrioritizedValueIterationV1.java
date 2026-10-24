@@ -2,220 +2,251 @@ package fr.polytech.mnia.mbrl.offline;
 
 import de.prob.statespace.State;
 import de.prob.statespace.Transition;
-
-import java.util.*;
-
 import fr.polytech.mnia.Agent;
 import fr.polytech.mnia.Environment.Environment;
 import fr.polytech.mnia.Environment.ExplorationStrategy;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
+
 /**
- * An agent that implements a prioritized sweeping variant of
- * Value Iteration.
+ * Prioritized (asynchronous) Value Iteration over the explored ProB graph.
  *
- * After an exhaustive exploration of the state space (via ProB),
- * the algorithm maintains a priority queue of states, ordered by
- * their Bellman error:
+ * This algorithm performs one Bellman update on the state with the highest
+ * currently known residual and updates its predecessors' priorities. A global
+ * Bellman optimality residual is checked before reporting convergence.
  *
- *   error(s) = | V(s) - max_a [ R(s,a,s') + gamma * V(s') ] |
- *
- * At each step, the state with the highest error is updated first,
- * and its predecessors are reinserted into the queue with updated
- * priorities. This focuses computation on states where the value
- * function is most inconsistent with the Bellman equation.
+ * The numerical ProB identifiers only break ties between equal priorities.
+ * They are NOT a semantic canonicalization of states across ProB runs.
  */
 public class PrioritizedValueIterationV1 extends Agent {
 
-    /** Maximum number of state updates (pops from the priority queue). */
+    public enum TerminationStatus {
+        NOT_STARTED, CONVERGED, UPDATE_LIMIT_REACHED, NO_STATES
+    }
+
     private final int maxUpdates;
+    private final Map<State, Double> vValues = new HashMap<>();
+    private final Map<State, Map<Transition, Double>> qValues = new HashMap<>();
+    private final Map<State, List<Transition>> outgoing = new HashMap<>();
+    private final Map<State, Set<State>> predecessors = new HashMap<>();
+    private final Map<State, Integer> ranks = new HashMap<>();
+    private final TreeSet<StatePriority> queue = new TreeSet<>(
+            Comparator.comparingDouble((StatePriority x) -> x.priority).reversed()
+                      .thenComparingInt(x -> x.rank));
+    private final Map<State, StatePriority> scheduled = new HashMap<>();
 
-    /** State-value function V(s). */
-    private final Map<State, Double> vValues;
+    private TerminationStatus status = TerminationStatus.NOT_STARTED;
+    private double lastBellmanResidual = Double.NaN;
+    private long priorityBackups, residualBackups, finalQBackups;
+    private long rewardLookups, updates, graphTransitions;
+    private int exploredStates;
 
-    /** Action-value function Q(s,a) for inspection/export. */
-    private final Map<State, Map<Transition, Double>> qValues;
-
-    /** Outgoing transitions for each state (cached). */
-    private final Map<State, List<Transition>> outgoing;
-
-    /** Predecessors of each state: for each s', a list of transitions (s,a)->s'. */
-    private final Map<State, List<Transition>> predecessors;
-
-    /**
-     * Creates a Prioritized Value Iteration agent.
-     *
-     * @param env        the environment (backed by ProB)
-     * @param gamma      discount factor
-     * @param teta       threshold on Bellman error for stopping
-     * @param maxUpdates safety bound on the number of updates
-     */
-    public PrioritizedValueIterationV1(Environment env,
-                                       double gamma,
-                                       double teta,
-                                       int maxUpdates) {
+    public PrioritizedValueIterationV1(Environment env, double gamma,
+                                       double teta, int maxUpdates) {
         super(env, gamma, teta);
+        if (!Double.isFinite(gamma) || gamma < 0.0 || gamma >= 1.0
+                || !Double.isFinite(teta) || teta < 0.0 || maxUpdates < 0) {
+            throw new IllegalArgumentException(
+                    "PVI requires 0 <= gamma < 1, finite theta >= 0, maxUpdates >= 0");
+        }
         this.maxUpdates = maxUpdates;
-        this.vValues = new HashMap<>();
-        this.qValues = new HashMap<>();
-        this.outgoing = new HashMap<>();
-        this.predecessors = new HashMap<>();
     }
 
     @Override
     public void learn(ExplorationStrategy strategy) {
-        // Full state-space construction via ProB
-        env.explore(strategy);
-        System.out.println("Start learning (Prioritized Value Iteration)");
-        long startTime = System.nanoTime();
-
-        // Collect all reachable states
-        Set<Integer> stateIds = env.getStateIds();
-        List<State> states = new ArrayList<>();
-        for (int sID : stateIds) {
-            State s = env.gState(sID);
-            states.add(s);
+        if (strategy == null || strategy == ExplorationStrategy.NONE) {
+            throw new IllegalArgumentException("PVI requires exhaustive exploration (PREPROCESS or RECURSIVE)");
         }
+        reset();
+        env.explore(strategy);
+        System.out.println("Preparing graph and initial priorities (PVI). First pass may take time...");
+        System.out.flush();
+        long started = System.nanoTime();
 
+        List<Integer> ids = new ArrayList<>(env.getStateIds());
+        Collections.sort(ids);
+        List<State> states = new ArrayList<>(ids.size());
+        for (int id : ids) {
+            State state = env.gState(id);
+            if (state == null) {
+                throw new IllegalStateException("ProB did not return explored state " + id);
+            }
+            if (vValues.put(state, 0.0) != null) {
+                throw new IllegalStateException("Duplicate state in exploration: " + id);
+            }
+            ranks.put(state, states.size());
+            states.add(state);
+        }
+        exploredStates = states.size();
         if (states.isEmpty()) {
-            System.out.println("No reachable states. Aborting learning.");
+            status = TerminationStatus.NO_STATES;
+            printResult(started);
             return;
         }
+        buildGraph(states);
 
-        // Cache outgoing transitions and build predecessors
-        buildGraphs(states);
-
-        // Initialise V(s) = 0 for all states
         for (State s : states) {
-            vValues.put(s, 0.0);
+            scheduleByCurrentError(s);
         }
 
-        // Priority queue of states, ordered by descending Bellman error
-        PriorityQueue<StatePriority> pq = new PriorityQueue<>(
-            Comparator.comparingDouble((StatePriority sp) -> sp.priority).reversed()
-        );
-
-        // Initial priorities: on first pass, we can compute
-        // an initial Bellman error for each state
-        for (State s : states) {
-            double error = computeBellmanError(s);
-            if (error > 0.0) {
-                pq.add(new StatePriority(s, error));
-            }
-        }
-
-        int updates = 0;
-        while (!pq.isEmpty() && updates < maxUpdates) {
-            StatePriority sp = pq.poll();
-            State s = sp.state;
-
-            // Recompute the current error; if it's below teta, skip update
-            double currentError = computeBellmanError(s);
-            if (currentError < teta) {
-                continue;
-            }
-
-            // Perform Bellman backup for s
-            double oldV = vValues.getOrDefault(s, 0.0);
-            double newV = bellmanBackup(s);
-            vValues.put(s, newV);
-
-            double delta = Math.abs(oldV - newV);
-            updates++;
-
-            if (updates % 100 == 0) {
-                System.out.println("Update " + updates + " | last delta: " + delta);
-            }
-
-            // After updating s, propagate changes to its predecessors
-            List<Transition> preds = predecessors.getOrDefault(s, Collections.emptyList());
-            for (Transition tPred : preds) {
-                State sPred = tPred.getSource();
-                double errPred = computeBellmanError(sPred);
-                if (errPred >= teta) {
-                    pq.add(new StatePriority(sPred, errPred));
+        while (true) {
+            if (queue.isEmpty() || updates >= maxUpdates) {
+                // Empty queue is NOT itself evidence of convergence.
+                lastBellmanResidual = globalBellmanResidual(states, queue.isEmpty() && updates < maxUpdates);
+                if (lastBellmanResidual <= teta) {
+                    status = TerminationStatus.CONVERGED;
+                    break;
+                }
+                if (updates >= maxUpdates) {
+                    status = TerminationStatus.UPDATE_LIMIT_REACHED;
+                    break;
+                }
+                // A queue exhausted with positive residual indicates stale priorities.
+                // Rebuild them from the global residual scan before continuing.
+                if (queue.isEmpty()) {
+                    throw new IllegalStateException(
+                            "Nonzero Bellman residual but no eligible state in priority queue: "
+                                    + lastBellmanResidual);
                 }
             }
+
+            StatePriority current = queue.pollFirst();
+            scheduled.remove(current.state);
+            State s = current.state;
+            double target = bellmanTarget(s, Counter.PRIORITY);
+            double error = Math.abs(vValues.get(s) - target);
+            if (error <= teta) {
+                continue; // Stale or already sufficiently accurate priority
+            }
+            vValues.put(s, target);
+            updates++;
+            if (updates % 1000 == 0) {
+                System.out.printf(Locale.ROOT, "PVI updates=%d pending=%d last_error=%.9g%n",
+                        updates, queue.size(), error);
+                System.out.flush();
+            }
+            for (State predecessor : predecessors.getOrDefault(s, Collections.emptySet())) {
+                scheduleByCurrentError(predecessor);
+            }
         }
 
-        long endTime = System.nanoTime();
-        double durationInSeconds = (endTime - startTime) / 1_000_000_000.0;
-        System.out.println("Execution time (Prioritized VI): " + durationInSeconds + " seconds");
-        System.out.println("Total updates performed: " + updates);
+        refreshFinalQ(states);
+        printResult(started);
     }
 
-    /**
-     * Build outgoing and predecessor graphs from the state space.
-     */
-    private void buildGraphs(List<State> states) {
+    private void reset() {
+        vValues.clear();
+        qValues.clear();
         outgoing.clear();
         predecessors.clear();
+        ranks.clear();
+        queue.clear();
+        scheduled.clear();
+        status = TerminationStatus.NOT_STARTED;
+        lastBellmanResidual = Double.NaN;
+        priorityBackups = residualBackups = finalQBackups = 0;
+        rewardLookups = updates = graphTransitions = 0;
+        exploredStates = 0;
+    }
 
+    private void buildGraph(List<State> states) {
+        Set<State> known = new HashSet<>(states);
         for (State s : states) {
-            List<Transition> outs = s.getOutTransitions();
-            outgoing.put(s, outs);
-
-            for (Transition t : outs) {
-                State sPrime = t.getDestination();
-                predecessors
-                    .computeIfAbsent(sPrime, key -> new ArrayList<>())
-                    .add(t);
+            List<Transition> transitions = new ArrayList<>(s.getOutTransitions());
+            outgoing.put(s, transitions);
+            graphTransitions += transitions.size();
+            for (Transition t : transitions) {
+                State destination = t.getDestination();
+                if (!known.contains(destination)) {
+                    throw new IllegalStateException("Exploration omitted a successor state of " + s.getId());
+                }
+                predecessors.computeIfAbsent(destination, ignored -> new LinkedHashSet<>()).add(s);
             }
         }
     }
 
-    /**
-     * Computes the Bellman error for a given state:
-     * |V(s) - max_a [ R(s,a,s') + gamma * V(s') ]|
-     */
-    private double computeBellmanError(State s) {
-        List<Transition> actions = outgoing.getOrDefault(s, Collections.emptyList());
-        if (actions.isEmpty()) {
-            // Terminal state -> by convention, Bellman error is 0
-            return 0.0;
+    private enum Counter { PRIORITY, RESIDUAL }
+
+    private double bellmanTarget(State s, Counter category) {
+        if (category == Counter.PRIORITY) priorityBackups++;
+        else residualBackups++;
+        List<Transition> actions = outgoing.get(s);
+        if (actions == null) throw new IllegalStateException("Unknown state in priority evaluation");
+        if (actions.isEmpty()) return 0.0;
+        double best = Double.NEGATIVE_INFINITY;
+        for (Transition transition : actions) {
+            double r = env.reward(s, transition, transition.getDestination());
+            rewardLookups++;
+            double q = r + gamma * vValues.get(transition.getDestination());
+            if (!Double.isFinite(q)) throw new IllegalStateException("Nonfinite Bellman target at state " + s.getId());
+            best = Math.max(best, q);
         }
-
-        double oldV = vValues.getOrDefault(s, 0.0);
-        double maxQ = Double.NEGATIVE_INFINITY;
-
-        for (Transition t : actions) {
-            State sPrime = t.getDestination();
-            double reward = env.reward(s, t, sPrime);
-            double q = reward + gamma * vValues.getOrDefault(sPrime, 0.0);
-            if (q > maxQ) {
-                maxQ = q;
-            }
-        }
-
-        return Math.abs(oldV - maxQ);
+        return best;
     }
 
-    /**
-     * Performs a Bellman backup for state s and updates Q(s,a) accordingly.
-     *
-     * @return the new value V(s) after the backup.
-     */
-    private double bellmanBackup(State s) {
-        List<Transition> actions = outgoing.getOrDefault(s, Collections.emptyList());
-        if (actions.isEmpty()) {
-            // Terminal state
-            return vValues.getOrDefault(s, 0.0);
+    private void scheduleByCurrentError(State s) {
+        double error = Math.abs(vValues.get(s) - bellmanTarget(s, Counter.PRIORITY));
+        StatePriority old = scheduled.remove(s);
+        if (old != null) queue.remove(old);
+        if (error > teta) {
+            StatePriority entry = new StatePriority(s, error, ranks.get(s));
+            queue.add(entry);
+            scheduled.put(s, entry);
         }
+    }
 
-        double maxQ = Double.NEGATIVE_INFINITY;
-        Map<Transition, Double> qForState =
-            qValues.computeIfAbsent(s, key -> new HashMap<>());
-
-        for (Transition t : actions) {
-            State sPrime = t.getDestination();
-            double reward = env.reward(s, t, sPrime);
-            double q = reward + gamma * vValues.getOrDefault(sPrime, 0.0);
-            qForState.put(t, q);
-            if (q > maxQ) {
-                maxQ = q;
+    private double globalBellmanResidual(List<State> states, boolean requeue) {
+        double max = 0.0;
+        for (State s : states) {
+            double error = Math.abs(vValues.get(s) - bellmanTarget(s, Counter.RESIDUAL));
+            max = Math.max(max, error);
+            if (requeue && error > teta) {
+                StatePriority old = scheduled.remove(s);
+                if (old != null) queue.remove(old);
+                StatePriority entry = new StatePriority(s, error, ranks.get(s));
+                queue.add(entry);
+                scheduled.put(s, entry);
             }
         }
+        return max;
+    }
 
-        return maxQ;
+    private void refreshFinalQ(List<State> states) {
+        for (State s : states) {
+            finalQBackups++;
+            Map<Transition, Double> qs = new HashMap<>();
+            for (Transition t : outgoing.get(s)) {
+                double reward = env.reward(s, t, t.getDestination());
+                rewardLookups++;
+                double q = reward + gamma * vValues.get(t.getDestination());
+                if (!Double.isFinite(q)) throw new IllegalStateException("Nonfinite final Q at " + s.getId());
+                qs.put(t, q);
+            }
+            qValues.put(s, qs);
+        }
+    }
+
+    private void printResult(long started) {
+        double seconds = (System.nanoTime() - started) / 1_000_000_000.0;
+        System.out.printf(Locale.ROOT,
+                "PVI_RESULT status=%s gamma=%.9g theta=%.9g maxUpdates=%d updates=%d " +
+                "exploredStates=%d transitions=%d priorityBackups=%d residualBackups=%d " +
+                "finalQBackups=%d totalBackups=%d rewardLookups=%d bellmanResidual=%.9g learningSeconds=%.6f%n",
+                status, gamma, teta, maxUpdates, updates,
+                exploredStates, graphTransitions, priorityBackups, residualBackups,
+                finalQBackups, priorityBackups + residualBackups + finalQBackups,
+                rewardLookups, lastBellmanResidual, seconds);
+        System.out.flush();
     }
 
     @Override
@@ -223,16 +254,24 @@ public class PrioritizedValueIterationV1 extends Agent {
         return qValues.getOrDefault(s, Collections.emptyMap());
     }
 
-    /**
-     * Internal structure for priority queue entries.
-     */
-    private static class StatePriority {
-        final State state;
-        final double priority;
+    public double getValue(State s) {
+        return vValues.getOrDefault(s, 0.0);
+    }
 
-        StatePriority(State state, double priority) {
+    public TerminationStatus getStatus() { return status; }
+    public long getUpdates() { return updates; }
+    public double getLastBellmanResidual() { return lastBellmanResidual; }
+    public long getTotalBackups() { return priorityBackups + residualBackups + finalQBackups; }
+    public long getRewardLookups() { return rewardLookups; }
+
+    private static final class StatePriority {
+        private final State state;
+        private final double priority;
+        private final int rank;
+        private StatePriority(State state, double priority, int rank) {
             this.state = state;
             this.priority = priority;
+            this.rank = rank;
         }
     }
 }

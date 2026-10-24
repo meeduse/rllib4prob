@@ -1,0 +1,54 @@
+{
+  "campaignId": "policy_iteration_tictactoe_onthefly_preprocess_20261023T054712Z_j90xx6is",
+  "algorithm": "POLICY_ITERATION",
+  "environment": "tictactoe",
+  "rewardStrategy": "ONTHEFLY",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 1,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 1
+  },
+  "successfulRuns": 1,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 1,
+      "mean": 4.680225042,
+      "sampleSD": null,
+      "median": 4.680225042,
+      "min": 4.680225042,
+      "max": 4.680225042
+    },
+    "learningSeconds": {
+      "n": 1,
+      "mean": 129.24113,
+      "sampleSD": null,
+      "median": 129.24113,
+      "min": 129.24113,
+      "max": 129.24113
+    },
+    "totalSeconds": {
+      "n": 1,
+      "mean": 133.921355,
+      "sampleSD": null,
+      "median": 133.921355,
+      "min": 133.921355,
+      "max": 133.921355
+    },
+    "totalBackups": {
+      "n": 1,
+      "mean": 108750.0,
+      "sampleSD": null,
+      "median": 108750.0,
+      "min": 108750.0,
+      "max": 108750.0
+    },
+    "iterations": {
+      "n": 1,
+      "mean": 3.0,
+      "sampleSD": null,
+      "median": 3.0,
+      "min": 3.0,
+      "max": 3.0
+    }
+  }
+}

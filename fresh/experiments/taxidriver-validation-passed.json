@@ -1,0 +1,8 @@
+{
+  "schema": "taxidriver-full-campaign-v1",
+  "createdUtc": "2026-10-23T17:25:19.270622+00:00",
+  "validatedRuns": 72,
+  "fingerprint": "8cbca0e799d5cce3f434937ea90fa13f6841aa1040f8059c0c3a3673a847964b",
+  "reportCsv": "/Users/idani/Downloads/taxidriver-validation-20261023-191647/taxidriver_all_72_validations.csv",
+  "reportSha256": "68fd01c9850450d99340c4d9eb3558fe9fe7b704014cdf7770d15c2f01f4c7f9"
+}

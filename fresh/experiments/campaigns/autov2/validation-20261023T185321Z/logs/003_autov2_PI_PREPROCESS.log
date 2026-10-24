@@ -1,0 +1,41 @@
+
+COMMAND: bash /Users/idani/rllib4prob/fresh/scripts/experiments/offline/run_campaign.sh --algorithm PI --reward ONCEANDFORALL --exploration PREPROCESS --environment autov2 --count 1 --expected-states 2961
+Compiling once and resolving the runtime classpath...
+
+New campaign: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_autov2_onceandforall_preprocess_20261023T185401Z_pv3ju5z7
+Snapshot: 116 source/config files
+
+========== POLICY_ITERATION repetition 1 (1/1) ==========
+Selected algorithm = POLICY_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = autov2
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+..Model Checking complete. No more error nodes found.Total states: 2962
+
+End of exploration 2961 | Exploration time: 0.86946125 seconds
+PI iteration=1 evaluation_sweeps=106 policy_residual=0.00846948983 policy_stable=false bellman_residual=NaN
+PI iteration=2 evaluation_sweeps=214 policy_residual=0.00836751556 policy_stable=false bellman_residual=NaN
+PI iteration=3 evaluation_sweeps=304 policy_residual=0.00880027346 policy_stable=false bellman_residual=NaN
+PI iteration=4 evaluation_sweeps=381 policy_residual=0.00839133902 policy_stable=false bellman_residual=NaN
+PI iteration=5 evaluation_sweeps=412 policy_residual=0.000320146724 policy_stable=false bellman_residual=NaN
+PI iteration=6 evaluation_sweeps=440 policy_residual=1.67548023e-05 policy_stable=false bellman_residual=NaN
+PI iteration=7 evaluation_sweeps=457 policy_residual=2.79422966e-06 policy_stable=false bellman_residual=NaN
+PI iteration=8 evaluation_sweeps=463 policy_residual=1.48496838e-06 policy_stable=true bellman_residual=1.48496838e-06
+PI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 maxEvaluationSweeps=10000 iterations=8 evaluationSweeps=463 exploredStates=2961 evaluationBackups=1361220 improvementBackups=23520 residualBackups=29610 totalBackups=1414350 rewardLookups=1491040 policyStable=true policyResidual=1.48496838e-06 bellmanResidual=1.48496838e-06 learningSeconds=4.884800
+REWARD_CACHE strategy=ONCEANDFORALL hits=1488080 misses=2960 cachedStates=2960
+Nb states discovered (env): 2961
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+CHECK run 0: status=CONVERGED verification=VERIFIED_SUCCESS
+
+Completed: 1/1 verified successful runs
+Breakdown: {'VERIFIED_SUCCESS': 1}
+totalSeconds: mean=5.754261 sample_sd=n/a
+learningSeconds: mean=4.884800 sample_sd=n/a
+explorationSeconds: mean=0.869461 sample_sd=n/a
+totalBackups: mean=1414350.000000 sample_sd=n/a
+CSV: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_autov2_onceandforall_preprocess_20261023T185401Z_pv3ju5z7/results.csv
+Summary: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_autov2_onceandforall_preprocess_20261023T185401Z_pv3ju5z7/summary.json
+All raw logs preserved in: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_autov2_onceandforall_preprocess_20261023T185401Z_pv3ju5z7/logs

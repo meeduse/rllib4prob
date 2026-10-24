@@ -1,0 +1,115 @@
+Selected algorithm = PRIORITIZED_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = interlocking
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 100226 | Exploration time: 312.458964875 seconds
+Preparing graph and initial priorities (PVI). First pass may take time...
+PVI updates=1000 pending=97920 last_error=36548.4640
+PVI updates=2000 pending=96920 last_error=29672.0168
+PVI updates=3000 pending=95920 last_error=26738.1024
+PVI updates=4000 pending=94920 last_error=24100.7708
+PVI updates=5000 pending=93920 last_error=21728.1719
+PVI updates=6000 pending=92920 last_error=21560.1719
+PVI updates=7000 pending=91920 last_error=19528.6135
+PVI updates=8000 pending=90920 last_error=17671.6201
+PVI updates=9000 pending=89920 last_error=17551.5575
+PVI updates=10000 pending=88920 last_error=17413.3992
+PVI updates=11000 pending=87920 last_error=15821.2857
+PVI updates=12000 pending=86920 last_error=15647.7177
+PVI updates=13000 pending=85920 last_error=14376.0966
+PVI updates=14000 pending=84920 last_error=14125.4064
+PVI updates=15000 pending=83920 last_error=12978.6138
+PVI updates=16000 pending=82920 last_error=12767.3330
+PVI updates=17000 pending=81920 last_error=11721.5798
+PVI updates=18000 pending=80920 last_error=11600.2070
+PVI updates=19000 pending=79920 last_error=11394.8841
+PVI updates=20000 pending=78920 last_error=10579.6690
+PVI updates=21000 pending=77920 last_error=10367.9786
+PVI updates=22000 pending=76920 last_error=10175.4491
+PVI updates=23000 pending=75920 last_error=9497.85631
+PVI updates=24000 pending=74920 last_error=9238.59319
+PVI updates=25000 pending=73920 last_error=9049.60000
+PVI updates=26000 pending=72920 last_error=8471.51028
+PVI updates=27000 pending=71920 last_error=8235.41386
+PVI updates=28000 pending=70920 last_error=7748.72344
+PVI updates=29000 pending=69920 last_error=7387.77228
+PVI updates=30000 pending=68920 last_error=6947.25109
+PVI updates=31000 pending=67920 last_error=6591.51489
+PVI updates=32000 pending=66920 last_error=6109.34587
+PVI updates=33000 pending=65920 last_error=5899.37569
+PVI updates=34000 pending=64920 last_error=5416.17782
+PVI updates=35000 pending=63920 last_error=5133.19520
+PVI updates=36000 pending=62920 last_error=4782.50667
+PVI updates=37000 pending=61920 last_error=4505.73734
+PVI updates=38000 pending=60920 last_error=4236.48872
+PVI updates=39000 pending=59920 last_error=3920.43122
+PVI updates=40000 pending=58920 last_error=3783.01691
+PVI updates=41000 pending=57920 last_error=3382.57164
+PVI updates=42000 pending=56920 last_error=3053.65582
+PVI updates=43000 pending=55920 last_error=2821.58148
+PVI updates=44000 pending=54920 last_error=2687.67109
+PVI updates=45000 pending=53920 last_error=2393.98340
+PVI updates=46000 pending=52920 last_error=2129.78918
+PVI updates=47000 pending=51920 last_error=1892.32548
+PVI updates=48000 pending=50920 last_error=1683.63563
+PVI updates=49000 pending=49920 last_error=1493.33472
+PVI updates=50000 pending=48920 last_error=1318.20124
+PVI updates=51000 pending=47920 last_error=1154.01504
+PVI updates=52000 pending=46920 last_error=1008.99864
+PVI updates=53000 pending=45920 last_error=775.015987
+PVI updates=54000 pending=44920 last_error=52.4262942
+PVI updates=55000 pending=44328 last_error=63.2214822
+PVI updates=56000 pending=43886 last_error=298.714085
+PVI updates=57000 pending=43478 last_error=341.112795
+PVI updates=58000 pending=43043 last_error=37.9135250
+PVI updates=59000 pending=42587 last_error=86.5804094
+PVI updates=60000 pending=42196 last_error=42.1261389
+PVI updates=61000 pending=41734 last_error=247.080695
+PVI updates=62000 pending=41343 last_error=38.1227619
+PVI updates=63000 pending=40882 last_error=51.3564560
+PVI updates=64000 pending=40442 last_error=256.004610
+PVI updates=65000 pending=39989 last_error=63.0039213
+PVI updates=66000 pending=39617 last_error=60.5775830
+PVI updates=67000 pending=39202 last_error=60.5775830
+PVI updates=68000 pending=38780 last_error=294.697172
+PVI updates=69000 pending=38342 last_error=123.569800
+PVI updates=70000 pending=37855 last_error=267.043736
+PVI updates=71000 pending=37465 last_error=118.069425
+PVI updates=72000 pending=37081 last_error=36.1095878
+PVI updates=73000 pending=36645 last_error=36.3754962
+PVI updates=74000 pending=36184 last_error=40.5129780
+PVI updates=75000 pending=35829 last_error=166.740220
+PVI updates=76000 pending=35389 last_error=36.0000000
+PVI updates=77000 pending=34896 last_error=186.427218
+PVI updates=78000 pending=34520 last_error=122.882000
+PVI updates=79000 pending=34041 last_error=35.8000000
+PVI updates=80000 pending=33675 last_error=96.6380000
+PVI updates=81000 pending=33215 last_error=40.1928318
+PVI updates=82000 pending=32754 last_error=35.6000000
+PVI updates=83000 pending=32379 last_error=95.8960000
+PVI updates=84000 pending=31981 last_error=96.2960000
+PVI updates=85000 pending=31529 last_error=121.560600
+PVI updates=86000 pending=31272 last_error=35.5480375
+PVI updates=87000 pending=30989 last_error=54.1728000
+PVI updates=88000 pending=30883 last_error=33.2832050
+PVI updates=89000 pending=31038 last_error=32.5384922
+PVI updates=90000 pending=30948 last_error=31.9932337
+PVI updates=91000 pending=30800 last_error=36.8000377
+PVI updates=92000 pending=30738 last_error=29.4439572
+PVI updates=93000 pending=30722 last_error=28.9734193
+PVI updates=94000 pending=30696 last_error=27.5893488
+PVI updates=95000 pending=30220 last_error=26.8000000
+PVI updates=96000 pending=29722 last_error=26.7940010
+PVI updates=97000 pending=29426 last_error=26.6000000
+PVI updates=98000 pending=28947 last_error=26.6000000
+PVI updates=99000 pending=28500 last_error=33.4363140
+PVI updates=100000 pending=28212 last_error=26.4000000
+PVI_RESULT status=UPDATE_LIMIT_REACHED gamma=0.900000000 theta=0.0100000000 maxUpdates=100000 updates=100000 exploredStates=100226 transitions=301099 priorityBackups=504587 residualBackups=100226 finalQBackups=100226 totalBackups=705039 rewardLookups=2416848 bellmanResidual=26.4000000 learningSeconds=269.110593
+REWARD_CACHE strategy=ONCEANDFORALL hits=2316623 misses=100225 cachedStates=100225
+Nb states discovered (env): 100226
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

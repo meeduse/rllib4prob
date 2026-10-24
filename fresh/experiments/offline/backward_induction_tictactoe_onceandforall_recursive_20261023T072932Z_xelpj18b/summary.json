@@ -1,0 +1,46 @@
+{
+  "campaignId": "backward_induction_tictactoe_onceandforall_recursive_20261023T072932Z_xelpj18b",
+  "algorithm": "BACKWARD_INDUCTION",
+  "environment": "tictactoe",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "RECURSIVE",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 20.5524608791,
+      "sampleSD": 1.2195709663683612,
+      "median": 20.251998270999998,
+      "min": 19.026498625,
+      "max": 22.004955083
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 31.3561296,
+      "sampleSD": 1.3393443127934903,
+      "median": 31.361817000000002,
+      "min": 29.027485,
+      "max": 33.392661
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 51.9085905,
+      "sampleSD": 1.8087621563189595,
+      "median": 51.240636,
+      "min": 48.865911,
+      "max": 54.602008
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 49302.0,
+      "sampleSD": 0.0,
+      "median": 49302.0,
+      "min": 49302.0,
+      "max": 49302.0
+    }
+  }
+}

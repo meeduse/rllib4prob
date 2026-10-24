@@ -1,0 +1,54 @@
+{
+  "campaignId": "prioritized_value_iteration_tictacembedded_embedded_recursive_20261023T083941Z_n9i4b613",
+  "algorithm": "PRIORITIZED_VALUE_ITERATION",
+  "environment": "tictacembedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "RECURSIVE",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 37.7621485874,
+      "sampleSD": 1.6046834427896002,
+      "median": 37.309557312500004,
+      "min": 35.751277292,
+      "max": 40.931192541
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 8.6441912,
+      "sampleSD": 1.1657158563471062,
+      "median": 8.130265,
+      "min": 7.740396,
+      "max": 10.669525
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 46.4063398,
+      "sampleSD": 2.4267769709687785,
+      "median": 46.0121865,
+      "min": 43.870266,
+      "max": 51.600718
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 34044.0,
+      "sampleSD": 0.0,
+      "median": 34044.0,
+      "min": 34044.0,
+      "max": 34044.0
+    },
+    "updates": {
+      "n": 10,
+      "mean": 4488.0,
+      "sampleSD": 0.0,
+      "median": 4488.0,
+      "min": 4488.0,
+      "max": 4488.0
+    }
+  }
+}

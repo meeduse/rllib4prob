@@ -2,7 +2,8 @@ MACHINE 	MountainCarSmall
 INCLUDES 	MountainCar
 PROMOTES	push_left, no_push, push_right
 
-DEFINITIONS 	"rewards.def";
+DEFINITIONS 	
+  "rewards.def";
 
 /*
 Try : reward_success

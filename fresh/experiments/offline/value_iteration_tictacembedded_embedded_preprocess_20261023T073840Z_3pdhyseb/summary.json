@@ -1,0 +1,54 @@
+{
+  "campaignId": "value_iteration_tictacembedded_embedded_preprocess_20261023T073840Z_3pdhyseb",
+  "algorithm": "VALUE_ITERATION",
+  "environment": "tictacembedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 33.8433460208,
+      "sampleSD": 0.9432115414981204,
+      "median": 33.7451423955,
+      "min": 33.071976584,
+      "max": 36.348737583
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 8.6251027,
+      "sampleSD": 0.6034963196089655,
+      "median": 8.4007165,
+      "min": 8.015019,
+      "max": 9.763631
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 42.4684486,
+      "sampleSD": 0.9874447345094765,
+      "median": 42.2883785,
+      "min": 41.378984,
+      "max": 44.833986
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 32868.0,
+      "sampleSD": 0.0,
+      "median": 32868.0,
+      "min": 32868.0,
+      "max": 32868.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 5.0,
+      "sampleSD": 0.0,
+      "median": 5.0,
+      "min": 5.0,
+      "max": 5.0
+    }
+  }
+}

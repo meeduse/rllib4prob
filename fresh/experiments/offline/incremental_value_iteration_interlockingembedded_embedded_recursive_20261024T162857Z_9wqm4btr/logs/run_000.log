@@ -1,0 +1,15 @@
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = interlockingembedded
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 100226 | Exploration time: 296.62662875 seconds
+IVI_ORDERING method=BFS_ACTIONS states=100226 transitions=301099 orderingSeconds=120.664390
+IVI iteration=100 sample_delta=50000.0000 global_residual=50000.0000
+IVI_RESULT status=ITERATION_LIMIT_REACHED seed=0 gamma=0.900000000 theta=0.0100000000 maxIterations=100 updatesPerIteration=500 iterations=100 exploredStates=100226 distinctUpdatedStates=49349 updateBackups=50000 residualBackups=200452 totalBackups=250452 rewardLookups=752336 bellmanResidual=50000.0000 orderingSeconds=120.664390 learningSeconds=145.422194
+Nb states discovered (env): 100226
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

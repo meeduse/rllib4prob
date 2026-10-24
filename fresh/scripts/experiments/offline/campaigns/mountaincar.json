@@ -1,0 +1,30 @@
+{
+  "id": "mountaincar",
+  "description": "MountainCarSmall classical B with subscribed and embedded successor reward; expectedStates measured by equivalence test",
+  "algorithms": [
+    "VI",
+    "PI",
+    "MPI",
+    "IVI",
+    "PVI",
+    "BI"
+  ],
+  "explorations": [
+    "PREPROCESS",
+    "RECURSIVE"
+  ],
+  "repetitions": 10,
+  "gamma": 0.9,
+  "theta": 0.01,
+  "biHorizon": 150,
+  "variants": [
+    {
+      "id": "small",
+      "expectedStates": 12047,
+      "environments": {
+        "ONCEANDFORALL": "mountaincar",
+        "EMBEDDED": "mountaincarembedded"
+      }
+    }
+  ]
+}

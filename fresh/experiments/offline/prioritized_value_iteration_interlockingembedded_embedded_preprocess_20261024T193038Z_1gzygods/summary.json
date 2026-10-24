@@ -1,0 +1,54 @@
+{
+  "campaignId": "prioritized_value_iteration_interlockingembedded_embedded_preprocess_20261024T193038Z_1gzygods",
+  "algorithm": "PRIORITIZED_VALUE_ITERATION",
+  "environment": "interlockingembedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 1,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 1
+  },
+  "successfulRuns": 1,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 1,
+      "mean": 235.5959585,
+      "sampleSD": null,
+      "median": 235.5959585,
+      "min": 235.5959585,
+      "max": 235.5959585
+    },
+    "learningSeconds": {
+      "n": 1,
+      "mean": 153.233485,
+      "sampleSD": null,
+      "median": 153.233485,
+      "min": 153.233485,
+      "max": 153.233485
+    },
+    "totalSeconds": {
+      "n": 1,
+      "mean": 388.829444,
+      "sampleSD": null,
+      "median": 388.829444,
+      "min": 388.829444,
+      "max": 388.829444
+    },
+    "totalBackups": {
+      "n": 1,
+      "mean": 3600300.0,
+      "sampleSD": null,
+      "median": 3600300.0,
+      "min": 3600300.0,
+      "max": 3600300.0
+    },
+    "updates": {
+      "n": 1,
+      "mean": 823058.0,
+      "sampleSD": null,
+      "median": 823058.0,
+      "min": 823058.0,
+      "max": 823058.0
+    }
+  }
+}

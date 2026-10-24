@@ -1,0 +1,52 @@
+[
+  {
+    "run": 0,
+    "seed": 0,
+    "logFile": "logs/run_000.log"
+  },
+  {
+    "run": 1,
+    "seed": 1,
+    "logFile": "logs/run_001.log"
+  },
+  {
+    "run": 2,
+    "seed": 2,
+    "logFile": "logs/run_002.log"
+  },
+  {
+    "run": 3,
+    "seed": 3,
+    "logFile": "logs/run_003.log"
+  },
+  {
+    "run": 4,
+    "seed": 4,
+    "logFile": "logs/run_004.log"
+  },
+  {
+    "run": 5,
+    "seed": 5,
+    "logFile": "logs/run_005.log"
+  },
+  {
+    "run": 6,
+    "seed": 6,
+    "logFile": "logs/run_006.log"
+  },
+  {
+    "run": 7,
+    "seed": 7,
+    "logFile": "logs/run_007.log"
+  },
+  {
+    "run": 8,
+    "seed": 8,
+    "logFile": "logs/run_008.log"
+  },
+  {
+    "run": 9,
+    "seed": 9,
+    "logFile": "logs/run_009.log"
+  }
+]

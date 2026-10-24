@@ -1,0 +1,22 @@
+Selected algorithm = POLICY_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = frozenlake
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 43 | Exploration time: 0.089116791 seconds
+PI iteration=1 evaluation_sweeps=111 policy_residual=0.00833524842 policy_stable=false bellman_residual=NaN
+PI iteration=2 evaluation_sweeps=113 policy_residual=0.00675155122 policy_stable=false bellman_residual=NaN
+PI iteration=3 evaluation_sweeps=115 policy_residual=0.00546875649 policy_stable=false bellman_residual=NaN
+PI iteration=4 evaluation_sweeps=119 policy_residual=0.00358805113 policy_stable=false bellman_residual=NaN
+PI iteration=5 evaluation_sweeps=121 policy_residual=0.00290632142 policy_stable=false bellman_residual=NaN
+PI iteration=6 evaluation_sweeps=123 policy_residual=0.00235412035 policy_stable=false bellman_residual=NaN
+PI iteration=7 evaluation_sweeps=125 policy_residual=0.00190683748 policy_stable=false bellman_residual=NaN
+PI iteration=8 evaluation_sweeps=126 policy_residual=0.00171615373 policy_stable=true bellman_residual=0.00171615373
+PI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 maxEvaluationSweeps=10000 iterations=8 evaluationSweeps=126 exploredStates=43 evaluationBackups=5418 improvementBackups=344 residualBackups=430 totalBackups=6192 rewardLookups=7432 policyStable=true policyResidual=0.00171615373 bellmanResidual=0.00171615373 learningSeconds=0.008111
+REWARD_CACHE strategy=ONCEANDFORALL hits=7389 misses=43 cachedStates=43
+Nb states discovered (env): 43
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

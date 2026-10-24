@@ -1,0 +1,54 @@
+{
+  "campaignId": "prioritized_value_iteration_frozenlake10_onceandforall_preprocess_20261023T161252Z_k59mvdi_",
+  "algorithm": "PRIORITIZED_VALUE_ITERATION",
+  "environment": "frozenlake10",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 0.0442109666,
+      "sampleSD": 0.005407248609433497,
+      "median": 0.041925917,
+      "min": 0.0412285,
+      "max": 0.057915875
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 0.6897222000000001,
+      "sampleSD": 0.075946414996657,
+      "median": 0.6561589999999999,
+      "min": 0.619351,
+      "max": 0.83909
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 0.7339332,
+      "sampleSD": 0.07834087412470087,
+      "median": 0.6982505,
+      "min": 0.661462,
+      "max": 0.888653
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 90812.0,
+      "sampleSD": 0.0,
+      "median": 90812.0,
+      "min": 90812.0,
+      "max": 90812.0
+    },
+    "updates": {
+      "n": 10,
+      "mean": 17811.0,
+      "sampleSD": 0.0,
+      "median": 17811.0,
+      "min": 17811.0,
+      "max": 17811.0
+    }
+  }
+}

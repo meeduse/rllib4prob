@@ -1,0 +1,19 @@
+Selected algorithm = MODIFIED_POLICY_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = tictactoe
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+......Model Checking complete. No more error nodes found.Total states: 5479
+
+End of exploration 5478 | Exploration time: 2.883947708 seconds
+Preparing state transitions and rewards. The first iteration may take some time...
+MPI iteration=1 evaluation_sweeps=5 evaluation_delta=0.754515000 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=2 evaluation_sweeps=10 evaluation_delta=0.436306500 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=3 evaluation_sweeps=12 evaluation_delta=0.00000000 policy_stable=true policy_residual=0.00000000 bellman_residual=0.00000000
+MPI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 evalIterations=5 iterations=3 evaluationSweeps=12 exploredStates=5478 evaluationBackups=54240 improvementBackups=13560 residualBackups=21912 totalBackups=89712 rewardLookups=144115 policyStable=true evaluationDelta=0.00000000 policyResidual=0.00000000 bellmanResidual=0.00000000 learningSeconds=29.929725
+REWARD_CACHE strategy=ONCEANDFORALL hits=138638 misses=5477 cachedStates=5477
+Nb states discovered (env): 5478
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

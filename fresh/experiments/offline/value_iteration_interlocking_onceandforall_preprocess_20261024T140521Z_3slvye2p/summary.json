@@ -1,0 +1,54 @@
+{
+  "campaignId": "value_iteration_interlocking_onceandforall_preprocess_20261024T140521Z_3slvye2p",
+  "algorithm": "VALUE_ITERATION",
+  "environment": "interlocking",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 1,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 1
+  },
+  "successfulRuns": 1,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 1,
+      "mean": 133.271956583,
+      "sampleSD": null,
+      "median": 133.271956583,
+      "min": 133.271956583,
+      "max": 133.271956583
+    },
+    "learningSeconds": {
+      "n": 1,
+      "mean": 275.990798,
+      "sampleSD": null,
+      "median": 275.990798,
+      "min": 275.990798,
+      "max": 275.990798
+    },
+    "totalSeconds": {
+      "n": 1,
+      "mean": 409.262755,
+      "sampleSD": null,
+      "median": 409.262755,
+      "min": 409.262755,
+      "max": 409.262755
+    },
+    "totalBackups": {
+      "n": 1,
+      "mean": 6414464.0,
+      "sampleSD": null,
+      "median": 6414464.0,
+      "min": 6414464.0,
+      "max": 6414464.0
+    },
+    "iterations": {
+      "n": 1,
+      "mean": 63.0,
+      "sampleSD": null,
+      "median": 63.0,
+      "min": 63.0,
+      "max": 63.0
+    }
+  }
+}

@@ -2,6 +2,8 @@ MACHINE 	MountainCarSmallBis
 INCLUDES 	MountainCarBis
 PROMOTES	push_left, no_push, push_right
 
+DEFINITIONS 	
+  "rewards.def";
 /*
 Try : reward_success
   gamma : 0.99

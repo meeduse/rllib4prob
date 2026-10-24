@@ -1,4 +1,4 @@
-MACHINE InterlockingReq
+MACHINE interlocking
 
 SETS
   TRAIN   = {tt01, tt02, tt03} ;
@@ -20,7 +20,7 @@ DEFINITIONS
 
   NbDone == card(dom(reqtab) - pending);
 
-  Goal == pending = {} & acttrn = {};
+  
 
 NbAtGoal == card({
   tt | tt:acttrn &
@@ -37,6 +37,9 @@ HeadToHeadBad ==
     (trainpos(t1) |-> trainpos(t2)) : nextss
   )
 ;
+
+
+Goal == pending = {} & acttrn = {};
 
 /*
 [QLearning] episode=49900 | epsilon=0,0161 | steps(lastEp)=48 | states=70487 | goals=46420
@@ -89,7 +92,6 @@ reward ==
       - (0.2 * real(card(dom(resss))))
       - (IF HeadToHeadBad THEN 10000.0 ELSE 0.0 END)
   END
-;
 
 CONSTANTS
   nextss, pltf1, pltf2, reqtab

@@ -1,0 +1,44 @@
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = mountaincarembedded
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+........Model Checking complete. No more error nodes found.Total states: 12049
+
+End of exploration 12047 | Exploration time: 3.767410541 seconds
+VI iteration=1 sweep_delta=10000.0000
+VI iteration=2 sweep_delta=9000.00000
+VI iteration=3 sweep_delta=8100.00000
+VI iteration=4 sweep_delta=7290.00000
+VI iteration=5 sweep_delta=5314.35095
+VI iteration=6 sweep_delta=4782.91586
+VI iteration=7 sweep_delta=4304.57113
+VI iteration=8 sweep_delta=3874.11401
+VI iteration=9 sweep_delta=3486.70261
+VI iteration=10 sweep_delta=3138.03235
+VI iteration=11 sweep_delta=2574.23721
+VI iteration=12 sweep_delta=2198.71730
+VI iteration=13 sweep_delta=1863.95404
+VI iteration=14 sweep_delta=1635.16324
+VI iteration=15 sweep_delta=1382.14552
+VI iteration=16 sweep_delta=1203.16319
+VI iteration=17 sweep_delta=977.696480
+VI iteration=18 sweep_delta=827.586835
+VI iteration=19 sweep_delta=692.488155
+VI iteration=20 sweep_delta=623.239339
+VI iteration=21 sweep_delta=513.809408
+VI iteration=22 sweep_delta=415.322470
+VI iteration=23 sweep_delta=326.684226
+VI iteration=24 sweep_delta=294.015804
+VI iteration=25 sweep_delta=175.112829
+VI iteration=26 sweep_delta=157.601546
+VI iteration=27 sweep_delta=99.4459939
+VI iteration=28 sweep_delta=58.1555520
+VI iteration=29 sweep_delta=0.00000000
+VI_RESIDUAL iteration=29 global_residual=0.00000000
+VI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=200 iterations=29 exploredStates=12047 updateBackups=349363 residualBackups=12047 totalBackups=361410 rewardLookups=1067580 bellmanResidual=0.00000000 learningSeconds=17.089958
+Nb states discovered (env): 12047
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

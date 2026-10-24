@@ -1,0 +1,13 @@
+{
+  "campaignId": "backward_induction_interlocking_onceandforall_preprocess_20261024T134037Z_uccdoj68",
+  "algorithm": "BACKWARD_INDUCTION",
+  "environment": "interlocking",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 1,
+  "validationStates": {
+    "INVALID": 1
+  },
+  "successfulRuns": 0,
+  "statisticsOnVerifiedSuccessOnly": {}
+}

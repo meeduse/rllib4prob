@@ -10,3 +10,11 @@ target/
 
 # Do not ignore experiments/ or *.log globally: reproducibility data
 # are intended to remain versionable for the journal artifact.
+
+# Temporary files and backups
+__pycache__/
+*.py[cod]
+*.backup*
+*.bak
+*~
+.pytest_cache/

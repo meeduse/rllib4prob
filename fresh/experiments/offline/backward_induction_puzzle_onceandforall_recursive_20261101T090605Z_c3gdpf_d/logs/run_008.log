@@ -1,0 +1,165 @@
+Selected algorithm = BACKWARD_INDUCTION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = puzzle
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 181440 | Exploration time: 381.490236375 seconds
+Preparing finite-horizon dynamic programming (BI). First pass may take time...
+BI horizon_step=1/150 value_delta=13.9500000
+BI horizon_step=2/150 value_delta=12.5550000
+BI horizon_step=3/150 value_delta=11.2995000
+BI horizon_step=4/150 value_delta=10.1695500
+BI horizon_step=5/150 value_delta=9.15259500
+BI horizon_step=6/150 value_delta=8.23733550
+BI horizon_step=7/150 value_delta=7.41360195
+BI horizon_step=8/150 value_delta=6.67224176
+BI horizon_step=9/150 value_delta=6.00501758
+BI horizon_step=10/150 value_delta=5.40451582
+BI horizon_step=11/150 value_delta=4.86406424
+BI horizon_step=12/150 value_delta=4.37765782
+BI horizon_step=13/150 value_delta=3.93989203
+BI horizon_step=14/150 value_delta=3.54590283
+BI horizon_step=15/150 value_delta=3.19131255
+BI horizon_step=16/150 value_delta=2.87218129
+BI horizon_step=17/150 value_delta=2.58496316
+BI horizon_step=18/150 value_delta=2.32646685
+BI horizon_step=19/150 value_delta=2.09382016
+BI horizon_step=20/150 value_delta=1.88443815
+BI horizon_step=21/150 value_delta=1.69599433
+BI horizon_step=22/150 value_delta=1.52639490
+BI horizon_step=23/150 value_delta=1.37375541
+BI horizon_step=24/150 value_delta=1.23637987
+BI horizon_step=25/150 value_delta=1.11274188
+BI horizon_step=26/150 value_delta=1.00146769
+BI horizon_step=27/150 value_delta=0.901320924
+BI horizon_step=28/150 value_delta=0.811188831
+BI horizon_step=29/150 value_delta=0.730069948
+BI horizon_step=30/150 value_delta=0.657062953
+BI horizon_step=31/150 value_delta=0.591356658
+BI horizon_step=32/150 value_delta=0.532220992
+BI horizon_step=33/150 value_delta=0.478998893
+BI horizon_step=34/150 value_delta=0.431099004
+BI horizon_step=35/150 value_delta=0.387989103
+BI horizon_step=36/150 value_delta=0.349190193
+BI horizon_step=37/150 value_delta=0.314271174
+BI horizon_step=38/150 value_delta=0.282844056
+BI horizon_step=39/150 value_delta=0.254559651
+BI horizon_step=40/150 value_delta=0.229103686
+BI horizon_step=41/150 value_delta=0.206193317
+BI horizon_step=42/150 value_delta=0.185573985
+BI horizon_step=43/150 value_delta=0.167016587
+BI horizon_step=44/150 value_delta=0.150314928
+BI horizon_step=45/150 value_delta=0.135283435
+BI horizon_step=46/150 value_delta=0.121755092
+BI horizon_step=47/150 value_delta=0.109579583
+BI horizon_step=48/150 value_delta=0.0986216243
+BI horizon_step=49/150 value_delta=0.0887594619
+BI horizon_step=50/150 value_delta=0.0798835157
+BI horizon_step=51/150 value_delta=0.0718951641
+BI horizon_step=52/150 value_delta=0.0647056477
+BI horizon_step=53/150 value_delta=0.0582350830
+BI horizon_step=54/150 value_delta=0.0524115747
+BI horizon_step=55/150 value_delta=0.0471704172
+BI horizon_step=56/150 value_delta=0.0424533755
+BI horizon_step=57/150 value_delta=0.0382080379
+BI horizon_step=58/150 value_delta=0.0343872341
+BI horizon_step=59/150 value_delta=0.0309485107
+BI horizon_step=60/150 value_delta=0.0278536596
+BI horizon_step=61/150 value_delta=0.0250682937
+BI horizon_step=62/150 value_delta=0.0225614643
+BI horizon_step=63/150 value_delta=0.0203053179
+BI horizon_step=64/150 value_delta=0.0182747861
+BI horizon_step=65/150 value_delta=0.0164473075
+BI horizon_step=66/150 value_delta=0.0148025767
+BI horizon_step=67/150 value_delta=0.0133223191
+BI horizon_step=68/150 value_delta=0.0119900872
+BI horizon_step=69/150 value_delta=0.0107910784
+BI horizon_step=70/150 value_delta=0.00971197060
+BI horizon_step=71/150 value_delta=0.00874077354
+BI horizon_step=72/150 value_delta=0.00786669618
+BI horizon_step=73/150 value_delta=0.00708002657
+BI horizon_step=74/150 value_delta=0.00637202391
+BI horizon_step=75/150 value_delta=0.00573482152
+BI horizon_step=76/150 value_delta=0.00516133937
+BI horizon_step=77/150 value_delta=0.00464520543
+BI horizon_step=78/150 value_delta=0.00418068489
+BI horizon_step=79/150 value_delta=0.00376261640
+BI horizon_step=80/150 value_delta=0.00338635476
+BI horizon_step=81/150 value_delta=0.00304771928
+BI horizon_step=82/150 value_delta=0.00274294735
+BI horizon_step=83/150 value_delta=0.00246865262
+BI horizon_step=84/150 value_delta=0.00222178736
+BI horizon_step=85/150 value_delta=0.00199960862
+BI horizon_step=86/150 value_delta=0.00179964776
+BI horizon_step=87/150 value_delta=0.00161968298
+BI horizon_step=88/150 value_delta=0.00145771468
+BI horizon_step=89/150 value_delta=0.00131194322
+BI horizon_step=90/150 value_delta=0.00118074889
+BI horizon_step=91/150 value_delta=0.00106267401
+BI horizon_step=92/150 value_delta=0.000956406605
+BI horizon_step=93/150 value_delta=0.000860765944
+BI horizon_step=94/150 value_delta=0.000774689350
+BI horizon_step=95/150 value_delta=0.000697220415
+BI horizon_step=96/150 value_delta=0.000627498373
+BI horizon_step=97/150 value_delta=0.000564748536
+BI horizon_step=98/150 value_delta=0.000508273682
+BI horizon_step=99/150 value_delta=0.000457446314
+BI horizon_step=100/150 value_delta=0.000411701683
+BI horizon_step=101/150 value_delta=0.000370531515
+BI horizon_step=102/150 value_delta=0.000333478363
+BI horizon_step=103/150 value_delta=0.000300130527
+BI horizon_step=104/150 value_delta=0.000270117474
+BI horizon_step=105/150 value_delta=0.000243105727
+BI horizon_step=106/150 value_delta=0.000218795154
+BI horizon_step=107/150 value_delta=0.000196915639
+BI horizon_step=108/150 value_delta=0.000177224075
+BI horizon_step=109/150 value_delta=0.000159501667
+BI horizon_step=110/150 value_delta=0.000143551501
+BI horizon_step=111/150 value_delta=0.000129196351
+BI horizon_step=112/150 value_delta=0.000116276715
+BI horizon_step=113/150 value_delta=0.000104649044
+BI horizon_step=114/150 value_delta=9.41841395e-05
+BI horizon_step=115/150 value_delta=8.47657256e-05
+BI horizon_step=116/150 value_delta=7.62891530e-05
+BI horizon_step=117/150 value_delta=6.86602377e-05
+BI horizon_step=118/150 value_delta=6.17942140e-05
+BI horizon_step=119/150 value_delta=5.56147926e-05
+BI horizon_step=120/150 value_delta=5.00533133e-05
+BI horizon_step=121/150 value_delta=4.50479820e-05
+BI horizon_step=122/150 value_delta=4.05431838e-05
+BI horizon_step=123/150 value_delta=3.64888654e-05
+BI horizon_step=124/150 value_delta=3.28399789e-05
+BI horizon_step=125/150 value_delta=2.95559810e-05
+BI horizon_step=126/150 value_delta=2.66003829e-05
+BI horizon_step=127/150 value_delta=2.39403446e-05
+BI horizon_step=128/150 value_delta=2.15463101e-05
+BI horizon_step=129/150 value_delta=1.93916791e-05
+BI horizon_step=130/150 value_delta=1.74525112e-05
+BI horizon_step=131/150 value_delta=1.57072601e-05
+BI horizon_step=132/150 value_delta=1.41365341e-05
+BI horizon_step=133/150 value_delta=1.27228807e-05
+BI horizon_step=134/150 value_delta=1.14505926e-05
+BI horizon_step=135/150 value_delta=1.03055334e-05
+BI horizon_step=136/150 value_delta=9.27498004e-06
+BI horizon_step=137/150 value_delta=8.34748204e-06
+BI horizon_step=138/150 value_delta=7.51273383e-06
+BI horizon_step=139/150 value_delta=6.76146045e-06
+BI horizon_step=140/150 value_delta=6.08531440e-06
+BI horizon_step=141/150 value_delta=5.47678297e-06
+BI horizon_step=142/150 value_delta=4.92910467e-06
+BI horizon_step=143/150 value_delta=4.43619420e-06
+BI horizon_step=144/150 value_delta=3.99257478e-06
+BI horizon_step=145/150 value_delta=3.59331731e-06
+BI horizon_step=146/150 value_delta=3.23398558e-06
+BI horizon_step=147/150 value_delta=2.91058703e-06
+BI horizon_step=148/150 value_delta=2.61952832e-06
+BI horizon_step=149/150 value_delta=2.35757550e-06
+BI horizon_step=150/150 value_delta=2.12181796e-06
+BI_RESULT status=HORIZON_COMPLETED gamma=0.900000000 horizon=150 completedHorizon=150 exploredStates=181440 updateBackups=27216000 totalBackups=27216000 rewardLookups=72576000 lastHorizonDelta=2.12181796e-06 learningSeconds=628.102354
+REWARD_CACHE strategy=ONCEANDFORALL hits=72394560 misses=181440 cachedStates=181440
+Nb states discovered (env): 181440
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

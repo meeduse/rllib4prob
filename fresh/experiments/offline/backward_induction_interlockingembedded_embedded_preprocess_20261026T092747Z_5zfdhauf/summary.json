@@ -1,0 +1,46 @@
+{
+  "campaignId": "backward_induction_interlockingembedded_embedded_preprocess_20261026T092747Z_5zfdhauf",
+  "algorithm": "BACKWARD_INDUCTION",
+  "environment": "interlockingembedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 229.7963091748,
+      "sampleSD": 0.5620124550456513,
+      "median": 229.9118375415,
+      "min": 228.488018,
+      "max": 230.64597125
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 160.334224,
+      "sampleSD": 0.8255963466553567,
+      "median": 160.21448550000002,
+      "min": 159.106734,
+      "max": 161.602819
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 390.1305331,
+      "sampleSD": 1.04310514026391,
+      "median": 390.132837,
+      "min": 388.511369,
+      "max": 391.507693
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 15033900.0,
+      "sampleSD": 0.0,
+      "median": 15033900.0,
+      "min": 15033900.0,
+      "max": 15033900.0
+    }
+  }
+}

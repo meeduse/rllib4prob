@@ -11,6 +11,7 @@ import fr.polytech.mnia.Environment.FrozenLakeEnvironment;
 import fr.polytech.mnia.Environment.EnvironmentFactory;
 import fr.polytech.mnia.Environment.ExplorationStrategy;
 import fr.polytech.mnia.Environment.RewardStrategy;
+import fr.polytech.mnia.Environment.PuzzleEnvironment;
 import fr.polytech.mnia.Environment.InterlockingEnvironment;
 import fr.polytech.mnia.Environment.MountainCarEnvironment;
 import fr.polytech.mnia.Environment.AutoV2Environment;
@@ -123,6 +124,14 @@ public class App {
                 + " hits=" + railway.getRewardCacheHits()
                 + " misses=" + railway.getRewardCacheMisses()
                 + " cachedStates=" + railway.getCachedRewardStateCount());
+        }
+
+        if (rewardStrategy == RewardStrategy.ONCEANDFORALL
+                && env instanceof PuzzleEnvironment puzzleModel) {
+            System.out.println("REWARD_CACHE strategy=ONCEANDFORALL"
+                + " hits=" + puzzleModel.getRewardCacheHits()
+                + " misses=" + puzzleModel.getRewardCacheMisses()
+                + " cachedStates=" + puzzleModel.getCachedRewardStateCount());
         }
 
         System.out.println("Nb states discovered (env): " + env.getStateIds().size());

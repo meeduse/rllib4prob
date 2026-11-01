@@ -1,0 +1,13 @@
+{
+  "schema": "offline-campaign-manager-v1",
+  "campaign": "puzzle",
+  "sourceFingerprint": "8f38806689c1e2565d5927aae6b3f45b95817ed37791adef6482fdb30c334ca7",
+  "manifestSha256": "53c8670e5eecfe09e852e264db14a29c3da85a85e330c88a3c10e60df4bb76ea",
+  "report": "/Users/idani/rllib4prob/fresh/experiments/campaigns/puzzle/validation-20261027T180744Z/validation.csv",
+  "reportSha256": "c52f171ce8346750e7487717dd2c4997cecd33a4fd298da0d20e50718f542bdb",
+  "configurations": 24,
+  "timeUtc": "2026-10-27T21:04:27.618750+00:00",
+  "reusedPreprocessCount": 12,
+  "reusedFrom": "/Users/idani/rllib4prob/fresh/experiments/campaigns/puzzle/validation-20261027T132313Z/validation.csv",
+  "reusedFromSha256": "41a38cc88320b64b6820d4387f65cde3d1e075f6c0cfcba324822c5d8ba33a56"
+}

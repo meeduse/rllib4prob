@@ -1,0 +1,90 @@
+
+COMMAND: bash /Users/idani/rllib4prob/fresh/scripts/experiments/offline/run_campaign.sh --algorithm IVI --reward ONCEANDFORALL --exploration RECURSIVE --environment puzzle --count 1 --expected-states 181440
+Compiling once and resolving the runtime classpath...
+
+New campaign: /Users/idani/rllib4prob/fresh/experiments/offline/incremental_value_iteration_puzzle_onceandforall_recursive_20261027T193318Z_iwd2i5xn
+Snapshot: 116 source/config files
+
+========== INCREMENTAL_VALUE_ITERATION seed 0 (1/1) ==========
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = puzzle
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 181440 | Exploration time: 377.546627625 seconds
+IVI_ORDERING method=BFS_ACTIONS states=181440 transitions=483840 orderingSeconds=611.110703
+IVI iteration=37 sample_delta=27.3129517 global_residual=23.9266565
+IVI iteration=73 sample_delta=33.0997385 global_residual=38.5721885
+IVI iteration=109 sample_delta=39.1780627 global_residual=34.0016105
+IVI iteration=146 sample_delta=23.9275245 global_residual=27.0170373
+IVI iteration=182 sample_delta=27.5083404 global_residual=24.7575064
+IVI iteration=218 sample_delta=21.3461439 global_residual=23.3604495
+IVI iteration=255 sample_delta=16.9990622 global_residual=21.0244045
+IVI iteration=291 sample_delta=14.1393484 global_residual=18.9219641
+IVI iteration=327 sample_delta=16.5162436 global_residual=17.7081557
+IVI iteration=363 sample_delta=16.5981979 global_residual=15.9904373
+IVI iteration=400 sample_delta=10.7916021 global_residual=13.5659051
+IVI iteration=436 sample_delta=13.2739922 global_residual=12.2786181
+IVI iteration=472 sample_delta=13.4457464 global_residual=11.0667213
+IVI iteration=509 sample_delta=7.53612832 global_residual=9.96004918
+IVI iteration=545 sample_delta=8.27795033 global_residual=8.29101294
+IVI iteration=581 sample_delta=6.70513977 global_residual=7.46191165
+IVI iteration=617 sample_delta=5.63895519 global_residual=8.74949427
+IVI iteration=654 sample_delta=4.88804689 global_residual=7.26787879
+IVI iteration=690 sample_delta=4.39924220 global_residual=5.88698182
+IVI iteration=726 sample_delta=3.20704756 global_residual=5.05535896
+IVI iteration=763 sample_delta=2.76835996 global_residual=4.54982306
+IVI iteration=799 sample_delta=2.58555731 global_residual=4.09484076
+IVI iteration=835 sample_delta=2.24237156 global_residual=3.06380429
+IVI iteration=871 sample_delta=2.75742386 global_residual=2.74501198
+IVI iteration=908 sample_delta=1.92675347 global_residual=2.29504075
+IVI iteration=944 sample_delta=1.48604072 global_residual=2.06553668
+IVI iteration=980 sample_delta=1.33743665 global_residual=1.31325215
+IVI iteration=1017 sample_delta=0.815188461 global_residual=1.18192694
+IVI iteration=1053 sample_delta=0.902600962 global_residual=1.06373424
+IVI iteration=1089 sample_delta=0.743338690 global_residual=0.957360819
+IVI iteration=1125 sample_delta=0.801482358 global_residual=0.775462263
+IVI iteration=1162 sample_delta=0.487704514 global_residual=0.589684916
+IVI iteration=1198 sample_delta=0.457902712 global_residual=0.621321689
+IVI iteration=1234 sample_delta=0.457902712 global_residual=0.425940586
+IVI iteration=1271 sample_delta=0.333811077 global_residual=0.370901197
+IVI iteration=1307 sample_delta=0.253651384 global_residual=0.308699748
+IVI iteration=1343 sample_delta=0.270386972 global_residual=0.259186175
+IVI iteration=1379 sample_delta=0.233267557 global_residual=0.219013448
+IVI iteration=1416 sample_delta=0.144881463 global_residual=0.197112103
+IVI iteration=1452 sample_delta=0.159660803 global_residual=0.177400893
+IVI iteration=1488 sample_delta=0.177400893 global_residual=0.143694723
+IVI iteration=1525 sample_delta=0.0942781077 global_residual=0.129325251
+IVI iteration=1561 sample_delta=0.0942781077 global_residual=0.116392726
+IVI iteration=1597 sample_delta=0.0942781077 global_residual=0.104753453
+IVI iteration=1633 sample_delta=0.0763652673 global_residual=0.0942781077
+IVI iteration=1670 sample_delta=0.0515658523 global_residual=0.0501032519
+IVI iteration=1706 sample_delta=0.0370324280 global_residual=0.0389024544
+IVI iteration=1742 sample_delta=0.0350122090 global_residual=0.0339757655
+IVI iteration=1779 sample_delta=0.0260743623 global_residual=0.0342246202
+IVI iteration=1815 sample_delta=0.0197026069 global_residual=0.0327876648
+IVI iteration=1851 sample_delta=0.0186598983 global_residual=0.0295088983
+IVI iteration=1887 sample_delta=0.0165091455 global_residual=0.0265580085
+IVI iteration=1924 sample_delta=0.0119195794 global_residual=0.0239022076
+IVI iteration=1960 sample_delta=0.0132593191 global_residual=0.0147325768
+IVI iteration=1996 sample_delta=0.0104010111 global_residual=0.0132593191
+IVI iteration=2033 sample_delta=0.00966604361 global_residual=0.0128257940
+IVI iteration=2069 sample_delta=0.00650105600 global_residual=0.00935000384
+IVI_RESULT status=CONVERGED seed=0 gamma=0.900000000 theta=0.0100000000 maxIterations=3500 updatesPerIteration=5000 iterations=2069 exploredStates=181440 distinctUpdatedStates=181440 updateBackups=10345000 residualBackups=10523520 totalBackups=20868520 rewardLookups=55649389 bellmanResidual=0.00935000384 orderingSeconds=611.110703 learningSeconds=817.192906
+REWARD_CACHE strategy=ONCEANDFORALL hits=55467949 misses=181440 cachedStates=181440
+Nb states discovered (env): 181440
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+CHECK run 0: status=CONVERGED verification=VERIFIED_SUCCESS
+
+Completed: 1/1 verified successful runs
+Breakdown: {'VERIFIED_SUCCESS': 1}
+totalSeconds: mean=1194.739534 sample_sd=n/a
+learningSeconds: mean=817.192906 sample_sd=n/a
+explorationSeconds: mean=377.546628 sample_sd=n/a
+totalBackups: mean=20868520.000000 sample_sd=n/a
+CSV: /Users/idani/rllib4prob/fresh/experiments/offline/incremental_value_iteration_puzzle_onceandforall_recursive_20261027T193318Z_iwd2i5xn/results.csv
+Summary: /Users/idani/rllib4prob/fresh/experiments/offline/incremental_value_iteration_puzzle_onceandforall_recursive_20261027T193318Z_iwd2i5xn/summary.json
+All raw logs preserved in: /Users/idani/rllib4prob/fresh/experiments/offline/incremental_value_iteration_puzzle_onceandforall_recursive_20261027T193318Z_iwd2i5xn/logs

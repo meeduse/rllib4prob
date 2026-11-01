@@ -41,7 +41,8 @@ VALIDATE_FIELDS = ['variant', 'environment', 'algorithm', 'rewardStrategy',
                    'expectedStates', 'exploredStates', 'status', 'validationState',
                    'processExitCode', 'gamma', 'theta', 'bellmanResidual',
                    'totalBackups', 'rewardLookups', 'cacheHits', 'cacheMisses',
-                   'cachedStates', 'horizon', 'completedHorizon', 'seed', 'run']
+                   'cachedStates', 'horizon', 'completedHorizon', 'seed', 'run',
+                   'validationOrigin']
 
 
 def stamp():
@@ -318,7 +319,125 @@ def authorize_path(repo, mid):
     return repo / 'experiments/campaigns' / mid / 'validation-ok.json'
 
 
-def validate(repo, m, manifest_path):
+# A previous PREPROCESS validation can be reused after the recursive-only DFS fix.
+# Any other changed experiment input invalidates this shortcut.
+REUSE_ALLOWED_CHANGED_FILES = frozenset({
+    'src/main/java/fr/polytech/mnia/Environment/Environment.java',
+    'scripts/experiments/offline/manage_campaigns.py',
+})
+
+
+def snapshot_file_hashes(snapshot):
+    """Read the runner's saved per-file SHA-256 list without trusting file paths."""
+    if not snapshot.is_file():
+        raise RuntimeError(f'Missing source-provenance snapshot: {snapshot}')
+    hashes = {}
+    for line in snapshot.read_text(encoding='utf-8').splitlines():
+        if not line.strip():
+            continue
+        match = re.fullmatch(r'([0-9a-f]{64})  (.+)', line)
+        if not match:
+            raise RuntimeError(f'Malformed source-provenance entry: {line[:120]}')
+        sha, rel = match.groups()
+        path = Path(rel)
+        if path.is_absolute() or '..' in path.parts or rel in hashes:
+            raise RuntimeError(f'Unsafe or duplicate snapshot path: {rel}')
+        hashes[rel] = sha
+    if not hashes:
+        raise RuntimeError('Empty source-provenance snapshot')
+    return hashes
+
+
+def reuse_preprocess(repo, m, source_report):
+    """Recheck old PASS records and their original one-run experiments.
+
+    The only permitted input changes are Environment.java (recursive DFS fix)
+    and this orchestration script. All other inputs must have identical SHA-256.
+    This assumes the Environment.java edit has been reviewed as recursive-only.
+    """
+    report = source_report.expanduser().resolve()
+    root = (repo / 'experiments/campaigns' / m['id']).resolve()
+    if (not report.is_file() or report.name != 'validation.csv' or
+            report.parent.parent != root or not report.parent.name.startswith('validation-')):
+        raise RuntimeError(f'Not a validation report for campaign {m["id"]}: {report}')
+    if not (report.parent / 'logs').is_dir():
+        raise RuntimeError('Previous validation has no saved logs')
+    plan = list(specs(m))
+    with report.open(newline='', encoding='utf-8-sig') as f:
+        old_rows = list(csv.DictReader(f))
+    if len(old_rows) != len(plan):
+        raise RuntimeError(f'Previous report must have {len(plan)} rows, found {len(old_rows)}')
+    by_key = {}
+    for old in old_rows:
+        key = tuple(old.get(field) for field in
+                    ('algorithm', 'rewardStrategy', 'explorationStrategy', 'environment'))
+        if key in by_key:
+            raise RuntimeError(f'Duplicate old validation configuration: {key}')
+        by_key[key] = old
+    if set(by_key) != {c['key'] for c in plan}:
+        raise RuntimeError('Previous validation report does not match this campaign matrix')
+    current = snapshot_file_hashes_from_current(repo)
+    reuse = {}
+    for i, c in enumerate(plan, 1):
+        if c['exploration'] != 'PREPROCESS':
+            continue
+        old = by_key[c['key']]
+        if (old.get('validation') != 'PASS' or old.get('issues') or
+                old.get('validationState') != 'VERIFIED_SUCCESS' or
+                old.get('expectedStates') != str(c['expected'])):
+            raise RuntimeError(f'Cannot reuse configuration {i}: not a verified PASS')
+        campaign_id = old.get('campaignId', '')
+        # A campaign ID is a basename, not an arbitrary filesystem path.
+        if not re.fullmatch(r'[a-zA-Z0-9_-]+', campaign_id):
+            raise RuntimeError(f'Invalid old campaign ID in configuration {i}')
+        folder = repo / 'experiments/offline' / campaign_id
+        if folder.is_symlink() or not folder.is_dir():
+            raise RuntimeError(f'Missing or unsafe old pilot campaign: {folder}')
+        summary, trial, key = read_folder(folder)
+        issues = check_rows(m, c, summary, trial, 1)
+        if issues or key != c['key']:
+            raise RuntimeError(f'Previous pilot for configuration {i} is invalid: {issues[:4]}')
+        source = snapshot_file_hashes(folder / 'input_sha256.txt')
+        changed = {p for p in set(source) | set(current) if source.get(p) != current.get(p)}
+        unexpected = changed - REUSE_ALLOWED_CHANGED_FILES
+        if unexpected:
+            raise RuntimeError('Cannot reuse old pilots: unrelated source/config changes: '
+                               + ', '.join(sorted(unexpected)[:12]))
+        if ('src/main/java/fr/polytech/mnia/Environment/Environment.java' not in source
+                or 'src/main/java/fr/polytech/mnia/Environment/Environment.java' not in current):
+            raise RuntimeError('Environment.java not present in source snapshots')
+        log = report.parent / 'logs' / f'{i:03d}_{c["env"]}_{c["flag"]}_{c["exploration"]}.log'
+        if not log.is_file():
+            raise RuntimeError(f'Missing original validation log: {log}')
+        evidence = log.read_text(encoding='utf-8', errors='replace')
+        if ('New campaign: ' not in evidence or campaign_id not in evidence or
+                'Completed: 1/1 verified successful runs' not in evidence):
+            raise RuntimeError(f'Original validation log does not establish PASS: {log}')
+        first = trial[0]
+        for field in VALIDATE_FIELDS:
+            if field in ('variant', 'validation', 'issues', 'validationOrigin', 'expectedStates'):
+                continue
+            if old.get(field, '') != first.get(field, ''):
+                raise RuntimeError(f'Original report differs from saved pilot {i}: {field}')
+        reusable = dict(old)
+        reusable['validationOrigin'] = 'REUSED_PREPROCESS'
+        reuse[c['key']] = reusable
+    if not reuse:
+        raise RuntimeError('No PREPROCESS validations found to reuse')
+    print(f'REUSE: {len(reuse)} previously verified PREPROCESS validations from {report}', flush=True)
+    return reuse, report
+
+
+def snapshot_file_hashes_from_current(repo):
+    """Use the exact input paths captured by run_campaign.py."""
+    hashes = {}
+    for entry in expected_snapshot_lines(repo):
+        sha, rel = entry.split('  ', 1)
+        hashes[rel] = sha
+    return hashes
+
+
+def validate(repo, m, manifest_path, reuse_source=None):
     marker = authorize_path(repo, m['id'])
     marker.unlink(missing_ok=True)  # fail closed when a new validation starts
     root = marker.parent / ('validation-' + stamp())
@@ -331,7 +450,13 @@ def validate(repo, m, manifest_path):
     rows = []
     report = root / 'validation.csv'
     errors = []
+    reused, previous_report = reuse_preprocess(repo, m, reuse_source) if reuse_source else ({}, None)
     for i, c in enumerate(plan, 1):
+        if c['key'] in reused:
+            rows.append(reused[c['key']])
+            save_csv(report, rows, VALIDATE_FIELDS)
+            print(f'REUSED {i}/{len(plan)}: {c["variant"]} {c["flag"]} {c["reward"]} {c["exploration"]} PASS', flush=True)
+            continue
         print(f'VALIDATE {i}/{len(plan)}: {c["variant"]} {c["flag"]} {c["reward"]} {c["exploration"]}', flush=True)
         cmd = ['bash', str(runner), '--algorithm', c['flag'], '--reward', c['reward'],
                '--exploration', c['exploration'], '--environment', c['env'],
@@ -356,7 +481,7 @@ def validate(repo, m, manifest_path):
                'explorationStrategy': c['exploration'],
                'validation': 'FAIL' if issues else 'PASS', 'issues': '; '.join(issues),
                'campaignId': summary.get('campaignId', ''),
-               'expectedStates': c['expected'], **row0}
+               'expectedStates': c['expected'], **row0, 'validationOrigin': 'EXECUTED'}
         rows.append(row)
         save_csv(report, rows, VALIDATE_FIELDS)
         if issues:
@@ -377,6 +502,9 @@ def validate(repo, m, manifest_path):
         'sourceFingerprint': initial_hash, 'manifestSha256': digest(manifest_path),
         'report': str(report), 'reportSha256': digest(report),
         'configurations': len(plan), 'timeUtc': datetime.now(timezone.utc).isoformat(),
+        'reusedPreprocessCount': len(reused),
+        'reusedFrom': str(previous_report) if previous_report else None,
+        'reusedFromSha256': digest(previous_report) if previous_report else None,
     }, indent=2) + '\n', encoding='utf-8')
     print(f'VALIDATION PASSED {len(plan)}/{len(plan)}. Report: {report}', flush=True)
 
@@ -557,12 +685,16 @@ def main(argv=None):
     modes.add_argument('--all', action='store_true', help='Validate, then run only if all validations succeed')
     modes.add_argument('--audit', action='store_true', help='Rebuild audits from existing final ZIPs without ProB')
     modes.add_argument('--status', action='store_true', help='Read-only final campaign status')
+    p.add_argument('--reuse-preprocess-from', type=Path, metavar='VALIDATION_CSV',
+                   help='With --validate: recheck and reuse old PREPROCESS PASS pilots; rerun other explorations')
     p.add_argument('--repo', type=Path, default=Path(__file__).resolve().parents[3],
                    help='fresh project root (inferred from script location)')
     p.add_argument('--archive', type=Path, default=Path.home() / 'rllib4prob-private-archive',
                    help='Private pilot archive, must be outside fresh project')
     args = p.parse_args(argv)
     try:
+        if args.reuse_preprocess_from is not None and not args.validate:
+            raise ValueError('--reuse-preprocess-from is only supported together with --validate')
         repo = args.repo.expanduser().resolve()
         m, manifest_path = manifest_load(repo, args.campaign)
         plan = list(specs(m))
@@ -587,7 +719,7 @@ def main(argv=None):
         if not (repo / 'scripts/experiments/offline/run_campaign.sh').is_file():
             raise RuntimeError('Cannot find the existing runner in fresh')
         if args.validate or args.all:
-            validate(repo, m, manifest_path)
+            validate(repo, m, manifest_path, args.reuse_preprocess_from)
         if args.run or args.all:
             run(repo, m, manifest_path, archive_root)
     except (OSError, ValueError, RuntimeError, KeyError, json.JSONDecodeError) as exc:

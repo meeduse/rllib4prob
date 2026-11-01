@@ -1,0 +1,54 @@
+{
+  "campaignId": "modified_policy_iteration_puzzle_onceandforall_preprocess_20261030T181030Z_upqyf6ou",
+  "algorithm": "MODIFIED_POLICY_ITERATION",
+  "environment": "puzzle",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 28.5379152252,
+      "sampleSD": 0.45122919554129826,
+      "median": 28.485304687499998,
+      "min": 27.987638417,
+      "max": 29.433568584
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 619.3502116,
+      "sampleSD": 7.539150757539874,
+      "median": 622.444025,
+      "min": 607.919961,
+      "max": 631.123787
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 647.8881268,
+      "sampleSD": 7.327539163389298,
+      "median": 650.5965795,
+      "min": 637.105615,
+      "max": 659.651035
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 19287072.0,
+      "sampleSD": 468866.2997486597,
+      "median": 19323360.0,
+      "min": 18688320.0,
+      "max": 19958400.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 17.5,
+      "sampleSD": 0.5270462766947299,
+      "median": 17.5,
+      "min": 17.0,
+      "max": 18.0
+    }
+  }
+}

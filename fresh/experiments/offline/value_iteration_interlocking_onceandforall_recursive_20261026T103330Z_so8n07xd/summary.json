@@ -1,0 +1,54 @@
+{
+  "campaignId": "value_iteration_interlocking_onceandforall_recursive_20261026T103330Z_so8n07xd",
+  "algorithm": "VALUE_ITERATION",
+  "environment": "interlocking",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "RECURSIVE",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 294.8521627457,
+      "sampleSD": 2.967335044539359,
+      "median": 294.52254177099996,
+      "min": 290.55424575,
+      "max": 299.612707375
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 256.8413105,
+      "sampleSD": 8.119096092247233,
+      "median": 258.3122965,
+      "min": 237.931002,
+      "max": 264.759221
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 551.6934733,
+      "sampleSD": 7.099899766635589,
+      "median": 553.179134,
+      "min": 537.543709,
+      "max": 559.338781
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 6013560.0,
+      "sampleSD": 0.0,
+      "median": 6013560.0,
+      "min": 6013560.0,
+      "max": 6013560.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 59.0,
+      "sampleSD": 0.0,
+      "median": 59.0,
+      "min": 59.0,
+      "max": 59.0
+    }
+  }
+}

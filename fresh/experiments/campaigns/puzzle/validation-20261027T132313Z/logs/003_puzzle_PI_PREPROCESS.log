@@ -1,0 +1,50 @@
+
+COMMAND: bash /Users/idani/rllib4prob/fresh/scripts/experiments/offline/run_campaign.sh --algorithm PI --reward ONCEANDFORALL --exploration PREPROCESS --environment puzzle --count 1 --expected-states 181440
+Compiling once and resolving the runtime classpath...
+
+New campaign: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_puzzle_onceandforall_preprocess_20261027T134410Z_l_dydh_b
+Snapshot: 116 source/config files
+
+========== POLICY_ITERATION repetition 1 (1/1) ==========
+Selected algorithm = POLICY_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = puzzle
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+................................................................Model Checking complete. No more error nodes found.Total states: 181442
+
+End of exploration 181440 | Exploration time: 32.041081875 seconds
+PI iteration=1 evaluation_sweeps=38 policy_residual=0.00747561734 policy_stable=false bellman_residual=NaN
+PI iteration=2 evaluation_sweeps=69 policy_residual=0.00752602692 policy_stable=false bellman_residual=NaN
+PI iteration=3 evaluation_sweeps=99 policy_residual=0.00706968668 policy_stable=false bellman_residual=NaN
+PI iteration=4 evaluation_sweeps=117 policy_residual=0.00778759507 policy_stable=false bellman_residual=NaN
+PI iteration=5 evaluation_sweeps=135 policy_residual=0.000194935615 policy_stable=false bellman_residual=NaN
+PI iteration=6 evaluation_sweeps=149 policy_residual=1.02019093e-05 policy_stable=false bellman_residual=NaN
+PI iteration=7 evaluation_sweeps=166 policy_residual=2.83744065e-07 policy_stable=false bellman_residual=NaN
+PI iteration=8 evaluation_sweeps=186 policy_residual=4.19398560e-09 policy_stable=false bellman_residual=NaN
+PI iteration=9 evaluation_sweeps=204 policy_residual=9.44808676e-11 policy_stable=false bellman_residual=NaN
+PI iteration=10 evaluation_sweeps=221 policy_residual=2.36610731e-12 policy_stable=false bellman_residual=NaN
+PI iteration=11 evaluation_sweeps=235 policy_residual=1.20792265e-13 policy_stable=false bellman_residual=NaN
+PI iteration=12 evaluation_sweeps=249 policy_residual=1.42108547e-14 policy_stable=false bellman_residual=NaN
+PI iteration=13 evaluation_sweeps=265 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=14 evaluation_sweeps=274 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=15 evaluation_sweeps=289 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=16 evaluation_sweeps=291 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=17 evaluation_sweeps=293 policy_residual=0.00000000 policy_stable=true bellman_residual=0.00000000
+PI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 maxEvaluationSweeps=10000 iterations=17 evaluationSweeps=293 exploredStates=181440 evaluationBackups=53161920 improvementBackups=3084480 residualBackups=3447360 totalBackups=59693760 rewardLookups=65439360 policyStable=true policyResidual=0.00000000 bellmanResidual=0.00000000 learningSeconds=655.640790
+REWARD_CACHE strategy=ONCEANDFORALL hits=65257920 misses=181440 cachedStates=181440
+Nb states discovered (env): 181440
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+CHECK run 0: status=CONVERGED verification=VERIFIED_SUCCESS
+
+Completed: 1/1 verified successful runs
+Breakdown: {'VERIFIED_SUCCESS': 1}
+totalSeconds: mean=687.681872 sample_sd=n/a
+learningSeconds: mean=655.640790 sample_sd=n/a
+explorationSeconds: mean=32.041082 sample_sd=n/a
+totalBackups: mean=59693760.000000 sample_sd=n/a
+CSV: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_puzzle_onceandforall_preprocess_20261027T134410Z_l_dydh_b/results.csv
+Summary: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_puzzle_onceandforall_preprocess_20261027T134410Z_l_dydh_b/summary.json
+All raw logs preserved in: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_puzzle_onceandforall_preprocess_20261027T134410Z_l_dydh_b/logs

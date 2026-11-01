@@ -1,0 +1,72 @@
+
+COMMAND: bash /Users/idani/rllib4prob/fresh/scripts/experiments/offline/run_campaign.sh --algorithm VI --reward EMBEDDED --exploration PREPROCESS --environment puzzleembedded --count 1 --expected-states 181440
+Compiling once and resolving the runtime classpath...
+
+New campaign: /Users/idani/rllib4prob/fresh/experiments/offline/value_iteration_puzzleembedded_embedded_preprocess_20261027T133403Z_yyyijrxw
+Snapshot: 116 source/config files
+
+========== VALUE_ITERATION repetition 1 (1/1) ==========
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = puzzleembedded
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................Model Checking complete. No more error nodes found.Total states: 181442
+
+End of exploration 181440 | Exploration time: 348.506501166 seconds
+VI iteration=1 sweep_delta=45.5334455
+VI iteration=2 sweep_delta=34.9363740
+VI iteration=3 sweep_delta=26.1298504
+VI iteration=4 sweep_delta=21.7162815
+VI iteration=5 sweep_delta=15.0457213
+VI iteration=6 sweep_delta=13.5411492
+VI iteration=7 sweep_delta=11.3032568
+VI iteration=8 sweep_delta=8.81377818
+VI iteration=9 sweep_delta=5.74439861
+VI iteration=10 sweep_delta=5.16995875
+VI iteration=11 sweep_delta=4.23690112
+VI iteration=12 sweep_delta=3.81321101
+VI iteration=13 sweep_delta=2.85533482
+VI iteration=14 sweep_delta=2.56980134
+VI iteration=15 sweep_delta=2.07774367
+VI iteration=16 sweep_delta=1.12988757
+VI iteration=17 sweep_delta=0.915208928
+VI iteration=18 sweep_delta=0.741319232
+VI iteration=19 sweep_delta=0.624398234
+VI iteration=20 sweep_delta=0.505762570
+VI iteration=21 sweep_delta=0.409667682
+VI iteration=22 sweep_delta=0.331830822
+VI iteration=23 sweep_delta=0.270534008
+VI iteration=24 sweep_delta=0.219132547
+VI iteration=25 sweep_delta=0.177497363
+VI iteration=26 sweep_delta=0.143772864
+VI iteration=27 sweep_delta=0.116456020
+VI iteration=28 sweep_delta=0.0943293760
+VI iteration=29 sweep_delta=0.0764067946
+VI iteration=30 sweep_delta=0.0657026648
+VI iteration=31 sweep_delta=0.0532191585
+VI iteration=32 sweep_delta=0.0431075184
+VI iteration=33 sweep_delta=0.0349170899
+VI iteration=34 sweep_delta=0.0282828428
+VI iteration=35 sweep_delta=0.0229091027
+VI iteration=36 sweep_delta=0.0185563732
+VI iteration=37 sweep_delta=0.0150306623
+VI iteration=38 sweep_delta=0.0121748364
+VI iteration=39 sweep_delta=0.00986161751
+VI_RESIDUAL iteration=39 global_residual=0.00798791018
+VI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 iterations=39 exploredStates=181440 updateBackups=7076160 residualBackups=181440 totalBackups=7257600 rewardLookups=19353600 bellmanResidual=0.00798791018 learningSeconds=253.378108
+Nb states discovered (env): 181440
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+CHECK run 0: status=CONVERGED verification=VERIFIED_SUCCESS
+
+Completed: 1/1 verified successful runs
+Breakdown: {'VERIFIED_SUCCESS': 1}
+totalSeconds: mean=601.884609 sample_sd=n/a
+learningSeconds: mean=253.378108 sample_sd=n/a
+explorationSeconds: mean=348.506501 sample_sd=n/a
+totalBackups: mean=7257600.000000 sample_sd=n/a
+CSV: /Users/idani/rllib4prob/fresh/experiments/offline/value_iteration_puzzleembedded_embedded_preprocess_20261027T133403Z_yyyijrxw/results.csv
+Summary: /Users/idani/rllib4prob/fresh/experiments/offline/value_iteration_puzzleembedded_embedded_preprocess_20261027T133403Z_yyyijrxw/summary.json
+All raw logs preserved in: /Users/idani/rllib4prob/fresh/experiments/offline/value_iteration_puzzleembedded_embedded_preprocess_20261027T133403Z_yyyijrxw/logs

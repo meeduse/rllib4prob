@@ -1,0 +1,30 @@
+{
+  "id": "puzzle",
+  "description": "Puzzle8 classical B (3x3 sliding puzzle); two B encodings with exhaustively checked successor-state reward equivalence",
+  "algorithms": [
+    "VI",
+    "PI",
+    "MPI",
+    "IVI",
+    "PVI",
+    "BI"
+  ],
+  "explorations": [
+    "PREPROCESS",
+    "RECURSIVE"
+  ],
+  "repetitions": 10,
+  "gamma": 0.9,
+  "theta": 0.01,
+  "biHorizon": 150,
+  "variants": [
+    {
+      "id": "default",
+      "expectedStates": 181440,
+      "environments": {
+        "ONCEANDFORALL": "puzzle",
+        "EMBEDDED": "puzzleembedded"
+      }
+    }
+  ]
+}

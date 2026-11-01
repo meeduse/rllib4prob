@@ -1,0 +1,54 @@
+{
+  "campaignId": "value_iteration_puzzleembedded_embedded_preprocess_20261030T125910Z_i947s_x3",
+  "algorithm": "VALUE_ITERATION",
+  "environment": "puzzleembedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 342.7257471456,
+      "sampleSD": 4.211113090325633,
+      "median": 342.7349918955,
+      "min": 336.909216833,
+      "max": 351.198652166
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 246.4488966,
+      "sampleSD": 9.559535815568982,
+      "median": 240.09790099999998,
+      "min": 238.43067,
+      "max": 263.318306
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 589.1746437,
+      "sampleSD": 13.09634305035465,
+      "median": 582.2737255,
+      "min": 576.512329,
+      "max": 614.516958
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 7529760.0,
+      "sampleSD": 95627.27644349179,
+      "median": 7529760.0,
+      "min": 7439040.0,
+      "max": 7620480.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 40.5,
+      "sampleSD": 0.5270462766947299,
+      "median": 40.5,
+      "min": 40.0,
+      "max": 41.0
+    }
+  }
+}

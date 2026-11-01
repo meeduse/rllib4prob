@@ -1,0 +1,54 @@
+{
+  "campaignId": "modified_policy_iteration_puzzle_onceandforall_recursive_20261031T181834Z_ygaxs_b5",
+  "algorithm": "MODIFIED_POLICY_ITERATION",
+  "environment": "puzzle",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "RECURSIVE",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 376.9950411708,
+      "sampleSD": 8.428330569335742,
+      "median": 375.3786385205,
+      "min": 365.577536125,
+      "max": 395.242269917
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 624.3808162,
+      "sampleSD": 13.307395832280106,
+      "median": 625.352337,
+      "min": 606.568426,
+      "max": 648.090941
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 1001.3758574,
+      "sampleSD": 19.59465626329445,
+      "median": 1000.7244285,
+      "min": 972.145962,
+      "max": 1043.333211
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 19595520.0,
+      "sampleSD": 0.0,
+      "median": 19595520.0,
+      "min": 19595520.0,
+      "max": 19595520.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 18.0,
+      "sampleSD": 0.0,
+      "median": 18.0,
+      "min": 18.0,
+      "max": 18.0
+    }
+  }
+}

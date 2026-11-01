@@ -18,3 +18,6 @@ __pycache__/
 *.bak
 *~
 .pytest_cache/
+
+# Archived campaign source snapshots
+/experiments/offline/**/inputs/source_snapshot.tar.gz

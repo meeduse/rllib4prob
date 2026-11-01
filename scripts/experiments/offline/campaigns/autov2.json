@@ -1,8 +1,18 @@
 {
   "id": "autov2",
   "description": "HighwayPerception_Q and HighwayPerception_QBis; invariant-corrected initial state 95,50,25",
-  "algorithms": ["VI", "PI", "MPI", "IVI", "PVI", "BI"],
-  "explorations": ["PREPROCESS", "RECURSIVE"],
+  "algorithms": [
+    "VI",
+    "PI",
+    "MPI",
+    "IVI",
+    "PVI",
+    "BI"
+  ],
+  "explorations": [
+    "PREPROCESS",
+    "RECURSIVE"
+  ],
   "repetitions": 10,
   "gamma": 0.9,
   "theta": 0.01,
@@ -14,7 +24,14 @@
       "environments": {
         "ONCEANDFORALL": "autov2",
         "EMBEDDED": "autov2embedded"
-      }
+      },
+      "auditBenchmark": "AutoV2",
+      "modelFiles": {
+        "ONCEANDFORALL": "/autoV2/HighwayPerception_Q.mch",
+        "EMBEDDED": "/autoV2/HighwayPerception_QBis.mch"
+      },
+      "referenceReachableTransitions": "10630",
+      "referenceTransitionsSource": "independent prior B-transition enumeration estimate; not directly verified by uploaded campaign CSVs"
     }
   ]
 }

@@ -1,8 +1,18 @@
 {
   "id": "taxidriver",
   "description": "Taxi Driver 5x5, 10x10 and 30x30; six offline RL algorithms",
-  "algorithms": ["VI", "PI", "MPI", "IVI", "PVI", "BI"],
-  "explorations": ["PREPROCESS", "RECURSIVE"],
+  "algorithms": [
+    "VI",
+    "PI",
+    "MPI",
+    "IVI",
+    "PVI",
+    "BI"
+  ],
+  "explorations": [
+    "PREPROCESS",
+    "RECURSIVE"
+  ],
   "repetitions": 10,
   "gamma": 0.9,
   "theta": 0.01,
@@ -14,7 +24,14 @@
       "environments": {
         "ONCEANDFORALL": "taxidriver5",
         "EMBEDDED": "taxidriver5embedded"
-      }
+      },
+      "auditBenchmark": "TaxiDriver5",
+      "modelFiles": {
+        "ONCEANDFORALL": "/taxi_driver/SafeTaxiDriver_5_5.mch",
+        "EMBEDDED": "/taxi_driver/SafeTaxiDriver_5_5Bis.mch"
+      },
+      "referenceReachableTransitions": "110",
+      "referenceTransitionsSource": "separate ProB reachable-graph equivalence test (not counted in run CSV)"
     },
     {
       "id": "10",
@@ -22,7 +39,14 @@
       "environments": {
         "ONCEANDFORALL": "taxidriver10",
         "EMBEDDED": "taxidriver10embedded"
-      }
+      },
+      "auditBenchmark": "TaxiDriver10",
+      "modelFiles": {
+        "ONCEANDFORALL": "/taxi_driver/SafeTaxiDriver_10_10.mch",
+        "EMBEDDED": "/taxi_driver/SafeTaxiDriver_10_10Bis.mch"
+      },
+      "referenceReachableTransitions": "490",
+      "referenceTransitionsSource": "separate ProB reachable-graph equivalence test (not counted in run CSV)"
     },
     {
       "id": "30",
@@ -30,7 +54,14 @@
       "environments": {
         "ONCEANDFORALL": "taxidriver30",
         "EMBEDDED": "taxidriver30embedded"
-      }
+      },
+      "auditBenchmark": "TaxiDriver30",
+      "modelFiles": {
+        "ONCEANDFORALL": "/taxi_driver/SafeTaxiDriver_30_30.mch",
+        "EMBEDDED": "/taxi_driver/SafeTaxiDriver_30_30Bis.mch"
+      },
+      "referenceReachableTransitions": "5402",
+      "referenceTransitionsSource": "separate ProB reachable-graph equivalence test (not counted in run CSV)"
     }
   ]
 }

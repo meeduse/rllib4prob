@@ -81,7 +81,17 @@ Si une validation échoue, `--run` est interdit. Si un résultat final est incom
 
 - `experiments/campaigns/<id>/validation-<date>/validation.csv` : une ligne par configuration, résultats de validation et chemins des journaux.
 - `experiments/campaigns/<id>/validation-ok.json` : autorisation de lancer les répétitions finales, invalide si le code ou les paramètres changent.
-- `<id>_<variant>_final_results.zip` à la racine de `fresh`, avec **uniquement** les `results.csv` et `summary.json` finaux de chaque configuration (pour audits ultérieurs).
+- `analysis/audits/*_audit.csv` : rapports de vérification générés directement à partir des `results.csv` et `summary.json` des campagnes finales, sans création d'archives ZIP.
+
+**Reproductibilité des audits historiques.** La commande `--audit`
+recalcule `auditTimeDeltaSeconds` à partir des mesures enregistrées
+(`explorationSeconds + learningSeconds - totalSeconds`). Les audits
+historiques sont conservés sans modification. Sur les 2 160 exécutions,
+1 401 valeurs diffèrent textuellement lors d'une régénération.
+L'écart maximal observé est de 0,000001 seconde, inférieur à la
+tolérance de validation de 0,00001 seconde. Tous les autres champs
+sont identiques. Une régénération en place peut donc modifier les CSV
+versionnés sans changer les résultats scientifiques.
 - `experiments/offline/...` : campagnes finales et leurs logs/snapshots conservés intacts.
 - `~/rllib4prob-private-archive/<id>-pilots-<date>/` : les campagnes de validation à une répétition, déplacées **uniquement quand toutes les campagnes finales sont vérifiées et exportées**.
 

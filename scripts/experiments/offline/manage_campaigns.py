@@ -25,7 +25,6 @@ import shutil
 import subprocess
 import sys
 from datetime import datetime, timezone
-from zipfile import ZipFile, ZIP_DEFLATED
 
 ALGOS = {
     'VI': 'VALUE_ITERATION', 'PI': 'POLICY_ITERATION',
@@ -575,27 +574,6 @@ def snapshot_matches(repo, folder):
         return False, f'Unreadable source provenance: {exc}'
 
 
-def export_archives(repo, m, finals):
-    archives = []
-    for variant in m['variants']:
-        name = f'{m["id"]}_{variant["id"]}_final_results.zip'
-        target = repo / name
-        tmp = repo / (name + '.part')
-        if tmp.exists():
-            raise RuntimeError('A temporary ZIP already exists: ' + str(tmp))
-        selected = [c for c in specs(m) if c['variant'] == variant['id']]
-        with ZipFile(tmp, 'w', ZIP_DEFLATED) as z:
-            for c in selected:
-                folder, problems = finals[c['key']]
-                if problems:
-                    raise RuntimeError('Attempted to export invalid final')
-                for filename in ('results.csv', 'summary.json'):
-                    src = folder / filename
-                    z.write(src, src.relative_to(repo))
-        tmp.replace(target)
-        print(f'EXPORTED {target}: {len(selected)} configurations x {m["repetitions"]} runs', flush=True)
-        archives.append(target)
-    return archives
 
 
 def archive_pilots(repo, m, pilots, archive_root):
@@ -665,14 +643,12 @@ def run(repo, m, manifest_path, archive_root):
         matches, msg = snapshot_matches(repo, folder)
         if not matches:
             raise RuntimeError(f'Final source provenance mismatch: {folder.name}: {msg}')
-    # No moving any experiment until exports are secured.
-    archives = export_archives(repo, m, finals)
-    # Fail closed: do not archive pilots if any final audit fails.
+    # Fail closed: audit verified final folders before moving pilots.
     from audit_campaigns import generate_from_archives
-    generate_from_archives(repo, m, archives)
+    reports = generate_from_archives(repo, m, finals=finals)
     archive_pilots(repo, m, pilots, archive_root)
     print(f'SUCCESS: {len(configs)} final campaigns, {len(configs)*m["repetitions"]} verified runs; '
-          f'{len(archives)} final ZIP(s).', flush=True)
+          f'{len(reports)} audit report(s); no final ZIP.', flush=True)
 
 
 def main(argv=None):
@@ -683,7 +659,7 @@ def main(argv=None):
     modes.add_argument('--validate', action='store_true', help='One validated run per configuration')
     modes.add_argument('--run', action='store_true', help='Final repeated experiments, requires complete validation')
     modes.add_argument('--all', action='store_true', help='Validate, then run only if all validations succeed')
-    modes.add_argument('--audit', action='store_true', help='Rebuild audits from existing final ZIPs without ProB')
+    modes.add_argument('--audit', action='store_true', help='Rebuild audits from offline final campaign files without ProB')
     modes.add_argument('--status', action='store_true', help='Read-only final campaign status')
     p.add_argument('--reuse-preprocess-from', type=Path, metavar='VALIDATION_CSV',
                    help='With --validate: recheck and reuse old PREPROCESS PASS pilots; rerun other explorations')

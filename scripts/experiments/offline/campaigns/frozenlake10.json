@@ -1,8 +1,18 @@
 {
   "id": "frozenlake10",
   "description": "Frozen Lake 10x10 (304 reachable states)",
-  "algorithms": ["VI", "PI", "MPI", "IVI", "PVI", "BI"],
-  "explorations": ["PREPROCESS", "RECURSIVE"],
+  "algorithms": [
+    "VI",
+    "PI",
+    "MPI",
+    "IVI",
+    "PVI",
+    "BI"
+  ],
+  "explorations": [
+    "PREPROCESS",
+    "RECURSIVE"
+  ],
   "repetitions": 10,
   "gamma": 0.9,
   "theta": 0.01,
@@ -14,7 +24,14 @@
       "environments": {
         "ONCEANDFORALL": "frozenlake10",
         "EMBEDDED": "frozenlake10embedded"
-      }
+      },
+      "auditBenchmark": "FrozenLake10",
+      "modelFiles": {
+        "ONCEANDFORALL": "/frozen_lake/FrozenLakeGrid_10_10.mch",
+        "EMBEDDED": "/frozen_lake/FrozenLakeGrid_10_10Bis.mch"
+      },
+      "referenceReachableTransitions": "1316",
+      "referenceTransitionsSource": "separate ProB reachable-graph equivalence test (not counted in run CSV)"
     }
   ]
 }

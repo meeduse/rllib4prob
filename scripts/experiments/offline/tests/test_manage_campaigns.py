@@ -14,7 +14,7 @@ SRC = Path(__file__).resolve().parents[1]
 MANAGER = SRC / 'manage_campaigns.py'
 
 FAKE_RUNNER = r'''#!/usr/bin/env python3
-import argparse, csv, hashlib, json
+import argparse, csv, hashlib, json, statistics
 from pathlib import Path
 import os
 import tempfile
@@ -36,14 +36,42 @@ for i in range(int(a.count)):
          'exploredStates':a.expected_states,'gamma':'0.9','theta':'0.01',
          'bellmanResidual':'0.00000','horizon':'150','completedHorizon':'150',
          'lastHorizonDelta':'0.00001', 'explorationSeconds':'0.1','learningSeconds':'0.2',
-         'totalSeconds':'0.3','totalBackups':'20','rewardLookups':'20',
+         'totalSeconds':'0.3','updateBackups':'20','totalBackups':'20','rewardLookups':'20',
          'cacheHits':'18','cacheMisses':'2','cachedStates':'2','policyStable':'true'}
     rows.append(row)
 with (folder/'results.csv').open('w',newline='') as f:
-    w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
+    fields=['schemaVersion', 'campaignId', 'run', 'seed', 'algorithm', 'environment', 'rewardStrategy', 'explorationStrategy', 'status', 'validationState', 'issue', 'processExitCode', 'exploredStates', 'explorationSeconds', 'learningSeconds', 'totalSeconds', 'gamma', 'theta', 'iterations', 'maxIterations', 'maxUpdates', 'updates', 'horizon', 'completedHorizon', 'evalIterations', 'evaluationSweeps', 'maxEvaluationSweeps', 'updatesPerIteration', 'policyStable', 'bellmanResidual', 'policyResidual', 'evaluationDelta', 'lastHorizonDelta', 'updateBackups', 'evaluationBackups', 'improvementBackups', 'priorityBackups', 'residualBackups', 'finalQBackups', 'totalBackups', 'rewardLookups', 'orderingMethod', 'orderingSeconds', 'cacheHits', 'cacheMisses', 'cachedStates', 'logFile']
+    assert len(fields)==47
+    w=csv.DictWriter(f,fieldnames=fields)
+    w.writeheader()
+    w.writerows(rows)
 summary={'campaignId':folder.name,'algorithm':alg,'environment':a.environment,
          'rewardStrategy':a.reward,'explorationStrategy':a.exploration,
          'totalRuns':len(rows),'successfulRuns':len(rows),'validationStates':{'VERIFIED_SUCCESS':len(rows)}}
+stats={}
+for field in (
+    'explorationSeconds',
+    'learningSeconds',
+    'totalSeconds',
+    'totalBackups',
+    'iterations',
+    'orderingSeconds'
+):
+    values=[
+        float(row[field])
+        for row in rows
+        if row.get(field,'') != ''
+    ]
+    if values:
+        stats[field]={
+            'n':len(values),
+            'mean':statistics.mean(values),
+            'sampleSD':(
+                statistics.stdev(values)
+                if len(values)>1 else None
+            )
+        }
+summary['statisticsOnVerifiedSuccessOnly']=stats
 (folder/'summary.json').write_text(json.dumps(summary))
 inputs=[]
 for rel in ['pom.xml','config/agent-parameters.properties','src/main/java/Mock.java',
@@ -89,7 +117,7 @@ class CampaignFlow(unittest.TestCase):
                                '--repo',str(self.repo),'--archive',str(self.archive)],
                               text=True,capture_output=True,timeout=20)
 
-    def test_all_then_reopen_status_and_archive(self):
+    def test_all_then_reopen_status_and_audit(self):
         a=self.call('--run')
         self.assertNotEqual(a.returncode,0)
         self.assertIn('No valid validation marker',a.stderr)
@@ -101,9 +129,25 @@ class CampaignFlow(unittest.TestCase):
             self.assertEqual(len(list(csv.DictReader(fh))),2)
         self.assertEqual(self.call('--status').returncode,0)
         archive=self.repo/'demo_small_final_results.zip'
-        self.assertTrue(archive.is_file())
-        with __import__('zipfile').ZipFile(archive) as z:
-            self.assertEqual(len(z.namelist()),4)
+        self.assertFalse(archive.exists())
+
+        audit=self.repo/'analysis/audits/demo_audit.csv'
+        self.assertTrue(audit.is_file())
+
+        with audit.open(newline='', encoding='utf-8') as fh:
+            rows=list(csv.DictReader(fh))
+
+        self.assertEqual(len(rows),4)
+        self.assertEqual(len(rows[0]),80)
+        self.assertTrue(all(
+            r['auditPassed']=='true' for r in rows
+        ))
+
+        rebuilt=self.call('--audit')
+        self.assertEqual(
+            rebuilt.returncode,0,
+            rebuilt.stdout+'\n'+rebuilt.stderr
+        )
         self.assertEqual(len(list(self.archive.rglob('manifest.csv'))),1)
         self.assertEqual(len(list((self.repo/'experiments/offline').iterdir())),2)
         second=self.call('--run')

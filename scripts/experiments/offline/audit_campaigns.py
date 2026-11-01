@@ -126,21 +126,151 @@ def check_summary_statistics(summary, runs):
 
 
 def audited_filename(m, variant):
+    if m['id'] == 'frozenlake4':
+        return 'frozenlake_audit.csv'
     # Human-friendly names consistent with existing audit convention.
     if len(m['variants']) == 1:
         return f'{m["id"]}_audit.csv'
     return f'{m["id"]}{variant["id"]}_audit.csv'
 
 
+
+class OfflineCampaignFiles:
+    """Read final campaign files directly from experiments/offline/.
+
+    Exposes the subset of ZipFile used by the audit engine.
+    No temporary ZIP is created.
+    """
+
+    def __init__(self, repo, manifest, variant, finals=None):
+        self.name = (
+            f'offline:{manifest["id"]}:{variant["id"]}'
+        )
+        self._files = {}
+
+        expected = expected_for_variant(
+            manifest, variant
+        )
+        observed = {}
+
+        root = repo / 'experiments' / 'offline'
+
+        if not root.is_dir():
+            raise RuntimeError(
+                f'Missing offline directory: {root}'
+            )
+
+        if finals is None:
+            candidates = sorted(root.glob('*/results.csv'))
+        else:
+            candidates = []
+
+            for key, (folder, problems) in finals.items():
+                if key not in expected:
+                    continue
+
+                if problems:
+                    raise RuntimeError(
+                        f'Invalid selected final {key}: {problems}'
+                    )
+
+                folder = Path(folder)
+
+                if (
+                    folder.is_symlink()
+                    or folder.resolve().parent != root.resolve()
+                ):
+                    raise RuntimeError(
+                        f'Unsafe selected final folder: {folder}'
+                    )
+
+                candidates.append(folder / 'results.csv')
+
+            candidates.sort()
+
+        for results in candidates:
+            with results.open(
+                newline='', encoding='utf-8-sig'
+            ) as stream:
+                reader = csv.DictReader(stream)
+                first = next(reader, None)
+                run_count = (
+                    (1 if first is not None else 0)
+                    + sum(1 for _ in reader)
+                )
+
+            if run_count != manifest['repetitions']:
+                if finals is not None:
+                    raise RuntimeError(
+                        f'Invalid selected final run count: '
+                        f'{results}: {run_count}'
+                    )
+                continue
+
+            if first is None:
+                continue
+
+            fields = (
+                'algorithm', 'rewardStrategy',
+                'explorationStrategy', 'environment'
+            )
+            key = tuple(
+                first.get(field, '') for field in fields
+            )
+
+            if key not in expected:
+                continue
+
+            if key in observed:
+                raise RuntimeError(
+                    f'Duplicate offline configuration: {key}'
+                )
+
+            summary = results.with_name('summary.json')
+
+            if not summary.is_file():
+                raise RuntimeError(
+                    f'Missing summary: {summary}'
+                )
+
+            observed[key] = results.parent.name
+
+            for source in (results, summary):
+                relative = source.relative_to(
+                    repo
+                ).as_posix()
+                self._files[relative] = source
+
+        if set(observed) != expected:
+            missing = expected - set(observed)
+            raise RuntimeError(
+                f'Missing offline configurations '
+                f'for {self.name}: {missing}'
+            )
+
+    def namelist(self):
+        return sorted(self._files)
+
+    def read(self, name):
+        return self._files[name].read_bytes()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc, tb):
+        return False
+
+
 def audit_zip(m, variant, archive):
     configs=expected_for_variant(m,variant)
     expected_count=m['repetitions']
     expected_states=integer(variant['expectedStates'])
-    if not archive.is_file():
+    if not isinstance(archive, OfflineCampaignFiles) and not archive.is_file():
         raise RuntimeError(f'Missing final archive: {archive}')
     outputs=[]
     observed=set()
-    with ZipFile(archive) as z:
+    with (archive if isinstance(archive, OfflineCampaignFiles)
+          else ZipFile(archive)) as z:
         names=z.namelist()
         if len(names)!=len(set(names)):
             raise RuntimeError(f'{archive.name}: duplicated ZIP members')
@@ -311,20 +441,28 @@ def audit_zip(m, variant, archive):
     return outputs
 
 
-def generate_from_archives(repo, m, archives=None):
+def generate_from_archives(repo, m, archives=None, output_dir=None, finals=None):
     byvariant = {}
+    if archives is not None and finals is not None:
+        raise RuntimeError(
+            'Specify ZIP archives or selected finals, not both'
+        )
+
     if archives is not None and len(archives)!=len(m['variants']):
         raise RuntimeError('wrong number of final ZIPs provided')
     for i, v in enumerate(m['variants']):
-        source=(Path(archives[i]) if archives is not None else repo /
-                f'{m["id"]}_{v["id"]}_final_results.zip')
+        source=(Path(archives[i]) if archives is not None
+                else OfflineCampaignFiles(repo,m,v,finals=finals))
         byvariant[v['id']]=(v,audit_zip(m,v,source))
     # Commit only when ALL variants are valid; never overwrite a completed audit with invalid data.
+    output_dir = (Path(output_dir) if output_dir is not None
+                  else repo / 'analysis' / 'audits')
+    output_dir.mkdir(parents=True, exist_ok=True)
     files=[]
     for variant_id, (v,rows) in byvariant.items():
-        path=repo / audited_filename(m,v)
+        path=output_dir / audited_filename(m,v)
         with tempfile.NamedTemporaryFile('w', encoding='utf-8', newline='',
-                                         dir=repo, prefix='.audit-',suffix='.part',delete=False) as f:
+                                         dir=output_dir, prefix='.audit-',suffix='.part',delete=False) as f:
             tmp=Path(f.name)
             w=csv.DictWriter(f,fieldnames=COLUMNS)
             w.writeheader();w.writerows(rows)

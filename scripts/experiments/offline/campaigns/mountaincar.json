@@ -24,7 +24,14 @@
       "environments": {
         "ONCEANDFORALL": "mountaincar",
         "EMBEDDED": "mountaincarembedded"
-      }
+      },
+      "auditBenchmark": "MountainCarSmall",
+      "modelFiles": {
+        "ONCEANDFORALL": "/Mountain_Car/MountainCarSmall.mch",
+        "EMBEDDED": "/Mountain_Car/MountainCarSmallBis.mch"
+      },
+      "referenceReachableTransitions": "35586",
+      "referenceTransitionsSource": "separate ProB reachable-graph equivalence test (not counted in run CSV)"
     }
   ]
 }

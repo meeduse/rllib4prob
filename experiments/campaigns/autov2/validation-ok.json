@@ -1,0 +1,10 @@
+{
+  "schema": "offline-campaign-manager-v1",
+  "campaign": "autov2",
+  "sourceFingerprint": "05c694b446ccc1a93e49fbdb89e73f702f780a7b4db6191b0ba0ae5277eb9280",
+  "manifestSha256": "075f5885e6be32ae960371b1802cbb50969eb861213524ff3e4a00183cfacdcd",
+  "report": "/Users/idani/rllib4prob/fresh/experiments/campaigns/autov2/validation-20261023T185643Z/validation.csv",
+  "reportSha256": "59f1b60457e6567c6dbe36578ae8051518c97182df4ae028e3a4844656a67bd3",
+  "configurations": 24,
+  "timeUtc": "2026-10-23T19:02:18.205886+00:00"
+}

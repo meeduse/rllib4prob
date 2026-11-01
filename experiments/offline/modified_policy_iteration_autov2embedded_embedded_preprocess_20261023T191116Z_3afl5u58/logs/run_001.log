@@ -1,0 +1,38 @@
+Selected algorithm = MODIFIED_POLICY_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = autov2embedded
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+...Model Checking complete. No more error nodes found.Total states: 2962
+
+End of exploration 2961 | Exploration time: 1.20672825 seconds
+Preparing state transitions and rewards. The first iteration may take some time...
+MPI iteration=1 evaluation_sweeps=5 evaluation_delta=7131.80700 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=2 evaluation_sweeps=10 evaluation_delta=1996.47717 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=3 evaluation_sweeps=15 evaluation_delta=1475.83794 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=4 evaluation_sweeps=20 evaluation_delta=1145.63414 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=5 evaluation_sweeps=25 evaluation_delta=839.827655 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=6 evaluation_sweeps=30 evaluation_delta=477.465095 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=7 evaluation_sweeps=35 evaluation_delta=236.620355 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=8 evaluation_sweeps=40 evaluation_delta=70.9290880 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=9 evaluation_sweeps=45 evaluation_delta=69.7756014 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=10 evaluation_sweeps=50 evaluation_delta=37.0816154 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=11 evaluation_sweeps=55 evaluation_delta=8.23191055 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=12 evaluation_sweeps=60 evaluation_delta=4.52124047 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=13 evaluation_sweeps=65 evaluation_delta=1.40575495 policy_stable=true policy_residual=1.26517946 bellman_residual=1.26517946
+MPI iteration=14 evaluation_sweeps=70 evaluation_delta=0.830084243 policy_stable=true policy_residual=0.747075819 bellman_residual=0.747075819
+MPI iteration=15 evaluation_sweeps=75 evaluation_delta=0.490156445 policy_stable=false policy_residual=0.747075819 bellman_residual=0.747075819
+MPI iteration=16 evaluation_sweeps=80 evaluation_delta=0.289432479 policy_stable=true policy_residual=0.260489231 bellman_residual=0.260489231
+MPI iteration=17 evaluation_sweeps=85 evaluation_delta=0.170906984 policy_stable=true policy_residual=0.153816286 bellman_residual=0.153816286
+MPI iteration=18 evaluation_sweeps=90 evaluation_delta=0.100918865 policy_stable=true policy_residual=0.0908269787 bellman_residual=0.0908269787
+MPI iteration=19 evaluation_sweeps=95 evaluation_delta=0.0595915808 policy_stable=true policy_residual=0.0536324227 bellman_residual=0.0536324227
+MPI iteration=20 evaluation_sweeps=100 evaluation_delta=0.0351882325 policy_stable=true policy_residual=0.0316694093 bellman_residual=0.0316694093
+MPI iteration=21 evaluation_sweeps=105 evaluation_delta=0.0207782994 policy_stable=true policy_residual=0.0187004695 bellman_residual=0.0187004695
+MPI iteration=22 evaluation_sweeps=110 evaluation_delta=0.0122693780 policy_stable=true policy_residual=0.0110424402 bellman_residual=0.0110424402
+MPI iteration=23 evaluation_sweeps=112 evaluation_delta=0.00993819620 policy_stable=true policy_residual=0.00894437658 bellman_residual=0.00894437658
+MPI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 evalIterations=5 iterations=23 evaluationSweeps=112 exploredStates=2961 evaluationBackups=329280 improvementBackups=67620 residualBackups=65142 totalBackups=462042 rewardLookups=723040 policyStable=true evaluationDelta=0.00993819620 policyResidual=0.00894437658 bellmanResidual=0.00894437658 learningSeconds=5.277085
+Nb states discovered (env): 2961
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

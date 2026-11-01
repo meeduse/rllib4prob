@@ -1,0 +1,46 @@
+{
+  "campaignId": "backward_induction_mountaincarembedded_embedded_preprocess_20261024T110543Z_0_t4sgin",
+  "algorithm": "BACKWARD_INDUCTION",
+  "environment": "mountaincarembedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 3.5087521709,
+      "sampleSD": 0.03348883518798083,
+      "median": 3.5115864165,
+      "min": 3.445996667,
+      "max": 3.563332875
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 18.1306982,
+      "sampleSD": 0.07775077298479618,
+      "median": 18.150178,
+      "min": 18.011917,
+      "max": 18.254707
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 21.6394504,
+      "sampleSD": 0.08497150453364438,
+      "median": 21.616706999999998,
+      "min": 21.52537,
+      "max": 21.753812
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 1807050.0,
+      "sampleSD": 0.0,
+      "median": 1807050.0,
+      "min": 1807050.0,
+      "max": 1807050.0
+    }
+  }
+}

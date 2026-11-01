@@ -1,0 +1,38 @@
+Selected algorithm = MODIFIED_POLICY_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = autov2
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 2961 | Exploration time: 5.190744167 seconds
+Preparing state transitions and rewards. The first iteration may take some time...
+MPI iteration=1 evaluation_sweeps=5 evaluation_delta=7105.56300 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=2 evaluation_sweeps=10 evaluation_delta=1701.73596 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=3 evaluation_sweeps=15 evaluation_delta=1288.17285 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=4 evaluation_sweeps=20 evaluation_delta=2563.44740 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=5 evaluation_sweeps=25 evaluation_delta=1510.67495 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=6 evaluation_sweeps=30 evaluation_delta=853.907859 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=7 evaluation_sweeps=35 evaluation_delta=648.430545 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=8 evaluation_sweeps=40 evaluation_delta=108.218980 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=9 evaluation_sweeps=45 evaluation_delta=88.1377439 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=10 evaluation_sweeps=50 evaluation_delta=42.1560097 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=11 evaluation_sweeps=55 evaluation_delta=11.0249291 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=12 evaluation_sweeps=60 evaluation_delta=5.76396655 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=13 evaluation_sweeps=65 evaluation_delta=2.08399835 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=14 evaluation_sweeps=70 evaluation_delta=0.945554276 policy_stable=true policy_residual=0.850998848 bellman_residual=0.850998848
+MPI iteration=15 evaluation_sweeps=75 evaluation_delta=0.558340344 policy_stable=true policy_residual=0.502506310 bellman_residual=0.502506310
+MPI iteration=16 evaluation_sweeps=80 evaluation_delta=0.329694390 policy_stable=true policy_residual=0.296724951 bellman_residual=0.296724951
+MPI iteration=17 evaluation_sweeps=85 evaluation_delta=0.194681240 policy_stable=true policy_residual=0.175213116 bellman_residual=0.175213116
+MPI iteration=18 evaluation_sweeps=90 evaluation_delta=0.114957326 policy_stable=true policy_residual=0.103461593 bellman_residual=0.103461593
+MPI iteration=19 evaluation_sweeps=95 evaluation_delta=0.0678811512 policy_stable=true policy_residual=0.0610930361 bellman_residual=0.0610930361
+MPI iteration=20 evaluation_sweeps=100 evaluation_delta=0.0400831410 policy_stable=true policy_residual=0.0360748269 bellman_residual=0.0360748269
+MPI iteration=21 evaluation_sweeps=105 evaluation_delta=0.0236686939 policy_stable=true policy_residual=0.0213018245 bellman_residual=0.0213018245
+MPI iteration=22 evaluation_sweeps=110 evaluation_delta=0.0139761271 policy_stable=true policy_residual=0.0125785144 bellman_residual=0.0125785144
+MPI iteration=23 evaluation_sweeps=114 evaluation_delta=0.00916973697 policy_stable=true policy_residual=0.00825276327 bellman_residual=0.00825276327
+MPI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 evalIterations=5 iterations=23 evaluationSweeps=114 exploredStates=2961 evaluationBackups=335160 improvementBackups=67620 residualBackups=65142 totalBackups=467922 rewardLookups=728920 policyStable=true evaluationDelta=0.00916973697 policyResidual=0.00825276327 bellmanResidual=0.00825276327 learningSeconds=3.981415
+REWARD_CACHE strategy=ONCEANDFORALL hits=725960 misses=2960 cachedStates=2960
+Nb states discovered (env): 2961
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

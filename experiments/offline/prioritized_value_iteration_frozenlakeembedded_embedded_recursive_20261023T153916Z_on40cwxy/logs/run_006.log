@@ -1,0 +1,17 @@
+Selected algorithm = PRIORITIZED_VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = frozenlakeembedded
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 43 | Exploration time: 0.096492916 seconds
+Preparing graph and initial priorities (PVI). First pass may take time...
+PVI updates=1000 pending=20 last_error=22.5283995
+PVI updates=2000 pending=24 last_error=1.07144966
+PVI updates=3000 pending=17 last_error=0.0175966355
+PVI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxUpdates=100000 updates=3125 exploredStates=43 transitions=167 priorityBackups=14350 residualBackups=43 finalQBackups=43 totalBackups=14436 rewardLookups=61476 bellmanResidual=0.00926138713 learningSeconds=0.131248
+Nb states discovered (env): 43
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

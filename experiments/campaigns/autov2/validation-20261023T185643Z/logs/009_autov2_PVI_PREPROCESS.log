@@ -1,0 +1,151 @@
+
+COMMAND: bash /Users/idani/rllib4prob/fresh/scripts/experiments/offline/run_campaign.sh --algorithm PVI --reward ONCEANDFORALL --exploration PREPROCESS --environment autov2 --count 1 --expected-states 2961
+Compiling once and resolving the runtime classpath...
+
+New campaign: /Users/idani/rllib4prob/fresh/experiments/offline/prioritized_value_iteration_autov2_onceandforall_preprocess_20261023T185829Z_g9gg3lcm
+Snapshot: 116 source/config files
+
+========== PRIORITIZED_VALUE_ITERATION repetition 1 (1/1) ==========
+Selected algorithm = PRIORITIZED_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = autov2
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+...Model Checking complete. No more error nodes found.Total states: 2962
+
+End of exploration 2961 | Exploration time: 1.064301084 seconds
+Preparing graph and initial priorities (PVI). First pass may take time...
+PVI updates=1000 pending=2349 last_error=2239.00000
+PVI updates=2000 pending=2128 last_error=2746.50000
+PVI updates=3000 pending=1997 last_error=5572.97868
+PVI updates=4000 pending=1510 last_error=3787.78924
+PVI updates=5000 pending=1270 last_error=973.670000
+PVI updates=6000 pending=1259 last_error=1690.75130
+PVI updates=7000 pending=1294 last_error=773.541900
+PVI updates=8000 pending=1289 last_error=696.187710
+PVI updates=9000 pending=1229 last_error=632.414790
+PVI updates=10000 pending=1218 last_error=568.641870
+PVI updates=11000 pending=1204 last_error=510.482873
+PVI updates=12000 pending=1179 last_error=456.768757
+PVI updates=13000 pending=1141 last_error=407.953775
+PVI updates=14000 pending=1180 last_error=367.158397
+PVI updates=15000 pending=1136 last_error=330.442558
+PVI updates=16000 pending=1070 last_error=297.398302
+PVI updates=17000 pending=1024 last_error=266.895912
+PVI updates=18000 pending=961 last_error=236.774802
+PVI updates=19000 pending=899 last_error=209.391281
+PVI updates=20000 pending=840 last_error=185.116717
+PVI updates=21000 pending=750 last_error=160.054242
+PVI updates=22000 pending=638 last_error=135.085172
+PVI updates=23000 pending=571 last_error=114.889939
+PVI updates=24000 pending=492 last_error=93.0608503
+PVI updates=25000 pending=443 last_error=73.7048763
+PVI updates=26000 pending=361 last_error=56.1132380
+PVI updates=27000 pending=414 last_error=43.5219924
+PVI updates=28000 pending=326 last_error=31.7275324
+PVI updates=29000 pending=332 last_error=23.1293712
+PVI updates=30000 pending=488 last_error=30.2249120
+PVI updates=31000 pending=328 last_error=21.9716258
+PVI updates=32000 pending=188 last_error=16.4458032
+PVI updates=33000 pending=211 last_error=18.3593366
+PVI updates=34000 pending=311 last_error=9.75690418
+PVI updates=35000 pending=388 last_error=10.8410046
+PVI updates=36000 pending=353 last_error=7.11278314
+PVI updates=37000 pending=426 last_error=5.76135435
+PVI updates=38000 pending=401 last_error=5.18521891
+PVI updates=39000 pending=498 last_error=5.18521891
+PVI updates=40000 pending=546 last_error=3.78002459
+PVI updates=41000 pending=583 last_error=3.40202213
+PVI updates=42000 pending=658 last_error=3.06181992
+PVI updates=43000 pending=695 last_error=3.40202213
+PVI updates=44000 pending=778 last_error=4.66669702
+PVI updates=45000 pending=801 last_error=3.40202213
+PVI updates=46000 pending=885 last_error=2.00886005
+PVI updates=47000 pending=866 last_error=1.80797404
+PVI updates=48000 pending=954 last_error=1.62717664
+PVI updates=49000 pending=958 last_error=1.46445897
+PVI updates=50000 pending=1037 last_error=1.31801308
+PVI updates=51000 pending=1022 last_error=2.23206672
+PVI updates=52000 pending=1034 last_error=1.18621177
+PVI updates=53000 pending=1117 last_error=1.06759059
+PVI updates=54000 pending=1152 last_error=0.960831533
+PVI updates=55000 pending=1090 last_error=1.06759059
+PVI updates=56000 pending=1154 last_error=0.864748380
+PVI updates=57000 pending=1145 last_error=0.778273542
+PVI updates=58000 pending=1218 last_error=0.700446187
+PVI updates=59000 pending=1212 last_error=0.700446187
+PVI updates=60000 pending=1159 last_error=0.630401569
+PVI updates=61000 pending=1211 last_error=0.567361412
+PVI updates=62000 pending=1232 last_error=0.567361412
+PVI updates=63000 pending=1234 last_error=0.510625271
+PVI updates=64000 pending=1221 last_error=0.459562744
+PVI updates=65000 pending=1187 last_error=0.459562744
+PVI updates=66000 pending=1233 last_error=0.413606469
+PVI updates=67000 pending=1222 last_error=0.372245822
+PVI updates=68000 pending=1226 last_error=0.459562744
+PVI updates=69000 pending=1129 last_error=0.335021240
+PVI updates=70000 pending=1289 last_error=0.301519116
+PVI updates=71000 pending=1226 last_error=0.271367204
+PVI updates=72000 pending=1183 last_error=0.271367204
+PVI updates=73000 pending=1250 last_error=0.244230484
+PVI updates=74000 pending=1256 last_error=0.219807436
+PVI updates=75000 pending=1119 last_error=0.219807436
+PVI updates=76000 pending=1220 last_error=0.197826692
+PVI updates=77000 pending=1251 last_error=0.178044023
+PVI updates=78000 pending=1152 last_error=0.178044023
+PVI updates=79000 pending=1223 last_error=0.160239621
+PVI updates=80000 pending=1243 last_error=0.144215658
+PVI updates=81000 pending=1158 last_error=0.144215658
+PVI updates=82000 pending=1276 last_error=0.129794093
+PVI updates=83000 pending=1197 last_error=0.116814683
+PVI updates=84000 pending=1166 last_error=0.178044023
+PVI updates=85000 pending=1202 last_error=0.105133215
+PVI updates=86000 pending=1248 last_error=0.0946198935
+PVI updates=87000 pending=1197 last_error=0.105133215
+PVI updates=88000 pending=1201 last_error=0.0851579042
+PVI updates=89000 pending=1166 last_error=0.0766421138
+PVI updates=90000 pending=1228 last_error=0.0766421138
+PVI updates=91000 pending=1264 last_error=0.0689779024
+PVI updates=92000 pending=1230 last_error=0.0620801122
+PVI updates=93000 pending=1236 last_error=0.0558721009
+PVI updates=94000 pending=1198 last_error=0.0558721009
+PVI updates=95000 pending=1185 last_error=0.0502848908
+PVI updates=96000 pending=1203 last_error=0.0452564018
+PVI updates=97000 pending=1198 last_error=0.0452564018
+PVI updates=98000 pending=1185 last_error=0.0407307616
+PVI updates=99000 pending=1277 last_error=0.0366576854
+PVI updates=100000 pending=1198 last_error=0.0689779024
+PVI updates=101000 pending=1192 last_error=0.0329919169
+PVI updates=102000 pending=1222 last_error=0.0296927252
+PVI updates=103000 pending=1235 last_error=0.0366576854
+PVI updates=104000 pending=1193 last_error=0.0267234527
+PVI updates=105000 pending=1219 last_error=0.0240511074
+PVI updates=106000 pending=1230 last_error=0.0240511074
+PVI updates=107000 pending=1218 last_error=0.0216459967
+PVI updates=108000 pending=1266 last_error=0.0194813970
+PVI updates=109000 pending=1224 last_error=0.0175332573
+PVI updates=110000 pending=1195 last_error=0.0175332573
+PVI updates=111000 pending=1267 last_error=0.0157799316
+PVI updates=112000 pending=1210 last_error=0.0142019384
+PVI updates=113000 pending=1190 last_error=0.0142019384
+PVI updates=114000 pending=1256 last_error=0.0127817446
+PVI updates=115000 pending=1314 last_error=0.0115035701
+PVI updates=116000 pending=1138 last_error=0.0115035701
+PVI updates=117000 pending=492 last_error=0.0103532131
+PVI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxUpdates=500000 updates=117647 exploredStates=2961 transitions=10630 priorityBackups=552462 residualBackups=2961 finalQBackups=2961 totalBackups=558384 rewardLookups=2108008 bellmanResidual=0.00931789180 learningSeconds=5.063215
+REWARD_CACHE strategy=ONCEANDFORALL hits=2105048 misses=2960 cachedStates=2960
+Nb states discovered (env): 2961
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+CHECK run 0: status=CONVERGED verification=VERIFIED_SUCCESS
+
+Completed: 1/1 verified successful runs
+Breakdown: {'VERIFIED_SUCCESS': 1}
+totalSeconds: mean=6.127516 sample_sd=n/a
+learningSeconds: mean=5.063215 sample_sd=n/a
+explorationSeconds: mean=1.064301 sample_sd=n/a
+totalBackups: mean=558384.000000 sample_sd=n/a
+CSV: /Users/idani/rllib4prob/fresh/experiments/offline/prioritized_value_iteration_autov2_onceandforall_preprocess_20261023T185829Z_g9gg3lcm/results.csv
+Summary: /Users/idani/rllib4prob/fresh/experiments/offline/prioritized_value_iteration_autov2_onceandforall_preprocess_20261023T185829Z_g9gg3lcm/summary.json
+All raw logs preserved in: /Users/idani/rllib4prob/fresh/experiments/offline/prioritized_value_iteration_autov2_onceandforall_preprocess_20261023T185829Z_g9gg3lcm/logs

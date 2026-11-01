@@ -1,0 +1,19 @@
+Selected algorithm = PRIORITIZED_VALUE_ITERATION
+Selected reward strategy = ONTHEFLY
+Selected environment = tictactoe
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+......Model Checking complete. No more error nodes found.Total states: 5479
+
+End of exploration 5478 | Exploration time: 2.838541292 seconds
+Preparing graph and initial priorities (PVI). First pass may take time...
+PVI updates=1000 pending=3440 last_error=1.00000000
+PVI updates=2000 pending=2440 last_error=0.650000000
+PVI updates=3000 pending=1440 last_error=0.650000000
+PVI updates=4000 pending=447 last_error=0.250000000
+PVI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxUpdates=100000 updates=4516 exploredStates=5478 transitions=16167 priorityBackups=23200 residualBackups=5478 finalQBackups=5478 totalBackups=34156 rewardLookups=122087 bellmanResidual=0.00000000 learningSeconds=82.856882
+Nb states discovered (env): 5478
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

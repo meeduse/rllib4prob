@@ -1,0 +1,74 @@
+
+COMMAND: bash /Users/idani/rllib4prob/fresh/scripts/experiments/offline/run_campaign.sh --algorithm VI --reward ONCEANDFORALL --exploration PREPROCESS --environment puzzle --count 1 --expected-states 181440
+Compiling once and resolving the runtime classpath...
+
+New campaign: /Users/idani/rllib4prob/fresh/experiments/offline/value_iteration_puzzle_onceandforall_preprocess_20261027T132317Z_22qup5d5
+Snapshot: 116 source/config files
+
+========== VALUE_ITERATION repetition 1 (1/1) ==========
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = puzzle
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.............................................................Model Checking complete. No more error nodes found.Total states: 181442
+
+End of exploration 181440 | Exploration time: 30.591400417 seconds
+VI iteration=1 sweep_delta=45.7726892
+VI iteration=2 sweep_delta=36.3052837
+VI iteration=3 sweep_delta=29.5399235
+VI iteration=4 sweep_delta=25.4930738
+VI iteration=5 sweep_delta=22.9437664
+VI iteration=6 sweep_delta=20.6493898
+VI iteration=7 sweep_delta=12.6149297
+VI iteration=8 sweep_delta=9.81147845
+VI iteration=9 sweep_delta=8.83033061
+VI iteration=10 sweep_delta=5.71530409
+VI iteration=11 sweep_delta=4.51578144
+VI iteration=12 sweep_delta=3.00706048
+VI iteration=13 sweep_delta=2.70635443
+VI iteration=14 sweep_delta=1.87389736
+VI iteration=15 sweep_delta=1.45051288
+VI iteration=16 sweep_delta=1.17491544
+VI iteration=17 sweep_delta=0.951681503
+VI iteration=18 sweep_delta=0.770862018
+VI iteration=19 sweep_delta=0.624398234
+VI iteration=20 sweep_delta=0.505762570
+VI iteration=21 sweep_delta=0.409667682
+VI iteration=22 sweep_delta=0.368700913
+VI iteration=23 sweep_delta=0.317505267
+VI iteration=24 sweep_delta=0.257179267
+VI iteration=25 sweep_delta=0.208315206
+VI iteration=26 sweep_delta=0.168735317
+VI iteration=27 sweep_delta=0.136675607
+VI iteration=28 sweep_delta=0.110707241
+VI iteration=29 sweep_delta=0.0896728655
+VI iteration=30 sweep_delta=0.0726350210
+VI iteration=31 sweep_delta=0.0588343670
+VI iteration=32 sweep_delta=0.0476558373
+VI iteration=33 sweep_delta=0.0386012282
+VI iteration=34 sweep_delta=0.0312669949
+VI iteration=35 sweep_delta=0.0253262658
+VI iteration=36 sweep_delta=0.0205142753
+VI iteration=37 sweep_delta=0.0166165630
+VI iteration=38 sweep_delta=0.0134594160
+VI iteration=39 sweep_delta=0.0109021270
+VI iteration=40 sweep_delta=0.00883072286
+VI_RESIDUAL iteration=40 global_residual=0.00715288552
+VI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 iterations=40 exploredStates=181440 updateBackups=7257600 residualBackups=181440 totalBackups=7439040 rewardLookups=19837440 bellmanResidual=0.00715288552 learningSeconds=608.078478
+REWARD_CACHE strategy=ONCEANDFORALL hits=19656000 misses=181440 cachedStates=181440
+Nb states discovered (env): 181440
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+CHECK run 0: status=CONVERGED verification=VERIFIED_SUCCESS
+
+Completed: 1/1 verified successful runs
+Breakdown: {'VERIFIED_SUCCESS': 1}
+totalSeconds: mean=638.669878 sample_sd=n/a
+learningSeconds: mean=608.078478 sample_sd=n/a
+explorationSeconds: mean=30.591400 sample_sd=n/a
+totalBackups: mean=7439040.000000 sample_sd=n/a
+CSV: /Users/idani/rllib4prob/fresh/experiments/offline/value_iteration_puzzle_onceandforall_preprocess_20261027T132317Z_22qup5d5/results.csv
+Summary: /Users/idani/rllib4prob/fresh/experiments/offline/value_iteration_puzzle_onceandforall_preprocess_20261027T132317Z_22qup5d5/summary.json
+All raw logs preserved in: /Users/idani/rllib4prob/fresh/experiments/offline/value_iteration_puzzle_onceandforall_preprocess_20261027T132317Z_22qup5d5/logs

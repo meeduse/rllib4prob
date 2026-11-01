@@ -1,0 +1,54 @@
+{
+  "campaignId": "modified_policy_iteration_autov2_onceandforall_preprocess_20261023T190952Z_9ijje5yt",
+  "algorithm": "MODIFIED_POLICY_ITERATION",
+  "environment": "autov2",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 0.8801454376,
+      "sampleSD": 0.04599854184621136,
+      "median": 0.865181417,
+      "min": 0.832647209,
+      "max": 0.992224875
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 4.8162116,
+      "sampleSD": 0.6020808252367967,
+      "median": 4.498006,
+      "min": 4.406536,
+      "max": 6.075282
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 5.6963569,
+      "sampleSD": 0.6004362938464828,
+      "median": 5.357241,
+      "min": 5.277898,
+      "max": 6.926741
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 462348.6,
+      "sampleSD": 15373.619860006946,
+      "median": 462042.0,
+      "min": 444402.0,
+      "max": 494466.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 22.7,
+      "sampleSD": 0.6749485577105528,
+      "median": 23.0,
+      "min": 22.0,
+      "max": 24.0
+    }
+  }
+}

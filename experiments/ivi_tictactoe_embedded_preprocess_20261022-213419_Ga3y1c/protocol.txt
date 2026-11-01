@@ -1,0 +1,28 @@
+started_at=2026-10-22T19:34:19Z
+algorithm=INCREMENTAL_VALUE_ITERATION
+reward_strategy=EMBEDDED
+exploration=PREPROCESS
+environment=tictacEmbedded
+b_machine=tictacEmbedded.mch
+ordering=BFS_ACTIONS
+first_seed=0
+run_count=10
+kernel=de.prob2.kernel:4.16.1
+expected_gamma=0.9
+expected_theta=0.01
+expected_max_iterations=100
+expected_updates_per_iteration=500
+expected_states=5478
+expected_process=separate_java_jvm_per_seed
+git_commit=c9001f5bf37785b567883c7aed4e761311081b27
+git_tracked_worktree_dirty=false
+operating_system=Darwin
+architecture=arm64
+openjdk version "24-ea" 2025-03-18
+OpenJDK Runtime Environment (build 24-ea+19-2228)
+OpenJDK 64-Bit Server VM (build 24-ea+19-2228, mixed mode, sharing)
+Apache Maven 3.9.9 (8e8579a9e76f7d015ee5ec7bfcdc97d260186937)
+Maven home: /opt/homebrew/Cellar/maven/3.9.9/libexec
+Java version: 23.0.2, vendor: Homebrew, runtime: /opt/homebrew/Cellar/openjdk/23.0.2/libexec/openjdk.jdk/Contents/Home
+Default locale: fr_FR, platform encoding: UTF-8
+OS name: "mac os x", version: "26.6.2", arch: "aarch64", family: "mac"

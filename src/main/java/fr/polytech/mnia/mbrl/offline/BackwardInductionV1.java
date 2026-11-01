@@ -6,132 +6,149 @@ import fr.polytech.mnia.Agent;
 import fr.polytech.mnia.Environment.Environment;
 import fr.polytech.mnia.Environment.ExplorationStrategy;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
+import java.util.HashSet;
 
 /**
- * An agent that implements finite-horizon dynamic programming
- * (backward induction) for solving MDPs.
- *
- * Given a fixed planning horizon H, the algorithm computes V_h(s)
- * for h = 0..H using:
- *
- *   V_0(s) = 0
- *   V_{h+1}(s) = max_a [ R(s,a,s') + gamma * V_h(s') ].
- *
- * This is a model-based planner which requires an exhaustive
- * exploration of the state space via ProB, similarly to
- * {@link ValueIterationV1} and {@link PolicyIterationV1}.
+ * Finite-horizon backward induction (dynamic programming):
+ * V_0(s)=0 and V_h(s)=max_a[R(s,a,s')+gamma*V_(h-1)(s')].
+ * A terminal state has V_h(s)=0 for every h.
+ * Completing the requested horizon is NOT a claim of Bellman convergence.
  */
 public class BackwardInductionV1 extends Agent {
+    public enum TerminationStatus { HORIZON_COMPLETED, NO_STATES }
 
-    /** Planning horizon (number of steps). */
     private final int horizon;
+    private Map<State, Double> vValues = new HashMap<>();
+    private final Map<State, Map<Transition, Double>> qValues = new HashMap<>();
+    private TerminationStatus status = TerminationStatus.NO_STATES;
+    private int completedHorizon = 0;
+    private long updateBackups = 0;
+    private long rewardLookups = 0;
+    private double lastHorizonDelta = Double.NaN;
 
-    /** Final state-value function V_H(s). */
-    private Map<State, Double> vValues;
-
-    /** Action-value function Q_H(s,a) for inspection/export. */
-    private final Map<State, Map<Transition, Double>> qValues;
-
-    public BackwardInductionV1(Environment env,
-                               double gamma,
-                               int horizon) {
-        // teta is unused here, but we keep it in the Agent signature;
-        // we can pass a dummy value such as 0.0.
+    public BackwardInductionV1(Environment env, double gamma, int horizon) {
         super(env, gamma, 0.0);
+        if (horizon < 1) {
+            throw new IllegalArgumentException(
+                "Backward Induction requires horizon >= 1 (received " + horizon
+                + "). Set env.<environment>.BACKWARD_INDUCTION.offline.horizon "
+                + "in config/agent-parameters.properties.");
+        }
         this.horizon = horizon;
-        this.vValues = new HashMap<>();
-        this.qValues = new HashMap<>();
     }
 
     @Override
     public void learn(ExplorationStrategy strategy) {
-        // Full model construction via ProB
         env.explore(strategy);
-        System.out.println("Start learning (Backward Induction / Finite Horizon DP)");
+        System.out.println("Preparing finite-horizon dynamic programming (BI). First pass may take time...");
+        System.out.flush();
         long startTime = System.nanoTime();
 
-        // Collect all reachable states
-        Set<Integer> stateIds = env.getStateIds();
+        status = TerminationStatus.NO_STATES;
+        completedHorizon = 0;
+        updateBackups = 0;
+        rewardLookups = 0;
+        lastHorizonDelta = Double.NaN;
+        vValues.clear();
+        qValues.clear();
+
         List<State> states = new ArrayList<>();
-        for (int sID : stateIds) {
-            State s = env.gState(sID);
+        for (int id : env.getStateIds()) {
+            State s = env.gState(id);
+            if (s == null) {
+                throw new IllegalStateException("Missing explored state " + id);
+            }
             states.add(s);
         }
 
         if (states.isEmpty()) {
-            System.out.println("No reachable states. Aborting learning.");
+            printResult(startTime, states.size());
             return;
         }
 
-        // V_0(s) = 0 for all s
-        Map<State, Double> vPrev = new HashMap<>();
+        // Establish the finite reachable-state domain; never silently assume
+        // V_(h-1)(s')=0 for a successor absent from the explored graph.
+        Set<State> stateSet = new HashSet<>(states);
+        Map<State, Double> previous = new HashMap<>();
         for (State s : states) {
-            vPrev.put(s, 0.0);
+            previous.put(s, 0.0);
         }
 
-        // Backward induction: h = 1..H
         for (int h = 1; h <= horizon; h++) {
-            Map<State, Double> vCurr = new HashMap<>();
+            Map<State, Double> next = new HashMap<>();
             double delta = 0.0;
 
             for (State s : states) {
+                updateBackups++;
                 List<Transition> actions = s.getOutTransitions();
                 if (actions.isEmpty()) {
-                    // Terminal state: horizon-limited return is zero by convention
-                    vCurr.put(s, 0.0);
+                    next.put(s, 0.0);
                     continue;
                 }
 
                 double maxQ = Double.NEGATIVE_INFINITY;
-                Map<Transition, Double> qForState =
-                        qValues.computeIfAbsent(s, key -> new HashMap<>());
-
+                Map<Transition, Double> finalQ = null;
+                if (h == horizon) {
+                    finalQ = qValues.computeIfAbsent(s, key -> new HashMap<>());
+                }
                 for (Transition t : actions) {
-                    State sPrime = t.getDestination();
-                    double reward = env.reward(s, t, sPrime);
-                    double q = reward + gamma * vPrev.getOrDefault(sPrime, 0.0);
-
-                    // On ne garde que les Q-values de la dernière étape (horizon H),
-                    // mais on peut aussi stocker pour tous les h si nécessaire.
-                    if (h == horizon) {
-                        qForState.put(t, q);
+                    State successor = t.getDestination();
+                    if (!stateSet.contains(successor)) {
+                        throw new IllegalStateException("Exploration is incomplete: transition to an unlisted successor");
                     }
-
-                    if (q > maxQ) {
-                        maxQ = q;
+                    double reward = env.reward(s, t, successor);
+                    rewardLookups++;
+                    double q = reward + gamma * previous.get(successor);
+                    if (!Double.isFinite(q)) {
+                        throw new IllegalStateException("Non-finite action value in finite-horizon backup");
                     }
+                    if (finalQ != null) {
+                        finalQ.put(t, q);
+                    }
+                    maxQ = Math.max(maxQ, q);
                 }
-
-                double oldV = vPrev.getOrDefault(s, 0.0);
-                vCurr.put(s, maxQ);
-                double diff = Math.abs(oldV - maxQ);
-                if (diff > delta) {
-                    delta = diff;
-                }
+                next.put(s, maxQ);
+                delta = Math.max(delta, Math.abs(maxQ - previous.get(s)));
             }
 
-            System.out.println("Horizon step: " + h + " | max delta: " + delta);
-            vPrev = vCurr; // for next backward step
+            previous = next;
+            completedHorizon = h;
+            lastHorizonDelta = delta;
+            System.out.printf(Locale.ROOT,
+                "BI horizon_step=%d/%d value_delta=%.9g%n", h, horizon, delta);
+            System.out.flush();
         }
 
-        // Final V_H(s)
-        this.vValues = vPrev;
-
-        long endTime = System.nanoTime();
-        double durationInSeconds = (endTime - startTime) / 1_000_000_000.0;
-        System.out.println("Execution time (Backward Induction): " + durationInSeconds + " seconds");
+        vValues = previous;
+        status = TerminationStatus.HORIZON_COMPLETED;
+        printResult(startTime, states.size());
     }
 
+    private void printResult(long startTime, int exploredStates) {
+        double seconds = (System.nanoTime() - startTime) / 1_000_000_000.0;
+        System.out.printf(Locale.ROOT,
+            "BI_RESULT status=%s gamma=%.9g horizon=%d completedHorizon=%d "
+            + "exploredStates=%d updateBackups=%d totalBackups=%d rewardLookups=%d "
+            + "lastHorizonDelta=%.9g learningSeconds=%.6f%n",
+            status, gamma, horizon, completedHorizon, exploredStates,
+            updateBackups, updateBackups, rewardLookups, lastHorizonDelta, seconds);
+    }
+
+    public TerminationStatus getStatus() { return status; }
+    public int getCompletedHorizon() { return completedHorizon; }
+    public long getUpdateBackups() { return updateBackups; }
+    public long getRewardLookups() { return rewardLookups; }
+    public double getLastHorizonDelta() { return lastHorizonDelta; }
+    public double getValue(State s) { return vValues.getOrDefault(s, 0.0); }
     @Override
     public Map<Transition, Double> getQValues(State s) {
-        return qValues.getOrDefault(s, Collections.emptyMap());
-    }
-
-    /**
-     * Optional accessor to inspect V_H(s).
-     */
-    public double getValue(State s) {
-        return vValues.getOrDefault(s, 0.0);
+        return Collections.unmodifiableMap(qValues.getOrDefault(s, Collections.emptyMap()));
     }
 }

@@ -1,0 +1,54 @@
+{
+  "campaignId": "value_iteration_taxidriver30_onceandforall_preprocess_20261023T174945Z_l_v8b7ad",
+  "algorithm": "VALUE_ITERATION",
+  "environment": "taxidriver30",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 0.2559238667,
+      "sampleSD": 0.009850691483216451,
+      "median": 0.2542398335,
+      "min": 0.244801625,
+      "max": 0.276118625
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 2.3224483,
+      "sampleSD": 0.2135147274317004,
+      "median": 2.2189655,
+      "min": 2.150122,
+      "max": 2.692455
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 2.5783723,
+      "sampleSD": 0.21918430590312193,
+      "median": 2.471979,
+      "min": 2.395177,
+      "max": 2.968574
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 66612.7,
+      "sampleSD": 7383.358706502678,
+      "median": 67203.5,
+      "min": 53172.0,
+      "max": 76804.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 44.1,
+      "sampleSD": 4.998888765404656,
+      "median": 44.5,
+      "min": 35.0,
+      "max": 51.0
+    }
+  }
+}

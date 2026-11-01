@@ -1,0 +1,46 @@
+{
+  "campaignId": "backward_induction_autov2embedded_embedded_recursive_20261023T194354Z_a05s39an",
+  "algorithm": "BACKWARD_INDUCTION",
+  "environment": "autov2embedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "RECURSIVE",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 3.1871708417,
+      "sampleSD": 0.28205364293924406,
+      "median": 3.1243295625,
+      "min": 2.890494417,
+      "max": 3.718377
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 5.1543046,
+      "sampleSD": 0.2788185916829157,
+      "median": 4.9911235000000005,
+      "min": 4.962736,
+      "max": 5.631077
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 8.3414754,
+      "sampleSD": 0.4817520092676083,
+      "median": 8.1334525,
+      "min": 7.869874,
+      "max": 9.349454
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 444150.0,
+      "sampleSD": 0.0,
+      "median": 444150.0,
+      "min": 444150.0,
+      "max": 444150.0
+    }
+  }
+}

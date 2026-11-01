@@ -1,0 +1,26 @@
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = taxidriver5
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 43 | Exploration time: 0.09864625 seconds
+VI iteration=1 sweep_delta=1000.00000
+VI iteration=2 sweep_delta=900.000000
+VI iteration=3 sweep_delta=810.000000
+VI iteration=4 sweep_delta=729.000000
+VI iteration=5 sweep_delta=530.194410
+VI iteration=6 sweep_delta=477.174969
+VI iteration=7 sweep_delta=429.457472
+VI iteration=8 sweep_delta=386.511725
+VI iteration=9 sweep_delta=347.860552
+VI iteration=10 sweep_delta=313.074497
+VI iteration=11 sweep_delta=0.00000000
+VI_RESIDUAL iteration=11 global_residual=0.00000000
+VI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 iterations=11 exploredStates=43 updateBackups=473 residualBackups=43 totalBackups=516 rewardLookups=1320 bellmanResidual=0.00000000 learningSeconds=0.003597
+REWARD_CACHE strategy=ONCEANDFORALL hits=1277 misses=43 cachedStates=43
+Nb states discovered (env): 43
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

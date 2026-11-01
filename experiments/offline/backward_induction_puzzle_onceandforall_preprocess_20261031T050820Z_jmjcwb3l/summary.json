@@ -1,0 +1,46 @@
+{
+  "campaignId": "backward_induction_puzzle_onceandforall_preprocess_20261031T050820Z_jmjcwb3l",
+  "algorithm": "BACKWARD_INDUCTION",
+  "environment": "puzzle",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 29.0694178583,
+      "sampleSD": 0.9229305510574091,
+      "median": 28.575256854000003,
+      "min": 28.454577292,
+      "max": 31.02691275
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 641.7007959,
+      "sampleSD": 8.004099407341867,
+      "median": 639.6281165,
+      "min": 628.22288,
+      "max": 657.512314
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 670.7702138,
+      "sampleSD": 8.281419569159327,
+      "median": 668.1687079999999,
+      "min": 657.722845,
+      "max": 687.881986
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 27216000.0,
+      "sampleSD": 0.0,
+      "median": 27216000.0,
+      "min": 27216000.0,
+      "max": 27216000.0
+    }
+  }
+}

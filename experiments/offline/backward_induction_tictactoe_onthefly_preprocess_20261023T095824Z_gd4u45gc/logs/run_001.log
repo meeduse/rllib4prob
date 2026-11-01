@@ -1,0 +1,24 @@
+Selected algorithm = BACKWARD_INDUCTION
+Selected reward strategy = ONTHEFLY
+Selected environment = tictactoe
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+......Model Checking complete. No more error nodes found.Total states: 5479
+
+End of exploration 5478 | Exploration time: 2.857997833 seconds
+Preparing finite-horizon dynamic programming (BI). First pass may take time...
+BI horizon_step=1/9 value_delta=1.00000000
+BI horizon_step=2/9 value_delta=0.900000000
+BI horizon_step=3/9 value_delta=0.810000000
+BI horizon_step=4/9 value_delta=0.729000000
+BI horizon_step=5/9 value_delta=0.656100000
+BI horizon_step=6/9 value_delta=0.00000000
+BI horizon_step=7/9 value_delta=0.00000000
+BI horizon_step=8/9 value_delta=0.00000000
+BI horizon_step=9/9 value_delta=0.00000000
+BI_RESULT status=HORIZON_COMPLETED gamma=0.900000000 horizon=9 completedHorizon=9 exploredStates=5478 updateBackups=49302 totalBackups=49302 rewardLookups=145503 lastHorizonDelta=0.00000000 learningSeconds=90.415959
+Nb states discovered (env): 5478
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

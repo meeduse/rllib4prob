@@ -1,0 +1,14 @@
+Selected algorithm = PRIORITIZED_VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = taxidriver5embedded
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 43 | Exploration time: 0.054108375 seconds
+Preparing graph and initial priorities (PVI). First pass may take time...
+PVI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxUpdates=100000 updates=42 exploredStates=43 transitions=110 priorityBackups=194 residualBackups=43 finalQBackups=43 totalBackups=280 rewardLookups=743 bellmanResidual=0.00000000 learningSeconds=0.060480
+Nb states discovered (env): 43
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

@@ -1,0 +1,47 @@
+
+COMMAND: bash /Users/idani/rllib4prob/fresh/scripts/experiments/offline/run_campaign.sh --algorithm PI --reward EMBEDDED --exploration PREPROCESS --environment interlockingembedded --count 1 --expected-states 100226
+Compiling once and resolving the runtime classpath...
+
+New campaign: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_interlockingembedded_embedded_preprocess_20261024T142603Z_ut02ieq1
+Snapshot: 117 source/config files
+
+========== POLICY_ITERATION repetition 1 (1/1) ==========
+Selected algorithm = POLICY_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = interlockingembedded
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................Model Checking complete. No more error nodes found.Total states: 100228
+
+End of exploration 100226 | Exploration time: 235.845863209 seconds
+PI iteration=1 evaluation_sweeps=79 policy_residual=0.00830028384 policy_stable=false bellman_residual=NaN
+PI iteration=2 evaluation_sweeps=140 policy_residual=0.00740027820 policy_stable=false bellman_residual=NaN
+PI iteration=3 evaluation_sweeps=183 policy_residual=0.00790972261 policy_stable=false bellman_residual=NaN
+PI iteration=4 evaluation_sweeps=206 policy_residual=0.00784850908 policy_stable=false bellman_residual=NaN
+PI iteration=5 evaluation_sweeps=230 policy_residual=5.54862160e-05 policy_stable=false bellman_residual=NaN
+PI iteration=6 evaluation_sweeps=251 policy_residual=0.00462645370 policy_stable=false bellman_residual=NaN
+PI iteration=7 evaluation_sweeps=270 policy_residual=1.21222570e-08 policy_stable=false bellman_residual=NaN
+PI iteration=8 evaluation_sweeps=284 policy_residual=6.34429398e-10 policy_stable=false bellman_residual=NaN
+PI iteration=9 evaluation_sweeps=299 policy_residual=2.68869371e-11 policy_stable=false bellman_residual=NaN
+PI iteration=10 evaluation_sweeps=325 policy_residual=1.13686838e-13 policy_stable=false bellman_residual=NaN
+PI iteration=11 evaluation_sweeps=335 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=12 evaluation_sweeps=341 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=13 evaluation_sweeps=347 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=14 evaluation_sweeps=351 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=15 evaluation_sweeps=353 policy_residual=0.00000000 policy_stable=true bellman_residual=0.00000000
+PI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 maxEvaluationSweeps=10000 iterations=15 evaluationSweeps=353 exploredStates=100226 evaluationBackups=34918760 improvementBackups=1483800 residualBackups=1703842 totalBackups=38106402 rewardLookups=41521243 policyStable=true policyResidual=0.00000000 bellmanResidual=0.00000000 learningSeconds=163.901906
+Nb states discovered (env): 100226
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+CHECK run 0: status=CONVERGED verification=VERIFIED_SUCCESS
+
+Completed: 1/1 verified successful runs
+Breakdown: {'VERIFIED_SUCCESS': 1}
+totalSeconds: mean=399.747769 sample_sd=n/a
+learningSeconds: mean=163.901906 sample_sd=n/a
+explorationSeconds: mean=235.845863 sample_sd=n/a
+totalBackups: mean=38106402.000000 sample_sd=n/a
+CSV: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_interlockingembedded_embedded_preprocess_20261024T142603Z_ut02ieq1/results.csv
+Summary: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_interlockingembedded_embedded_preprocess_20261024T142603Z_ut02ieq1/summary.json
+All raw logs preserved in: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_interlockingembedded_embedded_preprocess_20261024T142603Z_ut02ieq1/logs

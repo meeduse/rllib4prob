@@ -1,0 +1,88 @@
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = frozenlake10
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.Model Checking complete. No more error nodes found.Total states: 306
+
+End of exploration 304 | Exploration time: 0.045687083 seconds
+IVI_ORDERING method=BFS_ACTIONS states=304 transitions=1316 orderingSeconds=1.033331
+IVI iteration=1 sample_delta=2194.20000 global_residual=1973.88000
+IVI iteration=2 sample_delta=1973.88000 global_residual=1385.10000
+IVI iteration=3 sample_delta=1385.10000 global_residual=1121.93100
+IVI iteration=4 sample_delta=1600.22790 global_residual=1296.18460
+IVI iteration=5 sample_delta=1296.18460 global_residual=967.513797
+IVI iteration=6 sample_delta=1427.87308 global_residual=936.827528
+IVI iteration=7 sample_delta=944.918573 global_residual=843.144775
+IVI iteration=8 sample_delta=964.721430 global_residual=480.213725
+IVI iteration=9 sample_delta=845.168281 global_residual=569.658357
+IVI iteration=10 sample_delta=569.658357 global_residual=451.951624
+IVI iteration=11 sample_delta=502.168471 global_residual=366.080815
+IVI iteration=12 sample_delta=553.187287 global_residual=403.273532
+IVI iteration=13 sample_delta=415.280942 global_residual=326.651561
+IVI iteration=14 sample_delta=373.752848 global_residual=272.465826
+IVI iteration=15 sample_delta=293.986405 global_residual=220.697319
+IVI iteration=16 sample_delta=220.697319 global_residual=175.095319
+IVI iteration=17 sample_delta=175.095319 global_residual=118.084387
+IVI iteration=18 sample_delta=140.612786 global_residual=103.392035
+IVI iteration=19 sample_delta=140.612786 global_residual=102.506721
+IVI iteration=20 sample_delta=102.506721 global_residual=83.0304441
+IVI iteration=21 sample_delta=83.7475484 global_residual=67.2546597
+IVI iteration=22 sample_delta=67.2546597 global_residual=54.4762744
+IVI iteration=23 sample_delta=61.0519628 global_residual=49.0286469
+IVI iteration=24 sample_delta=49.0286469 global_residual=44.5068809
+IVI iteration=25 sample_delta=44.5068809 global_residual=33.3505186
+IVI iteration=26 sample_delta=33.3505186 global_residual=30.0154667
+IVI iteration=27 sample_delta=30.0154667 global_residual=26.2808681
+IVI iteration=28 sample_delta=26.2808681 global_residual=17.7238329
+IVI iteration=29 sample_delta=17.7238329 global_residual=19.1587528
+IVI iteration=30 sample_delta=19.1587528 global_residual=15.9514496
+IVI iteration=31 sample_delta=15.9514496 global_residual=13.8471380
+IVI iteration=32 sample_delta=13.8471380 global_residual=12.4624242
+IVI iteration=33 sample_delta=12.4624242 global_residual=9.37505844
+IVI iteration=34 sample_delta=9.37505844 global_residual=6.68024405
+IVI iteration=35 sample_delta=6.68024405 global_residual=4.86989791
+IVI iteration=36 sample_delta=6.17991842 global_residual=5.41099768
+IVI iteration=37 sample_delta=5.41099768 global_residual=5.52439710
+IVI iteration=38 sample_delta=5.52439710 global_residual=2.93589112
+IVI iteration=39 sample_delta=3.62455693 global_residual=2.66025224
+IVI iteration=40 sample_delta=3.28426203 global_residual=2.95583582
+IVI iteration=41 sample_delta=2.95583582 global_residual=2.39422702
+IVI iteration=42 sample_delta=2.85100292 global_residual=2.30931237
+IVI iteration=43 sample_delta=2.30931237 global_residual=2.14026462
+IVI iteration=44 sample_delta=2.14026462 global_residual=1.56025291
+IVI iteration=45 sample_delta=1.56025291 global_residual=1.13742437
+IVI iteration=46 sample_delta=1.14515136 global_residual=0.921313741
+IVI iteration=47 sample_delta=0.921313741 global_residual=0.569412278
+IVI iteration=48 sample_delta=0.834815341 global_residual=0.592065896
+IVI iteration=49 sample_delta=0.834815341 global_residual=0.431616038
+IVI iteration=50 sample_delta=0.547722346 global_residual=0.492950111
+IVI iteration=51 sample_delta=0.604473946 global_residual=0.489623896
+IVI iteration=52 sample_delta=0.528296598 global_residual=0.440661506
+IVI iteration=53 sample_delta=0.440661506 global_residual=0.356935820
+IVI iteration=54 sample_delta=0.356935820 global_residual=0.252682625
+IVI iteration=55 sample_delta=0.321909865 global_residual=0.289718878
+IVI iteration=56 sample_delta=0.289718878 global_residual=0.234672291
+IVI iteration=57 sample_delta=0.234672291 global_residual=0.190084556
+IVI iteration=58 sample_delta=0.190084556 global_residual=0.0854657283
+IVI iteration=59 sample_delta=0.0854657283 global_residual=0.0623045159
+IVI iteration=60 sample_delta=0.0692272399 global_residual=0.0560740643
+IVI iteration=61 sample_delta=0.0822101857 global_residual=0.0583049267
+IVI iteration=62 sample_delta=0.0665902504 global_residual=0.0539381028
+IVI iteration=63 sample_delta=0.0642285330 global_residual=0.0468226005
+IVI iteration=64 sample_delta=0.0472269906 global_residual=0.0341336758
+IVI iteration=65 sample_delta=0.0341336758 global_residual=0.0241380460
+IVI iteration=66 sample_delta=0.0353887893 global_residual=0.0309856285
+IVI iteration=67 sample_delta=0.0309856285 global_residual=0.0232185846
+IVI iteration=68 sample_delta=0.0250983591 global_residual=0.0203296709
+IVI iteration=69 sample_delta=0.0203296709 global_residual=0.0164670334
+IVI iteration=70 sample_delta=0.0182967038 global_residual=0.0120044674
+IVI iteration=71 sample_delta=0.0148203301 global_residual=0.0108040206
+IVI iteration=72 sample_delta=0.0133382971 global_residual=0.00875125671
+IVI_RESULT status=CONVERGED seed=8 gamma=0.900000000 theta=0.0100000000 maxIterations=100 updatesPerIteration=500 iterations=72 exploredStates=304 distinctUpdatedStates=304 updateBackups=36000 residualBackups=22192 totalBackups=58192 rewardLookups=251924 bellmanResidual=0.00875125671 orderingSeconds=1.033331 learningSeconds=1.307283
+REWARD_CACHE strategy=ONCEANDFORALL hits=251620 misses=304 cachedStates=304
+Nb states discovered (env): 304
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

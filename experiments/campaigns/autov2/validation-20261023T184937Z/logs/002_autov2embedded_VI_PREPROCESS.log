@@ -1,0 +1,119 @@
+
+COMMAND: bash /Users/idani/rllib4prob/fresh/scripts/experiments/offline/run_campaign.sh --algorithm VI --reward EMBEDDED --exploration PREPROCESS --environment autov2embedded --count 1 --expected-states 2961
+Compiling once and resolving the runtime classpath...
+
+New campaign: /Users/idani/rllib4prob/fresh/experiments/offline/value_iteration_autov2embedded_embedded_preprocess_20261023T184951Z_qukfp_ku
+Snapshot: 116 source/config files
+
+========== VALUE_ITERATION repetition 1 (1/1) ==========
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = autov2embedded
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+...Model Checking complete. No more error nodes found.Total states: 2962
+
+End of exploration 2961 | Exploration time: 1.152233583 seconds
+VI iteration=1 sweep_delta=10000.0000
+VI iteration=2 sweep_delta=8050.00000
+VI iteration=3 sweep_delta=3821.31300
+VI iteration=4 sweep_delta=3221.10300
+VI iteration=5 sweep_delta=2863.77489
+VI iteration=6 sweep_delta=2577.39740
+VI iteration=7 sweep_delta=1914.72898
+VI iteration=8 sweep_delta=1691.03044
+VI iteration=9 sweep_delta=1358.99427
+VI iteration=10 sweep_delta=1156.83326
+VI iteration=11 sweep_delta=1041.14993
+VI iteration=12 sweep_delta=758.998302
+VI iteration=13 sweep_delta=403.874237
+VI iteration=14 sweep_delta=363.486813
+VI iteration=15 sweep_delta=327.138132
+VI iteration=16 sweep_delta=294.424319
+VI iteration=17 sweep_delta=264.981887
+VI iteration=18 sweep_delta=238.483698
+VI iteration=19 sweep_delta=214.635328
+VI iteration=20 sweep_delta=193.171796
+VI iteration=21 sweep_delta=173.854616
+VI iteration=22 sweep_delta=40.6384212
+VI iteration=23 sweep_delta=36.5745791
+VI iteration=24 sweep_delta=29.6254091
+VI iteration=25 sweep_delta=26.6628682
+VI iteration=26 sweep_delta=17.4935078
+VI iteration=27 sweep_delta=12.7527672
+VI iteration=28 sweep_delta=8.65441369
+VI iteration=29 sweep_delta=7.53038150
+VI iteration=30 sweep_delta=6.77734335
+VI iteration=31 sweep_delta=6.09960902
+VI iteration=32 sweep_delta=4.13937924
+VI iteration=33 sweep_delta=2.91742408
+VI iteration=34 sweep_delta=2.24926204
+VI iteration=35 sweep_delta=2.02433584
+VI iteration=36 sweep_delta=1.82190225
+VI iteration=37 sweep_delta=1.63971203
+VI iteration=38 sweep_delta=1.47574083
+VI iteration=39 sweep_delta=1.32816674
+VI iteration=40 sweep_delta=1.19535007
+VI iteration=41 sweep_delta=1.07581506
+VI iteration=42 sweep_delta=0.968233556
+VI iteration=43 sweep_delta=0.871410200
+VI iteration=44 sweep_delta=0.784269180
+VI iteration=45 sweep_delta=0.705842262
+VI iteration=46 sweep_delta=0.635258036
+VI iteration=47 sweep_delta=0.571732232
+VI iteration=48 sweep_delta=0.514559009
+VI iteration=49 sweep_delta=0.463103108
+VI iteration=50 sweep_delta=0.416792797
+VI iteration=51 sweep_delta=0.375113518
+VI iteration=52 sweep_delta=0.337602166
+VI iteration=53 sweep_delta=0.303841949
+VI iteration=54 sweep_delta=0.273457754
+VI iteration=55 sweep_delta=0.246111979
+VI iteration=56 sweep_delta=0.221500781
+VI iteration=57 sweep_delta=0.199350703
+VI iteration=58 sweep_delta=0.179415633
+VI iteration=59 sweep_delta=0.161474069
+VI iteration=60 sweep_delta=0.145326662
+VI iteration=61 sweep_delta=0.130793996
+VI iteration=62 sweep_delta=0.117714597
+VI iteration=63 sweep_delta=0.105943137
+VI iteration=64 sweep_delta=0.0953488232
+VI iteration=65 sweep_delta=0.0858139409
+VI iteration=66 sweep_delta=0.0772325468
+VI iteration=67 sweep_delta=0.0695092921
+VI iteration=68 sweep_delta=0.0625583629
+VI iteration=69 sweep_delta=0.0563025266
+VI iteration=70 sweep_delta=0.0506722740
+VI iteration=71 sweep_delta=0.0456050466
+VI iteration=72 sweep_delta=0.0410445419
+VI iteration=73 sweep_delta=0.0369400877
+VI iteration=74 sweep_delta=0.0332460790
+VI iteration=75 sweep_delta=0.0299214711
+VI iteration=76 sweep_delta=0.0269293240
+VI iteration=77 sweep_delta=0.0242363916
+VI iteration=78 sweep_delta=0.0218127524
+VI iteration=79 sweep_delta=0.0196314772
+VI iteration=80 sweep_delta=0.0176683294
+VI iteration=81 sweep_delta=0.0159014965
+VI iteration=82 sweep_delta=0.0143113469
+VI iteration=83 sweep_delta=0.0128802122
+VI iteration=84 sweep_delta=0.0115921910
+VI iteration=85 sweep_delta=0.0104329719
+VI iteration=86 sweep_delta=0.00938967467
+VI_RESIDUAL iteration=86 global_residual=0.00845070720
+VI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=200 iterations=86 exploredStates=2961 updateBackups=254646 residualBackups=2961 totalBackups=257607 rewardLookups=924810 bellmanResidual=0.00845070720 learningSeconds=5.698651
+Nb states discovered (env): 2961
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+CHECK run 0: status=CONVERGED verification=VERIFIED_SUCCESS
+
+Completed: 1/1 verified successful runs
+Breakdown: {'VERIFIED_SUCCESS': 1}
+totalSeconds: mean=6.850885 sample_sd=n/a
+learningSeconds: mean=5.698651 sample_sd=n/a
+explorationSeconds: mean=1.152234 sample_sd=n/a
+totalBackups: mean=257607.000000 sample_sd=n/a
+CSV: /Users/idani/rllib4prob/fresh/experiments/offline/value_iteration_autov2embedded_embedded_preprocess_20261023T184951Z_qukfp_ku/results.csv
+Summary: /Users/idani/rllib4prob/fresh/experiments/offline/value_iteration_autov2embedded_embedded_preprocess_20261023T184951Z_qukfp_ku/summary.json
+All raw logs preserved in: /Users/idani/rllib4prob/fresh/experiments/offline/value_iteration_autov2embedded_embedded_preprocess_20261023T184951Z_qukfp_ku/logs

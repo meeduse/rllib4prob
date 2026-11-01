@@ -1,0 +1,43 @@
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = mountaincar
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.......Model Checking complete. No more error nodes found.Total states: 12049
+
+End of exploration 12047 | Exploration time: 3.397547125 seconds
+VI iteration=1 sweep_delta=10000.0000
+VI iteration=2 sweep_delta=9000.00000
+VI iteration=3 sweep_delta=8100.00000
+VI iteration=4 sweep_delta=7290.00000
+VI iteration=5 sweep_delta=5904.83439
+VI iteration=6 sweep_delta=4782.85681
+VI iteration=7 sweep_delta=4304.57113
+VI iteration=8 sweep_delta=3874.11401
+VI iteration=9 sweep_delta=3486.70261
+VI iteration=10 sweep_delta=3138.03235
+VI iteration=11 sweep_delta=2824.22912
+VI iteration=12 sweep_delta=2359.62173
+VI iteration=13 sweep_delta=2085.13214
+VI iteration=14 sweep_delta=1833.81069
+VI iteration=15 sweep_delta=1135.23571
+VI iteration=16 sweep_delta=1021.71214
+VI iteration=17 sweep_delta=352.109043
+VI iteration=18 sweep_delta=316.898139
+VI iteration=19 sweep_delta=285.208325
+VI iteration=20 sweep_delta=256.687493
+VI iteration=21 sweep_delta=231.018743
+VI iteration=22 sweep_delta=207.916869
+VI iteration=23 sweep_delta=98.4869379
+VI iteration=24 sweep_delta=88.6382441
+VI iteration=25 sweep_delta=79.7744197
+VI iteration=26 sweep_delta=71.7969777
+VI iteration=27 sweep_delta=0.00000000
+VI_RESIDUAL iteration=27 global_residual=0.00000000
+VI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=200 iterations=27 exploredStates=12047 updateBackups=325269 residualBackups=12047 totalBackups=337316 rewardLookups=996408 bellmanResidual=0.00000000 learningSeconds=15.163745
+REWARD_CACHE strategy=ONCEANDFORALL hits=984362 misses=12046 cachedStates=12046
+Nb states discovered (env): 12047
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

@@ -1,0 +1,18 @@
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = tictacembedded
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 5478 | Exploration time: 35.871494458 seconds
+VI iteration=1 sweep_delta=1.15000000
+VI iteration=2 sweep_delta=0.900000000
+VI iteration=3 sweep_delta=0.810000000
+VI iteration=4 sweep_delta=0.00000000
+VI_RESIDUAL iteration=4 global_residual=0.00000000
+VI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 iterations=4 exploredStates=5478 updateBackups=21912 residualBackups=5478 totalBackups=27390 rewardLookups=80835 bellmanResidual=0.00000000 learningSeconds=7.991290
+Nb states discovered (env): 5478
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

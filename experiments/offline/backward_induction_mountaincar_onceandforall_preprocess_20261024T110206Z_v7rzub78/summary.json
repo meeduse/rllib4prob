@@ -1,0 +1,46 @@
+{
+  "campaignId": "backward_induction_mountaincar_onceandforall_preprocess_20261024T110206Z_v7rzub78",
+  "algorithm": "BACKWARD_INDUCTION",
+  "environment": "mountaincar",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 3.3126106623,
+      "sampleSD": 0.04867453354780095,
+      "median": 3.304294958,
+      "min": 3.2569185,
+      "max": 3.419523416
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 15.7859342,
+      "sampleSD": 0.14907384026105222,
+      "median": 15.786699500000001,
+      "min": 15.485483,
+      "max": 16.002007
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 19.0985449,
+      "sampleSD": 0.12522220115676122,
+      "median": 19.073330499999997,
+      "min": 18.905006,
+      "max": 19.328986
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 1807050.0,
+      "sampleSD": 0.0,
+      "median": 1807050.0,
+      "min": 1807050.0,
+      "max": 1807050.0
+    }
+  }
+}

@@ -13,69 +13,41 @@ import fr.polytech.mnia.mbrl.online.DynaQPlus;
 public final class AgentFactory {
 
     private AgentFactory() {
-        // util class
     }
 
-    public static Agent create(AlgorithmId id, Environment env) {
+    public static Agent create(AlgorithmId id, Environment env, String envName) {
+        AgentParameterCatalog.AgentSettings settings = AgentParameterCatalog.settings(envName, id);
+        AgentParameterCatalog.OfflineParams offline = settings.offline();
+        AgentParameterCatalog.OnlineParams online = settings.online();
+
         return switch (id) {
-            case VALUE_ITERATION -> new ValueIteration(
-                    env,
-                    0.9,   // gamma
-                    0.01,  // teta
-                    10     // maxIterations
-            );
-            case POLICY_ITERATION -> new PolicyIteration(
-                    env,
-                    0.9,   // gamma
-                    0.01,  // teta
-                    100    // maxIterations
-            );
-            case MODIFIED_POLICY_ITERATION -> new ModifiedPolicyIteration(
-                    env,
-                    0.9,   // gamma
-                    0.01,  // teta
-                    100,   // maxIterations
-                    5      // evalIterations
-            );
-            case INCREMENTAL_VALUE_ITERATION -> new IncrementalValueIteration(
-                    env,
-                    0.9,    // gamma
-                    0.001,  // teta
-                    200,    // maxIterations
-                    500     // updatesPerIteration 
-            );
-            case BACKWARD_INDUCTION -> new BackwardInductionV1(
-                    env,
-                    0.9,   // gamma
-                    9      // horizon (Tic-Tac-Toe)
-            );
-            case PRIORITIZED_VALUE_ITERATION -> new PrioritizedValueIterationV1(
-                env,
-                0.9,   // gamma
-                0.01,  // teta (erreur de Bellman seuil)
-                100_000 // maxUpdates (maxUpdates = k * |S| (k : 10..50)
-            );
+            case VALUE_ITERATION -> new ValueIteration(env, offline.gamma(), offline.teta(), offline.maxIterations());
+            case POLICY_ITERATION -> new PolicyIteration(env, offline.gamma(), offline.teta(), offline.maxIterations());
+            case MODIFIED_POLICY_ITERATION -> new ModifiedPolicyIteration(env, offline.gamma(), offline.teta(), offline.maxIterations(), offline.evalIterations());
+            case INCREMENTAL_VALUE_ITERATION -> new IncrementalValueIteration(env, offline.gamma(), offline.teta(), offline.maxIterations(), offline.updatesPerIteration());
+            case BACKWARD_INDUCTION -> new BackwardInductionV1(env, offline.gamma(), offline.horizon());
+            case PRIORITIZED_VALUE_ITERATION -> new PrioritizedValueIterationV1(env, offline.gamma(), offline.teta(), offline.maxUpdates());
             case DYNA_Q -> new DynaQ(
-                env,
-                0.9,    // gamma
-                0.0,   // teta (pas utilisé par DynaQ)
-                0.1,    // alpha
-                0.1,    // epsilon
-                20,     // planningSteps
-                10000,   // maxEpisodes
-                50      // maxStepsPerEpisode
+                    env,
+                    online.gamma(),
+                    online.teta(),
+                    online.alpha(),
+                    online.epsilon(),
+                    online.planningSteps(),
+                    online.maxEpisodes(),
+                    online.maxStepsPerEpisode()
             );
             case DYNA_Q_PLUS -> new DynaQPlus(
-                env,
-                0.9,        // gamma
-                0.0,        // teta (non utilisé)
-                0.1,        // alpha
-                0.2,        // epsilon
-                20,         // planningSteps
-                20_000,     // maxEpisodes
-                30,  // maxStepsPerEpisode (>= 9 pour Tic-Tac-Toe)
-                5e-4,       // kappa (bonus Dyna-Q+)
-                1_000       // logEveryEpisodes
+                    env,
+                    online.gamma(),
+                    online.teta(),
+                    online.alpha(),
+                    online.epsilon(),
+                    online.planningSteps(),
+                    online.maxEpisodes(),
+                    online.maxStepsPerEpisode(),
+                    online.kappa(),
+                    online.logEveryEpisodes()
             );
         };
     }

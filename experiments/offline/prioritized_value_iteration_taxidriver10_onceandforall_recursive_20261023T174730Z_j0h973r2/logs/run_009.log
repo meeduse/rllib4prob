@@ -1,0 +1,15 @@
+Selected algorithm = PRIORITIZED_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = taxidriver10
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 165 | Exploration time: 0.381914042 seconds
+Preparing graph and initial priorities (PVI). First pass may take time...
+PVI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxUpdates=100000 updates=164 exploredStates=165 transitions=490 priorityBackups=818 residualBackups=165 finalQBackups=165 totalBackups=1148 rewardLookups=3501 bellmanResidual=0.00000000 learningSeconds=0.281408
+REWARD_CACHE strategy=ONCEANDFORALL hits=3336 misses=165 cachedStates=165
+Nb states discovered (env): 165
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

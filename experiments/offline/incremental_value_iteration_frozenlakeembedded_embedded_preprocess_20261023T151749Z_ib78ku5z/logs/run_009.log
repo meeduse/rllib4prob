@@ -1,0 +1,25 @@
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = frozenlakeembedded
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.Model Checking complete. No more error nodes found.Total states: 45
+
+End of exploration 43 | Exploration time: 0.01411375 seconds
+IVI_ORDERING method=BFS_ACTIONS states=43 transitions=167 orderingSeconds=0.114711
+IVI iteration=1 sample_delta=1900.00000 global_residual=850.426715
+IVI iteration=2 sample_delta=874.147658 global_residual=240.185623
+IVI iteration=3 sample_delta=274.316798 global_residual=75.3727935
+IVI iteration=4 sample_delta=75.3727935 global_residual=14.9248177
+IVI iteration=5 sample_delta=21.8812752 global_residual=3.79368841
+IVI iteration=6 sample_delta=4.86989791 global_residual=1.69802841
+IVI iteration=7 sample_delta=1.69802841 global_residual=0.302609031
+IVI iteration=8 sample_delta=0.399289590 global_residual=0.135445686
+IVI iteration=9 sample_delta=0.135445686 global_residual=0.0539381028
+IVI iteration=10 sample_delta=0.0539381028 global_residual=0.00935157359
+IVI_RESULT status=CONVERGED seed=9 gamma=0.900000000 theta=0.0100000000 maxIterations=100 updatesPerIteration=500 iterations=10 exploredStates=43 distinctUpdatedStates=43 updateBackups=5000 residualBackups=473 totalBackups=5473 rewardLookups=21257 bellmanResidual=0.00935157359 orderingSeconds=0.114711 learningSeconds=0.158046
+Nb states discovered (env): 43
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

@@ -1,0 +1,20 @@
+{
+  "id": "autov2",
+  "description": "HighwayPerception_Q and HighwayPerception_QBis; invariant-corrected initial state 95,50,25",
+  "algorithms": ["VI", "PI", "MPI", "IVI", "PVI", "BI"],
+  "explorations": ["PREPROCESS", "RECURSIVE"],
+  "repetitions": 10,
+  "gamma": 0.9,
+  "theta": 0.01,
+  "biHorizon": 150,
+  "variants": [
+    {
+      "id": "default",
+      "expectedStates": 2961,
+      "environments": {
+        "ONCEANDFORALL": "autov2",
+        "EMBEDDED": "autov2embedded"
+      }
+    }
+  ]
+}

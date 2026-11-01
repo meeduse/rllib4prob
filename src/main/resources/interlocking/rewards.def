@@ -1,0 +1,14 @@
+DEFINITIONS
+
+Goal == pending = {} & acttrn = {};
+reward ==
+  IF Goal THEN
+      50000.0
+  ELSE
+      -1.0
+      + (50.0 * real(NbDone))
+      - (10.0 * real(card(pending)))
+      - (2.0 * real(card(acttrn)))
+      - (0.2 * real(card(dom(resss))))
+      - (IF HeadToHeadBad THEN 10000.0 ELSE 0.0 END)
+  END

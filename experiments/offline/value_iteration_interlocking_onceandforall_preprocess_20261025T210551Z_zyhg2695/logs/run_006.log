@@ -1,0 +1,79 @@
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = interlocking
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+..........................................................................................................................................................................................................................................................................................Model Checking complete. No more error nodes found.Total states: 100228
+
+End of exploration 100226 | Exploration time: 141.393964584 seconds
+VI iteration=1 sweep_delta=50000.0000
+VI iteration=2 sweep_delta=45000.0000
+VI iteration=3 sweep_delta=40500.0000
+VI iteration=4 sweep_delta=36450.0000
+VI iteration=5 sweep_delta=32805.0000
+VI iteration=6 sweep_delta=29524.5000
+VI iteration=7 sweep_delta=26483.1678
+VI iteration=8 sweep_delta=21523.3605
+VI iteration=9 sweep_delta=17411.4141
+VI iteration=10 sweep_delta=15643.6001
+VI iteration=11 sweep_delta=14078.1996
+VI iteration=12 sweep_delta=12665.3370
+VI iteration=13 sweep_delta=11398.8033
+VI iteration=14 sweep_delta=10253.4832
+VI iteration=15 sweep_delta=9228.13490
+VI iteration=16 sweep_delta=6731.66663
+VI iteration=17 sweep_delta=6050.64698
+VI iteration=18 sweep_delta=4901.02406
+VI iteration=19 sweep_delta=2869.58154
+VI iteration=20 sweep_delta=2572.19263
+VI iteration=21 sweep_delta=2307.43037
+VI iteration=22 sweep_delta=2076.68733
+VI iteration=23 sweep_delta=1675.75490
+VI iteration=24 sweep_delta=757.776169
+VI iteration=25 sweep_delta=681.998552
+VI iteration=26 sweep_delta=552.418827
+VI iteration=27 sweep_delta=447.459250
+VI iteration=28 sweep_delta=361.869345
+VI iteration=29 sweep_delta=240.931874
+VI iteration=30 sweep_delta=121.835515
+VI iteration=31 sweep_delta=97.6088913
+VI iteration=32 sweep_delta=87.8480021
+VI iteration=33 sweep_delta=79.0632019
+VI iteration=34 sweep_delta=71.1568817
+VI iteration=35 sweep_delta=64.0411936
+VI iteration=36 sweep_delta=46.6860301
+VI iteration=37 sweep_delta=24.8561701
+VI iteration=38 sweep_delta=20.1334977
+VI iteration=39 sweep_delta=16.3081332
+VI iteration=40 sweep_delta=0.684000000
+VI iteration=41 sweep_delta=0.516777057
+VI iteration=42 sweep_delta=0.456910151
+VI iteration=43 sweep_delta=0.411219136
+VI iteration=44 sweep_delta=0.329680161
+VI iteration=45 sweep_delta=0.296712145
+VI iteration=46 sweep_delta=0.241915843
+VI iteration=47 sweep_delta=0.197998724
+VI iteration=48 sweep_delta=0.160378966
+VI iteration=49 sweep_delta=0.143665815
+VI iteration=50 sweep_delta=0.116369310
+VI iteration=51 sweep_delta=0.0999389166
+VI iteration=52 sweep_delta=0.0885924681
+VI iteration=53 sweep_delta=0.0734560712
+VI iteration=54 sweep_delta=0.0594994177
+VI iteration=55 sweep_delta=0.0481945283
+VI iteration=56 sweep_delta=0.0390375680
+VI iteration=57 sweep_delta=0.0316204300
+VI iteration=58 sweep_delta=0.0256125483
+VI iteration=59 sweep_delta=0.0207461642
+VI iteration=60 sweep_delta=0.0168043930
+VI iteration=61 sweep_delta=0.0136115583
+VI iteration=62 sweep_delta=0.0110253622
+VI iteration=63 sweep_delta=0.00893054340
+VI_RESIDUAL iteration=63 global_residual=0.00723374016
+VI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 iterations=63 exploredStates=100226 updateBackups=6314238 residualBackups=100226 totalBackups=6414464 rewardLookups=19270336 bellmanResidual=0.00723374016 learningSeconds=243.991082
+REWARD_CACHE strategy=ONCEANDFORALL hits=19170111 misses=100225 cachedStates=100225
+Nb states discovered (env): 100226
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

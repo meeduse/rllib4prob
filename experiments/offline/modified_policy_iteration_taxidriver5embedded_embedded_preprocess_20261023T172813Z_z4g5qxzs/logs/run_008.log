@@ -1,0 +1,25 @@
+Selected algorithm = MODIFIED_POLICY_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = taxidriver5embedded
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.Model Checking complete. No more error nodes found.Total states: 45
+
+End of exploration 43 | Exploration time: 0.013533125 seconds
+Preparing state transitions and rewards. The first iteration may take some time...
+MPI iteration=1 evaluation_sweeps=5 evaluation_delta=1.24659000 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=2 evaluation_sweeps=10 evaluation_delta=0.482954507 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=3 evaluation_sweeps=15 evaluation_delta=0.207896079 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=4 evaluation_sweeps=20 evaluation_delta=0.0805432007 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=5 evaluation_sweeps=25 evaluation_delta=0.0312040862 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=6 evaluation_sweeps=30 evaluation_delta=0.0108801921 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=7 evaluation_sweeps=35 evaluation_delta=0.00379368841 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=8 evaluation_sweeps=37 evaluation_delta=0.00248903897 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=9 evaluation_sweeps=41 evaluation_delta=0.00000000 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=10 evaluation_sweeps=43 evaluation_delta=0.00000000 policy_stable=true policy_residual=0.00000000 bellman_residual=0.00000000
+MPI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 evalIterations=5 iterations=10 evaluationSweeps=43 exploredStates=43 evaluationBackups=1806 improvementBackups=420 residualBackups=172 totalBackups=2398 rewardLookups=3210 policyStable=true evaluationDelta=0.00000000 policyResidual=0.00000000 bellmanResidual=0.00000000 learningSeconds=0.112296
+Nb states discovered (env): 43
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

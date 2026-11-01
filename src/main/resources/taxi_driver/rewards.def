@@ -1,0 +1,72 @@
+DEFINITIONS
+
+SET_PREF_MAXINT == 200 ;
+SET_PREF_INVARIANT_CHECKING == FALSE ;
+    
+
+reward ==
+  IF delivered = 1 THEN
+     1000
+  ELSE
+     -1
+  END;
+
+DistanceToPassenger ==
+    ABS(taxiX - locX(passengerLoc))
+  + ABS(taxiY - locY(passengerLoc)) ;
+
+DistanceToDestination ==
+    ABS(taxiX - locX(destination))
+  + ABS(taxiY - locY(destination)) ;
+
+ManhattanDistance ==
+IF delivered = 1 THEN
+    1000
+ELSE
+    IF passengerInTaxi = 0 THEN
+        - DistanceToPassenger
+    ELSE
+        - DistanceToDestination
+    END
+END ;
+
+PhaseBonus ==
+IF delivered = 1 THEN
+    1000
+ELSE
+    IF passengerInTaxi = 0 THEN
+        50 - DistanceToPassenger
+    ELSE
+        100 - DistanceToDestination
+    END
+END ;
+
+Quadratic_Distance ==
+IF delivered = 1 THEN
+    1000
+ELSE
+    IF passengerInTaxi = 0 THEN
+        -(DistanceToPassenger * DistanceToPassenger)
+    ELSE
+        -(DistanceToDestination * DistanceToDestination)
+    END
+END ;
+
+Simplified_Exponential ==
+IF delivered = 1 THEN
+    1000
+ELSE
+    IF passengerInTaxi = 0 THEN
+        100 / (1 + DistanceToPassenger)
+    ELSE
+        100 / (1 + DistanceToDestination)
+    END
+END ;
+
+Combined_Attraction ==
+IF delivered = 1 THEN
+    1000
+ELSE
+    -DistanceToPassenger
+    - (DistanceToDestination / 2)
+END

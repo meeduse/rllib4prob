@@ -1,0 +1,19 @@
+
+COMMAND: bash /Users/idani/rllib4prob/fresh/scripts/experiments/offline/run_campaign.sh --algorithm PVI --reward EMBEDDED --exploration PREPROCESS --environment autov2embedded --count 1 --expected-states 2961
+Compiling once and resolving the runtime classpath...
+
+New campaign: /Users/idani/rllib4prob/fresh/experiments/offline/prioritized_value_iteration_autov2embedded_embedded_preprocess_20261023T184527Z_lgfz0ylw
+Snapshot: 116 source/config files
+
+========== PRIORITIZED_VALUE_ITERATION repetition 1 (1/1) ==========
+Selected algorithm = PRIORITIZED_VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = autov2embedded
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+...Model Checking complete. No more error nodes found.Total states: 2962
+
+End of exploration 2961 | Exploration time: 1.118970333 seconds
+Preparing graph and initial priorities (PVI). First pass may take time...

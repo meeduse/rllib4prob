@@ -1,0 +1,54 @@
+{
+  "campaignId": "policy_iteration_frozenlake10_onceandforall_preprocess_20261023T160919Z_397vmtr3",
+  "algorithm": "POLICY_ITERATION",
+  "environment": "frozenlake10",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 0.0487923251,
+      "sampleSD": 0.01066754580285538,
+      "median": 0.0452562295,
+      "min": 0.042082916,
+      "max": 0.077776
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 0.636601,
+      "sampleSD": 0.10917299481505895,
+      "median": 0.592515,
+      "min": 0.545768,
+      "max": 0.888223
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 0.6853933,
+      "sampleSD": 0.11870015909008343,
+      "median": 0.6369615,
+      "min": 0.587851,
+      "max": 0.965999
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 94756.8,
+      "sampleSD": 1003.660500368526,
+      "median": 95000.0,
+      "min": 93024.0,
+      "max": 96064.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 20.0,
+      "sampleSD": 1.3333333333333333,
+      "median": 20.0,
+      "min": 18.0,
+      "max": 22.0
+    }
+  }
+}

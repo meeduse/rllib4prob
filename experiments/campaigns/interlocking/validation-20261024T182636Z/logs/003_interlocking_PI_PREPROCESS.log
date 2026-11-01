@@ -1,0 +1,48 @@
+
+COMMAND: bash /Users/idani/rllib4prob/fresh/scripts/experiments/offline/run_campaign.sh --algorithm PI --reward ONCEANDFORALL --exploration PREPROCESS --environment interlocking --count 1 --expected-states 100226
+Compiling once and resolving the runtime classpath...
+
+New campaign: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_interlocking_onceandforall_preprocess_20261024T184011Z_zxf75w17
+Snapshot: 117 source/config files
+
+========== POLICY_ITERATION repetition 1 (1/1) ==========
+Selected algorithm = POLICY_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = interlocking
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+......................................................................................................................................................................................................................................................................................Model Checking complete. No more error nodes found.Total states: 100228
+
+End of exploration 100226 | Exploration time: 139.773380666 seconds
+PI iteration=1 evaluation_sweeps=76 policy_residual=0.00802073199 policy_stable=false bellman_residual=NaN
+PI iteration=2 evaluation_sweeps=137 policy_residual=0.00738765129 policy_stable=false bellman_residual=NaN
+PI iteration=3 evaluation_sweeps=180 policy_residual=0.00709121226 policy_stable=false bellman_residual=NaN
+PI iteration=4 evaluation_sweeps=203 policy_residual=0.00706296503 policy_stable=false bellman_residual=NaN
+PI iteration=5 evaluation_sweeps=226 policy_residual=6.16453015e-05 policy_stable=false bellman_residual=NaN
+PI iteration=6 evaluation_sweeps=248 policy_residual=5.97819962e-07 policy_stable=false bellman_residual=NaN
+PI iteration=7 evaluation_sweeps=266 policy_residual=1.34679112e-08 policy_stable=false bellman_residual=NaN
+PI iteration=8 evaluation_sweeps=284 policy_residual=3.03373326e-10 policy_stable=false bellman_residual=NaN
+PI iteration=9 evaluation_sweeps=309 policy_residual=1.59161573e-12 policy_stable=false bellman_residual=NaN
+PI iteration=10 evaluation_sweeps=336 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=11 evaluation_sweeps=345 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=12 evaluation_sweeps=351 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=13 evaluation_sweeps=357 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=14 evaluation_sweeps=360 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=15 evaluation_sweeps=362 policy_residual=0.00000000 policy_stable=true bellman_residual=0.00000000
+PI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 maxEvaluationSweeps=10000 iterations=15 evaluationSweeps=362 exploredStates=100226 evaluationBackups=35809040 improvementBackups=1483800 residualBackups=1703842 totalBackups=38996682 rewardLookups=42411523 policyStable=true policyResidual=0.00000000 bellmanResidual=0.00000000 learningSeconds=280.276454
+REWARD_CACHE strategy=ONCEANDFORALL hits=42311298 misses=100225 cachedStates=100225
+Nb states discovered (env): 100226
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+CHECK run 0: status=CONVERGED verification=VERIFIED_SUCCESS
+
+Completed: 1/1 verified successful runs
+Breakdown: {'VERIFIED_SUCCESS': 1}
+totalSeconds: mean=420.049835 sample_sd=n/a
+learningSeconds: mean=280.276454 sample_sd=n/a
+explorationSeconds: mean=139.773381 sample_sd=n/a
+totalBackups: mean=38996682.000000 sample_sd=n/a
+CSV: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_interlocking_onceandforall_preprocess_20261024T184011Z_zxf75w17/results.csv
+Summary: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_interlocking_onceandforall_preprocess_20261024T184011Z_zxf75w17/summary.json
+All raw logs preserved in: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_interlocking_onceandforall_preprocess_20261024T184011Z_zxf75w17/logs

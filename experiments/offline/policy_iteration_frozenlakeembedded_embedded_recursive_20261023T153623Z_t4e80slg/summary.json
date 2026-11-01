@@ -1,0 +1,54 @@
+{
+  "campaignId": "policy_iteration_frozenlakeembedded_embedded_recursive_20261023T153623Z_t4e80slg",
+  "algorithm": "POLICY_ITERATION",
+  "environment": "frozenlakeembedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "RECURSIVE",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 0.06452281680000001,
+      "sampleSD": 0.012956214653816307,
+      "median": 0.058352271,
+      "min": 0.05473425,
+      "max": 0.0936975
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 0.1110128,
+      "sampleSD": 0.032561137076787317,
+      "median": 0.0953415,
+      "min": 0.08851,
+      "max": 0.183877
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 0.1755356,
+      "sampleSD": 0.04212628193684107,
+      "median": 0.1547385,
+      "min": 0.147477,
+      "max": 0.277575
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 6192.0,
+      "sampleSD": 0.0,
+      "median": 6192.0,
+      "min": 6192.0,
+      "max": 6192.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 8.0,
+      "sampleSD": 0.0,
+      "median": 8.0,
+      "min": 8.0,
+      "max": 8.0
+    }
+  }
+}

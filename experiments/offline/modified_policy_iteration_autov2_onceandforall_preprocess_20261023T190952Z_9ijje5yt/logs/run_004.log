@@ -1,0 +1,38 @@
+Selected algorithm = MODIFIED_POLICY_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = autov2
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+..Model Checking complete. No more error nodes found.Total states: 2962
+
+End of exploration 2961 | Exploration time: 0.851459125 seconds
+Preparing state transitions and rewards. The first iteration may take some time...
+MPI iteration=1 evaluation_sweeps=5 evaluation_delta=7131.80700 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=2 evaluation_sweeps=10 evaluation_delta=1190.63631 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=3 evaluation_sweeps=15 evaluation_delta=2301.78821 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=4 evaluation_sweeps=20 evaluation_delta=1620.25598 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=5 evaluation_sweeps=25 evaluation_delta=745.820732 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=6 evaluation_sweeps=30 evaluation_delta=805.674202 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=7 evaluation_sweeps=35 evaluation_delta=216.360945 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=8 evaluation_sweeps=40 evaluation_delta=90.7533182 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=9 evaluation_sweeps=45 evaluation_delta=25.6922679 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=10 evaluation_sweeps=50 evaluation_delta=7.69991685 policy_stable=true policy_residual=6.92992516 bellman_residual=6.92992516
+MPI iteration=11 evaluation_sweeps=55 evaluation_delta=4.54672390 policy_stable=false policy_residual=6.92992516 bellman_residual=6.92992516
+MPI iteration=12 evaluation_sweeps=60 evaluation_delta=2.10025483 policy_stable=false policy_residual=6.92992516 bellman_residual=6.92992516
+MPI iteration=13 evaluation_sweeps=65 evaluation_delta=0.819135515 policy_stable=false policy_residual=6.92992516 bellman_residual=6.92992516
+MPI iteration=14 evaluation_sweeps=70 evaluation_delta=0.483691330 policy_stable=true policy_residual=0.435322197 bellman_residual=0.435322197
+MPI iteration=15 evaluation_sweeps=75 evaluation_delta=0.285614894 policy_stable=true policy_residual=0.257053404 bellman_residual=0.257053404
+MPI iteration=16 evaluation_sweeps=80 evaluation_delta=0.168652738 policy_stable=true policy_residual=0.151787465 bellman_residual=0.151787465
+MPI iteration=17 evaluation_sweeps=85 evaluation_delta=0.0995877555 policy_stable=true policy_residual=0.0896289800 bellman_residual=0.0896289800
+MPI iteration=18 evaluation_sweeps=90 evaluation_delta=0.0588055738 policy_stable=true policy_residual=0.0529250164 bellman_residual=0.0529250164
+MPI iteration=19 evaluation_sweeps=95 evaluation_delta=0.0347241033 policy_stable=true policy_residual=0.0312516929 bellman_residual=0.0312516929
+MPI iteration=20 evaluation_sweeps=100 evaluation_delta=0.0205042357 policy_stable=true policy_residual=0.0184538122 bellman_residual=0.0184538122
+MPI iteration=21 evaluation_sweeps=105 evaluation_delta=0.0121075462 policy_stable=true policy_residual=0.0108967915 bellman_residual=0.0108967915
+MPI iteration=22 evaluation_sweeps=107 evaluation_delta=0.00980711239 policy_stable=true policy_residual=0.00882640115 bellman_residual=0.00882640115
+MPI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 evalIterations=5 iterations=22 evaluationSweeps=107 exploredStates=2961 evaluationBackups=314580 improvementBackups=64680 residualBackups=65142 totalBackups=444402 rewardLookups=697710 policyStable=true evaluationDelta=0.00980711239 policyResidual=0.00882640115 bellmanResidual=0.00882640115 learningSeconds=6.075282
+REWARD_CACHE strategy=ONCEANDFORALL hits=694750 misses=2960 cachedStates=2960
+Nb states discovered (env): 2961
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

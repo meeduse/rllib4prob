@@ -1,0 +1,58 @@
+
+COMMAND: bash /Users/idani/rllib4prob/fresh/scripts/experiments/offline/run_campaign.sh --algorithm PI --reward ONCEANDFORALL --exploration PREPROCESS --environment mountaincar --count 1 --expected-states 12047
+Compiling once and resolving the runtime classpath...
+
+New campaign: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_mountaincar_onceandforall_preprocess_20261024T094603Z_t6976ldx
+Snapshot: 116 source/config files
+
+========== POLICY_ITERATION repetition 1 (1/1) ==========
+Selected algorithm = POLICY_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = mountaincar
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+........Model Checking complete. No more error nodes found.Total states: 12049
+
+End of exploration 12047 | Exploration time: 3.974173167 seconds
+PI iteration=1 evaluation_sweeps=26 policy_residual=0.00866439696 policy_stable=false bellman_residual=NaN
+PI iteration=2 evaluation_sweeps=35 policy_residual=0.00268874050 policy_stable=false bellman_residual=NaN
+PI iteration=3 evaluation_sweeps=52 policy_residual=0.00166368847 policy_stable=false bellman_residual=NaN
+PI iteration=4 evaluation_sweeps=75 policy_residual=3.69988485e-05 policy_stable=false bellman_residual=NaN
+PI iteration=5 evaluation_sweeps=94 policy_residual=4.99799581e-06 policy_stable=false bellman_residual=NaN
+PI iteration=6 evaluation_sweeps=112 policy_residual=7.50172358e-07 policy_stable=false bellman_residual=NaN
+PI iteration=7 evaluation_sweeps=126 policy_residual=1.71615373e-07 policy_stable=false bellman_residual=NaN
+PI iteration=8 evaluation_sweeps=141 policy_residual=3.53340835e-08 policy_stable=false bellman_residual=NaN
+PI iteration=9 evaluation_sweeps=155 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=10 evaluation_sweeps=165 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=11 evaluation_sweeps=172 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=12 evaluation_sweeps=181 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=13 evaluation_sweeps=187 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=14 evaluation_sweeps=191 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=15 evaluation_sweeps=194 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=16 evaluation_sweeps=197 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=17 evaluation_sweeps=200 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=18 evaluation_sweeps=202 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=19 evaluation_sweeps=205 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=20 evaluation_sweeps=208 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=21 evaluation_sweeps=210 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=22 evaluation_sweeps=213 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=23 evaluation_sweeps=215 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=24 evaluation_sweeps=217 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=25 evaluation_sweeps=219 policy_residual=0.00000000 policy_stable=true bellman_residual=0.00000000
+PI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 maxEvaluationSweeps=10000 iterations=25 evaluationSweeps=219 exploredStates=12047 evaluationBackups=2597778 improvementBackups=296550 residualBackups=325269 totalBackups=3219597 rewardLookups=3855150 policyStable=true policyResidual=0.00000000 bellmanResidual=0.00000000 learningSeconds=16.327603
+REWARD_CACHE strategy=ONCEANDFORALL hits=3843104 misses=12046 cachedStates=12046
+Nb states discovered (env): 12047
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+CHECK run 0: status=CONVERGED verification=VERIFIED_SUCCESS
+
+Completed: 1/1 verified successful runs
+Breakdown: {'VERIFIED_SUCCESS': 1}
+totalSeconds: mean=20.301776 sample_sd=n/a
+learningSeconds: mean=16.327603 sample_sd=n/a
+explorationSeconds: mean=3.974173 sample_sd=n/a
+totalBackups: mean=3219597.000000 sample_sd=n/a
+CSV: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_mountaincar_onceandforall_preprocess_20261024T094603Z_t6976ldx/results.csv
+Summary: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_mountaincar_onceandforall_preprocess_20261024T094603Z_t6976ldx/summary.json
+All raw logs preserved in: /Users/idani/rllib4prob/fresh/experiments/offline/policy_iteration_mountaincar_onceandforall_preprocess_20261024T094603Z_t6976ldx/logs

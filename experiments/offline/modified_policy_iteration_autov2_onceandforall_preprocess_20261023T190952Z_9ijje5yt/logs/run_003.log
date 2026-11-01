@@ -1,0 +1,39 @@
+Selected algorithm = MODIFIED_POLICY_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = autov2
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+..Model Checking complete. No more error nodes found.Total states: 2962
+
+End of exploration 2961 | Exploration time: 0.91694825 seconds
+Preparing state transitions and rewards. The first iteration may take some time...
+MPI iteration=1 evaluation_sweeps=5 evaluation_delta=7131.80700 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=2 evaluation_sweeps=10 evaluation_delta=2298.61939 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=3 evaluation_sweeps=15 evaluation_delta=1704.06405 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=4 evaluation_sweeps=20 evaluation_delta=1423.06694 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=5 evaluation_sweeps=25 evaluation_delta=750.538540 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=6 evaluation_sweeps=30 evaluation_delta=501.153137 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=7 evaluation_sweeps=35 evaluation_delta=516.398518 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=8 evaluation_sweeps=40 evaluation_delta=116.165129 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=9 evaluation_sweeps=45 evaluation_delta=108.104285 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=10 evaluation_sweeps=50 evaluation_delta=13.0840115 policy_stable=false policy_residual=NaN bellman_residual=NaN
+MPI iteration=11 evaluation_sweeps=55 evaluation_delta=11.1492380 policy_stable=true policy_residual=10.0343142 bellman_residual=10.0343142
+MPI iteration=12 evaluation_sweeps=60 evaluation_delta=5.33264599 policy_stable=false policy_residual=10.0343142 bellman_residual=10.0343142
+MPI iteration=13 evaluation_sweeps=65 evaluation_delta=1.33520156 policy_stable=false policy_residual=10.0343142 bellman_residual=10.0343142
+MPI iteration=14 evaluation_sweeps=70 evaluation_delta=0.788423169 policy_stable=true policy_residual=0.709580853 bellman_residual=0.709580853
+MPI iteration=15 evaluation_sweeps=75 evaluation_delta=0.465555997 policy_stable=false policy_residual=0.709580853 bellman_residual=0.709580853
+MPI iteration=16 evaluation_sweeps=80 evaluation_delta=0.274906161 policy_stable=true policy_residual=0.247415545 bellman_residual=0.247415545
+MPI iteration=17 evaluation_sweeps=85 evaluation_delta=0.162329339 policy_stable=true policy_residual=0.146096405 bellman_residual=0.146096405
+MPI iteration=18 evaluation_sweeps=90 evaluation_delta=0.0958538513 policy_stable=true policy_residual=0.0862684662 bellman_residual=0.0862684662
+MPI iteration=19 evaluation_sweeps=95 evaluation_delta=0.0566007407 policy_stable=true policy_residual=0.0509406666 bellman_residual=0.0509406666
+MPI iteration=20 evaluation_sweeps=100 evaluation_delta=0.0334221714 policy_stable=true policy_residual=0.0300799542 bellman_residual=0.0300799542
+MPI iteration=21 evaluation_sweeps=105 evaluation_delta=0.0197354580 policy_stable=true policy_residual=0.0177619122 bellman_residual=0.0177619122
+MPI iteration=22 evaluation_sweeps=110 evaluation_delta=0.0116535906 policy_stable=true policy_residual=0.0104882315 bellman_residual=0.0104882315
+MPI iteration=23 evaluation_sweeps=112 evaluation_delta=0.00943940837 policy_stable=true policy_residual=0.00849546753 bellman_residual=0.00849546753
+MPI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 evalIterations=5 iterations=23 evaluationSweeps=112 exploredStates=2961 evaluationBackups=329280 improvementBackups=67620 residualBackups=65142 totalBackups=462042 rewardLookups=723040 policyStable=true evaluationDelta=0.00943940837 policyResidual=0.00849546753 bellmanResidual=0.00849546753 learningSeconds=4.988696
+REWARD_CACHE strategy=ONCEANDFORALL hits=720080 misses=2960 cachedStates=2960
+Nb states discovered (env): 2961
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

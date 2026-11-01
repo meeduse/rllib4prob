@@ -1,0 +1,46 @@
+{
+  "campaignId": "backward_induction_autov2_onceandforall_preprocess_20261023T191937Z_eipjo42p",
+  "algorithm": "BACKWARD_INDUCTION",
+  "environment": "autov2",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 0.9163983042,
+      "sampleSD": 0.05373045736269413,
+      "median": 0.9126520005000001,
+      "min": 0.855901958,
+      "max": 0.987693584
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 5.0268951,
+      "sampleSD": 0.6833941483156699,
+      "median": 4.8322295,
+      "min": 4.433548,
+      "max": 6.71749
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 5.9432934,
+      "sampleSD": 0.6736358925516234,
+      "median": 5.711324,
+      "min": 5.28945,
+      "max": 7.614569
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 444150.0,
+      "sampleSD": 0.0,
+      "median": 444150.0,
+      "min": 444150.0,
+      "max": 444150.0
+    }
+  }
+}

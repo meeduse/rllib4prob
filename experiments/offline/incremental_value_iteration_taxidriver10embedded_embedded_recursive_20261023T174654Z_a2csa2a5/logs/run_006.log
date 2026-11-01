@@ -1,0 +1,18 @@
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = taxidriver10embedded
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 165 | Exploration time: 0.251336834 seconds
+IVI_ORDERING method=BFS_ACTIONS states=165 transitions=490 orderingSeconds=0.172813
+IVI iteration=1 sample_delta=1000.00000 global_residual=656.100000
+IVI iteration=2 sample_delta=656.100000 global_residual=346.850815
+IVI iteration=3 sample_delta=346.850815 global_residual=164.952751
+IVI iteration=4 sample_delta=164.952751 global_residual=0.00000000
+IVI_RESULT status=CONVERGED seed=6 gamma=0.900000000 theta=0.0100000000 maxIterations=100 updatesPerIteration=500 iterations=4 exploredStates=165 distinctUpdatedStates=164 updateBackups=2000 residualBackups=825 totalBackups=2825 rewardLookups=8386 bellmanResidual=0.00000000 orderingSeconds=0.172813 learningSeconds=0.242869
+Nb states discovered (env): 165
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

@@ -1,0 +1,58 @@
+Selected algorithm = POLICY_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = taxidriver30
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.Model Checking complete. No more error nodes found.Total states: 1479
+
+End of exploration 1477 | Exploration time: 0.294506625 seconds
+PI iteration=1 evaluation_sweeps=33 policy_residual=0.00793166004 policy_stable=false bellman_residual=NaN
+PI iteration=2 evaluation_sweeps=38 policy_residual=0.00379368841 policy_stable=false bellman_residual=NaN
+PI iteration=3 evaluation_sweeps=42 policy_residual=0.00201612156 policy_stable=false bellman_residual=NaN
+PI iteration=4 evaluation_sweeps=47 policy_residual=0.000781086802 policy_stable=false bellman_residual=NaN
+PI iteration=5 evaluation_sweeps=49 policy_residual=0.000569412278 policy_stable=false bellman_residual=NaN
+PI iteration=6 evaluation_sweeps=53 policy_residual=0.000302609031 policy_stable=false bellman_residual=NaN
+PI iteration=7 evaluation_sweeps=56 policy_residual=0.000198541785 policy_stable=false bellman_residual=NaN
+PI iteration=8 evaluation_sweeps=59 policy_residual=0.000117236939 policy_stable=false bellman_residual=NaN
+PI iteration=9 evaluation_sweeps=64 policy_residual=4.54199921e-05 policy_stable=false bellman_residual=NaN
+PI iteration=10 evaluation_sweeps=68 policy_residual=2.41380460e-05 policy_stable=false bellman_residual=NaN
+PI iteration=11 evaluation_sweeps=71 policy_residual=1.42532748e-05 policy_stable=false bellman_residual=NaN
+PI iteration=12 evaluation_sweeps=74 policy_residual=8.41641623e-06 policy_stable=false bellman_residual=NaN
+PI iteration=13 evaluation_sweeps=76 policy_residual=6.13556743e-06 policy_stable=false bellman_residual=NaN
+PI iteration=14 evaluation_sweeps=78 policy_residual=4.47282866e-06 policy_stable=false bellman_residual=NaN
+PI iteration=15 evaluation_sweeps=80 policy_residual=3.62299121e-06 policy_stable=false bellman_residual=NaN
+PI iteration=16 evaluation_sweeps=84 policy_residual=2.37704453e-06 policy_stable=false bellman_residual=NaN
+PI iteration=17 evaluation_sweeps=89 policy_residual=1.02323973e-06 policy_stable=false bellman_residual=NaN
+PI iteration=18 evaluation_sweeps=93 policy_residual=4.89412392e-07 policy_stable=false bellman_residual=NaN
+PI iteration=19 evaluation_sweeps=98 policy_residual=2.10675987e-07 policy_stable=false bellman_residual=NaN
+PI iteration=20 evaluation_sweeps=102 policy_residual=1.00765671e-07 policy_stable=false bellman_residual=NaN
+PI iteration=21 evaluation_sweeps=106 policy_residual=4.81959077e-08 policy_stable=false bellman_residual=NaN
+PI iteration=22 evaluation_sweeps=109 policy_residual=2.84592012e-08 policy_stable=false bellman_residual=NaN
+PI iteration=23 evaluation_sweeps=111 policy_residual=2.07467572e-08 policy_stable=false bellman_residual=NaN
+PI iteration=24 evaluation_sweeps=115 policy_residual=1.10256781e-08 policy_stable=false bellman_residual=NaN
+PI iteration=25 evaluation_sweeps=117 policy_residual=7.23394677e-09 policy_stable=false bellman_residual=NaN
+PI iteration=26 evaluation_sweeps=120 policy_residual=3.84441634e-09 policy_stable=false bellman_residual=NaN
+PI iteration=27 evaluation_sweeps=124 policy_residual=1.65489489e-09 policy_stable=false bellman_residual=NaN
+PI iteration=28 evaluation_sweeps=127 policy_residual=9.77198766e-10 policy_stable=false bellman_residual=NaN
+PI iteration=29 evaluation_sweeps=130 policy_residual=5.77026427e-10 policy_stable=false bellman_residual=NaN
+PI iteration=30 evaluation_sweeps=134 policy_residual=2.75990786e-10 policy_stable=false bellman_residual=NaN
+PI iteration=31 evaluation_sweeps=137 policy_residual=1.62970082e-10 policy_stable=false bellman_residual=NaN
+PI iteration=32 evaluation_sweeps=141 policy_residual=8.66080541e-11 policy_stable=false bellman_residual=NaN
+PI iteration=33 evaluation_sweeps=146 policy_residual=3.01998426e-11 policy_stable=false bellman_residual=NaN
+PI iteration=34 evaluation_sweeps=150 policy_residual=1.29993794e-11 policy_stable=false bellman_residual=NaN
+PI iteration=35 evaluation_sweeps=152 policy_residual=8.52828919e-12 policy_stable=false bellman_residual=NaN
+PI iteration=36 evaluation_sweeps=156 policy_residual=3.67172959e-12 policy_stable=false bellman_residual=NaN
+PI iteration=37 evaluation_sweeps=160 policy_residual=1.58095759e-12 policy_stable=false bellman_residual=NaN
+PI iteration=38 evaluation_sweeps=163 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=39 evaluation_sweeps=165 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=40 evaluation_sweeps=167 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=41 evaluation_sweeps=169 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=42 evaluation_sweeps=171 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=43 evaluation_sweeps=173 policy_residual=0.00000000 policy_stable=true bellman_residual=0.00000000
+PI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 maxEvaluationSweeps=10000 iterations=43 evaluationSweeps=173 exploredStates=1477 evaluationBackups=255348 improvementBackups=63468 residualBackups=66465 totalBackups=385281 rewardLookups=561906 policyStable=true policyResidual=0.00000000 bellmanResidual=0.00000000 learningSeconds=2.643498
+REWARD_CACHE strategy=ONCEANDFORALL hits=560429 misses=1477 cachedStates=1477
+Nb states discovered (env): 1477
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

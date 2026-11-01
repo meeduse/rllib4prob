@@ -1,0 +1,62 @@
+{
+  "campaignId": "incremental_value_iteration_tictactoe_onceandforall_preprocess_20261023T045521Z_lkqaf2ii",
+  "algorithm": "INCREMENTAL_VALUE_ITERATION",
+  "environment": "tictactoe",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 1,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 1
+  },
+  "successfulRuns": 1,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 1,
+      "mean": 4.617825583,
+      "sampleSD": null,
+      "median": 4.617825583,
+      "min": 4.617825583,
+      "max": 4.617825583
+    },
+    "orderingSeconds": {
+      "n": 1,
+      "mean": 33.062371,
+      "sampleSD": null,
+      "median": 33.062371,
+      "min": 33.062371,
+      "max": 33.062371
+    },
+    "learningSeconds": {
+      "n": 1,
+      "mean": 41.325175,
+      "sampleSD": null,
+      "median": 41.325175,
+      "min": 41.325175,
+      "max": 41.325175
+    },
+    "totalSeconds": {
+      "n": 1,
+      "mean": 45.943001,
+      "sampleSD": null,
+      "median": 45.943001,
+      "min": 45.943001,
+      "max": 45.943001
+    },
+    "totalBackups": {
+      "n": 1,
+      "mean": 38412.0,
+      "sampleSD": null,
+      "median": 38412.0,
+      "min": 38412.0,
+      "max": 38412.0
+    },
+    "iterations": {
+      "n": 1,
+      "mean": 33.0,
+      "sampleSD": null,
+      "median": 33.0,
+      "min": 33.0,
+      "max": 33.0
+    }
+  }
+}

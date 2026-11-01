@@ -1,0 +1,54 @@
+{
+  "campaignId": "modified_policy_iteration_mountaincar_onceandforall_preprocess_20261024T103835Z_1o6blgz3",
+  "algorithm": "MODIFIED_POLICY_ITERATION",
+  "environment": "mountaincar",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 3.3373165002,
+      "sampleSD": 0.09081589417807133,
+      "median": 3.311143646,
+      "min": 3.238110959,
+      "max": 3.524397083
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 15.3760523,
+      "sampleSD": 0.36722323665374945,
+      "median": 15.173831499999999,
+      "min": 15.124189,
+      "max": 16.227671
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 18.7133687,
+      "sampleSD": 0.41751191071873806,
+      "median": 18.5891195,
+      "min": 18.402516,
+      "max": 19.752068
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 1580758.4,
+      "sampleSD": 94863.04427752674,
+      "median": 1578386.0,
+      "min": 1388594.0,
+      "max": 1720730.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 25.4,
+      "sampleSD": 2.1186998109427604,
+      "median": 26.0,
+      "min": 21.0,
+      "max": 28.0
+    }
+  }
+}

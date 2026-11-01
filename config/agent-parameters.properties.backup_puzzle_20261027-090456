@@ -1,0 +1,62 @@
+env.tictactoe.BACKWARD_INDUCTION.offline.horizon=9
+env.tictacembedded.BACKWARD_INDUCTION.offline.horizon=9
+env.frozenlake.VALUE_ITERATION.offline.maxIterations=200
+env.frozenlakeembedded.VALUE_ITERATION.offline.maxIterations=200
+env.frozenlake.BACKWARD_INDUCTION.offline.horizon=150
+env.frozenlakeembedded.BACKWARD_INDUCTION.offline.horizon=150
+env.frozenlake10.VALUE_ITERATION.offline.maxIterations=200
+env.frozenlake10embedded.VALUE_ITERATION.offline.maxIterations=200
+env.frozenlake10.BACKWARD_INDUCTION.offline.horizon=150
+env.frozenlake10embedded.BACKWARD_INDUCTION.offline.horizon=150
+# Taxi Driver - Backward Induction
+env.taxidriver5.BACKWARD_INDUCTION.offline.horizon=150
+env.taxidriver5embedded.BACKWARD_INDUCTION.offline.horizon=150
+
+env.taxidriver10.BACKWARD_INDUCTION.offline.horizon=150
+env.taxidriver10embedded.BACKWARD_INDUCTION.offline.horizon=150
+
+env.taxidriver30.BACKWARD_INDUCTION.offline.horizon=150
+env.taxidriver30embedded.BACKWARD_INDUCTION.offline.horizon=150
+
+# AutoV2 verified benchmark parameters
+env.autov2.BACKWARD_INDUCTION.offline.horizon=150
+env.autov2embedded.BACKWARD_INDUCTION.offline.horizon=150
+env.autov2.VALUE_ITERATION.offline.maxIterations=200
+env.autov2embedded.VALUE_ITERATION.offline.maxIterations=200
+# AutoV2 - IVI
+env.autov2.INCREMENTAL_VALUE_ITERATION.offline.maxIterations=500
+env.autov2.INCREMENTAL_VALUE_ITERATION.offline.updatesPerIteration=2961
+env.autov2embedded.INCREMENTAL_VALUE_ITERATION.offline.maxIterations=500
+env.autov2embedded.INCREMENTAL_VALUE_ITERATION.offline.updatesPerIteration=2961
+
+# AutoV2 - PVI
+env.autov2.PRIORITIZED_VALUE_ITERATION.offline.maxUpdates=500000
+env.autov2embedded.PRIORITIZED_VALUE_ITERATION.offline.maxUpdates=500000
+
+# MountainCarSmall: initial validation settings (review before final campaign)
+env.mountaincar.BACKWARD_INDUCTION.offline.horizon=150
+env.mountaincarembedded.BACKWARD_INDUCTION.offline.horizon=150
+env.mountaincar.VALUE_ITERATION.offline.maxIterations=200
+env.mountaincarembedded.VALUE_ITERATION.offline.maxIterations=200
+
+
+# MountainCarSmall IVI pilot
+env.mountaincar.INCREMENTAL_VALUE_ITERATION.offline.maxIterations=500
+env.mountaincar.INCREMENTAL_VALUE_ITERATION.offline.updatesPerIteration=2000
+env.mountaincarembedded.INCREMENTAL_VALUE_ITERATION.offline.maxIterations=500
+env.mountaincarembedded.INCREMENTAL_VALUE_ITERATION.offline.updatesPerIteration=2000
+
+# Interlocking initial BI horizon (review against task semantics)
+env.interlocking.BACKWARD_INDUCTION.offline.horizon=150
+env.interlockingembedded.BACKWARD_INDUCTION.offline.horizon=150
+
+# Interlocking - IVI
+env.interlocking.INCREMENTAL_VALUE_ITERATION.offline.maxIterations=3500
+env.interlocking.INCREMENTAL_VALUE_ITERATION.offline.updatesPerIteration=5000
+
+env.interlockingembedded.INCREMENTAL_VALUE_ITERATION.offline.maxIterations=3500
+env.interlockingembedded.INCREMENTAL_VALUE_ITERATION.offline.updatesPerIteration=5000
+
+# Interlocking - PVI
+env.interlocking.PRIORITIZED_VALUE_ITERATION.offline.maxUpdates=1000000
+env.interlockingembedded.PRIORITIZED_VALUE_ITERATION.offline.maxUpdates=1000000

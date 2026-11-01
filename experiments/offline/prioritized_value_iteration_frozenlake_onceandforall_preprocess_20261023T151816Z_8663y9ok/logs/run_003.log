@@ -1,0 +1,19 @@
+Selected algorithm = PRIORITIZED_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = frozenlake
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.Model Checking complete. No more error nodes found.Total states: 45
+
+End of exploration 43 | Exploration time: 0.02049425 seconds
+Preparing graph and initial priorities (PVI). First pass may take time...
+PVI updates=1000 pending=20 last_error=42.8039591
+PVI updates=2000 pending=22 last_error=0.563920873
+PVI updates=3000 pending=18 last_error=0.0156842404
+PVI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxUpdates=100000 updates=3144 exploredStates=43 transitions=167 priorityBackups=14445 residualBackups=43 finalQBackups=43 totalBackups=14531 rewardLookups=61951 bellmanResidual=0.00926138713 learningSeconds=0.167543
+REWARD_CACHE strategy=ONCEANDFORALL hits=61908 misses=43 cachedStates=43
+Nb states discovered (env): 43
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

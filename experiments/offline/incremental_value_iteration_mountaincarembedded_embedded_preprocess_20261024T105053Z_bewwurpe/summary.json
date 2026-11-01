@@ -1,0 +1,62 @@
+{
+  "campaignId": "incremental_value_iteration_mountaincarembedded_embedded_preprocess_20261024T105053Z_bewwurpe",
+  "algorithm": "INCREMENTAL_VALUE_ITERATION",
+  "environment": "mountaincarembedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 3.5129390624,
+      "sampleSD": 0.039979218376983226,
+      "median": 3.5136478745,
+      "min": 3.426710959,
+      "max": 3.557805375
+    },
+    "orderingSeconds": {
+      "n": 10,
+      "mean": 13.48472,
+      "sampleSD": 0.07928125513638141,
+      "median": 13.4647665,
+      "min": 13.408888,
+      "max": 13.640051
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 17.1622511,
+      "sampleSD": 0.10748655594119629,
+      "median": 17.150596,
+      "min": 17.035305,
+      "max": 17.410445
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 20.6751901,
+      "sampleSD": 0.11105745535077316,
+      "median": 20.644630999999997,
+      "min": 20.54921,
+      "max": 20.957487
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 499796.4,
+      "sampleSD": 51699.496552889395,
+      "median": 470940.0,
+      "min": 446893.0,
+      "max": 591175.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 122.2,
+      "sampleSD": 12.899612397277679,
+      "median": 115.0,
+      "min": 109.0,
+      "max": 145.0
+    }
+  }
+}

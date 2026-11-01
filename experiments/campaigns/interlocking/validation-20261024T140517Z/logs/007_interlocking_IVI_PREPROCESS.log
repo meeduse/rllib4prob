@@ -1,0 +1,31 @@
+
+COMMAND: bash /Users/idani/rllib4prob/fresh/scripts/experiments/offline/run_campaign.sh --algorithm IVI --reward ONCEANDFORALL --exploration PREPROCESS --environment interlocking --count 1 --expected-states 100226
+Compiling once and resolving the runtime classpath...
+
+New campaign: /Users/idani/rllib4prob/fresh/experiments/offline/incremental_value_iteration_interlocking_onceandforall_preprocess_20261024T144610Z_5nos5t7m
+Snapshot: 117 source/config files
+
+========== INCREMENTAL_VALUE_ITERATION seed 0 (1/1) ==========
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = interlocking
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+..............................................................................................................................................................................................................................................................................Model Checking complete. No more error nodes found.Total states: 100228
+
+End of exploration 100226 | Exploration time: 135.484495667 seconds
+IVI_ORDERING method=BFS_ACTIONS states=100226 transitions=301099 orderingSeconds=252.555396
+IVI iteration=100 sample_delta=50000.0000 global_residual=50000.0000
+IVI_RESULT status=ITERATION_LIMIT_REACHED seed=0 gamma=0.900000000 theta=0.0100000000 maxIterations=100 updatesPerIteration=500 iterations=100 exploredStates=100226 distinctUpdatedStates=49349 updateBackups=50000 residualBackups=200452 totalBackups=250452 rewardLookups=752336 bellmanResidual=50000.0000 orderingSeconds=252.555396 learningSeconds=304.886989
+REWARD_CACHE strategy=ONCEANDFORALL hits=652111 misses=100225 cachedStates=100225
+Nb states discovered (env): 100226
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+CHECK run 0: status=ITERATION_LIMIT_REACHED verification=VERIFIED_NONCONVERGENCE
+
+Completed: 0/1 verified successful runs
+Breakdown: {'VERIFIED_NONCONVERGENCE': 1}
+CSV: /Users/idani/rllib4prob/fresh/experiments/offline/incremental_value_iteration_interlocking_onceandforall_preprocess_20261024T144610Z_5nos5t7m/results.csv
+Summary: /Users/idani/rllib4prob/fresh/experiments/offline/incremental_value_iteration_interlocking_onceandforall_preprocess_20261024T144610Z_5nos5t7m/summary.json
+All raw logs preserved in: /Users/idani/rllib4prob/fresh/experiments/offline/incremental_value_iteration_interlocking_onceandforall_preprocess_20261024T144610Z_5nos5t7m/logs

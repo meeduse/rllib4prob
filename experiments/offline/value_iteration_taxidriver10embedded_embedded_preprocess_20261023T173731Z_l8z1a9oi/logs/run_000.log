@@ -1,0 +1,32 @@
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = taxidriver10embedded
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.Model Checking complete. No more error nodes found.Total states: 167
+
+End of exploration 165 | Exploration time: 0.036674834 seconds
+VI iteration=1 sweep_delta=1000.00000
+VI iteration=2 sweep_delta=900.000000
+VI iteration=3 sweep_delta=810.000000
+VI iteration=4 sweep_delta=729.000000
+VI iteration=5 sweep_delta=656.100000
+VI iteration=6 sweep_delta=590.490000
+VI iteration=7 sweep_delta=413.962989
+VI iteration=8 sweep_delta=347.382256
+VI iteration=9 sweep_delta=312.644030
+VI iteration=10 sweep_delta=281.379627
+VI iteration=11 sweep_delta=253.241664
+VI iteration=12 sweep_delta=227.917498
+VI iteration=13 sweep_delta=205.125748
+VI iteration=14 sweep_delta=165.897669
+VI iteration=15 sweep_delta=149.307902
+VI iteration=16 sweep_delta=28.8031605
+VI iteration=17 sweep_delta=0.00000000
+VI_RESIDUAL iteration=17 global_residual=0.00000000
+VI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 iterations=17 exploredStates=165 updateBackups=2805 residualBackups=165 totalBackups=2970 rewardLookups=8820 bellmanResidual=0.00000000 learningSeconds=0.356115
+Nb states discovered (env): 165
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

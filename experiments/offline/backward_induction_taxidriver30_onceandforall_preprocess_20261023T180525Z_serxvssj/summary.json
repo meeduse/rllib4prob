@@ -1,0 +1,46 @@
+{
+  "campaignId": "backward_induction_taxidriver30_onceandforall_preprocess_20261023T180525Z_serxvssj",
+  "algorithm": "BACKWARD_INDUCTION",
+  "environment": "taxidriver30",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 0.2632946416,
+      "sampleSD": 0.014961024766212848,
+      "median": 0.2556049165,
+      "min": 0.246201625,
+      "max": 0.291224833
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 2.3537201,
+      "sampleSD": 0.27475069850419753,
+      "median": 2.286569,
+      "min": 2.165751,
+      "max": 3.093258
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 2.6170147,
+      "sampleSD": 0.2752119458445921,
+      "median": 2.5519765000000003,
+      "min": 2.411953,
+      "max": 3.348783
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 221550.0,
+      "sampleSD": 0.0,
+      "median": 221550.0,
+      "min": 221550.0,
+      "max": 221550.0
+    }
+  }
+}

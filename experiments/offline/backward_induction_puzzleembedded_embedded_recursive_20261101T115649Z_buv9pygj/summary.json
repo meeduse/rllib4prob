@@ -1,0 +1,46 @@
+{
+  "campaignId": "backward_induction_puzzleembedded_embedded_recursive_20261101T115649Z_buv9pygj",
+  "algorithm": "BACKWARD_INDUCTION",
+  "environment": "puzzleembedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "RECURSIVE",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 469.3163205541,
+      "sampleSD": 9.780729679399593,
+      "median": 471.3163526255,
+      "min": 454.244959583,
+      "max": 485.327477875
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 274.9936108,
+      "sampleSD": 9.276913615943533,
+      "median": 273.2868735,
+      "min": 261.134383,
+      "max": 295.351703
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 744.3099314,
+      "sampleSD": 13.095399102688722,
+      "median": 743.690707,
+      "min": 723.117953,
+      "max": 770.559372
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 27216000.0,
+      "sampleSD": 0.0,
+      "median": 27216000.0,
+      "min": 27216000.0,
+      "max": 27216000.0
+    }
+  }
+}

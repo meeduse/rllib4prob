@@ -1,0 +1,10 @@
+{
+  "schema": "offline-campaign-manager-v1",
+  "campaign": "mountaincar",
+  "sourceFingerprint": "df7042bdd06f155f0ffdc395518901da9cfeaef663f7bbcd3cddbf4e106d3a2b",
+  "manifestSha256": "b476be8abd5257c33b8d24c02a0e0a2f895cda26012cced03d1fd770afd41fae",
+  "report": "/Users/idani/rllib4prob/fresh/experiments/campaigns/mountaincar/validation-20261024T100950Z/validation.csv",
+  "reportSha256": "b94daae66da11b64de64758a19d55cba033f63a04f8a572c46ea1f8dadfd13c7",
+  "configurations": 24,
+  "timeUtc": "2026-10-24T10:22:35.747135+00:00"
+}

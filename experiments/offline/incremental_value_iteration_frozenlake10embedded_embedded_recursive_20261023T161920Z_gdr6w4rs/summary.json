@@ -1,0 +1,62 @@
+{
+  "campaignId": "incremental_value_iteration_frozenlake10embedded_embedded_recursive_20261023T161920Z_gdr6w4rs",
+  "algorithm": "INCREMENTAL_VALUE_ITERATION",
+  "environment": "frozenlake10embedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "RECURSIVE",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 0.3498208126,
+      "sampleSD": 0.057664584307533524,
+      "median": 0.3381704795,
+      "min": 0.28928475,
+      "max": 0.470730208
+    },
+    "orderingSeconds": {
+      "n": 10,
+      "mean": 0.5479204,
+      "sampleSD": 0.022687613053039405,
+      "median": 0.5505095,
+      "min": 0.504448,
+      "max": 0.590173
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 0.7647267,
+      "sampleSD": 0.05388489461816838,
+      "median": 0.7531165,
+      "min": 0.687011,
+      "max": 0.863237
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 1.1145475,
+      "sampleSD": 0.08393361636734115,
+      "median": 1.1238565,
+      "min": 0.976296,
+      "max": 1.234315
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 58192.0,
+      "sampleSD": 758.0184694319789,
+      "median": 58192.0,
+      "min": 56584.0,
+      "max": 58996.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 72.0,
+      "sampleSD": 0.9428090415820634,
+      "median": 72.0,
+      "min": 70.0,
+      "max": 73.0
+    }
+  }
+}

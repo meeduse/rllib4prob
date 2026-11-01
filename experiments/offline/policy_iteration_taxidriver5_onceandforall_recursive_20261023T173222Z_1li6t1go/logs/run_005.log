@@ -1,0 +1,24 @@
+Selected algorithm = POLICY_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = taxidriver5
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 43 | Exploration time: 0.085436833 seconds
+PI iteration=1 evaluation_sweeps=28 policy_residual=0.00793166004 policy_stable=false bellman_residual=NaN
+PI iteration=2 evaluation_sweeps=30 policy_residual=0.00642464464 policy_stable=false bellman_residual=NaN
+PI iteration=3 evaluation_sweeps=32 policy_residual=0.00468356594 policy_stable=false bellman_residual=NaN
+PI iteration=4 evaluation_sweeps=35 policy_residual=0.00276559885 policy_stable=false bellman_residual=NaN
+PI iteration=5 evaluation_sweeps=37 policy_residual=0.00201612156 policy_stable=false bellman_residual=NaN
+PI iteration=6 evaluation_sweeps=39 policy_residual=0.00132277736 policy_stable=false bellman_residual=NaN
+PI iteration=7 evaluation_sweeps=44 policy_residual=0.000461223946 policy_stable=false bellman_residual=NaN
+PI iteration=8 evaluation_sweeps=46 policy_residual=0.000302609031 policy_stable=false bellman_residual=NaN
+PI iteration=9 evaluation_sweeps=49 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=10 evaluation_sweeps=51 policy_residual=0.00000000 policy_stable=true bellman_residual=0.00000000
+PI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 maxEvaluationSweeps=10000 iterations=10 evaluationSweeps=51 exploredStates=43 evaluationBackups=2142 improvementBackups=420 residualBackups=516 totalBackups=3078 rewardLookups=3882 policyStable=true policyResidual=0.00000000 bellmanResidual=0.00000000 learningSeconds=0.005511
+REWARD_CACHE strategy=ONCEANDFORALL hits=3839 misses=43 cachedStates=43
+Nb states discovered (env): 43
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

@@ -1,0 +1,34 @@
+Selected algorithm = INCREMENTAL_VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = mountaincarembedded
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.......Model Checking complete. No more error nodes found.Total states: 12049
+
+End of exploration 12047 | Exploration time: 3.491990083 seconds
+IVI_ORDERING method=BFS_ACTIONS states=12047 transitions=35586 orderingSeconds=13.494483
+IVI iteration=7 sample_delta=9000.00000 global_residual=9000.00000
+IVI iteration=13 sample_delta=9000.00000 global_residual=8100.00000
+IVI iteration=19 sample_delta=6560.92710 global_residual=6560.92710
+IVI iteration=25 sample_delta=5314.28534 global_residual=5314.28534
+IVI iteration=31 sample_delta=4782.85681 global_residual=4782.85681
+IVI iteration=37 sample_delta=4304.57113 global_residual=4304.57113
+IVI iteration=43 sample_delta=3486.60164 global_residual=3486.65478
+IVI iteration=49 sample_delta=2824.09950 global_residual=2443.01922
+IVI iteration=55 sample_delta=2287.47755 global_residual=2071.06004
+IVI iteration=61 sample_delta=1863.95404 global_residual=1750.05477
+IVI iteration=67 sample_delta=1275.78992 global_residual=1544.14304
+IVI iteration=73 sample_delta=816.143108 global_residual=919.540928
+IVI iteration=79 sample_delta=374.567059 global_residual=512.743791
+IVI iteration=85 sample_delta=194.569810 global_residual=403.313860
+IVI iteration=91 sample_delta=304.826922 global_residual=216.188677
+IVI iteration=97 sample_delta=98.4869379 global_residual=157.601546
+IVI iteration=103 sample_delta=135.098680 global_residual=64.6172800
+IVI iteration=109 sample_delta=58.1555520 global_residual=58.1555520
+IVI iteration=115 sample_delta=52.3399968 global_residual=0.00000000
+IVI_RESULT status=CONVERGED seed=8 gamma=0.900000000 theta=0.0100000000 maxIterations=500 updatesPerIteration=2000 iterations=115 exploredStates=12047 distinctUpdatedStates=11862 updateBackups=230000 residualBackups=240940 totalBackups=470940 rewardLookups=1391100 bellmanResidual=0.00000000 orderingSeconds=13.494483 learningSeconds=17.159762
+Nb states discovered (env): 12047
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

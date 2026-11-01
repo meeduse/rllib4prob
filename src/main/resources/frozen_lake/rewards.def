@@ -1,0 +1,45 @@
+/*
+alpha = 0.8
+gamma = 0.95
+epsilon = 0.2
+episodes = 10000
+max steps = 200
+https://gymnasium.farama.org/tutorials/training_agents/frozenlake_q_learning/
+*/
+
+DEFINITIONS
+    SET_PREF_MAXINT == 200 ;
+    SET_PREF_SHOW_EVENTB_ANY_VALUES == FALSE ;
+    SET_PREF_MAX_OPERATIONS == 20 ;
+    SET_PREF_INVARIANT_CHECKING == FALSE ;
+reward ==
+    IF fellInHole = 1 THEN
+        -1000.0
+    ELSE
+        IF reachedGoal = 1 THEN
+            1000.0
+        ELSE
+            -1.0
+        END
+    END
+;
+
+reward2 ==
+    IF fellInHole = 1 THEN
+        -100.0
+    ELSE
+        IF reachedGoal = 1 THEN
+            100.0
+        ELSE
+            -1.0
+        END
+    END
+;
+
+reward3 ==
+    IF reachedGoal = 1 THEN
+        1.0
+    ELSE
+        0.0
+    END
+;

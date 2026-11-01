@@ -1,0 +1,54 @@
+{
+  "campaignId": "modified_policy_iteration_tictacembedded_embedded_preprocess_20261023T075340Z_ooq_sdkk",
+  "algorithm": "MODIFIED_POLICY_ITERATION",
+  "environment": "tictacembedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 33.6455725417,
+      "sampleSD": 1.041623382908617,
+      "median": 33.854963146,
+      "min": 32.359027583,
+      "max": 35.425719792
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 8.4435391,
+      "sampleSD": 0.7591012326990463,
+      "median": 8.11647,
+      "min": 7.951936,
+      "max": 10.406574
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 42.089111700000004,
+      "sampleSD": 1.581099580006835,
+      "median": 41.83538,
+      "min": 40.420501,
+      "max": 44.969521
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 89712.0,
+      "sampleSD": 0.0,
+      "median": 89712.0,
+      "min": 89712.0,
+      "max": 89712.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 3.0,
+      "sampleSD": 0.0,
+      "median": 3.0,
+      "min": 3.0,
+      "max": 3.0
+    }
+  }
+}

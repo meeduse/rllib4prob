@@ -1,0 +1,17 @@
+Selected algorithm = POLICY_ITERATION
+Selected reward strategy = ONCEANDFORALL
+Selected environment = tictactoe
+Load classical B Machine
+Load success
+Exploration strategy = RECURSIVE
+Start exploration
+
+End of exploration 5478 | Exploration time: 19.463906875 seconds
+PI iteration=1 evaluation_sweeps=8 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=2 evaluation_sweeps=12 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=3 evaluation_sweeps=14 policy_residual=0.00000000 policy_stable=true bellman_residual=0.00000000
+PI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 maxEvaluationSweeps=10000 iterations=3 evaluationSweeps=14 exploredStates=5478 evaluationBackups=63280 improvementBackups=13560 residualBackups=27390 totalBackups=104230 rewardLookups=157675 policyStable=true policyResidual=0.00000000 bellmanResidual=0.00000000 learningSeconds=29.362366
+REWARD_CACHE strategy=ONCEANDFORALL hits=152198 misses=5477 cachedStates=5477
+Nb states discovered (env): 5478
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

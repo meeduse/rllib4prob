@@ -7,19 +7,18 @@ import java.util.Scanner;
 import de.prob.statespace.State;
 import de.prob.statespace.Transition;
 import fr.polytech.mnia.Environment.Environment;
+import fr.polytech.mnia.Environment.FrozenLakeEnvironment;
+import fr.polytech.mnia.Environment.EnvironmentFactory;
 import fr.polytech.mnia.Environment.ExplorationStrategy;
 import fr.polytech.mnia.Environment.RewardStrategy;
+import fr.polytech.mnia.Environment.PuzzleEnvironment;
+import fr.polytech.mnia.Environment.InterlockingEnvironment;
+import fr.polytech.mnia.Environment.MountainCarEnvironment;
+import fr.polytech.mnia.Environment.AutoV2Environment;
+import fr.polytech.mnia.Environment.TaxiDriverEnvironment;
+import fr.polytech.mnia.Environment.TicTacToeEnvironment;
 
 public class App {
-    Environment env ;
-
-    private static String resolveMachinePath(RewardStrategy rs) {
-        if (rs == RewardStrategy.EMBEDDED) {
-            return "/TicTacToe/tictac_rewarded.mch";
-        }
-        return "/TicTacToe/tictac.mch";
-    }
-    
     public static void main(String[] args) {
 
         /* Read algorithm + reward strategy */
@@ -45,25 +44,25 @@ public class App {
 
         System.out.println("Selected algorithm = " + algo);
         System.out.println("Selected reward strategy = " + rewardStrategy);
-        
-        // Select B machine according to reward strategy
-        String machinePath = resolveMachinePath(rewardStrategy);
-        System.out.println("Selected machine = " + machinePath);
-        
-        // Create environment
-        TicTacToe env = new TicTacToe(
-                machinePath,
-                rewardStrategy
-        );
 
-        // Create agent (factory already exists)        
-        Agent agent = AgentFactory.create(algo, env);
+        String envName = "tictactoe";
+        if (args.length >= 4) {
+            envName = args[3];
+        }
+
+        System.out.println("Selected environment = " + envName);
+
+        // Create environment from factory
+        Environment env = EnvironmentFactory.create(envName, rewardStrategy);
+
+        // Create agent (factory already exists)
+        Agent agent = AgentFactory.create(algo, env, envName);
 
         if (agent == null) {
             System.err.println("ERROR: Cannot create agent for algorithm " + algo);
             return;
         }
-        
+
         // Run learning with exploration (unless NONE chosen)
         ExplorationStrategy exploration = ExplorationStrategy.PREPROCESS;
 
@@ -79,9 +78,69 @@ public class App {
         
         agent.learn(exploration); // Run learning with exploration
 
+        // Once-and-for-all diagnostics. These are Java-side cache metrics,
+        // NOT measurements of underlying ProB requests.
+        if (rewardStrategy == RewardStrategy.ONCEANDFORALL) {
+            if (env instanceof TicTacToeEnvironment ticTacToeEnv) {
+                System.out.println("REWARD_CACHE strategy=ONCEANDFORALL"
+                    + " hits=" + ticTacToeEnv.getRewardCacheHits()
+                    + " misses=" + ticTacToeEnv.getRewardCacheMisses()
+                    + " cachedStates=" + ticTacToeEnv.getCachedRewardStateCount());
+            } else if (env instanceof FrozenLakeEnvironment frozenLakeEnv) {
+                System.out.println("REWARD_CACHE strategy=ONCEANDFORALL"
+                    + " hits=" + frozenLakeEnv.getRewardCacheHits()
+                    + " misses=" + frozenLakeEnv.getRewardCacheMisses()
+                    + " cachedStates=" + frozenLakeEnv.getCachedRewardStateCount());
+            }
+        }
+
+        if (rewardStrategy == RewardStrategy.ONCEANDFORALL
+                && env instanceof TaxiDriverEnvironment taxiEnv) {
+            System.out.println("REWARD_CACHE strategy=ONCEANDFORALL"
+                + " hits=" + taxiEnv.getRewardCacheHits()
+                + " misses=" + taxiEnv.getRewardCacheMisses()
+                + " cachedStates=" + taxiEnv.getCachedRewardStateCount());
+        }
+
+        if (rewardStrategy == RewardStrategy.ONCEANDFORALL
+                && env instanceof AutoV2Environment autoV2Env) {
+            System.out.println("REWARD_CACHE strategy=ONCEANDFORALL"
+                + " hits=" + autoV2Env.getRewardCacheHits()
+                + " misses=" + autoV2Env.getRewardCacheMisses()
+                + " cachedStates=" + autoV2Env.getCachedRewardStateCount());
+        }
+
+        if (rewardStrategy == RewardStrategy.ONCEANDFORALL
+                && env instanceof MountainCarEnvironment car) {
+            System.out.println("REWARD_CACHE strategy=ONCEANDFORALL"
+                + " hits=" + car.getRewardCacheHits()
+                + " misses=" + car.getRewardCacheMisses()
+                + " cachedStates=" + car.getCachedRewardStateCount());
+        }
+
+        if (rewardStrategy == RewardStrategy.ONCEANDFORALL
+                && env instanceof InterlockingEnvironment railway) {
+            System.out.println("REWARD_CACHE strategy=ONCEANDFORALL"
+                + " hits=" + railway.getRewardCacheHits()
+                + " misses=" + railway.getRewardCacheMisses()
+                + " cachedStates=" + railway.getCachedRewardStateCount());
+        }
+
+        if (rewardStrategy == RewardStrategy.ONCEANDFORALL
+                && env instanceof PuzzleEnvironment puzzleModel) {
+            System.out.println("REWARD_CACHE strategy=ONCEANDFORALL"
+                + " hits=" + puzzleModel.getRewardCacheHits()
+                + " misses=" + puzzleModel.getRewardCacheMisses()
+                + " cachedStates=" + puzzleModel.getCachedRewardStateCount());
+        }
+
         System.out.println("Nb states discovered (env): " + env.getStateIds().size());
 
-        playStepByStep(agent, env);
+        if (env instanceof TicTacToe ticTacToe) {
+            playStepByStep(agent, ticTacToe);
+        } else {
+            System.out.println("Interactive play is only supported for TicTacToe. Skipping step-by-step display.");
+        }
         System.exit(0);
     }
     

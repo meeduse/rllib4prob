@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "offline-common-v1",
+  "startedAt": "2026-10-23T15:38:14.718633+00:00",
+  "algorithm": "INCREMENTAL_VALUE_ITERATION",
+  "environment": "frozenlakeembedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "RECURSIVE",
+  "bMachine": "/frozen_lake/FrozenLakeGrid_4_4Bis.mch",
+  "count": 10,
+  "firstSeed": 0,
+  "seedPolicy": "explicit seeded Fisher-Yates/BFS_ACTIONS (IVI only)",
+  "ordering": "BFS_ACTIONS",
+  "expectedStates": 43,
+  "gitRoot": "/Users/idani/rllib4prob",
+  "gitPrefix": "fresh/",
+  "gitCommit": "ad1ae4442839302b722af995603cff1b40ffa3e8",
+  "gitStatus": "M fresh/src/main/java/fr/polytech/mnia/App.java\n M fresh/src/main/java/fr/polytech/mnia/Environment/Environment.java\n M fresh/src/main/java/fr/polytech/mnia/Environment/FrozenLakeEnvironment.java\n M fresh/src/main/java/fr/polytech/mnia/mbrl/offline/BackwardInductionV1.java\n M fresh/src/main/java/fr/polytech/mnia/mbrl/offline/ModifiedPolicyIteration.java\n M fresh/src/main/java/fr/polytech/mnia/mbrl/offline/PolicyIteration.java\n M fresh/src/main/java/fr/polytech/mnia/mbrl/offline/PrioritizedValueIterationV1.java\n M fresh/src/main/resources/frozen_lake/FrozenLakeBis.mch\n D fresh/src/main/resources/frozen_lake/FrozenLakeEnvironment.svg\n D fresh/src/main/resources/frozen_lake/FrozenLakeEnvironment.visb.json\n D fresh/src/main/resources/frozen_lake/FrozenLakeGrid_11_11.mch\n D fresh/src/main/resources/frozen_lake/FrozenLakeGrid_7_7.mch\n D fresh/src/main/resources/frozen_lake/FrozenLakeGrid_8_8.mch\n D fresh/src/main/resources/frozen_lake/FrozenLakeGrid_9_9.mch\n?? fresh/analysis/\n?? fresh/clean_frozenlake_campaigns.py\n?? fresh/commands.txt\n?? fresh/config/\n?? fresh/experiments/bi_tictactoe_smoke/\n?? fresh/experiments/mpi_tictactoe_smoke/\n?? fresh/experiments/offline/\n?? fresh/experiments/pi_tictactoe_smoke/\n?? fresh/experiments/pvi_tictactoe_smoke/\n?? fresh/frozenlake_preprocess_audit.csv\n?? fresh/frozenlake_preprocess_results.zip\n?? fresh/scripts/experiments/offline/\n?? fresh/scripts/tests/bi_standalone/\n?? fresh/scripts/tests/mpi_standalone/\n?? fresh/scripts/tests/pi_standalone/\n?? fresh/scripts/tests/pvi_standalone/\n?? fresh/src/main/java/fr/polytech/mnia/App.java.backup\n?? fresh/src/main/java/fr/polytech/mnia/Environment/Environment.java.backup\n?? fresh/src/main/java/fr/polytech/mnia/Environment/FrozenLakeEnvironment.java.backup\n?? fresh/src/main/resources/frozen_lake.backup/\n?? fresh/src/test/java/fr/polytech/mnia/Environment/FrozenLakeRewardEquivalence.java\n?? fresh/src/test/java/fr/polytech/mnia/Environment/FrozenLakeStateSpaceAudit.java\n?? fresh/tictactoe_results.zip",
+  "javaVersion": "openjdk version \"24-ea\" 2025-03-18\nOpenJDK Runtime Environment (build 24-ea+19-2228)\nOpenJDK 64-Bit Server VM (build 24-ea+19-2228, mixed mode, sharing)",
+  "mavenVersion": "Apache Maven 3.9.9 (8e8579a9e76f7d015ee5ec7bfcdc97d260186937)\nMaven home: /opt/homebrew/Cellar/maven/3.9.9/libexec\nJava version: 23.0.2, vendor: Homebrew, runtime: /opt/homebrew/Cellar/openjdk/23.0.2/libexec/openjdk.jdk/Contents/Home\nDefault locale: fr_FR, platform encoding: UTF-8\nOS name: \"mac os x\", version: \"26.6.2\", arch: \"aarch64\", family: \"mac\"",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "architecture": "arm64",
+  "pythonVersion": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "sourceFilesInSnapshot": 109,
+  "resultCriteria": {
+    "BI": "completedHorizon == horizon > 0, status HORIZON_COMPLETED",
+    "others": "status CONVERGED and finite global Bellman residual <= theta; policy stable/residual for PI/MPI"
+  },
+  "notes": "All code, B machines, and config captured before runs; values parsed from algorithm result lines. Times are wall-clock algorithm times reported by Java and exclude Maven compilation."
+}

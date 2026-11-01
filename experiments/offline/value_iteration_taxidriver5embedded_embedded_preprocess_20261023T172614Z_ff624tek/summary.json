@@ -1,0 +1,54 @@
+{
+  "campaignId": "value_iteration_taxidriver5embedded_embedded_preprocess_20261023T172614Z_ff624tek",
+  "algorithm": "VALUE_ITERATION",
+  "environment": "taxidriver5embedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 0.014090895800000001,
+      "sampleSD": 0.0012749681760780283,
+      "median": 0.0136367295,
+      "min": 0.012969875,
+      "max": 0.016640416
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 0.125899,
+      "sampleSD": 0.03049608420764869,
+      "median": 0.1121705,
+      "min": 0.10593,
+      "max": 0.202921
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 0.13999,
+      "sampleSD": 0.03155210235291602,
+      "median": 0.1258025,
+      "min": 0.119127,
+      "max": 0.218838
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 602.0,
+      "sampleSD": 0.0,
+      "median": 602.0,
+      "min": 602.0,
+      "max": 602.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 13.0,
+      "sampleSD": 0.0,
+      "median": 13.0,
+      "min": 13.0,
+      "max": 13.0
+    }
+  }
+}

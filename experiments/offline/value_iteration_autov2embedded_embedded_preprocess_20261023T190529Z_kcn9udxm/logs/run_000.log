@@ -1,0 +1,110 @@
+Selected algorithm = VALUE_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = autov2embedded
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+....Model Checking complete. No more error nodes found.Total states: 2962
+
+End of exploration 2961 | Exploration time: 1.534407666 seconds
+VI iteration=1 sweep_delta=10000.0000
+VI iteration=2 sweep_delta=8050.00000
+VI iteration=3 sweep_delta=3840.71363
+VI iteration=4 sweep_delta=3456.64227
+VI iteration=5 sweep_delta=2799.88024
+VI iteration=6 sweep_delta=2519.89221
+VI iteration=7 sweep_delta=2068.17781
+VI iteration=8 sweep_delta=1861.36003
+VI iteration=9 sweep_delta=1675.22402
+VI iteration=10 sweep_delta=1398.33948
+VI iteration=11 sweep_delta=814.498798
+VI iteration=12 sweep_delta=733.048919
+VI iteration=13 sweep_delta=659.744027
+VI iteration=14 sweep_delta=593.769624
+VI iteration=15 sweep_delta=534.392662
+VI iteration=16 sweep_delta=480.953395
+VI iteration=17 sweep_delta=389.572250
+VI iteration=18 sweep_delta=315.553523
+VI iteration=19 sweep_delta=283.998171
+VI iteration=20 sweep_delta=255.598353
+VI iteration=21 sweep_delta=230.038518
+VI iteration=22 sweep_delta=207.034666
+VI iteration=23 sweep_delta=186.331200
+VI iteration=24 sweep_delta=150.928272
+VI iteration=25 sweep_delta=135.835445
+VI iteration=26 sweep_delta=122.251900
+VI iteration=27 sweep_delta=110.026710
+VI iteration=28 sweep_delta=99.0240391
+VI iteration=29 sweep_delta=89.1216352
+VI iteration=30 sweep_delta=80.2094717
+VI iteration=31 sweep_delta=72.1885245
+VI iteration=32 sweep_delta=64.9696720
+VI iteration=33 sweep_delta=15.6969118
+VI iteration=34 sweep_delta=12.5634796
+VI iteration=35 sweep_delta=11.3071316
+VI iteration=36 sweep_delta=10.1764185
+VI iteration=37 sweep_delta=9.15877662
+VI iteration=38 sweep_delta=8.24289896
+VI iteration=39 sweep_delta=4.43327154
+VI iteration=40 sweep_delta=3.84944062
+VI iteration=41 sweep_delta=2.90866946
+VI iteration=42 sweep_delta=2.54916912
+VI iteration=43 sweep_delta=2.29425221
+VI iteration=44 sweep_delta=2.06482699
+VI iteration=45 sweep_delta=1.85834429
+VI iteration=46 sweep_delta=1.67250986
+VI iteration=47 sweep_delta=1.50525887
+VI iteration=48 sweep_delta=1.35473299
+VI iteration=49 sweep_delta=1.21925969
+VI iteration=50 sweep_delta=1.09733372
+VI iteration=51 sweep_delta=0.987600346
+VI iteration=52 sweep_delta=0.888840312
+VI iteration=53 sweep_delta=0.799956281
+VI iteration=54 sweep_delta=0.719960653
+VI iteration=55 sweep_delta=0.647964587
+VI iteration=56 sweep_delta=0.583168129
+VI iteration=57 sweep_delta=0.524851316
+VI iteration=58 sweep_delta=0.472366184
+VI iteration=59 sweep_delta=0.425129566
+VI iteration=60 sweep_delta=0.382616609
+VI iteration=61 sweep_delta=0.344354948
+VI iteration=62 sweep_delta=0.309919453
+VI iteration=63 sweep_delta=0.278927508
+VI iteration=64 sweep_delta=0.251034757
+VI iteration=65 sweep_delta=0.225931282
+VI iteration=66 sweep_delta=0.203338153
+VI iteration=67 sweep_delta=0.183004338
+VI iteration=68 sweep_delta=0.164703904
+VI iteration=69 sweep_delta=0.148233514
+VI iteration=70 sweep_delta=0.133410162
+VI iteration=71 sweep_delta=0.120069146
+VI iteration=72 sweep_delta=0.108062232
+VI iteration=73 sweep_delta=0.0972560084
+VI iteration=74 sweep_delta=0.0875304076
+VI iteration=75 sweep_delta=0.0787773668
+VI iteration=76 sweep_delta=0.0708996301
+VI iteration=77 sweep_delta=0.0638096671
+VI iteration=78 sweep_delta=0.0574287004
+VI iteration=79 sweep_delta=0.0516858304
+VI iteration=80 sweep_delta=0.0465172473
+VI iteration=81 sweep_delta=0.0418655226
+VI iteration=82 sweep_delta=0.0376789703
+VI iteration=83 sweep_delta=0.0339110733
+VI iteration=84 sweep_delta=0.0305199660
+VI iteration=85 sweep_delta=0.0274679694
+VI iteration=86 sweep_delta=0.0247211724
+VI iteration=87 sweep_delta=0.0222490552
+VI iteration=88 sweep_delta=0.0200241497
+VI iteration=89 sweep_delta=0.0180217347
+VI iteration=90 sweep_delta=0.0162195612
+VI iteration=91 sweep_delta=0.0145976051
+VI iteration=92 sweep_delta=0.0131378446
+VI iteration=93 sweep_delta=0.0118240601
+VI iteration=94 sweep_delta=0.0106416541
+VI iteration=95 sweep_delta=0.00957748872
+VI_RESIDUAL iteration=95 global_residual=0.00861973985
+VI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=200 iterations=95 exploredStates=2961 updateBackups=281295 residualBackups=2961 totalBackups=284256 rewardLookups=1020480 bellmanResidual=0.00861973985 learningSeconds=5.340851
+Nb states discovered (env): 2961
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

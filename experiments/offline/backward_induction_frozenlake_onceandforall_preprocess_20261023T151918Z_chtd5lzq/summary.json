@@ -1,0 +1,46 @@
+{
+  "campaignId": "backward_induction_frozenlake_onceandforall_preprocess_20261023T151918Z_chtd5lzq",
+  "algorithm": "BACKWARD_INDUCTION",
+  "environment": "frozenlake",
+  "rewardStrategy": "ONCEANDFORALL",
+  "explorationStrategy": "PREPROCESS",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 0.0132015248,
+      "sampleSD": 0.0029025140124413905,
+      "median": 0.0120910625,
+      "min": 0.011259583,
+      "max": 0.020816708
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 0.1280086,
+      "sampleSD": 0.01987895391949318,
+      "median": 0.12621,
+      "min": 0.101652,
+      "max": 0.170537
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 0.1412101,
+      "sampleSD": 0.02082150182677086,
+      "median": 0.140068,
+      "min": 0.112912,
+      "max": 0.182781
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 6450.0,
+      "sampleSD": 0.0,
+      "median": 6450.0,
+      "min": 6450.0,
+      "max": 6450.0
+    }
+  }
+}

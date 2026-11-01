@@ -1,5 +1,9 @@
 package fr.polytech.mnia.Environment;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Iterator;
+
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -150,20 +154,53 @@ public abstract class Environment {
      * @param maxDepth maximum depth allowed (-1 for unlimited)
      * @param maxBreadth maximum number of children per state (-1 for unlimited)
      */
-    private void recursive(State state, Set<State> visited, int maxDepth, int maxBreadth) {
-        if (!visited.add(state)) return;
-        this.stateIds.add(Integer.parseInt(state.getId()));
-        if (maxDepth != -1 && maxDepth <= 0) return;
+    private void recursive(State root, Set<State> visited,
+                       int maxDepth, int maxBreadth) {
 
+    class Frame {
+        final int depth;
+        final Iterator<Transition> transitions;
         int count = 0;
-        for (Transition transition : state.getOutTransitions()) {
-            if (maxBreadth != -1 && count >= maxBreadth) break;
 
-            int nextDepth = (maxDepth == -1) ? -1 : maxDepth - 1;
-            recursive(transition.getDestination(), visited, nextDepth, maxBreadth);
-            count++;
+        Frame(State state, int depth) {
+            this.depth = depth;
+            this.transitions = (depth != -1 && depth <= 0)
+                ? Collections.emptyIterator()
+                : state.getOutTransitions().iterator();
         }
     }
+
+    Deque<Frame> stack = new ArrayDeque<>();
+
+    if (!visited.add(root)) return;
+
+    this.stateIds.add(Integer.parseInt(root.getId()));
+    stack.push(new Frame(root, maxDepth));
+
+    while (!stack.isEmpty()) {
+        Frame frame = stack.peek();
+
+        if ((maxBreadth != -1 && frame.count >= maxBreadth)
+                || !frame.transitions.hasNext()) {
+            stack.pop();
+            continue;
+        }
+
+        Transition transition = frame.transitions.next();
+        frame.count++;
+
+        State next = transition.getDestination();
+
+        if (visited.add(next)) {
+            this.stateIds.add(Integer.parseInt(next.getId()));
+
+            int nextDepth = frame.depth == -1
+                ? -1 : frame.depth - 1;
+
+            stack.push(new Frame(next, nextDepth));
+        }
+    }
+}
 
     /**
      * Performs a model check to explore the entire state space.
@@ -191,9 +228,51 @@ public abstract class Environment {
             }
         );
         modelChecker.call();
+        if (nodes[0] < 2) {
+            throw new IllegalStateException(
+                "ProB returned no usable nodes during preprocessing");
+        }
+
+        // ProB's total node count includes the synthetic root and, depending on
+        // the B machine, intermediate SETUP_CONSTANTS / INITIALISE_MACHINE states.
+        // The learner must only receive states AFTER machine initialisation.
+        // Preserve the fast model-checker traversal: do not enumerate all edges
+        // again through the Java API to discover the reachable state set.
+        Set<Integer> administrativeIds = new HashSet<>();
+        State cursor = animator.getStateSpace().getRoot();
+        for (String transitionName : new String[] {
+                Transition.SETUP_CONSTANTS_NAME,
+                Transition.INITIALISE_MACHINE_NAME }) {
+            Transition administrative = cursor.findTransition(transitionName);
+            if (administrative == null) continue;
+            cursor = administrative.getDestination();
+            if (!cursor.getId().equals(initial.getId())) {
+                try {
+                    administrativeIds.add(Integer.parseInt(cursor.getId()));
+                } catch (NumberFormatException ignored) {
+                    // The synthetic root has a non-numeric identifier.
+                }
+            }
+        }
+        if (!cursor.getId().equals(initial.getId())) {
+            throw new IllegalStateException(
+                "Cannot identify the initialized ProB game state: expected "
+                + initial.getId() + " but found " + cursor.getId());
+        }
+
+        // State IDs are sequential in the ProB state-space representation used
+        // by this backend. Unlike the previous implementation, explicitly remove
+        // any numeric setup/initialisation states instead of subtracting only
+        // the synthetic root from the total count.
         this.stateIds = IntStream.rangeClosed(0, nodes[0] - 2)
+                                 .filter(id -> !administrativeIds.contains(id))
                                  .boxed()
                                  .collect(Collectors.toSet());
+        int initializedId = Integer.parseInt(initial.getId());
+        if (!stateIds.contains(initializedId)) {
+            throw new IllegalStateException(
+                "Preprocessing omitted the initialized B state " + initializedId);
+        }
     }
 
     /**

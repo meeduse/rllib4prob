@@ -1,0 +1,32 @@
+Selected algorithm = POLICY_ITERATION
+Selected reward strategy = EMBEDDED
+Selected environment = taxidriver10embedded
+Load classical B Machine
+Load success
+Exploration strategy = PREPROCESS
+Start exploration
+.Model Checking complete. No more error nodes found.Total states: 167
+
+End of exploration 165 | Exploration time: 0.036037833 seconds
+PI iteration=1 evaluation_sweeps=30 policy_residual=0.00713849404 policy_stable=false bellman_residual=NaN
+PI iteration=2 evaluation_sweeps=32 policy_residual=0.00520396215 policy_stable=false bellman_residual=NaN
+PI iteration=3 evaluation_sweeps=34 policy_residual=0.00421520935 policy_stable=false bellman_residual=NaN
+PI iteration=4 evaluation_sweeps=36 policy_residual=0.00341431957 policy_stable=false bellman_residual=NaN
+PI iteration=5 evaluation_sweeps=38 policy_residual=0.00276559885 policy_stable=false bellman_residual=NaN
+PI iteration=6 evaluation_sweeps=40 policy_residual=0.00326210124 policy_stable=false bellman_residual=NaN
+PI iteration=7 evaluation_sweeps=42 policy_residual=0.00163305847 policy_stable=false bellman_residual=NaN
+PI iteration=8 evaluation_sweeps=45 policy_residual=0.000964304694 policy_stable=false bellman_residual=NaN
+PI iteration=9 evaluation_sweeps=48 policy_residual=0.000569412278 policy_stable=false bellman_residual=NaN
+PI iteration=10 evaluation_sweeps=50 policy_residual=0.000415101551 policy_stable=false bellman_residual=NaN
+PI iteration=11 evaluation_sweeps=52 policy_residual=0.000336232256 policy_stable=false bellman_residual=NaN
+PI iteration=12 evaluation_sweeps=54 policy_residual=0.000245113315 policy_stable=false bellman_residual=NaN
+PI iteration=13 evaluation_sweeps=56 policy_residual=0.000178687607 policy_stable=false bellman_residual=NaN
+PI iteration=14 evaluation_sweeps=58 policy_residual=0.000130263265 policy_stable=false bellman_residual=NaN
+PI iteration=15 evaluation_sweeps=60 policy_residual=9.49619203e-05 policy_stable=false bellman_residual=NaN
+PI iteration=16 evaluation_sweeps=64 policy_residual=2.17242414e-05 policy_stable=false bellman_residual=NaN
+PI iteration=17 evaluation_sweeps=66 policy_residual=0.00000000 policy_stable=false bellman_residual=NaN
+PI iteration=18 evaluation_sweeps=68 policy_residual=0.00000000 policy_stable=true bellman_residual=0.00000000
+PI_RESULT status=CONVERGED gamma=0.900000000 theta=0.0100000000 maxIterations=100 maxEvaluationSweeps=10000 iterations=18 evaluationSweeps=68 exploredStates=165 evaluationBackups=11152 improvementBackups=2952 residualBackups=3300 totalBackups=17404 rewardLookups=23904 policyStable=true policyResidual=0.00000000 bellmanResidual=0.00000000 learningSeconds=0.339177
+Nb states discovered (env): 165
+Interactive play is only supported for TicTacToe. Skipping step-by-step display.
+RUN_EXIT_CODE=0

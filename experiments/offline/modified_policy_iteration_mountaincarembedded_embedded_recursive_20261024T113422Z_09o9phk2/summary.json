@@ -1,0 +1,54 @@
+{
+  "campaignId": "modified_policy_iteration_mountaincarembedded_embedded_recursive_20261024T113422Z_09o9phk2",
+  "algorithm": "MODIFIED_POLICY_ITERATION",
+  "environment": "mountaincarembedded",
+  "rewardStrategy": "EMBEDDED",
+  "explorationStrategy": "RECURSIVE",
+  "totalRuns": 10,
+  "validationStates": {
+    "VERIFIED_SUCCESS": 10
+  },
+  "successfulRuns": 10,
+  "statisticsOnVerifiedSuccessOnly": {
+    "explorationSeconds": {
+      "n": 10,
+      "mean": 9.4884640792,
+      "sampleSD": 0.5302917748195739,
+      "median": 9.366120521,
+      "min": 8.709379,
+      "max": 10.414697125
+    },
+    "learningSeconds": {
+      "n": 10,
+      "mean": 19.0823482,
+      "sampleSD": 1.545833502051656,
+      "median": 19.407185,
+      "min": 16.887958,
+      "max": 21.617597
+    },
+    "totalSeconds": {
+      "n": 10,
+      "mean": 28.5708123,
+      "sampleSD": 1.7746273207154764,
+      "median": 29.1851135,
+      "min": 25.692428,
+      "max": 30.920774
+    },
+    "totalBackups": {
+      "n": 10,
+      "mean": 1685144.0,
+      "sampleSD": 0.0,
+      "median": 1685144.0,
+      "min": 1685144.0,
+      "max": 1685144.0
+    },
+    "iterations": {
+      "n": 10,
+      "mean": 26.0,
+      "sampleSD": 0.0,
+      "median": 26.0,
+      "min": 26.0,
+      "max": 26.0
+    }
+  }
+}

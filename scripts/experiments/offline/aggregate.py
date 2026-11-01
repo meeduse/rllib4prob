@@ -168,7 +168,7 @@ def main():
 
     out_file = destination / 'results_all.csv'
     with out_file.open('w', encoding='utf-8', newline='') as stream:
-        writer = csv.DictWriter(stream, fieldnames=FIELDS)
+        writer = csv.DictWriter(stream, fieldnames=FIELDS, lineterminator='\n')
         writer.writeheader()
         writer.writerows(rows)
 
@@ -205,7 +205,7 @@ def main():
         header += [field + 'Mean', field + 'SampleSD']
     comparison = destination / 'summary_by_configuration.csv'
     with comparison.open('w', encoding='utf-8', newline='') as stream:
-        writer = csv.DictWriter(stream, fieldnames=header)
+        writer = csv.DictWriter(stream, fieldnames=header, lineterminator='\n')
         writer.writeheader()
         writer.writerows(summary)
 
